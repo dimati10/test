@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before,  *::after {
+    box-sizing: inherit;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #515359;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+img {
+    display: block;
+}
+
+.wrapper {
+    padding-top: 156px;
+}
+
+.container {
+    max-width: 990px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.btn {
+    font-weight: 700;
+    border-radius: 21px;
+    cursor: pointer;
+    outline: transparent;
+}

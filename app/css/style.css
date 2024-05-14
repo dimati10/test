@@ -2893,12 +2893,14 @@ input[type=number] {
   opacity: 0.6;
 }
 .mission__pulsar span::before {
-  -webkit-animation: pulsar 2s infinite;
-          animation: pulsar 2s infinite;
+  width: 2.4rem;
+  height: 2.4rem;
+  opacity: 0.4;
 }
 .mission__pulsar span::after {
-  -webkit-animation: pulsar 2s infinite 0.2s;
-          animation: pulsar 2s infinite 0.2s;
+  width: 3.7rem;
+  height: 3.7rem;
+  opacity: 0.1;
 }
 .mission__title {
   max-width: 85rem;

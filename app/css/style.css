@@ -2872,8 +2872,8 @@ input[type=number] {
 .mission__pulsar span {
   display: block;
   position: relative;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background-color: var(--belyy-fon);
   opacity: 0.6;
@@ -2893,14 +2893,12 @@ input[type=number] {
   opacity: 0.6;
 }
 .mission__pulsar span::before {
-  width: 2.4rem;
-  height: 2.4rem;
-  opacity: 0.4;
+  -webkit-animation: pulsar 2s infinite;
+          animation: pulsar 2s infinite;
 }
 .mission__pulsar span::after {
-  width: 3.7rem;
-  height: 3.7rem;
-  opacity: 0.1;
+  -webkit-animation: pulsar 2s infinite 0.2s;
+          animation: pulsar 2s infinite 0.2s;
 }
 .mission__title {
   max-width: 85rem;
@@ -3026,6 +3024,31 @@ input[type=number] {
   }
 }
 
+@-webkit-keyframes pulsar {
+  50% {
+    width: 1.1rem;
+    height: 1.1rem;
+    opacity: 0.6;
+  }
+  100% {
+    width: 3.7rem;
+    height: 3.7rem;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsar {
+  50% {
+    width: 1.1rem;
+    height: 1.1rem;
+    opacity: 0.6;
+  }
+  100% {
+    width: 3.7rem;
+    height: 3.7rem;
+    opacity: 0;
+  }
+}
 .accounting {
   padding: 6rem 0;
   background-color: var(--belyy-fon);

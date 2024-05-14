@@ -354,8 +354,8 @@
         span {
             display: block;
             position: relative;
-            width: 1.1rem;
-            height: 1.1rem;
+            width: 1rem;
+            height: 1rem;
             border-radius: 50%;
             background-color: var(--belyy-fon);
             opacity: 0.6;
@@ -375,17 +375,17 @@
             }
 
             &::before {
-                // animation: pulsar 2s infinite;
-                width: 2.4rem;
-                height: 2.4rem;
-                opacity: .4;
+                animation: pulsar 2s infinite;
+                // width: 2.4rem;
+                // height: 2.4rem;
+                // opacity: .4;
             }
 
             &::after {
-                // animation: pulsar 2s infinite 0.2s;
-                width: 3.7rem;
-                height: 3.7rem;
-                opacity: .1;
+                animation: pulsar 2s infinite 0.2s;
+                // width: 3.7rem;
+                // height: 3.7rem;
+                // opacity: .1;
             }
         }
     }
@@ -498,16 +498,16 @@
     }
 }
 
-// @keyframes pulsar {
-//     50% {
-//         width: 1.1rem;
-//         height: 1.1rem;
-//         opacity: 0.6;
-//     }
+@keyframes pulsar {
+    50% {
+        width: 1.1rem;
+        height: 1.1rem;
+        opacity: 0.6;
+    }
 
-//     100% {
-//         width: 3.7rem;
-//         height: 3.7rem;
-//         opacity: 0;
-//     }
-// }
+    100% {
+        width: 3.7rem;
+        height: 3.7rem;
+        opacity: 0;
+    }
+}

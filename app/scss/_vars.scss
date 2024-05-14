@@ -1,0 +1,30 @@
+:root {
+    --font-family: "PP Neue Montreal", sans-serif;
+    --second-family: "Halvar Breitschrift", sans-serif;
+
+    --black-0: #000;
+    --black-13: #0d0911;
+    --black-31: #1f1f1f;
+    --black-37: #252525;
+    --black-13-opacity-80: rgba(13, 9, 17, 0.8);
+    --belyy-fon: #fff;
+    --white-opacity-10: rgba(255, 255, 255, 0.1);
+    --white-opacity-15: rgba(255, 255, 255, 0.15);
+    --white-opacity-20: rgba(255, 255, 255, 0.2);
+    --white-opacity-30: rgba(255, 255, 255, 0.3);
+    --purple: #3737cc;
+    --gray-241: #f1f1f4;
+    --gray-161: #a1a1b9;
+    --gray-242: #f2f2f2;
+}
+
+@mixin font-face($font-family, $path, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font-family;
+        src: url('../fonts/#{$path}.woff2') format('woff2'),
+        url('../fonts/#{$path}.woff') format('woff');
+        font-weight: $font-weight;
+        font-style: $font-style;
+        font-display: swap;
+    }
+}

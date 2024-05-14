@@ -1,0 +1,38 @@
+<svg width="328" height="62" viewBox="0 0 328 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_2002_355)">
+<path d="M277.514 36.1942C264.198 63.6421 153.79 4.00416 100.25 -29.2458L57.8829 -16.8824C66.0466 44.4516 206.779 69.9344 282.571 72.8893L277.514 36.1942Z" fill="#1329ED" fill-opacity="0.6"/>
+</g>
+<g filter="url(#filter1_f_2002_355)">
+<path d="M224.956 40.8934C95.7283 -17.9213 98.6032 59.811 116.194 106.029L267.039 124.202L299.484 96.9438C294.486 72.297 248.715 50.4329 224.956 40.8934Z" fill="url(#paint0_radial_2002_355)" fill-opacity="0.8"/>
+</g>
+<g filter="url(#filter2_f_2002_355)">
+<path d="M117.852 -4.77393C96.0409 44.0996 45.5293 53.8756 23 52.6543V130.141L241 133.988C159.253 102.847 124.84 28.5045 117.852 -4.77393Z" fill="url(#paint1_radial_2002_355)" fill-opacity="0.8"/>
+</g>
+<defs>
+<filter id="filter0_f_2002_355" x="22.9076" y="-64.221" width="294.639" height="172.086" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="17.4876" result="effect1_foregroundBlur_2002_355"/>
+</filter>
+<filter id="filter1_f_2002_355" x="78.9772" y="-8.72816" width="248.986" height="161.408" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="14.2392" result="effect1_foregroundBlur_2002_355"/>
+</filter>
+<filter id="filter2_f_2002_355" x="0.0324841" y="-27.7414" width="263.935" height="184.697" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="11.4838" result="effect1_foregroundBlur_2002_355"/>
+</filter>
+<radialGradient id="paint0_radial_2002_355" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(204.517 80.4418) rotate(123.956) scale(123.508 506.107)">
+<stop stop-color="#1CC9FF"/>
+<stop offset="0.0001" stop-color="#1CC9FF"/>
+<stop offset="0.605" stop-color="#0037C6"/>
+</radialGradient>
+<radialGradient id="paint1_radial_2002_355" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(97.1933 12.1646) rotate(69.1403) scale(133.441 112.625)">
+<stop stop-color="#B2DAFF"/>
+<stop offset="0.523849" stop-color="#2094FF"/>
+<stop offset="0.994169" stop-color="#002C55"/>
+</radialGradient>
+</defs>
+</svg>

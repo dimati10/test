@@ -1,0 +1,194 @@
+.footer {
+    padding: 6rem 0 4.8rem;
+    background-color: var(--black-13);
+
+    @media (min-width: 1200px) {
+        padding: 4.8rem 0 4.8rem;
+    }
+
+    &__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2.2rem;
+        margin: 0 0 4rem 0;
+        padding: 7.6rem 0 0 0;
+
+        @media (min-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
+
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(4, 1fr);
+            margin: 0 0 4.8rem 0;
+            padding: 0;
+        }
+    }
+
+    &__col {
+        &:nth-child(1) {
+            order: 1;
+
+            @media (min-width: 1200px) {
+                order: 0;
+            }
+        }
+
+        &:nth-child(4) {
+            @media (min-width: 576px) {
+                order: 1;
+            }
+
+            @media (min-width: 1200px) {
+                order: 0;
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: fit-content;
+        margin: 0 0 3rem 0;
+
+        @media (min-width: 1200px) {
+            position: static;
+        }
+
+        img {
+            width: auto;
+            height: 3.6rem;
+
+            @media (min-width: 1200px) {
+                height: 4.2rem;
+            }
+        }
+    }
+
+    &__contacts {
+        margin: 1.8rem 0 4rem 0;
+
+        @media (min-width: 576px) {
+            margin: 0 0 4rem 0;
+        }
+
+        @media (min-width: 1200px) {
+            margin: 0 0 3.6rem 0;
+        }
+
+        .footer__caption {
+            @media (min-width: 1200px) {
+                display: none;
+            }
+        }
+
+        .footer__item {
+            &:not(:last-child) {
+                margin: 0 0 1.2rem 0;
+            }
+        }
+
+        .footer__link {
+            font-size: 1.5rem;
+
+            @media (min-width: 1200px) {
+                font-size: 1.6rem;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__caption {
+        margin: 0 0 1rem 0;
+        color: var(--belyy-fon);
+        font-size: 2.2rem;
+        line-height: 120%;
+        font-weight: 400;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 3rem 0;
+            font-size: 1.6rem;
+            padding: 1rem 0 1.2rem;
+            color: var(--gray-241);
+            font-weight: 500;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin: 0 0 0.8rem 0;
+
+            @media (min-width: 1200px) {
+                margin: 0 0 1rem 0;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        width: fit-content;
+        color: var(--belyy-fon);
+        font-size: 1.6rem;
+        line-height: 2rem;
+        font-style: normal;
+        opacity: .5;
+        transition: color .3s;
+
+        @media (min-width: 1200px) {
+            color: var(--gray-161);
+            font-size: 1.4rem;
+            opacity: 1;
+        }
+
+        &:hover {
+            @media (min-width: 1200px) {
+                color: var(--belyy-fon);
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    grid-gap: 1rem 2rem;
+    border-top: 1px solid var(--gray-161);
+    padding: 2rem 0 0 0;
+    text-align: center;
+
+    @media (min-width: 576px) {
+        justify-items: start;
+        grid-gap: 1rem 3rem;
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2.4rem 0 0 0;
+        text-align: left;
+    }
+
+    &__link {
+        color: var(--gray-161);
+        font-size: 1.4rem;
+        line-height: 140%;
+        transition: color .3s;
+
+        @media (min-width: 1200px) {
+            font-size: 1.6rem;
+        }
+
+        &:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        &:hover {
+            @media (min-width: 1200px) {
+                color: var(--belyy-fon);
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+// Подключение семейства шрифтов 'PP Neue Montreal'
+
+@include font-face("PP Neue Montreal", "PPNeueMontreal-Book", 400, normal);
+@include font-face("PP Neue Montreal", "PPNeueMontreal-Medium", 500, normal);
+
+// Подключение семейства шрифтов 'Inter'
+
+@include font-face("Halvar Breitschrift", "HalvarBreit-Bd", 800, normal);

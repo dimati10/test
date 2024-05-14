@@ -6,11 +6,11 @@ window.addEventListener('DOMContentLoaded', () => {
 function initApp() {
 
     controlMobileMenu(); // мобильное меню;
-    initTariffsSlider(); // слайдер в разделе 'tariffs and methods'
-    initTypicalSlider(); // типовые слайдеры
-    setSolutionAnimation(5000, 1000); // анимация в разделе 'solution'
-    setMissionAnimation(); // анимация в разделе 'mission'
-    setSafetyAnimation(); // анимация в разделе 'safety'
+    // initTariffsSlider(); // слайдер в разделе 'tariffs and methods'
+    // initTypicalSlider(); // типовые слайдеры
+    // setSolutionAnimation(5000, 1000); // анимация в разделе 'solution'
+    // setMissionAnimation(); // анимация в разделе 'mission'
+    // setSafetyAnimation(); // анимация в разделе 'safety'
 
     console.log('initApp');
 

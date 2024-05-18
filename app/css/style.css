@@ -368,6 +368,7 @@ body {
   color: var(--black-13);
   font-size: 1.6rem;
   font-weight: 400;
+  background-color: var(--belyy-fon);
   background-color: var(--black-13);
 }
 
@@ -1417,7 +1418,7 @@ input[type=number] {
 }
 .tariffs__prev.swiper-button-disabled, .tariffs__next.swiper-button-disabled {
   opacity: 0.35;
-  cursor: not-allowed;
+  cursor: default;
 }
 .tariffs__prev {
   right: 100%;
@@ -1727,6 +1728,14 @@ input[type=number] {
   background-color: var(--belyy-fon);
   -webkit-box-shadow: 5px 4px 15px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 5px 4px 15px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+      -ms-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+.payments-message.animated {
+  -webkit-animation: message-animation 1s both;
+          animation: message-animation 1s both;
 }
 @media (min-width: 1200px) {
   .payments-message {
@@ -1813,6 +1822,21 @@ input[type=number] {
   }
 }
 
+@-webkit-keyframes message-animation {
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes message-animation {
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 .conversion {
   padding: 6rem 0;
   background-color: var(--belyy-fon);
@@ -2033,14 +2057,6 @@ input[type=number] {
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-.card-hover__messages {
-  margin: 20.34% 4% 0 4%;
-}
-@media (min-width: 1200px) {
-  .card-hover__messages {
-    margin: 20.34% 7.35% 0 7.35%;
-  }
-}
 .card-hover__img {
   position: absolute;
   top: 0;
@@ -2052,350 +2068,6 @@ input[type=number] {
   height: auto;
   max-width: 100%;
   margin: 0 auto;
-}
-.card-hover__btn {
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 59% auto 0;
-  padding: 0.7rem 5rem;
-  color: var(--belyy-fon);
-  font-size: 1.7rem;
-  line-height: 2.1rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  border-radius: 7.2rem;
-  -webkit-backdrop-filter: blur(19.5px);
-          backdrop-filter: blur(19.5px);
-  background-color: var(--white-opacity-15);
-  border: 1px solid var(--white-opacity-15);
-}
-@media (min-width: 1200px) {
-  .card-hover__btn {
-    margin: 51% auto 0;
-    padding: 0.9rem 7rem;
-    font-size: 2.4rem;
-    line-height: 2.9rem;
-  }
-}
-.card-hover__forms {
-  position: relative;
-  margin: 25.4% 6.55% 0 6.55%;
-}
-@media (min-width: 1200px) {
-  .card-hover__forms {
-    margin: 18.63% 12.25% 0 12.25%;
-  }
-}
-
-.card-hover-message {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1.2rem;
-  width: 22.4rem;
-  padding: 0.9rem;
-  border-radius: 1.5rem;
-  -webkit-backdrop-filter: blur(19.5px);
-          backdrop-filter: blur(19.5px);
-  -webkit-box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
-  background-color: var(--white-opacity-15);
-  border: 1px solid var(--white-opacity-15);
-}
-@media (min-width: 1200px) {
-  .card-hover-message {
-    gap: 1.5rem;
-    width: 30rem;
-    padding: 1.1rem;
-  }
-}
-.card-hover-message:nth-child(2) {
-  margin-left: auto;
-}
-.card-hover-message:not(:last-child) {
-  margin-bottom: 1rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-message:not(:last-child) {
-    margin-bottom: 1.9rem;
-  }
-}
-.card-hover-message__logo {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 3.4rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-message__logo {
-    width: 4.2rem;
-  }
-}
-.card-hover-message__logo img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-}
-.card-hover-message__content {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-.card-hover-message__time {
-  display: none;
-}
-@media (min-width: 1200px) {
-  .card-hover-message__time {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: var(--belyy-fon);
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    letter-spacing: -0.01em;
-    opacity: 0.3;
-  }
-}
-.card-hover-message__caption {
-  margin: 0 0 0.2rem 0;
-  color: var(--belyy-fon);
-  font-size: 1.3rem;
-  line-height: 120%;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-@media (min-width: 1200px) {
-  .card-hover-message__caption {
-    margin: 0 0 0.3rem 0;
-    padding: 0 9rem 0 0;
-    font-size: 1.6rem;
-  }
-}
-.card-hover-message__text {
-  color: var(--belyy-fon);
-  font-size: 1.1rem;
-  line-height: 120%;
-  letter-spacing: -0.01em;
-}
-@media (min-width: 1200px) {
-  .card-hover-message__text {
-    font-size: 1.4rem;
-  }
-}
-.card-hover-message--modified {
-  gap: 0.8rem;
-  width: 21.7rem;
-  padding: 1.1rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-message--modified {
-    gap: 1rem;
-    width: 30.5rem;
-    padding: 1.5rem;
-  }
-}
-.card-hover-message--modified:not(:last-child) {
-  margin-bottom: 1rem;
-}
-.card-hover-message--modified .card-hover-message__logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 3.1rem;
-  height: 3.1rem;
-  border-radius: 100%;
-  border: 1px solid var(--white-opacity-20);
-  background-color: var(--white-opacity-20);
-}
-@media (min-width: 1200px) {
-  .card-hover-message--modified .card-hover-message__logo {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-.card-hover-message--modified .card-hover-message__logo svg {
-  width: 1.4rem;
-  line-height: 1.4rem;
-  color: var(--belyy-fon);
-}
-@media (min-width: 1200px) {
-  .card-hover-message--modified .card-hover-message__logo svg {
-    width: 1.6rem;
-    line-height: 1.6rem;
-  }
-}
-
-.card-hover-form {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0.9rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  -webkit-backdrop-filter: blur(19.5px);
-          backdrop-filter: blur(19.5px);
-  -webkit-box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
-  background-color: var(--white-opacity-15);
-  border: 1px solid var(--white-opacity-15);
-}
-@media (min-width: 1200px) {
-  .card-hover-form {
-    top: 1.5rem;
-    padding: 1.5rem;
-    -webkit-backdrop-filter: blur(19.5px);
-            backdrop-filter: blur(19.5px);
-    border-radius: 1.5rem;
-  }
-}
-.card-hover-form:nth-child(1) {
-  top: 0;
-  left: 2.1rem;
-  right: 2.1rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-form:nth-child(1) {
-    left: 3rem;
-    right: 3rem;
-  }
-}
-.card-hover-form:nth-child(2) {
-  top: 0.3rem;
-  left: 1.4rem;
-  right: 1.4rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-form:nth-child(2) {
-    top: 0.5rem;
-    left: 2rem;
-    right: 2rem;
-  }
-}
-.card-hover-form:nth-child(3) {
-  top: 0.6rem;
-  left: 0.7rem;
-  right: 0.7rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-form:nth-child(3) {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-  }
-}
-.card-hover-form__top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-  margin: 0 0 1.4rem 0;
-}
-@media (min-width: 1200px) {
-  .card-hover-form__top {
-    gap: 1.5rem;
-    margin: 0 0 2rem 0;
-  }
-}
-.card-hover-form__logo {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 2.9rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-form__logo {
-    width: 4.1rem;
-  }
-}
-.card-hover-form__logo img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-}
-.card-hover-form__select {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 0.3rem;
-  color: var(--belyy-fon);
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-@media (min-width: 1200px) {
-  .card-hover-form__select {
-    gap: 0.5rem;
-    font-size: 2rem;
-    line-height: 2.4rem;
-  }
-}
-.card-hover-form__select svg {
-  color: var(--belyy-fon);
-  width: 0.6rem;
-  height: 0.4rem;
-}
-@media (min-width: 1200px) {
-  .card-hover-form__select svg {
-    width: 0.9rem;
-    height: 0.6rem;
-  }
-}
-.card-hover-form__field {
-  display: block;
-  margin: 0 0 0.8rem 0;
-  padding: 0.5rem 0.7rem;
-  color: var(--black-0);
-  font-size: 1rem;
-  line-height: 1.2rem;
-  letter-spacing: -0.01em;
-  border-radius: 0.3rem;
-  background-color: var(--belyy-fon);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-@media (min-width: 1200px) {
-  .card-hover-form__field {
-    margin: 0 0 1.4rem 0;
-    padding: 0.8rem 1rem;
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-    border-radius: 0.4rem;
-  }
-}
-.card-hover-form__btn {
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  color: var(--belyy-fon);
-  font-size: 1rem;
-  line-height: 1.2rem;
-  letter-spacing: -0.01em;
-  border-bottom: 1px solid var(--belyy-fon);
-}
-@media (min-width: 1200px) {
-  .card-hover-form__btn {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-  }
 }
 
 .solution {
@@ -3145,7 +2817,12 @@ input[type=number] {
 
 .safety {
   position: relative;
-  background-color: var(--belyy-fon);
+}
+.safety.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .safety__bg {
   position: absolute;

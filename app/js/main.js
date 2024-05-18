@@ -8,7 +8,8 @@ function initApp() {
     controlMobileMenu(); // мобильное меню;
     initTariffsSlider(); // слайдер в разделе 'tariffs and methods'
     initTypicalSlider(); // типовые слайдеры
-    setSolutionAnimation(5000, 1000); // анимация в разделе 'solution'
+    setPaymentsAnimation(); // анимация в разделе 'mass payments'
+    setSolutionAnimation(5000, 500); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'
 
@@ -169,6 +170,38 @@ function generateRandomNumber(a, b) {
     return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
+// анимация в разделе 'mass payments'
+
+function setPaymentsAnimation() {
+
+    const payments = document.querySelector('.js_payments');
+
+    if (payments) {
+
+        const img = payments.querySelector('.js_payments_img');
+        const messages = payments.querySelectorAll('.js_payments_message');
+
+        function animateMessages() {
+
+            if (img.getBoundingClientRect().bottom < innerHeight) {
+
+                messages.forEach((message, i) => {
+                    message.style.animationDelay = `${0.5 * (messages.length - 1 - i)}s`;
+                    message.classList.add('animated');
+                });
+
+            }
+
+        }
+
+        animateMessages();
+        window.addEventListener('scroll', animateMessages);
+        window.addEventListener('resize', animateMessages);
+
+    }
+
+}
+
 // анимация в разделе 'solution'
 
 function setSolutionAnimation(duration, delay) {
@@ -182,6 +215,7 @@ function setSolutionAnimation(duration, delay) {
         const items = itemsWrapper.querySelectorAll('.js_solution_item');
 
         let isAnimate = false;
+        let d = 0;
 
         function animateItems() {
 
@@ -191,18 +225,24 @@ function setSolutionAnimation(duration, delay) {
 
             copyWrapper.querySelectorAll('.js_solution_item').forEach((item, i) => {
 
-                // item.style.animation = `solution-animation linear ${duration}ms ${(duration / items.length) * i}ms`;
-                item.style.animation = `solution-animation linear ${duration}ms ${delay * i}ms`;
+                d = d + delay + generateRandomNumber(0, delay);
+
+                item.style.animation = `solution-animation linear ${duration}ms ${d}ms`;
                 item.style.left = `${generateRandomNumber(0, solutionWrapper.offsetWidth - item.offsetWidth)}px`;
 
                 if (i === (items.length - 1)) {
 
                     item.addEventListener('animationstart', () => {
 
-                        setTimeout(() => {
-                            // animateItems();
-                            requestAnimationFrame(animateItems);
-                        }, delay);
+                        d = 0;
+
+                        animateItems();
+                        // requestAnimationFrame(animateItems);
+
+                        // setTimeout(() => {
+                        //     animateItems();
+                        //     // requestAnimationFrame(animateItems);
+                        // }, delay);
 
                     });
 
@@ -221,14 +261,14 @@ function setSolutionAnimation(duration, delay) {
             if (entries[0].isIntersecting && !isAnimate) {
 
                 isAnimate = true;
-                // animateItems();
-                requestAnimationFrame(animateItems);
+                animateItems();
+                // requestAnimationFrame(animateItems);
 
             }
 
         };
 
-        const observer = new IntersectionObserver(callback, { threshold: 0.25 });
+        const observer = new IntersectionObserver(callback, { threshold: 0 });
 
         observer.observe(solution);
 
@@ -297,46 +337,37 @@ function setSafetyAnimation() {
 
     if (safety) {
 
-        gsap.registerPlugin(ScrollTrigger)
+        const images = safety.querySelector('.js_safety_images');
+        const block = safety.querySelector('.js_safety_block');
 
-        const images = safety.querySelector('.js_mission_blocks');
-        const tl = gsap.timeline();
+        window.addEventListener('scroll', () => {
 
-        tl.to(".js_safety_images", { y: '-66.7%', ease: "none" });
+            const blockTop = block.getBoundingClientRect().top;
 
-        const trigger = ScrollTrigger.create({
-            animation: tl,
-            trigger: '.js_safety',
-            start: 'top top',
-            end: () => safety.getBoundingClientRect().top + innerHeight * 3,
-            scrub: true,
-            pin: true,
-            // markers: true,
-        });
+            const topOffset = 150;
+            const bottomOffset = 150;
 
-        let isEnabled = null;
+            if (window.innerHeight > topOffset + bottomOffset) {
 
-        if (innerWidth >= 1200) {
-            trigger.enable();
-            isEnabled = true;
-        } else {
-            trigger.disable();
-            isEnabled = false;
-        }
+                if (blockTop + block.offsetHeight > topOffset && blockTop  < innerHeight - bottomOffset) {
 
-        window.addEventListener('resize', () => {
+                    const diff = window.innerHeight + block.offsetHeight - bottomOffset - topOffset;
+                    const translate = (100 - (blockTop + block.offsetHeight - topOffset) / diff * 100) * 0.667;
 
-            if (innerWidth >= 1200 && !isEnabled) {
-                trigger.enable();
-                isEnabled = true;
-            }
+                    images.style.transform = `translateY(-${translate}%)`
 
-            if (innerWidth < 1200 && isEnabled) {
-                trigger.disable();
-                isEnabled = false;
+                } else if (blockTop + block.offsetHeight - topOffset <= 0) {
+                    images.style.transform = 'translateY(-66.7%)'
+                } else {
+                    images.style.transform = 'translateY(0)'
+                }
+
+            } else {
+                images.style.transform = 'translateY(0)'
             }
 
         });
 
     }
+
 }

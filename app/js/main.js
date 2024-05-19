@@ -9,7 +9,7 @@ function initApp() {
     initTariffsSlider(); // слайдер в разделе 'tariffs and methods'
     initTypicalSlider(); // типовые слайдеры
     setPaymentsAnimation(); // анимация в разделе 'mass payments'
-    setSolutionAnimation(5000, 500); // анимация в разделе 'solution'
+    setSolutionAnimation(7000, 1000); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'
 

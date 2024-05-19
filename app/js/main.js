@@ -292,8 +292,8 @@ function setMissionAnimation() {
         const trigger = ScrollTrigger.create({
             animation: tl,
             trigger: '.js_mission',
-            start: 'top top',
             // start: () => blocks.getBoundingClientRect().top,
+            start: 'top top',
             // end: 'bottom',
             end: () => blocks.offsetWidth * 0.7,
             scrub: true,

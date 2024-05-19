@@ -2915,6 +2915,8 @@ input[type=number] {
 }
 .safety__images {
   height: 300%;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 .safety__img {
   background-color: #fff;

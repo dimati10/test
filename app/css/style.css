@@ -644,6 +644,12 @@ input[type=number] {
   fill: var(--belyy-fon);
   stroke: var(--purple);
 }
+@media (min-width: 1200px) {
+  .btn-arrow--purple:hover span {
+    color: var(--black-0);
+    background-color: var(--belyy-fon);
+  }
+}
 
 .pages {
   min-height: 100vh;

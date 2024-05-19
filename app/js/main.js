@@ -344,8 +344,8 @@ function setSafetyAnimation() {
 
             const blockTop = block.getBoundingClientRect().top;
 
-            const topOffset = 150;
-            const bottomOffset = 150;
+            const topOffset = 200;
+            const bottomOffset = 200;
 
             if (window.innerHeight > topOffset + bottomOffset) {
 

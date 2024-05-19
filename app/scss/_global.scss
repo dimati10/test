@@ -268,6 +268,15 @@ input[type=number] {
                 stroke: var(--purple);
             }
         }
+
+        &:hover {
+            @media (min-width: 1200px) {
+                span {
+                    color: var(--black-0);
+                    background-color: var(--belyy-fon);
+                }
+            }
+        }
     }
 }
 

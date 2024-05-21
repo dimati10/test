@@ -20,7 +20,7 @@
                 position: absolute;
                 bottom: 0;
                 left: -15rem;
-                // animation: blob-1 5s linear;
+                animation: blob-1 5s linear infinite alternate;
             }
         }
     }
@@ -79,6 +79,6 @@
 
 @keyframes blob-1 {
     100% {
-        transform: translateX(100rem);
+        transform: translateX(10rem);
     }
 }

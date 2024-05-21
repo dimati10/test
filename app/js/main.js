@@ -236,8 +236,8 @@ function setSolutionAnimation(duration, delay) {
 
                         d = 0;
 
-                        animateItems();
-                        // requestAnimationFrame(animateItems);
+                        // animateItems();
+                        requestAnimationFrame(animateItems);
 
                         // setTimeout(() => {
                         //     animateItems();
@@ -261,8 +261,8 @@ function setSolutionAnimation(duration, delay) {
             if (entries[0].isIntersecting && !isAnimate) {
 
                 isAnimate = true;
-                animateItems();
-                // requestAnimationFrame(animateItems);
+                // animateItems();
+                requestAnimationFrame(animateItems);
 
             }
 

@@ -225,10 +225,9 @@ function setSolutionAnimation(duration, delay) {
 
             copyWrapper.querySelectorAll('.js_solution_item').forEach((item, i) => {
 
-                d = d + delay + generateRandomNumber(0, delay);
-
                 item.style.animation = `solution-animation linear ${duration}ms ${d}ms`;
                 item.style.left = `${generateRandomNumber(0, solutionWrapper.offsetWidth - item.offsetWidth)}px`;
+                d = d + delay + generateRandomNumber(0, delay);
 
                 if (i === (items.length - 1)) {
 
@@ -236,13 +235,10 @@ function setSolutionAnimation(duration, delay) {
 
                         d = 0;
 
-                        // animateItems();
-                        requestAnimationFrame(animateItems);
-
-                        // setTimeout(() => {
-                        //     animateItems();
-                        //     // requestAnimationFrame(animateItems);
-                        // }, delay);
+                        setTimeout(() => {
+                            // animateItems();
+                            requestAnimationFrame(animateItems);
+                        }, d + delay + generateRandomNumber(0, delay));
 
                     });
 

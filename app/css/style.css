@@ -981,8 +981,8 @@ input[type=number] {
   -webkit-transform: translate(-12.7%, 15%);
       -ms-transform: translate(-12.7%, 15%);
           transform: translate(-12.7%, 15%);
-  -webkit-animation: blob-1 10s linear infinite alternate;
-          animation: blob-1 10s linear infinite alternate;
+  -webkit-animation: blob-1 10s linear infinite alternate 2s;
+          animation: blob-1 10s linear infinite alternate 2s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(1) {
@@ -997,8 +997,8 @@ input[type=number] {
   -webkit-transform: translate(13.22%, 24.55%);
       -ms-transform: translate(13.22%, 24.55%);
           transform: translate(13.22%, 24.55%);
-  -webkit-animation: blob-2 10s linear infinite alternate;
-          animation: blob-2 10s linear infinite alternate;
+  -webkit-animation: blob-2 10s linear infinite alternate 2s;
+          animation: blob-2 10s linear infinite alternate 2s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(2) {
@@ -1012,8 +1012,8 @@ input[type=number] {
   -webkit-transform: translate(14.15%, -25.3%);
       -ms-transform: translate(14.15%, -25.3%);
           transform: translate(14.15%, -25.3%);
-  -webkit-animation: blob-3 10s linear infinite alternate;
-          animation: blob-3 10s linear infinite alternate;
+  -webkit-animation: blob-3 10s linear infinite alternate 2s;
+          animation: blob-3 10s linear infinite alternate 2s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(3) {

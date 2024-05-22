@@ -981,8 +981,8 @@ input[type=number] {
   -webkit-transform: translate(-12.7%, 15%);
       -ms-transform: translate(-12.7%, 15%);
           transform: translate(-12.7%, 15%);
-  -webkit-animation: blob-1 10s linear infinite alternate 2s;
-          animation: blob-1 10s linear infinite alternate 2s;
+  -webkit-animation: blob-1 9s linear infinite alternate 2s;
+          animation: blob-1 9s linear infinite alternate 2s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(1) {
@@ -1012,8 +1012,8 @@ input[type=number] {
   -webkit-transform: translate(14.15%, -25.3%);
       -ms-transform: translate(14.15%, -25.3%);
           transform: translate(14.15%, -25.3%);
-  -webkit-animation: blob-3 10s linear infinite alternate 2s;
-          animation: blob-3 10s linear infinite alternate 2s;
+  -webkit-animation: blob-3 11s linear infinite alternate 2s;
+          animation: blob-3 11s linear infinite alternate 2s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(3) {
@@ -1108,14 +1108,14 @@ input[type=number] {
 }
 @-webkit-keyframes blob-3 {
   100% {
-    -webkit-transform: translate(14.15%, -12%);
-            transform: translate(14.15%, -12%);
+    -webkit-transform: translate(30%, -25.3%);
+            transform: translate(30%, -25.3%);
   }
 }
 @keyframes blob-3 {
   100% {
-    -webkit-transform: translate(14.15%, -12%);
-            transform: translate(14.15%, -12%);
+    -webkit-transform: translate(30%, -25.3%);
+            transform: translate(30%, -25.3%);
   }
 }
 .join {

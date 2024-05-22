@@ -34,7 +34,7 @@
             left: 0;
             bottom: 0;
             transform: translate(-12.7%, 15%);
-            animation: blob-1 10s linear infinite alternate 2s;
+            animation: blob-1 9s linear infinite alternate 2s;
 
             @media (min-width: 1200px) {
                 left: 0;
@@ -61,7 +61,7 @@
             right: 0;
             top: -20rem;
             transform: translate(14.15%, -25.3%);
-            animation: blob-3 10s linear infinite alternate 2s;
+            animation: blob-3 11s linear infinite alternate 2s;
 
             @media (min-width: 1200px) {
                 top: 0;
@@ -140,7 +140,7 @@
 @keyframes blob-3 {
     100% {
         // transform: translate(0, 0);
-        // transform: translate(14.15%, 0);
-        transform: translate(14.15%, -12%);
+        // transform: translate(14.15%, -25.3%);
+        transform: translate(30%, -25.3%);
     }
 }

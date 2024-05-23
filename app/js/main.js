@@ -146,21 +146,18 @@ function initTypicalSlider() {
 
 function initTariffsSlider() {
 
-    const swiper = new Swiper('.js_tariffs_swiper', {
-        navigation: {
-            nextEl: '.js_tariffs_next',
-            prevEl: '.js_tariffs_prev',
-        },
-        // slidesPerView: 3,
-        // slidesPerGroup: 3,
-        grabCursor: true,
-        spaceBetween: 20,
-        // breakpoints: {
-        //     1200: {
-        //         slidesPerView: 5
-        //     }
-        // }
-    });
+    if (document.querySelector('.js_tariffs_swiper')) {
+
+        const swiper = new Swiper('.js_tariffs_swiper', {
+            navigation: {
+                nextEl: '.js_tariffs_next',
+                prevEl: '.js_tariffs_prev',
+            },
+            grabCursor: true,
+            spaceBetween: 20,
+        });
+
+    }
 
 }
 
@@ -335,17 +332,16 @@ function setSafetyAnimation() {
 
         const images = safety.querySelector('.js_safety_images');
         const block = safety.querySelector('.js_safety_block');
+        const topOffset = 200;
+        const bottomOffset = 200;
 
-        window.addEventListener('scroll', () => {
+        function animateBlock() {
 
             const blockTop = block.getBoundingClientRect().top;
 
-            const topOffset = 200;
-            const bottomOffset = 200;
-
             if (window.innerHeight > topOffset + bottomOffset) {
 
-                if (blockTop + block.offsetHeight > topOffset && blockTop  < innerHeight - bottomOffset) {
+                if (blockTop + block.offsetHeight > topOffset && blockTop < innerHeight - bottomOffset) {
 
                     const diff = window.innerHeight + block.offsetHeight - bottomOffset - topOffset;
                     const translate = (100 - (blockTop + block.offsetHeight - topOffset) / diff * 100) * 0.667;
@@ -362,7 +358,11 @@ function setSafetyAnimation() {
                 images.style.transform = 'translateY(0)'
             }
 
-        });
+        }
+
+        animateBlock();
+        window.addEventListener('scroll', animateBlock);
+        window.addEventListener('resize', animateBlock);
 
     }
 

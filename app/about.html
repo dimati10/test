@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alikassa</title>
+    <link rel="preload" href="fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/HalvarBreit-Bd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header js_header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <a class="header__logo" href="/">
+                        <img src="images/logo.svg" alt="Logo" width="140" height="28">
+                    </a>
+                    <nav class="header-nav">
+                        <ul class="header-nav__list">
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">About company</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Solutions</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Integration</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__buttons">
+                        <a class="header__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                        <a class="header__btn btn-mini btn-mini--white" href="#">Connect</a>
+                    </div>
+
+                    <button class="header__burger burger js_burger" type="button" aria-label="Open menu">
+                        <span></span>
+                    </button>
+
+                    <div class="menu js_menu">
+                        <ul class="menu__list">
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">About company</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">About us</a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Contacts</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Solutions</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Payment and disbursement methods</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Integration</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Integration process</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Documentation</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Ready solutions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="menu__buttons">
+                            <a class="menu__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                            <a class="menu__btn btn-mini btn-mini--white" href="#">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <div class="container">
+                    <!-- <div class="hero__blobs">
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-1.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-2.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-3.png" alt="">
+                        </div>
+                    </div> -->
+                    <div class="hero__wrapper">
+                        <div class="hero__content">
+                            <h1 class="hero__title">About Alikassa</h1>
+                            <p class="hero__descr">
+                                Join our team to achieve joint results. By becoming<br>
+                                our partner, you will receive dozens of variations and<br>
+                                methods of cooperation.
+                            </p>
+                            <a class="hero__btn btn-arrow btn-arrow--white" href="#">
+                                <span>Connect</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-mission">
+                <div class="container-wide">
+                    <div class="about-mission__wrapper">
+                        <div class="about-mission__inner">
+                            <div class="about-mission__content">
+                                <h2 class="about-mission__title title">Our mission is to simplify financial decisions</h2>
+                                <p class="about-mission__descr">
+                                    Connect hundreds of solutions within 1 integration for your business
+                                </p>
+                            </div>
+                            <div class="about-mission__img">
+                                <img src="" alt="Section image" width="685" height="443" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="about-mission__items">
+                            <div class="about-mission-item">
+                                <h3 class="about-mission-item__title">We did something like this</h3>
+                                <p class="about-mission-item__descr">
+                                    Convenient tools that let you visualize and summarize key metrics and sales data in
+                                    one place. They provide clear and understandable overview information about sales
+                                    performance.
+                                </p>
+                            </div>
+                            <div class="about-mission-item">
+                                <h3 class="about-mission-item__title">We did something like this</h3>
+                                <p class="about-mission-item__descr">
+                                    Convenient tools that let you visualize and summarize key metrics and sales data in
+                                    one place. They provide clear and understandable overview information about sales
+                                    performance.
+                                </p>
+                            </div>
+                            <div class="about-mission-item">
+                                <h3 class="about-mission-item__title">We did something like this</h3>
+                                <p class="about-mission-item__descr">
+                                    Convenient tools that let you visualize and summarize key metrics and sales data in
+                                    one place. They provide clear and understandable overview information about sales
+                                    performance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="acquiring">
+                <div class="container">
+                    <div class="acquiring__inner">
+                        <h2 class="acquiring__title title">Internet acquiring</h2>
+                        <div class="acquiring__swiper swiper js_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="card">
+                                        <div class="card__img">
+                                            <img src="images/card/card-img-1.png" alt="Bank cards" width="408"
+                                                height="380" loading="lazy">
+                                        </div>
+                                        <div class="card__content">
+                                            <h3 class="card__title">Bank cards</h3>
+                                            <p class="card__descr">
+                                                Accepting international payments
+                                                from bank cards is available by default as part of the standard tariff
+                                                and
+                                                one
+                                                integration. Start accepting payments worldwide today.
+                                            </p>
+                                        </div>
+                                        <div class="card-hover">
+                                            <div class="card-hover__img">
+                                                <img src="images/card/card-hover-img-1.png"
+                                                    alt="Bank cards"
+                                                    width="408" height="380" loading="lazy">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="card">
+                                        <div class="card__img">
+                                            <img src="images/card/card-img-2.png"
+                                                alt="Electronic payment systems and local payment methods" width="408"
+                                                height="380" loading="lazy">
+                                        </div>
+                                        <div class="card__content">
+                                            <h3 class="card__title">Electronic payment systems and local payment methods
+                                            </h3>
+                                            <p class="card__descr">
+                                                Connect popular local solutions to make it easier for your
+                                                clients to pay using all available methods and electronic wallets
+                                            </p>
+                                        </div>
+                                        <div class="card-hover">
+                                            <div class="card-hover__img">
+                                                <img src="images/card/card-hover-img-2.png"
+                                                    alt="Electronic payment systems and local payment methods"
+                                                    width="408" height="380" loading="lazy">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="card">
+                                        <div class="card__img">
+                                            <img src="images/card/card-img-3.png" alt="Cryptoprocessing" width="408"
+                                                height="380" loading="lazy">
+                                        </div>
+                                        <div class="card__content">
+                                            <h3 class="card__title">Cryptoprocessing</h3>
+                                            <p class="card__descr">
+                                                Take advantage of a ready-made solution for accepting crypto payments to
+                                                increase your coverage area and expand payment methods for your clients
+                                            </p>
+                                        </div>
+                                        <div class="card-hover">
+                                            <div class="card-hover__img">
+                                                <img src="images/card/card-hover-img-3.png"
+                                                    alt="Cryptoprocessing"
+                                                    width="408" height="380" loading="lazy">
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="acquiring__btn btn-arrow btn-arrow--purple" href="#">
+                            <span>Learn more</span>
+                            <svg width="64" height="44">
+                                <use xlink:href="images/sprite.svg#btn-blob"></use>
+                            </svg>
+                            <svg width="17" height="16">
+                                <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section> -->
+
+            <section class="join">
+                <div class="container">
+                    <div class="join__wrapper">
+                        <div class="join__content">
+                            <h2 class="join__title">Join Alikassa</h2>
+                            <p class="join__descr">Join over 100 thousand users worldwide and start accepting payments
+                                today!</p>
+                        </div>
+                        <div class="join__buttons">
+                            <a class="join__btn btn btn--transparent" href="#">Learn more</a>
+                            <a class="join__btn btn-arrow btn-arrow--purple" href="#">
+                                <span>Submit</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__col">
+                        <a class="footer__logo" href="/">
+                            <img src="images/logo-footer.svg" alt="Logo" width="225" height="42" loading="lazy">
+                        </a>
+                        <div class="footer__contacts">
+                            <h3 class="footer__caption">Contacts</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="mailto:support@alikassa.com">support@alikassa.com</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel:+79114561212">+7 (911) 456-12-12</a>
+                                </li>
+                                <li class="footer__item">
+                                    <address class="footer__link" href="#">st. Vavilov, Moscow, Russia, 117312</address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__social social">
+                            <ul class="social__list">
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Facebook"
+                                        title="Facebook">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#fb"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item" aria-label="Vkontakte" title="Vkontakte">
+                                    <a class="social__link" href="#" target="_blank">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#vk"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="YouTube"
+                                        title="YouTube">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#youtube"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Twitter"
+                                        title="Twitter">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tw"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Skype" title="Skype">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#skype"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Telegram"
+                                        title="Telegram">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tg"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">About company</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">About us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Solutions</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Accepting payments worldwide</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Mass payouts</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Payment and disbursement methods</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Integration</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Integration process</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Documentation</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Ready solutions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <a class="footer-bottom__link" href="#">Terms and Conditions</a>
+                    <a class="footer-bottom__link" href="#">Privacy Policy</a>
+                    <a class="footer-bottom__link" href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

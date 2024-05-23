@@ -368,7 +368,6 @@ body {
   color: var(--black-13);
   font-size: 1.6rem;
   font-weight: 400;
-  background-color: var(--belyy-fon);
   background-color: var(--black-13);
 }
 
@@ -981,8 +980,8 @@ input[type=number] {
   -webkit-transform: translate(-12.7%, 15%);
       -ms-transform: translate(-12.7%, 15%);
           transform: translate(-12.7%, 15%);
-  -webkit-animation: blob-1 9s linear infinite alternate 2s;
-          animation: blob-1 9s linear infinite alternate 2s;
+  -webkit-animation: blob-1 7s linear infinite alternate 1s;
+          animation: blob-1 7s linear infinite alternate 1s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(1) {
@@ -997,8 +996,8 @@ input[type=number] {
   -webkit-transform: translate(13.22%, 24.55%);
       -ms-transform: translate(13.22%, 24.55%);
           transform: translate(13.22%, 24.55%);
-  -webkit-animation: blob-2 10s linear infinite alternate 2s;
-          animation: blob-2 10s linear infinite alternate 2s;
+  -webkit-animation: blob-2 8s linear infinite alternate 1s;
+          animation: blob-2 8s linear infinite alternate 1s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(2) {
@@ -1012,8 +1011,8 @@ input[type=number] {
   -webkit-transform: translate(14.15%, -25.3%);
       -ms-transform: translate(14.15%, -25.3%);
           transform: translate(14.15%, -25.3%);
-  -webkit-animation: blob-3 11s linear infinite alternate 2s;
-          animation: blob-3 11s linear infinite alternate 2s;
+  -webkit-animation: blob-3 9s linear infinite alternate 1s;
+          animation: blob-3 9s linear infinite alternate 1s;
 }
 @media (min-width: 1200px) {
   .hero__blob:nth-child(3) {
@@ -1075,6 +1074,14 @@ input[type=number] {
 @media (min-width: 1200px) {
   .hero__descr {
     font-size: 2.5rem;
+  }
+}
+.hero__descr br {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .hero__descr br {
+    display: inline;
   }
 }
 .hero__btn {
@@ -3067,4 +3074,9 @@ input[type=number] {
 .safety-mobile__mockup img {
   width: 100%;
   height: auto;
+}
+
+.about-mission {
+  padding: 16rem 0;
+  background-color: var(--belyy-fon);
 }

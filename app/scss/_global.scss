@@ -87,8 +87,6 @@ footer {
 
 input,
 textarea {
-    outline: transparent;
-
     &::placeholder {
         transition: opacity .3s;
     }
@@ -138,6 +136,20 @@ input[type=number] {
     }
 }
 
+.descr {
+    font-size: 1.8rem;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 1200px) {
+        font-size: 2rem;
+    }
+
+    &--white {
+        color: var(--belyy-fon);
+    }
+}
+
 .btn {
     padding: 0.9rem 2.3rem;
     font-size: 1.8rem;
@@ -152,6 +164,12 @@ input[type=number] {
     &--transparent {
         color: var(--black-0);
         border: 1px solid var(--black-0);
+    }
+
+    &--white {
+        color: var(--black-0);
+        background-color: var(--belyy-fon);
+        border: 1px solid var(--belyy-fon);
     }
 }
 
@@ -184,16 +202,43 @@ input[type=number] {
     }
 
     &:hover {
-        @media (min-width: 1200px) {
-            svg {
-                &:nth-child(3) {
+        svg {
+            &:nth-child(3) {
+                @media (min-width: 1200px) {
                     transform: translate(0.3rem, calc(-50% - 0.3rem));
                 }
             }
         }
     }
 
+    &:disabled {
+        cursor: default;
+
+        &:hover {
+            svg {
+                &:nth-child(3) {
+                    @media (min-width: 1200px) {
+                        transform: translate(0, -50%);
+                    }
+                }
+            }
+        }
+    }
+
+    &.animated {
+        span {
+            color: transparent;
+
+            &::before {
+                opacity: 1;
+                visibility: visible;
+                animation: spin 1s ease-in-out infinite;
+            }
+        }
+    }
+
     span {
+        position: relative;
         display: block;
         padding: 1rem 2.4rem;
         font-size: 1.8rem;
@@ -201,9 +246,24 @@ input[type=number] {
         font-weight: 500;
         text-align: center;
         border-radius: 7.6rem;
+        transition: .3s color;
 
         @media (min-width: 1200px) {
             font-size: 2.2rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: 3rem;
+            margin: -1.5rem 0 0 -1.5rem;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s, visibility .3s;
         }
     }
 
@@ -235,6 +295,11 @@ input[type=number] {
         span {
             color: var(--black-0);
             background-color: var(--belyy-fon);
+
+            &::before {
+                border: 3px solid var(--black-0-opacity-20);
+                border-top-color: var(--black-0);
+            }
         }
 
         svg {
@@ -254,6 +319,11 @@ input[type=number] {
         span {
             color: var(--belyy-fon);
             background-color: var(--purple);
+
+            &::before {
+                border: 3px solid var(--white-opacity-20);
+                border-top-color: var(--belyy-fon);
+            }
         }
 
         svg {
@@ -267,6 +337,60 @@ input[type=number] {
                 stroke: var(--purple);
             }
         }
+    }
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    transition: opacity .3s;
+
+    @media (min-width: 1200px) {
+        width: 4rem;
+    }
+
+    @media (min-width: 1400px) {
+        width: 4.4rem;
+    }
+
+    svg {
+        color: var(--belyy-fon);
+        width: 0.9rem;
+        height: 1.5rem;
+
+        @media (min-width: 1200px) {
+            width: 1.5rem;
+            height: 2.4rem;
+        }
+    }
+
+    &.swiper-button-disabled {
+        opacity: .35;
+        cursor: default;
+    }
+}
+
+.prev {
+    right: 100%;
+}
+
+.next {
+    left: 100%;
+
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 

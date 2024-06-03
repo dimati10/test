@@ -6,7 +6,7 @@
         padding: 10rem 0 12rem;
     }
 
-    &__inner {
+    &__wrapper {
         position: relative;
     }
 
@@ -15,6 +15,7 @@
 
         @media (min-width: 1200px) {
             margin: 0 0 4rem 0;
+            padding: 0 24rem 0 0;
         }
     }
 

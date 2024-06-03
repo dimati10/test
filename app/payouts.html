@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alikassa</title>
+    <link rel="preload" href="fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/HalvarBreit-Bd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header js_header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <a class="header__logo" href="/">
+                        <img src="images/logo.svg" alt="Logo" width="140" height="28">
+                    </a>
+                    <nav class="header-nav">
+                        <ul class="header-nav__list">
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">About company</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Solutions</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Integration</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__buttons">
+                        <a class="header__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                        <a class="header__btn btn-mini btn-mini--white" href="#">Connect</a>
+                    </div>
+
+                    <button class="header__burger burger js_burger" type="button" aria-label="Open menu">
+                        <span></span>
+                    </button>
+
+                    <div class="menu js_menu">
+                        <ul class="menu__list">
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">About company</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">About us</a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Contacts</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Solutions</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Payment and disbursement methods</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Integration</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Integration process</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Documentation</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Ready solutions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="menu__buttons">
+                            <a class="menu__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                            <a class="menu__btn btn-mini btn-mini--white" href="#">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__blobs">
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-1.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-2.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="hero__wrapper">
+                        <div class="hero__content">
+                            <h1 class="hero__title">Mass payouts</h1>
+                            <p class="hero__descr">
+                                Thanks to&nbsp;Alikassa, you can pay funds to&nbsp;your clients around the world
+                                in&nbsp;any convenient currency. We&nbsp;ensure uninterrupted payments for the stability
+                                of&nbsp;your business.
+                            </p>
+                            <a class="hero__btn btn-arrow btn-arrow--white" href="#">
+                                <span>Connect</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="business-payments">
+                <div class="container">
+                    <div class="business-payments__inner">
+                        <div class="business-payments__content">
+                            <h2 class="business-payments__title title title--white">Payments for business</h2>
+                            <p class="business-payments__descr descr descr--white">
+                                With Alikassa you can top up&nbsp;your balances in&nbsp;any available way to&nbsp;make mass payments to&nbsp;clients via the API.
+                            </p>
+                        </div>
+                        <div class="business-payments__img">
+                            <img src="images/business-payments/business-payments-img.png" alt="Payments for business"
+                                width="586" height="484" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="business-payments__items">
+                        <div class="business-payments-item">
+                            <div class="business-payments-item__icon">
+                                <svg width="25" height="25">
+                                    <use xlink:href="images/sprite.svg#business-payments-item-icon-1"></use>
+                                </svg>
+                            </div>
+                            <h3 class="business-payments-item__title">Instant transfers</h3>
+                            <p class="business-payments-item__descr">
+                                Pay your employees, clients and partners using available methods in&nbsp;your personal account.
+                            </p>
+                        </div>
+                        <div class="business-payments-item">
+                            <div class="business-payments-item__icon">
+                                <svg width="25" height="25">
+                                    <use xlink:href="images/sprite.svg#business-payments-item-icon-2"></use>
+                                </svg>
+                            </div>
+                            <h3 class="business-payments-item__title">Favorable courses</h3>
+                            <p class="business-payments-item__descr">
+                                We&nbsp;always take care of&nbsp;our clients and give the best rates for mutual settlements so&nbsp;that you always receive the maximum benefit.
+                            </p>
+                        </div>
+                        <div class="business-payments-item">
+                            <div class="business-payments-item__icon">
+                                <svg width="25" height="25">
+                                    <use xlink:href="images/sprite.svg#business-payments-item-icon-3"></use>
+                                </svg>
+                            </div>
+                            <h3 class="business-payments-item__title">Notification system</h3>
+                            <p class="business-payments-item__descr">
+                                We&nbsp;constantly monitor the entire work process and notify you of&nbsp;any possible delays if&nbsp;necessary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="available-solutions js_available_solutions">
+                <div class="container">
+                    <div class="available-solutions__wrapper">
+                        <div class="available-solutions__content">
+                            <h2 class="available-solutions__title title">Available solutions</h2>
+                            <p class="available-solutions__descr descr">
+                                Increase the conversion rates of&nbsp;your business with Alikassa tools.
+                            </p>
+                            <div class="available-solutions__items js_available_solution_items">
+                                <div class="available-solutions-item js_available_solution_item">
+                                    <div class="available-solutions-item__icon">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="images/sprite.svg#available-solutions-item-icon-1"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="available-solutions-item__content">
+                                        <h3 class="available-solutions-item__title">Mass payments via API</h3>
+                                        <p class="available-solutions-item__descr">
+                                            Instant payouts on&nbsp;request for all types of&nbsp;businesses
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="available-solutions-item js_available_solution_item">
+                                    <div class="available-solutions-item__icon">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="images/sprite.svg#available-solutions-item-icon-2"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="available-solutions-item__content">
+                                        <h3 class="available-solutions-item__title">Transfers by&nbsp;card number from your personal account</h3>
+                                        <p class="available-solutions-item__descr">
+                                            Pay clients using their details while traveling
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="available-solutions-item js_available_solution_item">
+                                    <div class="available-solutions-item__icon">
+                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_453_2478" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="25" height="25">
+                                                <path
+                                                    d="M13.2322 0.0703125V5.36923C14.6689 5.32675 16.0667 5.15969 17.3718 4.88111C17.1793 4.38449 16.9669 3.91166 16.735 3.46674C15.7475 1.57217 14.5248 0.394635 13.2322 0.0703125ZM8.26479 3.46674C8.03288 3.9117 7.82041 4.38449 7.62796 4.88111C8.93306 5.15969 10.3308 5.32675 11.7676 5.36923V0.0703125C10.475 0.394635 9.25225 1.57217 8.26479 3.46674ZM11.7676 11.768V6.83461C10.1705 6.78965 8.61235 6.59817 7.15854 6.2759C6.67442 7.94521 6.39198 9.81352 6.33545 11.768H11.7676ZM20.1296 13.2327C20.0726 15.307 19.7735 17.2992 19.2585 19.0909C20.3621 19.4178 21.3847 19.8251 22.2922 20.3055C23.9096 18.2844 24.8508 15.8335 24.9999 13.2327H20.1296ZM11.7676 13.2327H6.33545C6.39198 15.1871 6.67442 17.0554 7.15854 18.7248C8.61235 18.4025 10.1705 18.211 11.7676 18.166V13.2327ZM17.8413 6.2759C16.3875 6.59817 14.8293 6.78965 13.2323 6.83461V11.768H18.6644C18.6078 9.81352 18.3254 7.94521 17.8413 6.2759ZM18.8006 20.4802C18.5721 21.0896 18.3164 21.6687 18.0338 22.2109C17.6076 23.0287 17.1346 23.7366 16.6248 24.3292C18.3512 23.7287 19.9358 22.7484 21.2759 21.4309C20.5246 21.0608 19.6926 20.7423 18.8006 20.4802ZM11.7676 24.9304V19.6315C10.3308 19.6739 8.93301 19.841 7.62796 20.1196C7.82041 20.6162 8.03288 21.089 8.26479 21.534C9.25225 23.4285 10.475 24.6061 11.7676 24.9304ZM16.735 21.534C16.9669 21.089 17.1794 20.6162 17.3718 20.1195C16.0667 19.841 14.669 19.6739 13.2323 19.6315V24.9304C14.5248 24.6061 15.7475 23.4285 16.735 21.534ZM18.0338 2.78983C18.3164 3.332 18.5721 3.91107 18.8006 4.52046C19.6926 4.25839 20.5246 3.93987 21.2759 3.56981C19.9358 2.2523 18.3512 1.27201 16.6249 0.671552C17.1346 1.2641 17.6076 1.97202 18.0338 2.78983ZM13.2322 13.2327V18.166C14.8293 18.211 16.3874 18.4025 17.8412 18.7248C18.3253 17.0554 18.6078 15.1871 18.6643 13.2327H13.2322ZM19.2586 5.90978C19.7735 7.70144 20.0726 9.69361 20.1297 11.768H24.9999C24.8509 9.16717 23.9097 6.71627 22.2923 4.69515C21.3847 5.1755 20.3621 5.58287 19.2586 5.90978Z"
+                                                    fill="black" />
+                                                <path
+                                                    d="M5.74134 5.91015C5.22637 7.70181 4.92724 9.69399 4.87021 11.7684H0C0.149004 9.16754 1.09024 6.71669 2.7076 4.69552C3.6152 5.17588 4.63777 5.58324 5.74134 5.91015Z" />
+                                                <path
+                                                    d="M0 13.233H4.87021C4.92728 15.3074 5.22637 17.2996 5.74134 19.0912C4.63782 19.4182 3.61525 19.8256 2.70765 20.3059C1.09029 18.2848 0.149004 15.8339 0 13.233Z" />
+                                                <path
+                                                    d="M6.19929 20.4806C6.42777 21.09 6.6835 21.6691 6.96608 22.2112C7.39229 23.0291 7.86533 23.737 8.37503 24.3295C6.64869 23.7291 5.06408 22.7488 3.72398 21.4313C4.47534 21.0612 5.30726 20.7427 6.19929 20.4806Z" />
+                                                <path
+                                                    d="M6.96608 2.7902C6.6835 3.33237 6.42777 3.91144 6.19929 4.52083C5.30726 4.25871 4.47534 3.94025 3.72402 3.57018C5.06408 2.25263 6.64869 1.27238 8.37508 0.671875C7.86533 1.26447 7.39229 1.97239 6.96608 2.7902Z" />
+                                            </mask>
+                                            <g mask="url(#mask0_453_2478)">
+                                                <path d="M9.5 -0.5L12 -1V25.3201L9 24L7 18.5L5.5 12.5L7 5.5L9.5 -0.5Z"
+                                                    fill="currentColor" />
+                                                <mask id="mask1_453_2478" style="mask-type:alpha"
+                                                    maskUnits="userSpaceOnUse" x="6" y="0" width="19" height="25">
+                                                    <path
+                                                        d="M12.8968 0.0703125V5.36923C14.3335 5.32675 15.7312 5.15969 17.0363 4.88111C16.8439 4.38449 16.6314 3.91166 16.3995 3.46674C15.4121 1.57217 14.1893 0.394635 12.8968 0.0703125ZM7.92934 3.46674C7.69743 3.9117 7.48496 4.38449 7.29251 4.88111C8.59761 5.15969 9.99538 5.32675 11.4321 5.36923V0.0703125C10.1396 0.394635 8.91681 1.57217 7.92934 3.46674ZM11.4321 11.768V6.83461C9.83504 6.78965 8.2769 6.59817 6.82309 6.2759C6.33897 7.94521 6.05654 9.81352 6 11.768H11.4321ZM19.7942 13.2327C19.7372 15.307 19.438 17.2992 18.9231 19.0909C20.0266 19.4178 21.0492 19.8251 21.9568 20.3055C23.5742 18.2844 24.5153 15.8335 24.6644 13.2327H19.7942ZM11.4321 13.2327H6C6.05654 15.1871 6.33897 17.0554 6.82309 18.7248C8.2769 18.4025 9.83504 18.211 11.4321 18.166V13.2327ZM17.5058 6.2759C16.052 6.59817 14.4939 6.78965 12.8968 6.83461V11.768H18.3289C18.2724 9.81352 17.9899 7.94521 17.5058 6.2759ZM18.4652 20.4802C18.2367 21.0896 17.981 21.6687 17.6984 22.2109C17.2722 23.0287 16.7991 23.7366 16.2894 24.3292C18.0158 23.7287 19.6004 22.7484 20.9405 21.4309C20.1891 21.0608 19.3572 20.7423 18.4652 20.4802ZM11.4321 24.9304V19.6315C9.99538 19.6739 8.59756 19.841 7.29251 20.1196C7.48496 20.6162 7.69743 21.089 7.92934 21.534C8.91681 23.4285 10.1396 24.6061 11.4321 24.9304ZM16.3996 21.534C16.6315 21.089 16.8439 20.6162 17.0364 20.1195C15.7313 19.841 14.3335 19.6739 12.8968 19.6315V24.9304C14.1893 24.6061 15.4121 23.4285 16.3996 21.534ZM17.6984 2.78983C17.981 3.332 18.2367 3.91107 18.4652 4.52046C19.3572 4.25839 20.1891 3.93987 20.9405 3.56981C19.6004 2.2523 18.0158 1.27201 16.2894 0.671552C16.7991 1.2641 17.2722 1.97202 17.6984 2.78983ZM12.8968 13.2327V18.166C14.4938 18.211 16.052 18.4025 17.5058 18.7248C17.9899 17.0554 18.2723 15.1871 18.3289 13.2327H12.8968ZM18.9231 5.90978C19.4381 7.70144 19.7372 9.69361 19.7942 11.768H24.6645C24.5154 9.16717 23.5742 6.71627 21.9568 4.69515C21.0492 5.1755 20.0266 5.58287 18.9231 5.90978Z"
+                                                        fill="black" />
+                                                </mask>
+                                                <g mask="url(#mask1_453_2478)">
+                                                    <path
+                                                        d="M15.1646 -0.5L12.6646 -1V25.3201L15.6646 24L17.6646 18.5L19.1646 12.5L17.6646 5.5L15.1646 -0.5Z"
+                                                        fill="currentColor" />
+                                                    <path
+                                                        d="M20.2308 -0.506081L16 -1L19.5 12.3358L16 25L21.0769 23.696L24.4615 18.2628L27 12.3358L24.4615 5.42095L20.2308 -0.506081Z" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="available-solutions-item__content">
+                                        <h3 class="available-solutions-item__title">Payments to&nbsp;Swift/Sepa current accounts</h3>
+                                        <p class="available-solutions-item__descr">
+                                            Money transfers to&nbsp;bank details for your business
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="available-solutions__img">
+                            <img src="images/available-solutions/available-solutions-img.jpg" alt="Available solutions"
+                                width="572" height="667" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="methods">
+                <div class="container">
+                    <h2 class="methods__title title title--white">Top-up methods</h2>
+                    <p class="methods__descr descr descr--white">
+                        There are many options available to&nbsp;you to&nbsp;replenish your payout solution for the convenience of&nbsp;transferring your business funds.
+                    </p>
+                    <div class="methods__slider">
+                        <div class="methods__swiper swiper js_methods_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <article class="methods-card">
+                                        <div class="methods-card__content">
+                                            <h3 class="methods-card__title">Cryptocurrencies</h3>
+                                            <span class="methods-card__percent">
+                                                from <span>2.5%</span>
+                                            </span>
+                                            <p class="methods-card__descr">
+                                                with a&nbsp;turnover of&nbsp;10,000&nbsp;USD, conditions are discussed individually.
+                                            </p>
+                                        </div>
+                                        <div class="methods-card__img">
+                                            <img src="images/methods/methods-card-img-1.png" alt="Cryptocurrencies"
+                                                width="450" height="450" loading="lazy">
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="methods-card">
+                                        <div class="methods-card__content">
+                                            <h3 class="methods-card__title">Cash</h3>
+                                            <span class="methods-card__percent">
+                                                from <span>2.5%</span>
+                                            </span>
+                                            <p class="methods-card__descr">
+                                                with a&nbsp;turnover of&nbsp;10,000&nbsp;USD, conditions are discussed individually.
+                                            </p>
+                                        </div>
+                                        <div class="methods-card__img">
+                                            <img src="images/methods/methods-card-img-2.png" alt="Cash" width="450"
+                                                height="450" loading="lazy">
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="swiper-slide">
+                                    <article class="methods-card">
+                                        <div class="methods-card__content">
+                                            <h3 class="methods-card__title">Virtual codes</h3>
+                                            <span class="methods-card__percent">
+                                                from <span>2.5%</span>
+                                            </span>
+                                            <p class="methods-card__descr">
+                                                with a&nbsp;turnover of&nbsp;10,000&nbsp;USD, conditions are discussed individually.
+                                            </p>
+                                        </div>
+                                        <div class="methods-card__img">
+                                            <img src="images/methods/methods-card-img-3.png" alt="Virtual codes"
+                                                width="450" height="450" loading="lazy">
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="tariffs__prev prev js_methods_prev" type="button">
+                            <svg width="15" height="24">
+                                <use xlink:href="images/sprite.svg#tariffs-prev-arrow"></use>
+                            </svg>
+                        </button>
+                        <button class="tariffs__next next js_methods_next" type="button">
+                            <svg width="15" height="24">
+                                <use xlink:href="images/sprite.svg#tariffs-prev-arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="join">
+                <div class="container">
+                    <div class="join__wrapper">
+                        <div class="join__content">
+                            <h2 class="join__title">Join Alikassa</h2>
+                            <p class="join__descr">Join over 100 thousand users worldwide and start accepting payments today!</p>
+                        </div>
+                        <div class="join__buttons">
+                            <a class="join__btn btn btn--transparent" href="#">Learn more</a>
+                            <a class="join__btn btn-arrow btn-arrow--purple" href="#">
+                                <span>Submit</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__col">
+                        <a class="footer__logo" href="/">
+                            <img src="images/logo-footer.svg" alt="Logo" width="225" height="42" loading="lazy">
+                        </a>
+                        <div class="footer__contacts">
+                            <h3 class="footer__caption">Contacts</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="mailto:support@alikassa.com">support@alikassa.com</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel:+79114561212">+7 (911) 456-12-12</a>
+                                </li>
+                                <li class="footer__item">
+                                    <address class="footer__link" href="#">st. Vavilov, Moscow, Russia, 117312</address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__social social">
+                            <ul class="social__list">
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Facebook"
+                                        title="Facebook">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#fb"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item" aria-label="Vkontakte" title="Vkontakte">
+                                    <a class="social__link" href="#" target="_blank">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#vk"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="YouTube"
+                                        title="YouTube">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#youtube"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Twitter"
+                                        title="Twitter">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tw"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Skype" title="Skype">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#skype"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Telegram"
+                                        title="Telegram">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tg"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">About company</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">About us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Solutions</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Accepting payments worldwide</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Mass payouts</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Payment and disbursement methods</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Integration</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Integration process</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Documentation</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Ready solutions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <a class="footer-bottom__link" href="#">Terms and Conditions</a>
+                    <a class="footer-bottom__link" href="#">Privacy Policy</a>
+                    <a class="footer-bottom__link" href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -87,7 +87,10 @@
     }
 
     &__content {
-        max-width: 90rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90.8rem;
         padding: 10rem 0 10rem;
         text-align: center;
     }
@@ -108,6 +111,7 @@
     }
 
     &__descr {
+        max-width: 59.5rem;
         color: var(--belyy-fon);
         font-size: 2rem;
         line-height: 120%;

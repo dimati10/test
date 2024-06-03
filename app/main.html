@@ -106,7 +106,6 @@
         <main>
 
             <section class="hero">
-            <!-- <section class="hero" style="background-image:url('images/hero-bg.png')"> -->
                 <div class="container">
                     <div class="hero__blobs">
                         <div class="hero__blob">
@@ -222,7 +221,7 @@
 
             <section class="acquiring">
                 <div class="container">
-                    <div class="acquiring__inner">
+                    <div class="acquiring__wrapper">
                         <h2 class="acquiring__title title">Internet acquiring</h2>
                         <div class="acquiring__swiper swiper js_swiper">
                             <div class="swiper-wrapper">
@@ -358,7 +357,7 @@
                         </div>
                         <div class="payments__right">
                             <div class="payments__img js_payments_img">
-                                <img src="images/payments/payments-img-1.jpg" alt="Section image" width="572"
+                                <img src="images/payments/payments-img-1.jpg" alt="Mass payments" width="572"
                                     height="717" loading="lazy">
                             </div>
                             <div class="payments__messages">
@@ -417,7 +416,7 @@
                         <div class="conversion__right"
                             style="background-image: url('images/conversion/conversion-bg.jpg');">
                             <div class="conversion__img">
-                                <img src="images/conversion/conversion-img-1.png" alt="Section image" width="336"
+                                <img src="images/conversion/conversion-img-1.png" alt="Currency conversion" width="336"
                                     height="683" loading="lazy">
                             </div>
                         </div>
@@ -503,11 +502,8 @@
                 </div>
             </section>
 
-            <section class="safety js_safety">
+            <section class="safety js_safety" style="background-image:url('images/safety/safety-bg.jpg')">
                 <div class="container">
-                    <div class="safety__bg" style="background-image:url('images/safety/safety-bg.jpg')">
-                        <!-- <img src="images/safety/safety-bg.jpg" alt="Background image"> -->
-                    </div>
                     <div class="safety__wrapper">
                         <h2 class="safety__title title">safety</h2>
                         <p class="safety__descr">We place the highest importance on the security of your online
@@ -521,15 +517,15 @@
                             <div class="safety__block js_safety_block">
                                 <div class="safety__images js_safety_images">
                                     <div class="safety__img">
-                                        <img src="images/safety/safety-img-1.png" alt="Mockup" width="" height=""
+                                        <img src="images/safety/safety-img-1.png" alt="Mockup" width="870" height="503"
                                             loading="lazy">
                                     </div>
                                     <div class="safety__img">
-                                        <img src="images/safety/safety-img-2.png" alt="Mockup" width="" height=""
+                                        <img src="images/safety/safety-img-2.png" alt="Mockup" width="870" height="503"
                                             loading="lazy">
                                     </div>
                                     <div class="safety__img">
-                                        <img src="images/safety/safety-img-3.png" alt="Mockup" width="" height=""
+                                        <img src="images/safety/safety-img-3.png" alt="Mockup" width="870" height="503"
                                             loading="lazy">
                                     </div>
                                 </div>
@@ -673,8 +669,8 @@
                         <div class="accounting__img">
                             <picture>
                                 <source srcSet="images/accounting/accounting-img-1.png" media="(min-width: 576px)" />
-                                <img src="images/accounting/accounting-img-1-mini.png" alt="Section image" width=""
-                                    height="" loading="lazy">
+                                <img src="images/accounting/accounting-img-1-mini.png" alt="Financial accounting" width="608"
+                                    height="606" loading="lazy">
                             </picture>
                         </div>
                     </div>
@@ -878,12 +874,12 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="tariffs__prev js_tariffs_prev" type="button">
+                        <button class="tariffs__prev prev js_tariffs_prev" type="button">
                             <svg width="15" height="24">
                                 <use xlink:href="images/sprite.svg#tariffs-prev-arrow"></use>
                             </svg>
                         </button>
-                        <button class="tariffs__next js_tariffs_next" type="button">
+                        <button class="tariffs__next next js_tariffs_next" type="button">
                             <svg width="15" height="24">
                                 <use xlink:href="images/sprite.svg#tariffs-prev-arrow"></use>
                             </svg>
@@ -1051,6 +1047,7 @@
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

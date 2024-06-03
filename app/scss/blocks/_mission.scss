@@ -1,5 +1,4 @@
 .mission {
-    // display: none;
     padding: 8rem 0;
     overflow: hidden;
     background-color: var(--black-13);
@@ -500,8 +499,8 @@
 
 @keyframes pulsar {
     50% {
-        width: 1.1rem;
-        height: 1.1rem;
+        width: 1rem;
+        height: 1rem;
         opacity: 0.6;
     }
 

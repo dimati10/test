@@ -7,11 +7,14 @@ function initApp() {
 
     controlMobileMenu(); // мобильное меню;
     initTariffsSlider(); // слайдер в разделе 'tariffs and methods'
+    initMethodsSlider(); // слайдер в разделе 'methods'
     initTypicalSlider(); // типовые слайдеры
     setPaymentsAnimation(); // анимация в разделе 'mass payments'
     setSolutionAnimation(7000, 1000); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'
+    sendFeedbackForm(); // отправка формы на странице 'контакты'
+    setAvailableSolutionsAnimation(); // анимация в разделе 'available solutions'
 
     console.log('initApp');
 
@@ -152,6 +155,25 @@ function initTariffsSlider() {
             navigation: {
                 nextEl: '.js_tariffs_next',
                 prevEl: '.js_tariffs_prev',
+            },
+            grabCursor: true,
+            spaceBetween: 20,
+        });
+
+    }
+
+}
+
+// слайдер в разделе 'methods'
+
+function initMethodsSlider() {
+
+    if (document.querySelector('.js_methods_swiper')) {
+
+        const swiper = new Swiper('.js_methods_swiper', {
+            navigation: {
+                nextEl: '.js_methods_next',
+                prevEl: '.js_methods_prev',
             },
             grabCursor: true,
             spaceBetween: 20,
@@ -363,6 +385,197 @@ function setSafetyAnimation() {
         animateBlock();
         window.addEventListener('scroll', animateBlock);
         window.addEventListener('resize', animateBlock);
+
+    }
+
+}
+
+// валидация формы
+
+function validateForm(form) {
+
+    const formInputs = form.querySelectorAll('[class*="js_input"]');
+    const patternEmail = /^[a-zA-Z0-9._%+-\.]+@[a-z0-9.-]+\.[a-z]{2,}$/i; // рег. выражение для поля 'электронная почта';
+    const patternPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){7,}(\s*)?$/; // рег. выражение для поля 'телефон';
+
+    let isValid = true;
+
+    formInputs.forEach(input => {
+
+        // проверяем поле на заполненность от одного знака и более
+        if (input.classList.contains('js_input') && input.value === "") {
+            createError(input, 'The field is required');
+            isValid = false;
+        } else if (input.classList.contains('js_input')) {
+            removeError(input);
+        }
+
+        // проверяем правильность заполнения поля 'телефон'
+        if (input.classList.contains('js_input_phone') && input.value === "") {
+            createError(input, 'The field is required');
+            isValid = false;
+        } else if (input.classList.contains('js_input_phone') && input.value.search(patternPhone) === 0) {
+            removeError(input);
+        } else if (input.classList.contains('js_input_phone')) {
+            createError(input, 'Enter a valid phone number');
+            isValid = false;
+        }
+
+        // проверяем правильность заполнения поля 'электронная почта'
+        if (input.classList.contains('js_input_email') && input.value === "") {
+            createError(input, 'The field is required');
+            isValid = false;
+        } else if (input.classList.contains('js_input_email') && input.value.search(patternEmail) === 0) {
+            removeError(input);
+        } else if (input.classList.contains('js_input_email')) {
+            createError(input, 'Enter a valid email address');
+            isValid = false;
+        }
+
+
+    });
+
+    return isValid;
+
+}
+
+// создание ошибки валидации
+
+const createError = (input, text) => {
+
+    removeError(input);
+
+    input.classList.add('error');
+    input.closest('label').insertAdjacentHTML('beforeend', `<span class="field__error">${text}</span>`);
+
+}
+
+// удаление ошибки валидации
+
+const removeError = (input) => {
+
+    input.classList.remove('error');
+
+    if (input.parentElement.querySelector('.field__error')) {
+        input.parentElement.querySelector('.field__error').remove();
+    }
+
+}
+
+// отправка формы на странице 'контакты'
+
+function sendFeedbackForm() {
+
+    const form = document.querySelector('.js_feedback_form');
+
+    if (form) {
+
+        const formBtn = form.querySelector('.js_feedback_btn');
+        const formInputs = form.querySelectorAll('[class*="js_input"]');
+
+        let isInputEventAdded = false;
+
+        form.addEventListener('submit', async (e) => {
+
+            e.preventDefault();
+
+            if (!isInputEventAdded) {
+
+                formInputs.forEach(input => {
+
+                    input.addEventListener('input', () => {
+                        validateForm(form);
+                    });
+
+                });
+
+                isInputEventAdded = true;
+
+            }
+
+            if (validateForm(form)) {
+
+                // сюда пишем команды, которые должны сработать после успешной валидации
+
+                console.log('validate');
+
+                formBtn.classList.add('animated');
+                formBtn.disabled = true;
+
+                setTimeout(() => { // имитация отправки, когда отправка будет настроена, нужно удалить setTimeout(), код отправки ниже закомментирован
+
+                    formBtn.classList.remove('animated');
+                    formBtn.disabled = false;
+                    form.reset();
+
+                }, 2000);
+
+                // const formData = new FormData(form);
+
+                // const response = await fetch('/', {
+                //     method: 'POST',
+                //     body: formData
+                // });
+
+                // if (response.ok) {
+
+                //     formBtn.classList.remove('animated');
+                //     formBtn.disabled = false;
+                //     form.reset();
+
+                // } else {
+
+                //     alert('Error');
+                //     formBtn.classList.remove('animated');
+                //     formBtn.disabled = false;
+
+                // }
+
+            } else {
+
+                console.log('no-validate');
+
+                if (form.querySelector('[class*="js_input"].error')) {
+                    form.querySelector('[class*="js_input"].error').focus(); //фокус к полю с ошибкой;
+                }
+
+            }
+
+        });
+
+    }
+
+}
+
+// анимация в разделе 'available solutions'
+
+function setAvailableSolutionsAnimation() {
+
+    const availableSolutions = document.querySelector('.js_available_solutions');
+
+    if (availableSolutions) {
+
+        console.log('TESTA');
+
+        const wrapper = availableSolutions.querySelector('.js_available_solution_items');
+        const items = availableSolutions.querySelectorAll('.js_available_solution_item');
+
+        function animateItems() {
+
+            if (wrapper.getBoundingClientRect().bottom < innerHeight) {
+
+                items.forEach((item, i) => {
+                    item.style.animationDelay = `${0.5 * (items.length - 1 - i)}s`;
+                    item.classList.add('animated');
+                });
+
+            }
+
+        }
+
+        animateItems();
+        window.addEventListener('scroll', animateItems);
+        window.addEventListener('resize', animateItems);
 
     }
 

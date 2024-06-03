@@ -1,0 +1,106 @@
+.interested {
+    position: relative;
+    padding: 8rem 0 6rem;
+
+    @media (min-width: 1200px) {
+        padding: 12rem 0 8rem;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--black-0-opacity-20);
+            filter: blur(5px);
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__title {
+        max-width: 63.5rem;
+        margin: 0 auto 4rem;
+        text-align: center;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+        margin: 0 -1rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (min-width: 1200px) {
+            grid-gap: 2rem;
+            margin: 0;
+        }
+    }
+}
+
+.interested-item {
+    padding: 3rem 2rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--belyy-fon);
+    box-shadow: 2px 4px 11px 0 rgba(0, 0, 0, 0.11);
+
+    @media (min-width: 1200px) {
+        padding: 11.5rem 2.5rem 2.5rem;
+    }
+
+    &__icon {
+        margin: 0 0 2rem 0;
+
+        svg {
+            color: var(--purple-175);
+            fill: var(--purple-215);
+        }
+    }
+
+    &__title {
+        margin: 0 0 1rem 0;
+        font-size: 2.2rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        font-weight: 500;
+
+        @media (min-width: 1200px) {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__descr {
+        font-size: 1.6rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        opacity: 0.8;
+
+        @media (min-width: 1200px) {
+            font-size: 1.8rem;
+        }
+    }
+}

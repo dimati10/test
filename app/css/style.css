@@ -2523,11 +2523,6 @@ input[type=number] {
   padding: 10rem 0 0;
   background-color: var(--belyy-fon);
 }
-@media (min-width: 1200px) {
-  .account {
-    padding: 10rem 0 12rem;
-  }
-}
 .account__wrapper {
   margin: 0 -1rem;
   padding: 4rem 0;

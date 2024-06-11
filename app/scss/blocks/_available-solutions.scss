@@ -21,6 +21,10 @@
         @media (min-width: 768px) {
             width: 56.1rem;
         }
+
+        @media (min-width: 1200px) {
+            padding: 5rem 0 0 0;
+        }
     }
 
     &__title {
@@ -36,7 +40,7 @@
         margin: 0 0 3rem 0;
 
         @media (min-width: 1200px) {
-            margin: 0 0 8rem 0;
+            margin: 0 0 10.6rem 0;
         }
     }
 
@@ -74,7 +78,7 @@
 .available-solutions-item {
     display: flex;
     gap: 2rem;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
     border-radius: 2rem;
     background-color: var(--gray-242);
     opacity: 0;
@@ -86,6 +90,11 @@
 
     @media (min-width: 768px) {
         align-items: center;
+        padding: 2rem 1.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        min-height: 16rem;
     }
 
     &:not(:last-child) {

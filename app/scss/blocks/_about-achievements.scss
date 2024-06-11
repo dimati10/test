@@ -1,0 +1,200 @@
+.about-achievements {
+    position: relative;
+    padding: 8rem 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+
+    @media (min-width: 1200px) {
+        padding: 10rem 0 8rem;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__title {
+        max-width: 84.3rem;
+        margin: 0 0 3rem 0;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 4rem 0;
+        }
+    }
+
+    &__cards {
+        // display: flex;
+        // padding: 20px 0;
+        // background-color: tomato;
+    }
+
+    &__swiper {
+        overflow: visible;
+        margin: 0 -10px;
+
+        @media (min-width: 1200px) {
+            margin: 0;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+    }
+}
+
+.about-achievements-card {
+    // flex-shrink: 0;
+    // width: 71.4rem;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 2px 4px 11px 0 rgba(0, 0, 0, 0.11);
+    background-color: var(--belyy-fon);
+    border: 1px solid var(--belyy-fon);
+
+    @media (min-width: 1200px) {
+        padding: 2.5rem;
+    }
+
+    &.current {
+        color: var(--belyy-fon);
+        background: linear-gradient(180deg, #6969f2 0%, #3737cc 100%);
+
+        .about-achievements-card-item {
+
+            &__title,
+            &__descr {
+                color: var(--belyy-fon);
+            }
+        }
+
+        .about-achievements-card-item::before {
+            background-color: var(--belyy-fon);
+            box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
+        }
+    }
+
+    &__top {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+        margin: 0 0 4rem 0;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 4.7rem 0;
+        }
+    }
+
+    &__box {
+        @media (min-width: 1200px) {
+            display: flex;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+    }
+
+    &__year {
+        display: block;
+        font-size: 5.8rem;
+        line-height: 110%;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+
+        @media (min-width: 1200px) {
+            font-size: 7.4rem;
+        }
+    }
+
+    &__tagline {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: block;
+        font-size: 1.6rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        font-weight: 500;
+        opacity: 0.8;
+
+        @media (min-width: 1200px) {
+            position: static;
+            padding: 0 0 0.8rem 0;
+            font-size: 2.6rem;
+        }
+    }
+
+    &__descr {
+        max-width: 14.1rem;
+        padding: 0 0 0.8rem 0;
+        font-size: 1.4rem;
+        line-height: 120%;
+        text-align: right;
+        letter-spacing: -0.01em;
+
+        @media (min-width: 1200px) {
+            max-width: 19.7rem;
+            padding: 0 0 0.9rem 0;
+            font-size: 2rem;
+        }
+    }
+}
+
+.about-achievements-card-item {
+    position: relative;
+    padding: 0 0 0 2rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0.8rem;
+        left: 0;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--purple-105);
+        box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
+
+        @media (min-width: 1200px) {
+            top: 1.2rem;
+        }
+    }
+
+    &:not(:last-child) {
+        margin: 0 0 2rem 0;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 3rem 0;
+        }
+    }
+
+    &__title {
+        margin: 0 0 1.5rem 0;
+        color: var(--black-0);
+        font-size: 2.2rem;
+        line-height: 120%;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 2rem 0;
+            font-size: 2.6rem;
+        }
+    }
+
+    &__descr {
+        color: var(--black-0);
+        font-size: 1.6rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        opacity: 0.8;
+
+        @media (min-width: 1200px) {
+            font-size: 1.8rem;
+        }
+    }
+}

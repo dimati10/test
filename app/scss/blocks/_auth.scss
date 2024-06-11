@@ -1,0 +1,174 @@
+.auth {
+    padding: 6.8rem 0 3rem;
+
+    @media (min-width: 1200px) {
+        padding: 10.8rem 0 3.5rem;
+    }
+
+    &__wrapper {
+        min-height: 75.5rem;
+        padding: 4rem 2rem;
+        border-radius: 2rem;
+        background-color: var(--belyy-fon);
+
+        @media (min-width: 1200px) {
+            min-height: 84rem;
+            padding: 8rem 5.8rem 4rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        margin: 0 0 4rem 0;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 2rem 0;
+        }
+    }
+
+    &__back,
+    &__close {
+        color: var(--black-0);
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        text-decoration: underline;
+        opacity: .5;
+    }
+
+    &__close {
+        margin: 0 0 0 auto;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 84.7rem;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin: 0 0 2rem 0;
+        text-align: center;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 3rem 0;
+        }
+    }
+
+    &__descr {
+        margin: 0 0 4rem 0;
+        text-align: center;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 5rem 0;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 43rem;
+        width: 100%;
+    }
+
+    &__fields {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 0.5rem;
+        width: 100%;
+
+        @media (min-width: 1200px) {
+            grid-gap: 1rem;
+        }
+    }
+
+    &__field {
+        grid-column: span 5;
+
+        &.w-2 {
+            grid-column: span 2;
+        }
+
+        &.w-3 {
+            grid-column: span 3;
+        }
+
+        .field__input,
+        .field__select {
+            @media (min-width: 1200px) {
+                height: 4.3rem;
+                padding: 0.5rem 1.9rem;
+            }
+        }
+    }
+
+    &__captcha {
+        margin: 1rem 0 0 0;
+
+        @media (min-width: 1200px) {
+            margin: 2rem 0 0 0;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__checkbox {
+        margin: 2rem 0 0 0;
+    }
+
+    &__btn {
+        margin: 3rem 0 0 0;
+        padding-left: 3.9rem;
+        padding-right: 3.9rem;
+    }
+
+    &__forgot {
+        margin: 2rem 0 0 0;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-decoration: underline;
+        opacity: 0.5;
+
+        @media (min-width: 1200px) {
+            margin: 3rem 0 0 0;
+        }
+    }
+
+    &-recovery {
+        .auth__title {
+            margin: 0 0 4rem 0;
+
+            @media (min-width: 1200px) {
+                margin: 0 0 5rem 0;
+            }
+        }
+    }
+
+    &-success {
+        .auth__descr {
+            max-width: 54.3rem;
+            padding: 2rem;
+            border-radius: 2rem;
+            margin-bottom: 0;
+            background-color: var(--gray-242);
+
+            @media (min-width: 1200px) {
+                padding: 3rem;
+            }
+        }
+    }
+
+    &-registration {
+        .auth__title {
+            margin: 0 0 4rem 0;
+
+            @media (min-width: 1200px) {
+                margin: 0 0 5rem 0;
+            }
+        }
+    }
+}

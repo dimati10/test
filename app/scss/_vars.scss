@@ -5,10 +5,11 @@
     --black-0: #000;
     --black-0-opacity-20: rgba(0, 0, 0, 0.2);
     --black-13: #0d0911;
+    --black-13-opacity-80: rgba(13, 9, 17, 0.8);
     --black-31: #1f1f1f;
     --black-37: #252525;
     --black-37-34: #252229;
-    --black-13-opacity-80: rgba(13, 9, 17, 0.8);
+    --black-52: #343434;
     --belyy-fon: #fff;
     --white-opacity-5: rgba(255, 255, 255, 0.05);
     --white-opacity-10: rgba(255, 255, 255, 0.1);
@@ -16,15 +17,22 @@
     --white-opacity-20: rgba(255, 255, 255, 0.2);
     --white-opacity-30: rgba(255, 255, 255, 0.3);
     --purple: #3737cc;
+    --purple-32: #2020bc;
+    --purple-105: #6969f2;
     --purple-175: #afafeb;
     --purple-215: #d7d7f5;
     --gray-81: #514e54;
+    --gray-110: #6e6e6e;
     --gray-124: #7c7a7f;
-    --gray-241: #f1f1f4;
     --gray-161: #a1a1b9;
+    --gray-175-opacity-15: rgba(175, 175, 175, 0.15);
     --gray-197: #c5c5c5;
     --gray-217: #d9d9d9;
+    --gray-224: #e0e0e0;
+    --gray-230: #e6e6e6;
+    --gray-241: #f1f1f4;
     --gray-242: #f2f2f2;
+    --error: #e51739;
 }
 
 @mixin font-face($font-family, $path, $font-weight, $font-style) {

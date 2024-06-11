@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alikassa</title>
+    <link rel="preload" href="fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/HalvarBreit-Bd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header js_header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <a class="header__logo" href="/">
+                        <img src="images/logo.svg" alt="Logo" width="140" height="28">
+                    </a>
+                    <nav class="header-nav">
+                        <ul class="header-nav__list">
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">About company</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Solutions</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Integration</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__buttons">
+                        <a class="header__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                        <a class="header__btn btn-mini btn-mini--white" href="#">Connect</a>
+                    </div>
+
+                    <button class="header__burger burger js_burger" type="button" aria-label="Open menu">
+                        <span></span>
+                    </button>
+
+                    <div class="menu js_menu">
+                        <ul class="menu__list">
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">About company</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">About us</a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Contacts</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Solutions</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Payment and disbursement methods</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Integration</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Integration process</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Documentation</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Ready solutions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="menu__buttons">
+                            <a class="menu__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                            <a class="menu__btn btn-mini btn-mini--white" href="#">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="hero hero--modifyed-1">
+                <div class="container">
+                    <div class="hero__blobs">
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-1.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-2.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="hero__wrapper">
+                        <div class="hero__content">
+                            <h1 class="hero__title">Payment and disbursement methods</h1>
+                            <p class="hero__descr">
+                                Get the opportunity to connect more than a hundred countries, currencies and methods
+                                within one integration to our service.
+                            </p>
+                            <a class="hero__btn btn-arrow btn-arrow--white" href="#">
+                                <span>Connect</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="payments-accepting">
+                <div class="container">
+                    <div class="payments-accepting__content">
+                        <h2 class="payments-accepting__title title title--white">Accept payments from all over the world</h2>
+                        <p class="payments-accepting__descr descr descr--white">
+                            Grow your business with Alikassa. Accept payments from 150+ countries around the world in&nbsp;more than 100+ local currencies.
+                        </p>
+                    </div>
+                </div>
+                <div class="payments-accepting__map">
+                    <div class="payments-accepting__bg">
+                        <img src="images/payments-accepting/payments-accepting-map.png" alt="World map">
+                    </div>
+                    <div class="payments-accepting__items js_payments_accepting_items">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-1.png" alt="Logo" width="139" height="105" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-2.png" alt="Logo" width="164" height="90" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-3.png" alt="Logo" width="219" height="118" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-4.png" alt="Logo" width="170" height="112" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-5.png" alt="Logo" width="200" height="80" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-6.png" alt="Logo" width="188" height="101" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-7.png" alt="Logo" width="213" height="110" loading="lazy">
+                        <img class="js_payments_accepting_item" src="images/payments-accepting/payments-accepting-item-logo-8.png" alt="Logo" width="171" height="85" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <section class="tariffs">
+                <div class="container">
+                    <h2 class="tariffs__title title title--white">Tariffs and methods</h2>
+                    <div class="tariffs__slider">
+                        <div class="tariffs__swiper swiper js_tariffs_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="tariffs__group">
+                                        <article class="tariffs-card">
+                                            <div class="tariffs-card__info">
+                                                <h3 class="tariffs-card__title">
+                                                    <span>Bank acquiring</span>
+                                                    from 2.5%
+                                                </h3>
+                                            </div>
+                                        </article>
+                                        <article class="tariffs-card">
+                                            <div class="tariffs-card__logos">
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-1.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-2.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-31.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-4.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-5.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-32.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-33.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-8.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-34.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-10.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                            </div>
+                                            <div class="tariffs-card__info">
+                                                <h3 class="tariffs-card__title">Methods</h3>
+                                                <p class="tariffs-card__descr">
+                                                    more than 100<br>
+                                                    other methods
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="tariffs__group">
+                                        <article class="tariffs-card">
+                                            <div class="tariffs-card__info">
+                                                <h3 class="tariffs-card__title">
+                                                    <span>Local methods</span>
+                                                    from 4%
+                                                </h3>
+                                            </div>
+                                        </article>
+                                        <article class="tariffs-card">
+                                            <div class="tariffs-card__logos">
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-11.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-12.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-13.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-14.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-15.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-16.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-17.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-18.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-19.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-20.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                            </div>
+                                            <div class="tariffs-card__info">
+                                                <h3 class="tariffs-card__title">Methods</h3>
+                                                <p class="tariffs-card__descr">
+                                                    more than 100<br>
+                                                    other methods
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="tariffs__group">
+                                        <article class="tariffs-card">
+                                            <div class="tariffs-card__info">
+                                                <h3 class="tariffs-card__title">
+                                                    <span>Cryptoprocessing</span>
+                                                    from 0.1%
+                                                </h3>
+                                            </div>
+                                        </article>
+                                        <article class="tariffs-card">
+                                            <div class="tariffs-card__logos">
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-21.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-22.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-23.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-24.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-25.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-26.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-27.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-28.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-29.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                                <div class="tariffs-card__logo">
+                                                    <img src="images/tariffs/tariffs-card-logo-30.png" alt="Logo"
+                                                        width="107" height="54" loading="lazy">
+                                                </div>
+                                            </div>
+                                            <div class="tariffs-card__info">
+                                                <h3 class="tariffs-card__title">Methods</h3>
+                                                <p class="tariffs-card__descr">
+                                                    more than 100<br>
+                                                    other methods
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="tariffs__prev prev js_tariffs_prev" type="button">
+                            <svg width="15" height="24">
+                                <use xlink:href="images/sprite.svg#tariffs-prev-arrow"></use>
+                            </svg>
+                        </button>
+                        <button class="tariffs__next next js_tariffs_next" type="button">
+                            <svg width="15" height="24">
+                                <use xlink:href="images/sprite.svg#tariffs-prev-arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <a class="tariffs__btn btn-arrow btn-arrow--white" href="#">
+                        <span>Learn more</span>
+                        <svg width="64" height="44">
+                            <use xlink:href="images/sprite.svg#btn-blob"></use>
+                        </svg>
+                        <svg width="17" height="16">
+                            <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
+            <section class="join">
+                <div class="container">
+                    <div class="join__wrapper">
+                        <div class="join__content">
+                            <h2 class="join__title">Join Alikassa</h2>
+                            <p class="join__descr">Join over 100 thousand users worldwide and start accepting payments
+                                today!</p>
+                        </div>
+                        <div class="join__buttons">
+                            <a class="join__btn btn btn--transparent" href="#">Learn more</a>
+                            <a class="join__btn btn-arrow btn-arrow--purple" href="#">
+                                <span>Submit</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__col">
+                        <a class="footer__logo" href="/">
+                            <img src="images/logo-footer.svg" alt="Logo" width="225" height="42" loading="lazy">
+                        </a>
+                        <div class="footer__contacts">
+                            <h3 class="footer__caption">Contacts</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="mailto:support@alikassa.com">support@alikassa.com</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel:+79114561212">+7 (911) 456-12-12</a>
+                                </li>
+                                <li class="footer__item">
+                                    <address class="footer__link" href="#">st. Vavilov, Moscow, Russia, 117312</address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__social social">
+                            <ul class="social__list">
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Facebook"
+                                        title="Facebook">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#fb"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item" aria-label="Vkontakte" title="Vkontakte">
+                                    <a class="social__link" href="#" target="_blank">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#vk"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="YouTube"
+                                        title="YouTube">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#youtube"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Twitter"
+                                        title="Twitter">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tw"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Skype" title="Skype">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#skype"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Telegram"
+                                        title="Telegram">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tg"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">About company</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">About us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Solutions</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Accepting payments worldwide</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Mass payouts</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Payment and disbursement methods</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Integration</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Integration process</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Documentation</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Ready solutions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <a class="footer-bottom__link" href="#">Terms and Conditions</a>
+                    <a class="footer-bottom__link" href="#">Privacy Policy</a>
+                    <a class="footer-bottom__link" href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

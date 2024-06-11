@@ -1,9 +1,9 @@
-.about-mission {
-    padding: 6rem 0;
+.about-goal {
+    padding: 8rem 0 6rem;
     background-color: var(--belyy-fon);
 
     @media (min-width: 1200px) {
-        padding: 16rem 0;
+        padding: 12rem 0;
     }
 
     &__inner {
@@ -84,14 +84,14 @@
     }
 }
 
-.about-mission-item {
+.about-goal-item {
     position: relative;
     border-radius: 2rem;
     background-color: var(--gray-242);
     padding: 7.4rem 2.5rem 3rem;
 
     @media (min-width: 1200px) {
-        padding: 10.6rem 2.5rem 2.5rem;
+        padding: 10.6rem 2.5rem 3.8rem;
     }
 
     &::before {

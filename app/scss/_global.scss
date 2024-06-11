@@ -8,6 +8,7 @@
 html {
     // font-size: 10px;
     font-size: 62.5%;
+    // scroll-behavior: smooth;
 }
 
 body {
@@ -154,8 +155,10 @@ input[type=number] {
     padding: 0.9rem 2.3rem;
     font-size: 1.8rem;
     line-height: 118%;
+    text-align: center;
     font-weight: 500;
     border-radius: 7.6rem;
+    transition: .3s;
 
     @media (min-width: 1200px) {
         font-size: 2.2rem;
@@ -164,12 +167,28 @@ input[type=number] {
     &--transparent {
         color: var(--black-0);
         border: 1px solid var(--black-0);
+
+        &:hover {
+            @media (min-width: 1200px) {
+                color: var(--belyy-fon);
+                border-color: var(--purple);
+                background-color: var(--purple);
+            }
+        }
     }
 
     &--white {
         color: var(--black-0);
         background-color: var(--belyy-fon);
         border: 1px solid var(--belyy-fon);
+
+        &:hover {
+            @media (min-width: 1200px) {
+                color: var(--belyy-fon);
+                border-color: var(--purple);
+                background-color: var(--purple);
+            }
+        }
     }
 }
 
@@ -181,15 +200,45 @@ input[type=number] {
     text-align: center;
     letter-spacing: -0.04em;
     border-radius: 6.8rem;
-    border: 1px solid var(--belyy-fon);
+    transition: .3s;
 
     &--transparent {
         color: var(--belyy-fon);
+        border: 1px solid var(--belyy-fon);
+
+        &:hover {
+            @media (min-width: 1200px) {
+                color: var(--black-0);
+                background-color: var(--belyy-fon);
+            }
+        }
     }
 
     &--white {
         color: var(--black-0);
         background-color: var(--belyy-fon);
+        border: 1px solid var(--belyy-fon);
+
+        &:hover {
+            @media (min-width: 1200px) {
+                color: var(--belyy-fon);
+                background-color: var(--purple);
+                border-color: var(--purple);
+            }
+        }
+    }
+
+    &--purple {
+        color: var(--belyy-fon);
+        background-color: var(--purple);
+        border: 1px solid var(--purple);
+
+        &:hover {
+            @media (min-width: 1200px) {
+                background-color: var(--purple-32);
+                border-color: var(--purple-32);
+            }
+        }
     }
 }
 
@@ -246,7 +295,7 @@ input[type=number] {
         font-weight: 500;
         text-align: center;
         border-radius: 7.6rem;
-        transition: .3s color;
+        transition: color .3s, background-color .3s;
 
         @media (min-width: 1200px) {
             font-size: 2.2rem;
@@ -271,6 +320,7 @@ input[type=number] {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        transition: .3s;
 
         &:nth-child(2) {
             right: 0;
@@ -287,11 +337,35 @@ input[type=number] {
             right: 1.2rem;
             width: 1.7rem;
             height: 1.6rem;
-            transition: transform .3s;
         }
     }
 
     &--white {
+        &:not([disabled]) {
+            &:hover {
+                span {
+                    @media (min-width: 1200px) {
+                        background-color: var(--gray-230);
+                    }
+                }
+
+                svg {
+                    &:nth-child(2) {
+                        @media (min-width: 1200px) {
+                            fill: var(--gray-230);
+                            stroke: var(--gray-230);
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        @media (min-width: 1200px) {
+                            stroke: var(--gray-230);
+                        }
+                    }
+                }
+            }
+        }
+
         span {
             color: var(--black-0);
             background-color: var(--belyy-fon);
@@ -316,6 +390,31 @@ input[type=number] {
     }
 
     &--purple {
+        &:not([disabled]) {
+            &:hover {
+                span {
+                    @media (min-width: 1200px) {
+                        background-color: var(--purple-32);
+                    }
+                }
+
+                svg {
+                    &:nth-child(2) {
+                        @media (min-width: 1200px) {
+                            fill: var(--purple-32);
+                            stroke: var(--purple-32);
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        @media (min-width: 1200px) {
+                            stroke: var(--purple-32);
+                        }
+                    }
+                }
+            }
+        }
+
         span {
             color: var(--belyy-fon);
             background-color: var(--purple);

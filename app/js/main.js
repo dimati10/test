@@ -9,12 +9,16 @@ function initApp() {
     initTariffsSlider(); // слайдер в разделе 'tariffs and methods'
     initMethodsSlider(); // слайдер в разделе 'methods'
     initTypicalSlider(); // типовые слайдеры
-    setPaymentsAnimation(); // анимация в разделе 'mass payments'
+    setCustomAnimation('.js_payments_img', '.js_payments_message'); // анимация в разделе 'mass payments'
+    setCustomAnimation('.js_available_solution_items', '.js_available_solution_item'); // анимация в разделе 'available solutions'
+    setCustomAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 200, false); // анимация в разделе ''accept payments''
     setSolutionAnimation(7000, 1000); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'
     sendFeedbackForm(); // отправка формы на странице 'контакты'
-    setAvailableSolutionsAnimation(); // анимация в разделе 'available solutions'
+    // setAchievementsAnimation() // анимация в разделе 'our achievements'
+    initAchievementsSlider(); // слайдер в разделе 'our achievements'
+    setSmoothScroll('.js_policy_links a'); // плавный скролл к якорюy на странице 'privacy policy'
 
     console.log('initApp');
 
@@ -80,6 +84,7 @@ function fixBodyPosition() {
             document.body.style.top = `-${scrollPosition}px`;
             document.body.style.left = '0';
             document.body.style.width = '100%';
+            // document.documentElement.style.scrollBehavior = 'unset';
 
         }
 
@@ -104,6 +109,7 @@ function unfixBodyPosition() {
         document.body.style.left = '';
         document.body.style.width = '';
         window.scroll(0, scrollPosition);
+        // document.documentElement.style.scrollBehavior = '';
 
     }
 
@@ -189,33 +195,38 @@ function generateRandomNumber(a, b) {
     return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
-// анимация в разделе 'mass payments'
+// анимация в разделах: 'mass payments', 'available solutions', 'accept payments'
 
-function setPaymentsAnimation() {
+function setCustomAnimation(blockSelector, itemSelector, offset = 0, reverse = true) {
 
-    const payments = document.querySelector('.js_payments');
+    const block = document.querySelector(blockSelector);
+    const items = document.querySelectorAll(itemSelector);
 
-    if (payments) {
+    if (block) {
 
-        const img = payments.querySelector('.js_payments_img');
-        const messages = payments.querySelectorAll('.js_payments_message');
+        function animateItems() {
 
-        function animateMessages() {
+            if (block.getBoundingClientRect().bottom - offset < innerHeight) {
 
-            if (img.getBoundingClientRect().bottom < innerHeight) {
+                items.forEach((item, i) => {
 
-                messages.forEach((message, i) => {
-                    message.style.animationDelay = `${0.5 * (messages.length - 1 - i)}s`;
-                    message.classList.add('animated');
+                    if (reverse) {
+                        item.style.animationDelay = `${0.5 * (items.length - 1 - i)}s`;
+                    } else {
+                        item.style.animationDelay = `${0.5 * i}s`;
+                    }
+
+                    item.classList.add('animated');
+
                 });
 
             }
 
         }
 
-        animateMessages();
-        window.addEventListener('scroll', animateMessages);
-        window.addEventListener('resize', animateMessages);
+        animateItems();
+        window.addEventListener('scroll', animateItems);
+        window.addEventListener('resize', animateItems);
 
     }
 
@@ -547,35 +558,129 @@ function sendFeedbackForm() {
 
 }
 
-// анимация в разделе 'available solutions'
+// анимация в разделе 'our achievements'
 
-function setAvailableSolutionsAnimation() {
+function setAchievementsAnimation() {
 
-    const availableSolutions = document.querySelector('.js_available_solutions');
+    const mission = document.querySelector('.js_about_achievements');
 
-    if (availableSolutions) {
+    if (mission) {
 
-        console.log('TESTA');
+        const blocks = mission.querySelector('.js_about_achievements_cards');
+        const tl = gsap.timeline();
 
-        const wrapper = availableSolutions.querySelector('.js_available_solution_items');
-        const items = availableSolutions.querySelectorAll('.js_available_solution_item');
+        tl.to(".js_about_achievements_cards", { x: '-66.7%', ease: "none" });
 
-        function animateItems() {
+        const trigger = ScrollTrigger.create({
+            animation: tl,
+            trigger: '.js_about_achievements',
+            // start: () => blocks.getBoundingClientRect().top,
+            start: 'top top',
+            // end: 'bottom',
+            end: () => blocks.offsetWidth * 3,
+            scrub: true,
+            pin: true,
+            // markers: true,
+        });
 
-            if (wrapper.getBoundingClientRect().bottom < innerHeight) {
+        // let isEnabled = null;
 
-                items.forEach((item, i) => {
-                    item.style.animationDelay = `${0.5 * (items.length - 1 - i)}s`;
-                    item.classList.add('animated');
-                });
+        // if (innerWidth >= 1200) {
+        //     trigger.enable();
+        //     isEnabled = true;
+        // } else {
+        //     trigger.disable();
+        //     isEnabled = false;
+        // }
 
+        // window.addEventListener('resize', () => {
+
+        //     if (innerWidth >= 1200 && !isEnabled) {
+        //         trigger.enable();
+        //         isEnabled = true;
+        //     }
+
+        //     if (innerWidth < 1200 && isEnabled) {
+        //         trigger.disable();
+        //         isEnabled = false;
+        //     }
+
+        // });
+
+    }
+
+}
+
+// слайдер в разделе 'our achievements'
+
+function initAchievementsSlider() {
+
+    if (document.querySelector('.js_about_achievements_swiper')) {
+
+        const swiper = new Swiper('.js_about_achievements_swiper', {
+            grabCursor: true,
+            spaceBetween: 15,
+            slidesPerView: 1.06,
+            // freeMode: true,
+            // mousewheel: true,
+            mousewheel: {
+                sensitivity: 1,
+                releaseOnEdges: true
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 1.75,
+                    spaceBetween: 15,
+                },
+                1200: {
+                    slidesPerView: 1.75,
+                    spaceBetween: 20,
+                }
             }
+        });
 
-        }
+    }
 
-        animateItems();
-        window.addEventListener('scroll', animateItems);
-        window.addEventListener('resize', animateItems);
+}
+
+// плавный скролл к якорю
+
+function setSmoothScroll(el) {
+
+    const links = document.querySelectorAll(el);
+
+    if (links.length) {
+
+        links.forEach(link => {
+
+            link.addEventListener('click', (e) => {
+
+                e.preventDefault();
+
+                const href = link.getAttribute('href').substring(1);
+                const scrollTarget = document.getElementById(href);
+
+                if (href && scrollTarget) {
+
+                    // const topOffset = 50;
+                    const topOffset = 0;
+                    const elementPosition = scrollTarget.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - topOffset;
+
+                    window.scrollBy({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                }
+
+            });
+
+        });
 
     }
 

@@ -47,29 +47,6 @@
         min-height: 26rem;
     }
 
-    &__status {
-        position: relative;
-        display: block;
-        margin: 0 0 2rem 0;
-        padding: 0 0 0 1.5rem;
-        font-weight: 500;
-        font-size: 1.6rem;
-        line-height: 120%;
-        letter-spacing: -0.01em;
-        opacity: 0.5;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0.6rem;
-            left: 0;
-            width: 0.8rem;
-            height: 0.8rem;
-            border-radius: 50%;
-            background-color: var(--gray-217);
-        }
-    }
-
     &__info {
         margin: auto 0 0 0;
     }

@@ -23,12 +23,6 @@
         }
     }
 
-    &__cards {
-        // display: flex;
-        // padding: 20px 0;
-        // background-color: tomato;
-    }
-
     &__swiper {
         overflow: visible;
         margin: 0 -10px;
@@ -39,27 +33,61 @@
 
         .swiper-slide {
             height: auto;
+
+            &:first-child {
+                .about-achievements-card {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 1.8rem;
+                        right: calc(100% - 1rem);
+                        width: 300vw;
+                        border-bottom: 1px dashed var(--belyy-fon);
+                        opacity: 0.7;
+
+                        @media (min-width: 1200px) {
+                            right: calc(100% - 8rem);
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                .about-achievements-card {
+                    &::after {
+                        width: 300vw;
+                    }
+                }
+            }
         }
     }
 }
 
 .about-achievements-card {
-    // flex-shrink: 0;
-    // width: 71.4rem;
+    position: relative;
     height: 100%;
-    padding: 2rem;
-    border-radius: 2rem;
-    box-shadow: 2px 4px 11px 0 rgba(0, 0, 0, 0.11);
-    background-color: var(--belyy-fon);
-    border: 1px solid var(--belyy-fon);
+    padding: 5.2rem 0 0 0;
 
-    @media (min-width: 1200px) {
-        padding: 2.5rem;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 1.8rem;
+        left: 4.7rem;
+        width: calc(100% - 3.7rem + 15px);
+        border-bottom: 1px dashed var(--belyy-fon);
+        opacity: 0.7;
+
+        @media (min-width: 1200px) {
+            left: 11.7rem;
+            width: calc(100% - 3.7rem + 20px);
+        }
     }
 
     &.current {
-        color: var(--belyy-fon);
-        background: linear-gradient(180deg, #6969f2 0%, #3737cc 100%);
+        .about-achievements-card__inner {
+            color: var(--belyy-fon);
+            background: linear-gradient(180deg, #6969f2 0%, #3737cc 100%);
+        }
 
         .about-achievements-card-item {
 
@@ -72,6 +100,33 @@
         .about-achievements-card-item::before {
             background-color: var(--belyy-fon);
             box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
+        }
+    }
+
+    &__pulsar {
+        position: absolute;
+        top: 0;
+        left: 1rem;
+
+        @media (min-width: 1200px) {
+            left: 8rem;
+        }
+
+        span {
+            opacity: 0.8;
+        }
+    }
+
+    &__inner {
+        height: 100%;
+        padding: 2rem;
+        border-radius: 2rem;
+        box-shadow: 2px 4px 11px 0 rgba(0, 0, 0, 0.11);
+        border: 1px solid var(--belyy-fon);
+        background-color: var(--belyy-fon);
+
+        @media (min-width: 1200px) {
+            padding: 2.5rem;
         }
     }
 

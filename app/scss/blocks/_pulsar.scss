@@ -1,0 +1,54 @@
+.pulsar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.7rem;
+    height: 3.7rem;
+
+    span {
+        display: block;
+        position: relative;
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 50%;
+        background-color: var(--belyy-fon);
+        opacity: 0.6;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid white;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            opacity: 1;
+        }
+
+        &::before {
+            animation: pulsar 2s infinite;
+        }
+
+        &::after {
+            animation: pulsar 2s infinite 0.25s;
+        }
+    }
+}
+
+@keyframes pulsar {
+    25% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 3.7rem;
+        height: 3.7rem;
+        opacity: 0;
+    }
+}

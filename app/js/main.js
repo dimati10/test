@@ -11,14 +11,13 @@ function initApp() {
     initTypicalSlider(); // типовые слайдеры
     setCustomAnimation('.js_payments_img', '.js_payments_message'); // анимация в разделе 'mass payments'
     setCustomAnimation('.js_available_solution_items', '.js_available_solution_item'); // анимация в разделе 'available solutions'
-    setCustomAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 200, false); // анимация в разделе ''accept payments''
     setSolutionAnimation(7000, 1000); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'
     sendFeedbackForm(); // отправка формы на странице 'контакты'
-    // setAchievementsAnimation() // анимация в разделе 'our achievements'
     initAchievementsSlider(); // слайдер в разделе 'our achievements'
     setSmoothScroll('.js_policy_links a'); // плавный скролл к якорюy на странице 'privacy policy'
+    setPaymentsAcceptingAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 0.5, 200) //анимация в разделе 'accept payments'
 
     console.log('initApp');
 
@@ -197,7 +196,7 @@ function generateRandomNumber(a, b) {
 
 // анимация в разделах: 'mass payments', 'available solutions', 'accept payments'
 
-function setCustomAnimation(blockSelector, itemSelector, offset = 0, reverse = true) {
+function setCustomAnimation(blockSelector, itemSelector, delay = 0.5, offset = 0, reverse = true) {
 
     const block = document.querySelector(blockSelector);
     const items = document.querySelectorAll(itemSelector);
@@ -211,9 +210,9 @@ function setCustomAnimation(blockSelector, itemSelector, offset = 0, reverse = t
                 items.forEach((item, i) => {
 
                     if (reverse) {
-                        item.style.animationDelay = `${0.5 * (items.length - 1 - i)}s`;
+                        item.style.animationDelay = `${delay * (items.length - 1 - i)}s`;
                     } else {
-                        item.style.animationDelay = `${0.5 * i}s`;
+                        item.style.animationDelay = `${delay * i}s`;
                     }
 
                     item.classList.add('animated');
@@ -558,59 +557,6 @@ function sendFeedbackForm() {
 
 }
 
-// анимация в разделе 'our achievements'
-
-function setAchievementsAnimation() {
-
-    const mission = document.querySelector('.js_about_achievements');
-
-    if (mission) {
-
-        const blocks = mission.querySelector('.js_about_achievements_cards');
-        const tl = gsap.timeline();
-
-        tl.to(".js_about_achievements_cards", { x: '-66.7%', ease: "none" });
-
-        const trigger = ScrollTrigger.create({
-            animation: tl,
-            trigger: '.js_about_achievements',
-            // start: () => blocks.getBoundingClientRect().top,
-            start: 'top top',
-            // end: 'bottom',
-            end: () => blocks.offsetWidth * 3,
-            scrub: true,
-            pin: true,
-            // markers: true,
-        });
-
-        // let isEnabled = null;
-
-        // if (innerWidth >= 1200) {
-        //     trigger.enable();
-        //     isEnabled = true;
-        // } else {
-        //     trigger.disable();
-        //     isEnabled = false;
-        // }
-
-        // window.addEventListener('resize', () => {
-
-        //     if (innerWidth >= 1200 && !isEnabled) {
-        //         trigger.enable();
-        //         isEnabled = true;
-        //     }
-
-        //     if (innerWidth < 1200 && isEnabled) {
-        //         trigger.disable();
-        //         isEnabled = false;
-        //     }
-
-        // });
-
-    }
-
-}
-
 // слайдер в разделе 'our achievements'
 
 function initAchievementsSlider() {
@@ -681,6 +627,41 @@ function setSmoothScroll(el) {
             });
 
         });
+
+    }
+
+}
+
+// анимация в разделе 'accept payments'
+
+function setPaymentsAcceptingAnimation(blockSelector, itemSelector, delay = 0.5, offset = 0) {
+
+    const block = document.querySelector(blockSelector);
+    const items = document.querySelectorAll(itemSelector);
+
+    if (block) {
+
+        const duration = items.length * delay * 2 - delay;
+
+        function animateItems() {
+
+            if (block.getBoundingClientRect().bottom - offset < innerHeight) {
+
+                items.forEach((item, i) => {
+
+                    item.style.animationDelay = `${delay * i}s`;
+                    item.style.animationDuration = `${duration}s`;
+                    item.classList.add('animated');
+
+                });
+
+            }
+
+        }
+
+        animateItems();
+        window.addEventListener('scroll', animateItems);
+        window.addEventListener('resize', animateItems);
 
     }
 

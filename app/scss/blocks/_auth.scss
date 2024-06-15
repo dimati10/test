@@ -105,10 +105,10 @@
     }
 
     &__captcha {
-        margin: 1rem 0 0 0;
+        margin: 2rem 0 0 0;
 
         @media (min-width: 1200px) {
-            margin: 2rem 0 0 0;
+            margin: 3rem 0 0 0;
         }
 
         img {
@@ -127,14 +127,14 @@
     }
 
     &__forgot {
-        margin: 2rem 0 0 0;
+        margin: 1rem 0 0 0;
         font-size: 1.4rem;
         line-height: 2rem;
         text-decoration: underline;
         opacity: 0.5;
 
         @media (min-width: 1200px) {
-            margin: 3rem 0 0 0;
+            margin: 2rem 0 0 0;
         }
     }
 

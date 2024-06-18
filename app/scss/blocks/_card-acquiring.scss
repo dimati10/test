@@ -1,0 +1,75 @@
+.card-acquiring {
+    height: 100%;
+    border-radius: 1.5rem;
+    background-color: var(--gray-242);
+
+    @media (min-width: 1200px) {
+        border-radius: 2rem;
+    }
+
+    &__img {
+        aspect-ratio: 1.36/1;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 0 1.5rem 1.5rem;
+
+        @media (min-width: 1200px) {
+            padding: 0 2.5rem 2.5rem;
+        }
+    }
+
+    &__title {
+        margin: 0 0 1.2rem 0;
+        font-size: 2.2rem;
+        line-height: 120%;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+
+        @media (min-width: 1200px) {
+            margin: 0 0 2rem 0;
+            font-size: 2.8rem;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 1.8rem;
+        font-size: 1.6rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+
+        @media (min-width: 1200px) {
+            font-size: 1.8rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0.7rem;
+            left: 0;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            border-radius: 100%;
+            background-color: var(--purple-105);
+            box-shadow: 0 0 7px 1px var(--purple-105-opacity-40);
+        }
+
+        &:not(:last-child) {
+            margin: 0 0 1rem 0;
+        }
+    }
+}

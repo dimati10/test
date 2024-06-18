@@ -11,6 +11,7 @@ function initApp() {
     initTypicalSlider(); // типовые слайдеры
     setCustomAnimation('.js_payments_img', '.js_payments_message'); // анимация в разделе 'mass payments'
     setCustomAnimation('.js_available_solution_items', '.js_available_solution_item'); // анимация в разделе 'available solutions'
+    setCustomAnimation('.js_systems_items', '.js_systems_item'); // анимация в разделе 'systems'
     setSolutionAnimation(7000, 1000); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'

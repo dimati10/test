@@ -121,20 +121,21 @@
     gap: 1.4rem;
     width: 28.5rem;
     padding: 1.1rem;
-    border-radius: 1.6rem;
+    border-radius: 1.4rem;
     background-color: var(--belyy-fon);
     box-shadow: 5px 4px 15px 0 rgba(0, 0, 0, 0.25);
     opacity: 0;
     transform: translateY(-100px);
 
-    &.animated {
-        animation: message-animation 1s both;
-    }
-
     @media (min-width: 1200px) {
         gap: 1.6rem;
         width: 32rem;
         padding: 1.2rem;
+        border-radius: 1.6rem;
+    }
+
+    &.animated {
+        animation: message-animation 1s both;
     }
 
     &:not(:last-child) {
@@ -205,7 +206,7 @@
     &__text {
         color: var(--black-0);
         font-size: 1.3rem;
-        line-height: 100%;
+        line-height: 120%;
         letter-spacing: -0.01em;
 
         @media (min-width: 1200px) {

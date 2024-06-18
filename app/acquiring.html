@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alikassa</title>
+    <link rel="preload" href="fonts/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PPNeueMontreal-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/HalvarBreit-Bd.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header js_header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <a class="header__logo" href="/">
+                        <img src="images/logo.svg" alt="Logo" width="140" height="28">
+                    </a>
+                    <nav class="header-nav">
+                        <ul class="header-nav__list">
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">About company</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Solutions</a>
+                            </li>
+                            <li class="header-nav__item">
+                                <a class="header-nav__link" href="#">Integration</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__buttons">
+                        <a class="header__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                        <a class="header__btn btn-mini btn-mini--white" href="#">Connect</a>
+                    </div>
+
+                    <button class="header__burger burger js_burger" type="button" aria-label="Open menu">
+                        <span></span>
+                    </button>
+
+                    <div class="menu js_menu">
+                        <ul class="menu__list">
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">About company</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">About us</a>
+                                        </li>
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Contacts</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Solutions</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Accepting payments worldwide</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Payment and disbursement methods</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item js_menu_item">
+                                <button class="menu__caption js_menu_caption" type="btn">Integration</button>
+                                <div class="menu__content">
+                                    <ul class="menu__sub-list js_menu_sub_list">
+                                        <li class="menu__sub-item">
+                                            <a class="menu__sub-link" href="#">Integration process</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Documentation</a>
+                                        </li>
+                                        <li class="menu__sub-item"">
+                                            <a class=" menu__sub-link" href="#">Ready solutions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="menu__buttons">
+                            <a class="menu__btn btn-mini btn-mini--transparent" href="#">Log in</a>
+                            <a class="menu__btn btn-mini btn-mini--white" href="#">Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__blobs">
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-1.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-2.png" alt="">
+                        </div>
+                        <div class="hero__blob">
+                            <img src="images/hero-blob-3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="hero__wrapper">
+                        <div class="hero__content">
+                            <h1 class="hero__title">Accepting payments worldwide</h1>
+                            <p class="hero__descr">
+                                Get fast payment processing with our ready-made solutions and tools. Low fees, next day
+                                payments and much more are waiting for you!
+                            </p>
+                            <a class="hero__btn btn-arrow btn-arrow--white" href="#">
+                                <span>Connect</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bank-acquiring">
+                <div class="container">
+                    <div class="bank-acquiring__inner">
+                        <div class="bank-acquiring__content">
+                            <h2 class="bank-acquiring__title title title--white">Bank<br> acquiring</h2>
+                            <p class="bank-acquiring__descr descr descr--white">
+                                Acceptance of&nbsp;international payments from bank cards is&nbsp;available
+                                by&nbsp;default as&nbsp;part of&nbsp;the standard tariff and one integration.
+                            </p>
+                            <div class="bank-acquiring__items">
+                                <div class="bank-acquiring-item">
+                                    <span class="bank-acquiring-item__num">15+</span>
+                                    <p class="bank-acquiring-item__descr">
+                                        card brands<br>
+                                        Visa, MasterCard,
+                                        Maestro and other IPS
+                                    </p>
+                                </div>
+                                <div class="bank-acquiring-item">
+                                    <span class="bank-acquiring-item__num">100+</span>
+                                    <p class="bank-acquiring-item__descr">
+                                        local currencies
+                                        available for payment without
+                                        additional conversion
+                                    </p>
+                                </div>
+                                <div class="bank-acquiring-item">
+                                    <span class="bank-acquiring-item__num">150+</span>
+                                    <p class="bank-acquiring-item__descr">
+                                        countries around the world
+                                        Europe, Asia, Africa, North and South America
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bank-acquiring__img">
+                            <img src="images/bank-acquiring/bank-acquiring-img.png" alt="Payments for business"
+                                width="594" height="590" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="bank-acquiring__swiper swiper js_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="card-acquiring">
+                                    <div class="card-acquiring__img">
+                                        <img src="images/card/card-acquiring-img-3.png" alt="Regular payments"
+                                            width="408" height="340" loading="lazy">
+                                    </div>
+                                    <div class="card-acquiring__content">
+                                        <h3 class="card-acquiring__title">Regular payments</h3>
+                                        <ul class="card-acquiring__list">
+                                            <li class="card-acquiring__item">
+                                                Payments for subscriptions and
+                                                monthly debits
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Flexible setup of&nbsp;regular write-offs
+                                                according to&nbsp;specified parameters
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Customizable repeat charges
+                                                to&nbsp;increase conversion
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-acquiring">
+                                    <div class="card-acquiring__img">
+                                        <img src="images/card/card-acquiring-img-2.png" alt="QR code for payment"
+                                            width="408" height="340" loading="lazy">
+                                    </div>
+                                    <div class="card-acquiring__content">
+                                        <h3 class="card-acquiring__title">QR&nbsp;code for payment</h3>
+                                        <ul class="card-acquiring__list">
+                                            <li class="card-acquiring__item">
+                                                Compatibility with services
+                                                and social networks
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Offline and online payment tools
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Convenient placement and
+                                                management of&nbsp;QR codes
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-acquiring">
+                                    <div class="card-acquiring__img">
+                                        <img src="images/card/card-acquiring-img-3.png" alt="Payment links" width="408"
+                                            height="340" loading="lazy">
+                                    </div>
+                                    <div class="card-acquiring__content">
+                                        <h3 class="card-acquiring__title">Payment links</h3>
+                                        <ul class="card-acquiring__list">
+                                            <li class="card-acquiring__item">
+                                                Issue invoices to&nbsp;clients on&nbsp;social networks, instant
+                                                messengers and SMS
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Send checks after payment and track your payment history online
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Convenient management of&nbsp;payment links and flexible payment control
+                                                system
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="systems">
+                <div class="container">
+                    <div class="systems__inner">
+                        <div class="systems__content">
+                            <h2 class="systems__title title">Electronic payment systems and LPMs</h2>
+                            <p class="systems__descr descr">
+                                Connect popular local solutions for the convenience of&nbsp;paying for your clients
+                                using all available methods and e-wallets.
+                            </p>
+                            <div class="systems__items js_systems_items">
+                                <div class="systems-item js_systems_item">
+                                    <div class="systems-item__icon">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="images/sprite.svg#systems-item-icon-1"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="systems-item__content">
+                                        <span class="systems-item__num">80+</span>
+                                        <p class="systems-item__descr">
+                                            electronic payment systems
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="systems-item js_systems_item">
+                                    <div class="systems-item__icon">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="images/sprite.svg#systems-item-icon-2"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="systems-item__content">
+                                        <span class="systems-item__num">100+</span>
+                                        <p class="systems-item__descr">
+                                            multi-currency directions
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="systems-item js_systems_item">
+                                    <div class="systems-item__icon">
+                                        <svg width="25" height="25">
+                                            <use xlink:href="images/sprite.svg#systems-item-icon-3"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="systems-item__content">
+                                        <span class="systems-item__num">35+</span>
+                                        <p class="systems-item__descr">
+                                            banks and representative offices
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="systems__right">
+                            <div class="systems__img">
+                                <img src="images/systems/systems-img.jpg" alt="Electronic payment systems and LPMs"
+                                    width="572" height="717" loading="lazy">
+                            </div>
+                            <div class="systems__messages">
+                                <div class="systems-message">
+                                    <div class="systems-message__logo">
+                                        <img src="images/systems/systems-message-logo-1.png" alt="Logo" width="45"
+                                            height="45" loading="lazy">
+                                    </div>
+                                    <div class="systems-message__content">
+                                        <h4 class="systems-message__caption">PayPal</h4>
+                                        <p class="systems-message__text">There is&nbsp;$5000 in&nbsp;your wallet</p>
+                                    </div>
+                                </div>
+                                <div class="systems-message">
+                                    <div class="systems-message__logo">
+                                        <img src="images/systems/systems-message-logo-2.png" alt="Logo" width="45"
+                                            height="45" loading="lazy">
+                                    </div>
+                                    <div class="systems-message__content">
+                                        <h4 class="systems-message__caption">Raiffeisen Bank</h4>
+                                        <p class="systems-message__text">Transfer 2045$. Balance is&nbsp;$40999</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="systems__swiper swiper js_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="card-acquiring">
+                                    <div class="card-acquiring__img">
+                                        <img src="images/card/card-acquiring-img-4.png"
+                                            alt="Limitless opportunities to grow your business" width="408" height="340"
+                                            loading="lazy">
+                                    </div>
+                                    <div class="card-acquiring__content">
+                                        <h3 class="card-acquiring__title">Limitless opportunities to&nbsp;grow your
+                                            business</h3>
+                                        <ul class="card-acquiring__list">
+                                            <li class="card-acquiring__item">
+                                                Connection to&nbsp;international payment systems
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Automatic detection of&nbsp;client country and currency
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Flexible configuration of&nbsp;localization and translation of&nbsp;the
+                                                payment interface
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-acquiring">
+                                    <div class="card-acquiring__img">
+                                        <img src="images/card/card-acquiring-img-5.png" alt="High payment throughput"
+                                            width="408" height="340" loading="lazy">
+                                    </div>
+                                    <div class="card-acquiring__content">
+                                        <h3 class="card-acquiring__title">High payment<br> throughput</h3>
+                                        <ul class="card-acquiring__list">
+                                            <li class="card-acquiring__item">
+                                                Local currencies and payment methods
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Partner networks of&nbsp;banks in&nbsp;different countries
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                No&nbsp;additional conversion
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-acquiring">
+                                    <div class="card-acquiring__img">
+                                        <img src="images/card/card-acquiring-img-6.png"
+                                            alt="Increased profits and other economic indicators" width="408"
+                                            height="340" loading="lazy">
+                                    </div>
+                                    <div class="card-acquiring__content">
+                                        <h3 class="card-acquiring__title">Increased profits and other economic
+                                            indicators</h3>
+                                        <ul class="card-acquiring__list">
+                                            <li class="card-acquiring__item">
+                                                New countries for doing business
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Expanding the coverage area of&nbsp;payment methods
+                                            </li>
+                                            <li class="card-acquiring__item">
+                                                Visualization and analytics for different segments and customer groups
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cryptoprocessing"
+                style="background-image:url('images/cryptoprocessing/cryptoprocessing-bg.jpg')">
+                <div class="container">
+                    <div class="cryptoprocessing__wrapper">
+                        <h2 class="cryptoprocessing__title title title--white">Cryptoprocessing</h2>
+                        <p class="cryptoprocessing__descr descr descr--white">
+                            Take advantage of&nbsp;a&nbsp;ready-made solution for accepting crypto payments
+                            to&nbsp;increase your coverage area and expand payment methods for your clients.
+                        </p>
+                        <div class="cryptoprocessing__center">
+                            <div class="cryptoprocessing__decors">
+                                <div class="cryptoprocessing__decor">
+                                    <img src="images/cryptoprocessing/cryptoprocessing-decor-1.png" alt="Background"
+                                    width="311" height="374" loading="lazy">
+                                </div>
+                                <div class="cryptoprocessing__decor">
+                                    <img src="images/cryptoprocessing/cryptoprocessing-decor-2.png" alt="Background"
+                                    width="252" height="273" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="cryptoprocessing__messages">
+                                <div class="cryptoprocessing-message">
+                                    <h4 class="cryptoprocessing-message__caption">
+                                        Wallet: Tjfhfi635jhdurg&fr...
+                                    </h4>
+                                    <p class="cryptoprocessing-message__text">
+                                        Receipt of 290 Bitcoins. Withdraw using...
+                                    </p>
+                                </div>
+                                <div class="cryptoprocessing-message">
+                                    <h4 class="cryptoprocessing-message__caption">
+                                        Wallet: Jfljhu940firi23jdj564...
+                                    </h4>
+                                    <p class="cryptoprocessing-message__text">
+                                        Receipt of 430 Ethereum. Withdraw using...
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cryptoprocessing__items">
+                                <div class="cryptoprocessing-item">
+                                    <span class="cryptoprocessing-item__num">50+</span>
+                                    <p class="cryptoprocessing-item__descr">
+                                        cryptocurrencies and tokens
+                                    </p>
+                                </div>
+                                <div class="cryptoprocessing-item">
+                                    <span class="cryptoprocessing-item__num">20+</span>
+                                    <p class="cryptoprocessing-item__descr">
+                                        cryptocurrencies and tokens
+                                    </p>
+                                </div>
+                                <div class="cryptoprocessing-item">
+                                    <span class="cryptoprocessing-item__num">10+</span>
+                                    <p class="cryptoprocessing-item__descr">
+                                        directions of&nbsp;exchanges
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cryptoprocessing__img">
+                                <img src="images/cryptoprocessing/cryptoprocessing-img.png" alt="Cryptoprocessing"
+                                    width="336" height="683" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="cryptoprocessing__cards">
+                            <article class="cryptoprocessing-card">
+                                <div class="cryptoprocessing-card__icon">
+                                    <svg width="45" height="45">
+                                        <use xlink:href="images/sprite.svg#cryptoprocessing-card-icon-1"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="cryptoprocessing-card__title">Cryptoprocessing security</h3>
+                                <ul class="cryptoprocessing-card__list">
+                                    <li class="cryptoprocessing-card__item">
+                                        Special encryption system and secure access to&nbsp;wallets
+                                    </li>
+                                    <li class="cryptoprocessing-card__item">
+                                        Flexible wallet management system
+                                    </li>
+                                    <li class="cryptoprocessing-card__item">
+                                        Multi-level account protection system according to international standards
+                                    </li>
+                                </ul>
+                            </article>
+                            <article class="cryptoprocessing-card">
+                                <div class="cryptoprocessing-card__icon">
+                                    <svg width="45" height="45">
+                                        <use xlink:href="images/sprite.svg#cryptoprocessing-card-icon-2"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="cryptoprocessing-card__title">Increased profits and customer loyalty</h3>
+                                <ul class="cryptoprocessing-card__list">
+                                    <li class="cryptoprocessing-card__item">
+                                        Large selection of&nbsp;cryptocurrencies and tokens
+                                    </li>
+                                    <li class="cryptoprocessing-card__item">
+                                        Minimum commission costs
+                                    </li>
+                                    <li class="cryptoprocessing-card__item">
+                                        Profitable currency conversions without losses
+                                    </li>
+                                </ul>
+                            </article>
+                            <article class="cryptoprocessing-card">
+                                <div class="cryptoprocessing-card__icon">
+                                    <svg width="45" height="45">
+                                        <use xlink:href="images/sprite.svg#cryptoprocessing-card-icon-3"></use>
+                                    </svg>
+                                </div>
+                                <h3 class="cryptoprocessing-card__title">Convenient and simple interface</h3>
+                                <ul class="cryptoprocessing-card__list">
+                                    <li class="cryptoprocessing-card__item">
+                                        Flexible configuration of&nbsp;commissions, limits, currencies and other
+                                        parameters
+                                    </li>
+                                    <li class="cryptoprocessing-card__item">
+                                        API and H2H methods for easy integration
+                                    </li>
+                                    <li class="cryptoprocessing-card__item">
+                                        Ongoing technical suppor and advice
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="payment-process">
+                <div class="container-wide">
+                    <div class="payment-process__wrapper">
+                        <div class="payment-process__content">
+                            <h2 class="payment-process__title title">Payment Process</h2>
+                            <p class="payment-process__descr descr">
+                                Our payment page automatically detects user preferences and also displays all payment
+                                methods available to the buyer, determining his geolocation and language
+                            </p>
+                            <div class="payment-process__items">
+                                <div class="payment-process-item">
+                                    <span class="payment-process-item__num"></span>
+                                    <h3 class="payment-process-item__title">Convenient payment page</h3>
+                                    <p class="payment-process-item__descr">
+                                        To&nbsp;make a&nbsp;payment, the client goes to&nbsp;the payment page.
+                                    </p>
+                                </div>
+                                <div class="payment-process-item">
+                                    <span class="payment-process-item__num"></span>
+                                    <h3 class="payment-process-item__title">Maximum security</h3>
+                                    <p class="payment-process-item__descr">
+                                        Payment is&nbsp;made using a&nbsp;bank card or&nbsp;any connected method.
+                                    </p>
+                                </div>
+                                <div class="payment-process-item">
+                                    <span class="payment-process-item__num"></span>
+                                    <h3 class="payment-process-item__title">Fast deposits</h3>
+                                    <p class="payment-process-item__descr">
+                                        The payment amount is&nbsp;debited from the client&rsquo;s account in&nbsp;local
+                                        currency at&nbsp;the commercial rate.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-process__right"
+                            style="background-image: url('images/payment-process/payment-process-bg.jpg');">
+                            <div class="payment-process__img">
+                                <img src="images/payment-process/payment-process-img-1.png" alt="Payment Process"
+                                    width="341" height="695" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="join">
+                <div class="container">
+                    <div class="join__wrapper">
+                        <div class="join__content">
+                            <h2 class="join__title">Join Alikassa</h2>
+                            <p class="join__descr">Join over 100 thousand users worldwide and start accepting payments
+                                today!</p>
+                        </div>
+                        <div class="join__buttons">
+                            <a class="join__btn btn btn--transparent" href="#">Learn more</a>
+                            <a class="join__btn btn-arrow btn-arrow--purple" href="#">
+                                <span>Submit</span>
+                                <svg width="64" height="44">
+                                    <use xlink:href="images/sprite.svg#btn-blob"></use>
+                                </svg>
+                                <svg width="17" height="16">
+                                    <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__col">
+                        <a class="footer__logo" href="/">
+                            <img src="images/logo-footer.svg" alt="Logo" width="225" height="42" loading="lazy">
+                        </a>
+                        <div class="footer__contacts">
+                            <h3 class="footer__caption">Contacts</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a class="footer__link" href="mailto:support@alikassa.com">support@alikassa.com</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" href="tel:+79114561212">+7 (911) 456-12-12</a>
+                                </li>
+                                <li class="footer__item">
+                                    <address class="footer__link" href="#">st. Vavilov, Moscow, Russia, 117312</address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__social social">
+                            <ul class="social__list">
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Facebook"
+                                        title="Facebook">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#fb"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item" aria-label="Vkontakte" title="Vkontakte">
+                                    <a class="social__link" href="#" target="_blank">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#vk"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="YouTube"
+                                        title="YouTube">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#youtube"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Twitter"
+                                        title="Twitter">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tw"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Skype" title="Skype">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#skype"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__link" href="#" target="_blank" aria-label="Telegram"
+                                        title="Telegram">
+                                        <svg width="20" height="20">
+                                            <use xlink:href="images/sprite.svg#tg"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">About company</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">About us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Solutions</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Accepting payments worldwide</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Mass payouts</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Payment and disbursement methods</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h3 class="footer__caption">Integration</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Integration process</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Documentation</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="#">Ready solutions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <a class="footer-bottom__link" href="#">Terms and Conditions</a>
+                    <a class="footer-bottom__link" href="#">Privacy Policy</a>
+                    <a class="footer-bottom__link" href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

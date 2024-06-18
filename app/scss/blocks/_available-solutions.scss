@@ -85,7 +85,7 @@
     transform: translateY(-100px);
 
     &.animated {
-        animation: item-animation 1s both;
+        animation: available-solutions-item-animation 1s both;
     }
 
     @media (min-width: 768px) {
@@ -159,7 +159,7 @@
     }
 }
 
-@keyframes item-animation {
+@keyframes available-solutions-item-animation {
     100% {
         opacity: 1;
         transform: translateY(0);

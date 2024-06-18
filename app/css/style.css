@@ -5368,14 +5368,8 @@ input[type=number] {
   0% {
     opacity: 0;
   }
-  10% {
-    opacity: 1;
-  }
   50% {
     opacity: 1;
-  }
-  60% {
-    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -5386,14 +5380,8 @@ input[type=number] {
   0% {
     opacity: 0;
   }
-  10% {
-    opacity: 1;
-  }
   50% {
     opacity: 1;
-  }
-  60% {
-    opacity: 0;
   }
   100% {
     opacity: 0;

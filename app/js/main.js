@@ -18,7 +18,7 @@ function initApp() {
     sendFeedbackForm(); // отправка формы на странице 'контакты'
     initAchievementsSlider(); // слайдер в разделе 'our achievements'
     setSmoothScroll('.js_policy_links a'); // плавный скролл к якорюy на странице 'privacy policy'
-    setPaymentsAcceptingAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 0.5, 200) //анимация в разделе 'accept payments'
+    setPaymentsAcceptingAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 1000, 200) //анимация в разделе 'accept payments'
 
     console.log('initApp');
 
@@ -635,26 +635,40 @@ function setSmoothScroll(el) {
 
 // анимация в разделе 'accept payments'
 
-function setPaymentsAcceptingAnimation(blockSelector, itemSelector, delay = 0.5, offset = 0) {
+function setPaymentsAcceptingAnimation(blockSelector, itemSelector, duration = 1000, offset = 0) {
 
     const block = document.querySelector(blockSelector);
     const items = document.querySelectorAll(itemSelector);
 
     if (block) {
 
-        const duration = items.length * delay * 2 - delay;
+        let isAnimated = false;
+        let item = null;
 
         function animateItems() {
 
             if (block.getBoundingClientRect().bottom - offset < innerHeight) {
 
-                items.forEach((item, i) => {
+                if (!isAnimated) {
 
-                    item.style.animationDelay = `${delay * i}s`;
-                    item.style.animationDuration = `${duration}s`;
-                    item.classList.add('animated');
+                    function animateRandomItem() {
+                        item = items[generateRandomNumber(0, items.length - 1)];
+                        item.style.animationDuration = `${duration / 1000}s`;
+                        item.classList.add('animated');
+                    }
 
-                });
+                    animateRandomItem();
+
+                    setInterval(() => {
+
+                        item.classList.remove('animated');
+                        animateRandomItem();
+
+                    }, duration);
+
+                    isAnimated = true;
+
+                }
 
             }
 

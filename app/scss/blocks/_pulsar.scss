@@ -40,6 +40,12 @@
 }
 
 @keyframes pulsar {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
     25% {
         width: 0;
         height: 0;

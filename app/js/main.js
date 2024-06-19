@@ -652,19 +652,18 @@ function setPaymentsAcceptingAnimation(blockSelector, itemSelector, duration = 1
                 if (!isAnimated) {
 
                     function animateRandomItem() {
+
+                        items.forEach(item => item.classList.remove('animated'));
+
                         item = items[generateRandomNumber(0, items.length - 1)];
                         item.style.animationDuration = `${duration / 1000}s`;
-                        item.classList.add('animated');
+
+                        setTimeout(() => item.classList.add('animated'), 20);
+
                     }
 
                     animateRandomItem();
-
-                    setInterval(() => {
-
-                        item.classList.remove('animated');
-                        animateRandomItem();
-
-                    }, duration);
+                    setInterval(animateRandomItem, duration);
 
                     isAnimated = true;
 

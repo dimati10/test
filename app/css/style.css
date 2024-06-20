@@ -3044,12 +3044,12 @@ input[type=number] {
   opacity: 0;
 }
 .pulsar span::before {
-  -webkit-animation: pulsar 2s infinite both;
-          animation: pulsar 2s infinite both;
+  -webkit-animation: pulsar 2s infinite forwards;
+          animation: pulsar 2s infinite forwards;
 }
 .pulsar span::after {
-  -webkit-animation: pulsar 2s infinite 0.25s both;
-          animation: pulsar 2s infinite 0.25s both;
+  -webkit-animation: pulsar 2s infinite 0.25s forwards;
+          animation: pulsar 2s infinite 0.25s forwards;
 }
 
 @-webkit-keyframes pulsar {

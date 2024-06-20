@@ -30,11 +30,11 @@
         }
 
         &::before {
-            animation: pulsar 2s infinite both;
+            animation: pulsar 2s infinite forwards;
         }
 
         &::after {
-            animation: pulsar 2s infinite 0.25s both;
+            animation: pulsar 2s infinite 0.25s forwards;
         }
     }
 }

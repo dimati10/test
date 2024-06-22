@@ -19,7 +19,7 @@
     &__content {
         order: 1;
         border-radius: 2rem;
-        background-color: var(--gray-242);
+        background-color: var(--black-13);
         padding: 4rem 2.5rem 3rem;
 
         @media (min-width: 768px) {
@@ -102,7 +102,7 @@
 .payment-process-item {
     position: relative;
     padding: 3.7rem 6rem 1.5rem 1.5rem;
-    border: 1px solid var(--black-0-opacity-50);
+    border: 1px solid var(--white-opacity-30);
     border-radius: 1.5rem;
 
     @media (min-width: 768px) {
@@ -130,7 +130,7 @@
             right: calc(100% + 0.5rem);
             width: 2rem;
             height: 1px;
-            border-bottom: 1px solid var(--black-13);
+            border-bottom: 1px solid var(--belyy-fon);
 
             @media (min-width: 1200px) {
                 width: 2.6rem;
@@ -141,6 +141,7 @@
             display: block;
             content: '0' counter(payment-process-items-counter);
             counter-increment: payment-process-items-counter;
+            color: var(--belyy-fon);
             font-size: 1.4rem;
             line-height: 120%;
             letter-spacing: -0.01em;
@@ -155,6 +156,7 @@
     &__title {
         max-width: 39rem;
         margin: 0 0 1rem 0;
+        color: var(--belyy-fon);
         font-size: 2.2rem;
         line-height: 120%;
         font-weight: 500;
@@ -167,9 +169,11 @@
 
     &__descr {
         max-width: 39rem;
+        color: var(--belyy-fon);
         font-size: 1.6rem;
         line-height: 120%;
         letter-spacing: -0.01em;
+        opacity: 0.8;
 
         @media (min-width: 1200px) {
             font-size: 1.8rem;

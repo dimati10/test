@@ -9,20 +9,18 @@
     }
 
     @media (min-width: 1200px) {
-        padding: 14rem 0 6rem;
+        padding: 14rem 0 10.5rem;
     }
 
-    &__inner {
+    &__wrapper {
         display: flex;
         justify-content: space-between;
-        margin: 0 0 5rem 0;
-
-        @media (min-width: 1200px) {
-            margin: 0 0 6rem 0;
-        }
     }
 
     &__content {
+        position: relative;
+        z-index: 1;
+
         @media (min-width: 768px) {
             flex-grow: 1;
         }
@@ -32,31 +30,32 @@
         margin: 0 0 2rem 0;
 
         @media (min-width: 1200px) {
-            margin: 0 0 3.5rem 0;
+            margin: 0 0 4.5rem 0;
+        }
+    }
+
+    &__text {
+        max-width: 65.2rem;
+        color: var(--belyy-fon);
+        font-size: 1.8rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        opacity: 0.7;
+
+        @media (min-width: 1200px) {
+            font-size: 2.4rem;
+        }
+
+        &:not(:last-child) {
+            margin: 0 0 2rem 0;
         }
     }
 
     &__descr {
-        max-width: 55.3rem;
-        margin: 0 0 3rem 0;
-        opacity: 0.7;
+        margin: 0 0 4rem 0;
 
         @media (min-width: 1200px) {
             margin: 0 0 6rem 0;
-        }
-    }
-
-    &__items {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 3rem;
-
-        @media (min-width: 576px) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media (min-width: 1200px) {
-            gap: 8.6rem;
         }
     }
 
@@ -80,12 +79,12 @@
             top: auto;
             right: auto;
             height: auto;
-            margin: 0 -7.3rem 0 0;
+            margin: 0 -5.8rem 0 0;
         }
 
         @media (min-width: 1200px) {
-            width: 59.4rem;
-            margin: 0 -12.2rem 0 0;
+            width: 54rem;
+            margin: 0 -8.8rem 0 0;
         }
 
         img {
@@ -97,7 +96,7 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -62%);
+                transform: translate(-50%, -74%);
                 max-width: 100%;
                 width: auto;
                 height: auto;
@@ -105,23 +104,10 @@
 
         }
     }
-
-    &__swiper {
-        margin: 0 -2rem;
-        padding: 0 2rem;
-
-        @media (min-width: 1200px) {
-            margin: 0;
-            padding: 0;
-        }
-
-        .swiper-slide {
-            height: auto;
-        }
-    }
 }
 
 .bank-acquiring-item {
+    max-width: 28.6rem;
 
     &__num {
         display: block;
@@ -134,7 +120,7 @@
         text-transform: uppercase;
 
         @media (min-width: 1200px) {
-            font-size: 9rem;
+            font-size: 8rem;
         }
     }
 

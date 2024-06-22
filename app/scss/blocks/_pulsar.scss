@@ -22,7 +22,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            border: 1px solid var(--belyy-fon);
+            border: 1px solid transparent;
             width: 0;
             height: 0;
             border-radius: 50%;
@@ -30,11 +30,11 @@
         }
 
         &::before {
-            animation: pulsar 2s infinite forwards;
+            animation: pulsar 2s infinite both;
         }
 
         &::after {
-            animation: pulsar 2s infinite 0.25s forwards;
+            animation: pulsar 2s infinite 0.25s both;
         }
     }
 }
@@ -44,17 +44,28 @@
         width: 0;
         height: 0;
         opacity: 1;
+        border-color: transparent;
+    }
+
+    24.9% {
+        border-color: transparent;
     }
 
     25% {
         width: 0;
         height: 0;
         opacity: 1;
+        border-color: var(--belyy-fon);
     }
 
-    100% {
+    99.9% {
         width: 3.7rem;
         height: 3.7rem;
         opacity: 0;
+        border-color: var(--belyy-fon);
+    }
+
+    100% {
+        border-color: transparent;
     }
 }

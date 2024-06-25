@@ -30,14 +30,14 @@
 
         &:nth-child(1) {
             z-index: 3;
-            left: -30rem;
+            // left: -30rem;
             left: 0;
             bottom: 0;
             transform: translate(-12.7%, 15%);
-            animation: blob-1 7s linear infinite alternate 1s;
+            animation: hero-blob-1 7s linear infinite alternate 1s;
 
             @media (min-width: 1200px) {
-                left: 0;
+                // left: 0;
                 width: 95%;
             }
         }
@@ -47,7 +47,7 @@
             right: -20rem;
             bottom: 0;
             transform: translate(13.22%, 24.55%);
-            animation: blob-2 8s linear infinite alternate 1s;
+            animation: hero-blob-2 8s linear infinite alternate 1s;
 
             @media (min-width: 1200px) {
                 right: 0;
@@ -59,7 +59,7 @@
             right: 0;
             top: -20rem;
             transform: translate(14.15%, -25.3%);
-            animation: blob-3 9s linear infinite alternate 1s;
+            animation: hero-blob-3 9s linear infinite alternate 1s;
 
             @media (min-width: 1200px) {
                 top: 0;
@@ -158,19 +158,19 @@
     }
 }
 
-@keyframes blob-1 {
+@keyframes hero-blob-1 {
     100% {
         transform: translate(0, 15%);
     }
 }
 
-@keyframes blob-2 {
+@keyframes hero-blob-2 {
     100% {
         transform: translate(0, 0);
     }
 }
 
-@keyframes blob-3 {
+@keyframes hero-blob-3 {
     100% {
         transform: translate(30%, -25.3%);
     }

@@ -13,6 +13,7 @@
 
         @media (min-width: 768px) {
             flex-direction: row;
+            align-items: flex-start;
             justify-content: space-between;
             gap: 3rem;
         }
@@ -56,13 +57,17 @@
         }
     }
 
-    &__img {
+    &__right {
+        position: relative;
         order: -1;
 
         @media (min-width: 768px) {
             order: 0;
             width: 60.8rem;
         }
+    }
+
+    &__img {
 
         img {
             width: 100%;
@@ -73,6 +78,100 @@
             @media (min-width: 1200px) {
                 border-radius: 2rem;
                 box-shadow: 2px 4px 11px 0 rgba(0, 0, 0, 0.11);
+            }
+        }
+    }
+}
+
+.accounting-tooltip {
+    position: absolute;
+    left: 52%;
+    bottom: 57%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    width: 23.4rem;
+    padding: 1rem;
+    border-radius: 100rem;
+    background-color: var(--black-0-opacity-10);
+    backdrop-filter: blur(20px);
+
+    @media (min-width: 576px) {
+        bottom: 55%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 25rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 1rem solid var(--black-0-opacity-10);
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+        backdrop-filter: blur(20px);
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: var(--belyy-fon);
+
+        @media (min-width: 1200px) {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--purple-175);
+
+            @media (min-width: 1200px) {
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+        }
+    }
+
+    &__caption {
+        margin: 0 0 0.3rem 0;
+        color: var(--black-0);
+        font-size: 1.5rem;
+        line-height: 120%;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+
+        @media (min-width: 1200px) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__descr {
+        color: var(--black-0);
+        font-size: 1.3rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+
+        @media (min-width: 1200px) {
+            font-size: 1.4rem;
+        }
+
+        span {
+            display: inline-block;
+            width: 2.4rem;
+
+            @media (min-width: 1200px) {
+                width: 2.6rem;
             }
         }
     }

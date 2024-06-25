@@ -141,7 +141,17 @@
             <section class="mission js_mission">
                 <div class="mission__blocks js_mission_blocks">
                     <div class="mission__block mission__block-1 js_mission_block_1">
-                        <div class="mission__btn"></div>
+                        <div class="mission__btn">
+                            <div class="mission__blob">
+                                <img src="images/mission/mission-btn-blob-1.png" alt="">
+                            </div>
+                            <div class="mission__blob">
+                                <img src="images/mission/mission-btn-blob-2.png" alt="">
+                            </div>
+                            <div class="mission__blob">
+                                <img src="images/mission/mission-btn-blob-3.png" alt="">
+                            </div>
+                        </div>
                         <h2 class="mission__title title title--white">Our mission is&nbsp;to&nbsp;simplify financial
                             decisions</h2>
                         <div class="mission__pulsar pulsar">
@@ -171,13 +181,13 @@
                                 </p>
                             </div>
                             <div class="mission__images">
-                                <img src="images/mission/mission-img-1.jpg" alt="" width="273" height="273"
+                                <img class="js_mission_img_1" src="images/mission/mission-img-1.jpg" alt="" width="273" height="273"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-2.jpg" alt="" width="149" height="216"
+                                <img class="js_mission_img_2" src="images/mission/mission-img-2.jpg" alt="" width="149" height="216"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-3.jpg" alt="" width="296" height="154"
+                                <img class="js_mission_img_3" src="images/mission/mission-img-3.jpg" alt="" width="296" height="154"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-4.jpg" alt="" width="241" height="154"
+                                <img class="js_mission_img_4" src="images/mission/mission-img-4.jpg" alt="" width="241" height="154"
                                     loading="lazy">
                             </div>
                         </div>
@@ -196,17 +206,17 @@
                                 </p>
                             </div>
                             <div class="mission__images">
-                                <img src="images/mission/mission-img-5.jpg" alt="" width="273" height="273"
+                                <img class="js_mission_img_5" src="images/mission/mission-img-5.jpg" alt="" width="273" height="273"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-6.jpg" alt="" width="262" height="177"
+                                <img class="js_mission_img_6" src="images/mission/mission-img-6.jpg" alt="" width="262" height="177"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-7.jpg" alt="" width="164" height="111"
+                                <img class="js_mission_img_7" src="images/mission/mission-img-7.jpg" alt="" width="164" height="111"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-8.jpg" alt="" width="163" height="177"
+                                <img class="js_mission_img_8" src="images/mission/mission-img-8.jpg" alt="" width="163" height="177"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-9.jpg" alt="" width="219" height="144"
+                                <img class="js_mission_img_9" src="images/mission/mission-img-9.jpg" alt="" width="219" height="144"
                                     loading="lazy">
-                                <img src="images/mission/mission-img-10.jpg" alt="" width="216" height="111"
+                                <img class="js_mission_img_10" src="images/mission/mission-img-10.jpg" alt="" width="216" height="111"
                                     loading="lazy">
                             </div>
                         </div>
@@ -418,9 +428,52 @@
                         </div>
                         <div class="conversion__right"
                             style="background-image: url('images/conversion/conversion-bg.jpg');">
-                            <div class="conversion__img">
-                                <img src="images/conversion/conversion-img-1.png" alt="Currency conversion" width="336"
-                                    height="683" loading="lazy">
+                            <div class="conversion-mockup">
+                                <div class="conversion-mockup__content">
+                                    <h3 class="conversion-mockup__title">Methods and directions</h3>
+                                    <div class="conversion-mockup__list js_conversion_mockup_list">
+                                        <li class="conversion-mockup-item js_conversion_mockup_item">
+                                            <p class="conversion-mockup-item__text">
+                                                Fiat<br>
+                                                exchanges
+                                            </p>
+                                            <svg width="77" height="80">
+                                                <use xlink:href="images/sprite.svg#conversion-mockup-item-bg"></use>
+                                            </svg>
+                                        </li>
+                                        <li class="conversion-mockup-item js_conversion_mockup_item">
+                                            <p class="conversion-mockup-item__text">
+                                                Multicurrency<br>
+                                                exchanges
+                                            </p>
+                                            <svg width="77" height="80">
+                                                <use xlink:href="images/sprite.svg#conversion-mockup-item-bg"></use>
+                                            </svg>
+                                        </li>
+                                        <li class="conversion-mockup-item js_conversion_mockup_item">
+                                            <p class="conversion-mockup-item__text">
+                                                Cryptocurrency<br>
+                                                exchanges
+                                            </p>
+                                            <svg width="77" height="80">
+                                                <use xlink:href="images/sprite.svg#conversion-mockup-item-bg"></use>
+                                            </svg>
+                                        </li>
+                                        <li class="conversion-mockup-item js_conversion_mockup_item">
+                                            <p class="conversion-mockup-item__text">
+                                                Offline<br>
+                                                exchanges
+                                            </p>
+                                            <svg width="77" height="80">
+                                                <use xlink:href="images/sprite.svg#conversion-mockup-item-bg"></use>
+                                            </svg>
+                                        </li>
+                                    </div>
+                                </div>
+                                <div class="conversion-mockup__img">
+                                    <img src="images/conversion/conversion-img-1.png" alt="Currency conversion"
+                                        width="336" height="683" loading="lazy">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -570,7 +623,8 @@
                                             <div class="card__content">
                                                 <h3 class="card__title">Flexible data and metrics analytics system</h3>
                                                 <p class="card__descr">
-                                                    The analytics system provides flexibility in&nbsp;the choice of&nbsp;data sources, analysis methods and reporting formats.
+                                                    The analytics system provides flexibility in&nbsp;the choice
+                                                    of&nbsp;data sources, analysis methods and reporting formats.
                                                 </p>
                                             </div>
                                             <div class="card-hover">
@@ -590,9 +644,12 @@
                                                     height="380" loading="lazy">
                                             </div>
                                             <div class="card__content">
-                                                <h3 class="card__title">Convenient ticket system with customer support</h3>
+                                                <h3 class="card__title">Convenient ticket system with customer support
+                                                </h3>
                                                 <p class="card__descr">
-                                                    We&nbsp;have developed a&nbsp;functional ticket system and chatbots that integrate with many social networks so&nbsp;that you can get support on&nbsp;any issue.
+                                                    We&nbsp;have developed a&nbsp;functional ticket system and chatbots
+                                                    that integrate with many social networks so&nbsp;that you can get
+                                                    support on&nbsp;any issue.
                                                 </p>
                                             </div>
                                             <div class="card-hover">
@@ -613,7 +670,9 @@
                                             <div class="card__content">
                                                 <h3 class="card__title">Business<br> tools</h3>
                                                 <p class="card__descr">
-                                                    In&nbsp;your personal account you will have access to&nbsp;a&nbsp;huge number of&nbsp;search filters, a&nbsp;test environment for customization and our notification system.
+                                                    In&nbsp;your personal account you will have access
+                                                    to&nbsp;a&nbsp;huge number of&nbsp;search filters, a&nbsp;test
+                                                    environment for customization and our notification system.
                                                 </p>
                                             </div>
                                             <div class="card-hover">
@@ -643,7 +702,8 @@
                                     </svg>
                                     <h3 class="item__title">Accounting</h3>
                                     <p class="item__descr">
-                                        We&nbsp;provide complete transparency and control over your finances so&nbsp;you can focus on&nbsp;your business.
+                                        We&nbsp;provide complete transparency and control over your finances so&nbsp;you
+                                        can focus on&nbsp;your business.
                                     </p>
                                 </div>
                                 <div class="accounting__item item">
@@ -652,7 +712,8 @@
                                     </svg>
                                     <h3 class="item__title">Financial Claims Analytics</h3>
                                     <p class="item__descr">
-                                        We&nbsp;offer convenient tools to&nbsp;monitor financial claim statistics, allowing you to&nbsp;track data on&nbsp;returns and chargebacks.
+                                        We&nbsp;offer convenient tools to&nbsp;monitor financial claim statistics,
+                                        allowing you to&nbsp;track data on&nbsp;returns and chargebacks.
                                     </p>
                                 </div>
                                 <div class="accounting__item item">
@@ -661,17 +722,33 @@
                                     </svg>
                                     <h3 class="item__title">Data storage and security</h3>
                                     <p class="item__descr">
-                                        We&nbsp;use advanced encryption methods to&nbsp;ensure the security of&nbsp;data transmission and storage.
+                                        We&nbsp;use advanced encryption methods to&nbsp;ensure the security of&nbsp;data
+                                        transmission and storage.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accounting__img">
-                            <picture>
-                                <source srcSet="images/accounting/accounting-img-1.png" media="(min-width: 576px)" />
-                                <img src="images/accounting/accounting-img-1-mini.png" alt="Financial accounting"
-                                    width="608" height="606" loading="lazy">
-                            </picture>
+                        <div class="accounting__right">
+                            <div class="accounting-tooltip">
+                                <div class="accounting-tooltip__icon">
+                                    <svg width="16" height="16">
+                                        <use xlink:href="images/sprite.svg#accounting-tooltip-icon"></use>
+                                    </svg>
+                                </div>
+                                <div class="accounting-tooltip__info">
+                                    <h4 class="accounting-tooltip__caption">Increased profits</h4>
+                                    <p class="accounting-tooltip__descr">
+                                        Profits are up <span class="js_accounting_tooltip_num" data-num="2.07">1.02</span>% this week!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="accounting__img">
+                                <picture>
+                                    <source srcSet="images/accounting/accounting-img-1.png" media="(min-width: 576px)" />
+                                    <img src="images/accounting/accounting-img-1-mini.png" alt="Financial accounting"
+                                        width="608" height="606" loading="lazy">
+                                </picture>
+                            </div>
                         </div>
                     </div>
                 </div>

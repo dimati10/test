@@ -11,6 +11,7 @@ function initApp() {
     initTypicalSlider(); // типовые слайдеры
     setCustomAnimation('.js_payments_img', '.js_payments_message'); // анимация в разделе 'mass payments'
     setCustomAnimation('.js_available_solution_items', '.js_available_solution_item'); // анимация в разделе 'available solutions'
+    setCustomAnimation('.js_conversion_mockup_list', '.js_conversion_mockup_item', 0.5, 100); // анимация в разделе 'сurrency conversion'
     setSolutionAnimation(7000, 1000); // анимация в разделе 'solution'
     setMissionAnimation(); // анимация в разделе 'mission'
     setSafetyAnimation(); // анимация в разделе 'safety'
@@ -18,6 +19,7 @@ function initApp() {
     initAchievementsSlider(); // слайдер в разделе 'our achievements'
     setSmoothScroll('.js_policy_links a'); // плавный скролл к якорюy на странице 'privacy policy'
     setPaymentsAcceptingAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 1000, 200) //анимация в разделе 'accept payments'
+    setAccountingAnimation(); // анимация в разделе 'financial accounting' на главной странице
 
     console.log('initApp');
 
@@ -310,9 +312,23 @@ function setMissionAnimation() {
     if (mission) {
 
         const blocks = mission.querySelector('.js_mission_blocks');
+        const images = mission.querySelectorAll('[class*="js_mission_img"]');
         const tl = gsap.timeline();
 
+        tl.to(".js_mission_blocks", { x: '-33.3%', ease: "none" });
+        tl.to(".js_mission_blocks", { x: '-33.3%', ease: "none" }, 'label-1');
+        tl.fromTo(".js_mission_img_1", { x: '100%', y: '100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-1');
+        tl.fromTo(".js_mission_img_2", { x: '-100%', y: '-100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-1');
+        tl.fromTo(".js_mission_img_3", { x: '100%', y: '-100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-1');
+        tl.fromTo(".js_mission_img_4", { x: '-100%', y: '100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-1');
         tl.to(".js_mission_blocks", { x: '-66.7%', ease: "none" });
+        tl.to(".js_mission_blocks", { x: '-66.7%', ease: "none" }, 'label-2');
+        tl.fromTo(".js_mission_img_5", { scale: '0', opacity: '0', ease: 'none' }, { scale: '1', opacity: '1', ease: 'none' }, 'label-2');
+        tl.fromTo(".js_mission_img_6", { x: '-100%', y: '-100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-2');
+        tl.fromTo(".js_mission_img_7", { y: '-100%', scale: '0', opacity: '0', ease: 'none' }, { y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-2');
+        tl.fromTo(".js_mission_img_8", { x: '100%', y: '-100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-2');
+        tl.fromTo(".js_mission_img_9", { x: '100%', y: '100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-2');
+        tl.fromTo(".js_mission_img_10", { x: '-100%', y: '100%', scale: '0', opacity: '0', ease: 'none' }, { x: '0', y: '0', scale: '1', opacity: '1', ease: 'none' }, 'label-2');
 
         const trigger = ScrollTrigger.create({
             animation: tl,
@@ -320,7 +336,7 @@ function setMissionAnimation() {
             // start: () => blocks.getBoundingClientRect().top,
             start: 'top top',
             // end: 'bottom',
-            end: () => blocks.offsetWidth * 0.7,
+            end: () => blocks.offsetWidth * 0.8,
             scrub: true,
             pin: true,
             // markers: true,
@@ -333,6 +349,7 @@ function setMissionAnimation() {
             isEnabled = true;
         } else {
             trigger.disable();
+            images.forEach(img => img.removeAttribute('style'));
             isEnabled = false;
         }
 
@@ -345,6 +362,7 @@ function setMissionAnimation() {
 
             if (innerWidth < 1200 && isEnabled) {
                 trigger.disable();
+                images.forEach(img => img.removeAttribute('style'));
                 isEnabled = false;
             }
 
@@ -675,6 +693,47 @@ function setPaymentsAcceptingAnimation(blockSelector, itemSelector, duration = 1
         animateItems();
         window.addEventListener('scroll', animateItems);
         window.addEventListener('resize', animateItems);
+
+    }
+
+}
+
+// анимация в разделе 'financial accounting' на главной странице
+
+function setAccountingAnimation() {
+
+    const num = document.querySelector('.js_accounting_tooltip_num');
+
+    if (num) {
+
+        let start = +num.textContent;
+        let end = +num.dataset.num;
+        let step = 3000 / ((end - start) * 100);
+
+        console.log(step);
+
+        window.addEventListener('scroll', function onScroll() {
+
+            if (num.getBoundingClientRect().bottom + 200 < innerHeight) {
+
+                console.log('start');
+
+                window.removeEventListener('scroll', onScroll);
+
+                let interval = setInterval(() => {
+
+                    start = start + 0.01;
+                    num.textContent = start.toFixed(2);
+
+                    if (start >= end) {
+                        clearInterval(interval);
+                    }
+
+                }, step);
+
+            }
+
+        });
 
     }
 

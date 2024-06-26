@@ -30,6 +30,7 @@
             height: 0;
             border-radius: 50%;
             opacity: 0;
+            will-change: width, height, opacity, border-color;
         }
 
         &::before {

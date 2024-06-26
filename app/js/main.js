@@ -710,13 +710,10 @@ function setAccountingAnimation() {
         let end = +num.dataset.num;
         let step = 3000 / ((end - start) * 100);
 
-        console.log(step);
 
         window.addEventListener('scroll', function onScroll() {
 
             if (num.getBoundingClientRect().bottom + 200 < innerHeight) {
-
-                console.log('start');
 
                 window.removeEventListener('scroll', onScroll);
 

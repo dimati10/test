@@ -3243,7 +3243,7 @@ input[type=number] {
   width: 3.7rem;
   height: 3.7rem;
 }
-.pulsar__center {
+.pulsar span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3260,75 +3260,48 @@ input[type=number] {
   background-color: var(--belyy-fon);
   opacity: 0.6;
 }
-.pulsar__center span {
+.pulsar span::before, .pulsar span::after {
+  content: "";
   position: absolute;
-  border: 1px solid transparent;
-  width: 0;
-  height: 0;
+  border: 1px solid var(--belyy-fon);
   border-radius: 50%;
   opacity: 0;
-  will-change: width, height, opacity, border-color;
 }
-.pulsar__center span:nth-child(1) {
-  -webkit-animation: pulsar 2s infinite both;
-          animation: pulsar 2s infinite both;
+.pulsar span::before {
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-animation: pulsar 3s infinite both linear;
+          animation: pulsar 3s infinite both linear;
 }
-.pulsar__center span:nth-child(2) {
-  -webkit-animation: pulsar 2s infinite 0.25s both;
-          animation: pulsar 2s infinite 0.25s both;
+.pulsar span::after {
+  width: 100%;
+  width: 3.7rem;
+  height: 3.7rem;
+  -webkit-animation: pulsar 3s infinite 0.5s both linear;
+          animation: pulsar 3s infinite 0.5s both linear;
 }
 
 @-webkit-keyframes pulsar {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-    border-color: transparent;
+  33% {
+    opacity: 0.6;
   }
-  24.9% {
-    border-color: transparent;
-  }
-  25% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-    border-color: var(--belyy-fon);
-  }
-  99.9% {
-    width: 3.7rem;
-    height: 3.7rem;
+  66% {
     opacity: 0;
-    border-color: var(--belyy-fon);
   }
   100% {
-    border-color: transparent;
+    opacity: 0;
   }
 }
 
 @keyframes pulsar {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-    border-color: transparent;
+  33% {
+    opacity: 0.6;
   }
-  24.9% {
-    border-color: transparent;
-  }
-  25% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-    border-color: var(--belyy-fon);
-  }
-  99.9% {
-    width: 3.7rem;
-    height: 3.7rem;
+  66% {
     opacity: 0;
-    border-color: var(--belyy-fon);
   }
   100% {
-    border-color: transparent;
+    opacity: 0;
   }
 }
 .accounting {

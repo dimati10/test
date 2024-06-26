@@ -3243,7 +3243,7 @@ input[type=number] {
   width: 3.7rem;
   height: 3.7rem;
 }
-.pulsar span {
+.pulsar__center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3260,8 +3260,7 @@ input[type=number] {
   background-color: var(--belyy-fon);
   opacity: 0.6;
 }
-.pulsar span::before, .pulsar span::after {
-  content: "";
+.pulsar__center span {
   position: absolute;
   border: 1px solid transparent;
   width: 0;
@@ -3270,11 +3269,11 @@ input[type=number] {
   opacity: 0;
   will-change: width, height, opacity, border-color;
 }
-.pulsar span::before {
+.pulsar__center span:nth-child(1) {
   -webkit-animation: pulsar 2s infinite both;
           animation: pulsar 2s infinite both;
 }
-.pulsar span::after {
+.pulsar__center span:nth-child(2) {
   -webkit-animation: pulsar 2s infinite 0.25s both;
           animation: pulsar 2s infinite 0.25s both;
 }
@@ -5747,7 +5746,7 @@ input[type=number] {
   0% {
     opacity: 0;
   }
-  50% {
+  60% {
     opacity: 1;
   }
   100% {
@@ -5759,7 +5758,7 @@ input[type=number] {
   0% {
     opacity: 0;
   }
-  50% {
+  60% {
     opacity: 1;
   }
   100% {

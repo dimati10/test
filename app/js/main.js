@@ -18,7 +18,7 @@ function initApp() {
     sendFeedbackForm(); // отправка формы на странице 'контакты'
     initAchievementsSlider(); // слайдер в разделе 'our achievements'
     setSmoothScroll('.js_policy_links a'); // плавный скролл к якорюy на странице 'privacy policy'
-    setPaymentsAcceptingAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 1000, 200) //анимация в разделе 'accept payments'
+    setPaymentsAcceptingAnimation('.js_payments_accepting_items', '.js_payments_accepting_item', 2000, 200) //анимация в разделе 'accept payments'
     setAccountingAnimation(); // анимация в разделе 'financial accounting' на главной странице
 
     console.log('initApp');
@@ -661,6 +661,7 @@ function setPaymentsAcceptingAnimation(blockSelector, itemSelector, duration = 1
 
         let isAnimated = false;
         let item = null;
+        let index = null;
 
         function animateItems() {
 
@@ -672,7 +673,21 @@ function setPaymentsAcceptingAnimation(blockSelector, itemSelector, duration = 1
 
                         items.forEach(item => item.classList.remove('animated'));
 
-                        item = items[generateRandomNumber(0, items.length - 1)];
+                        function getRandomIndex() {
+
+                            const randomIndex = generateRandomNumber(0, items.length - 1);
+
+                            if (index === randomIndex) {
+                                getRandomIndex();
+                            } else {
+                                index = randomIndex;
+                            }
+
+                        }
+
+                        getRandomIndex();
+
+                        item = items[index];
                         item.style.animationDuration = `${duration / 1000}s`;
 
                         setTimeout(() => item.classList.add('animated'), 20);

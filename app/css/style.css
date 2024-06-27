@@ -352,6 +352,7 @@ template {
   --gray-213: #d5d5d5;
   --gray-217: #d9d9d9;
   --gray-224: #e0e0e0;
+  --gray-228-opacity-27: rgba(228, 228, 228, 0.27);
   --gray-230: #e6e6e6;
   --gray-241: #f1f1f4;
   --gray-242: #f2f2f2;
@@ -2470,9 +2471,11 @@ input[type=number] {
   border-radius: 2rem;
   overflow: hidden;
 }
-.card:hover .card-hover {
-  opacity: 1;
-  visibility: visible;
+@media (min-width: 1200px) {
+  .card:hover .card-hover {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .card__img {
   aspect-ratio: 1.15/1;
@@ -3569,16 +3572,13 @@ input[type=number] {
 }
 @media (min-width: 1200px) {
   .safety__inner {
-    display: block;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     max-width: 111.4rem;
     margin: 0 auto;
   }
 }
-.safety__mockup > img {
+.safety__mockup img {
   width: 100%;
   height: auto;
 }
@@ -3602,7 +3602,7 @@ input[type=number] {
   transition: 0.3s ease-out;
 }
 .safety__img {
-  background-color: #fff;
+  background-color: var(--belyy-fon);
   height: 33.333%;
 }
 .safety__img img {
@@ -3612,35 +3612,44 @@ input[type=number] {
      object-fit: contain;
 }
 
-.safety-mobile__mockups {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 1.4rem;
-  overflow-x: auto;
-  margin: 0 -2rem;
-  padding: 0 2rem 1rem;
-  scrollbar-width: none;
-}
-.safety-mobile__mockups::-webkit-scrollbar {
-  height: 0;
+.safety-mobile {
+  position: relative;
+  display: block;
+  max-width: 33.5rem;
+  margin: 0 auto;
 }
 @media (min-width: 1200px) {
-  .safety-mobile__mockups {
+  .safety-mobile {
     display: none;
   }
-}
-.safety-mobile__mockup {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 335px;
 }
 .safety-mobile__mockup img {
   width: 100%;
   height: auto;
+}
+.safety-mobile__block {
+  position: absolute;
+  top: 8.2%;
+  left: 5.4%;
+  right: 5.1%;
+  bottom: 2.3%;
+  overflow: hidden;
+  border-radius: 0 0 43px 43px;
+}
+.safety-mobile__images {
+  height: 300%;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+.safety-mobile__img {
+  background-color: var(--belyy-fon);
+  height: 33.333%;
+}
+.safety-mobile__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .about-goal {
@@ -3902,16 +3911,16 @@ input[type=number] {
 }
 .about-achievements-card.current .about-achievements-card__inner {
   color: var(--belyy-fon);
-  background: -webkit-gradient(linear, left top, left bottom, from(#6969f2), to(#3737cc));
-  background: linear-gradient(180deg, #6969f2 0%, #3737cc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--purple-105)), to(var(--purple)));
+  background: linear-gradient(180deg, var(--purple-105) 0%, var(--purple) 100%);
 }
 .about-achievements-card.current .about-achievements-card-item__title, .about-achievements-card.current .about-achievements-card-item__descr {
   color: var(--belyy-fon);
 }
 .about-achievements-card.current .about-achievements-card-item::before {
   background-color: var(--belyy-fon);
-  -webkit-box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
-          box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
+  -webkit-box-shadow: 0 0 7px 1px var(--purple-105-opacity-40);
+          box-shadow: 0 0 7px 1px var(--purple-105-opacity-40);
 }
 .about-achievements-card__pulsar {
   position: absolute;
@@ -4031,8 +4040,8 @@ input[type=number] {
   height: 1rem;
   border-radius: 50%;
   background-color: var(--purple-105);
-  -webkit-box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
-          box-shadow: 0 0 7px 1px rgba(105, 105, 242, 0.4);
+  -webkit-box-shadow: 0 0 7px 1px var(--purple-105-opacity-40);
+          box-shadow: 0 0 7px 1px var(--purple-105-opacity-40);
 }
 @media (min-width: 1200px) {
   .about-achievements-card-item::before {
@@ -6420,7 +6429,7 @@ input[type=number] {
           backdrop-filter: blur(18.78px);
   -webkit-box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
-  background-color: rgba(228, 228, 228, 0.27);
+  background-color: var(--gray-228-opacity-27);
   border: 1px solid var(--white-opacity-20);
 }
 @media (min-width: 1200px) {

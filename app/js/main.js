@@ -380,12 +380,27 @@ function setSafetyAnimation() {
 
     if (safety) {
 
-        const images = safety.querySelector('.js_safety_images');
-        const block = safety.querySelector('.js_safety_block');
+        const blocks = safety.querySelectorAll('.js_safety_block');
         const topOffset = 200;
         const bottomOffset = 200;
 
-        function animateBlock() {
+        blocks.forEach(block => {
+
+            const images = block.querySelector('.js_safety_images');
+
+            animateBlock(block, images);
+
+            window.addEventListener('scroll', () => {
+                animateBlock(block, images);
+            });
+
+            window.addEventListener('resize', () => {
+                animateBlock(block, images);
+            });
+
+        });
+
+        function animateBlock(block, images) {
 
             const blockTop = block.getBoundingClientRect().top;
 
@@ -410,9 +425,9 @@ function setSafetyAnimation() {
 
         }
 
-        animateBlock();
-        window.addEventListener('scroll', animateBlock);
-        window.addEventListener('resize', animateBlock);
+        // animateBlock();
+        // window.addEventListener('scroll', animateBlock);
+        // window.addEventListener('resize', animateBlock);
 
     }
 

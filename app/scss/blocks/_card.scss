@@ -10,8 +10,10 @@
     &:hover {
 
         .card-hover {
-            opacity: 1;
-            visibility: visible;
+            @media (min-width: 1200px) {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 

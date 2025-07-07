@@ -1,0 +1,171 @@
+.a-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &.error {
+    .a-field__input {
+      border-color: var(--error);
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+    line-height: 24px;
+
+    @media (min-width: 1200px) {
+      flex-shrink: 0;
+      width: 105px;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  // &__textarea,
+  &__select,
+  &__input {
+    display: block;
+    width: 100%;
+    color: var(--black);
+
+    &::placeholder {
+      color: var(--black);
+    }
+
+    &.error {
+      border-color: var(--error);
+    }
+  }
+
+  &__input {
+    &::placeholder {
+      // color: var(--gray-187);
+    }
+  }
+
+  &__textarea {
+    // resize: none;
+    // height: 120px;
+  }
+
+  &__select {
+    text-overflow: ellipsis;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: top 20px right 12px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.70711 8.20784C8.31658 8.59836 7.68342 8.59836 7.29289 8.20784L0.928932 1.84388C0.538408 1.45335 0.538408 0.820189 0.928932 0.429665C1.31946 0.0391403 1.95262 0.0391403 2.34315 0.429665L8 6.08652L13.6569 0.429665C14.0474 0.0391402 14.6805 0.0391401 15.0711 0.429665C15.4616 0.820189 15.4616 1.45335 15.0711 1.84388L8.70711 8.20784ZM9 5.5L9 7.50073L7 7.50073L7 5.5L9 5.5Z' fill='black' /%3E%3C/svg%3E");
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: var(--field-height);
+
+    svg {
+      position: absolute;
+      color: var(--black);
+      transition: opacity 0.3s;
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+    }
+
+    &.view {
+      svg {
+        &:nth-child(1) {
+          opacity: 0;
+        }
+
+        &:nth-child(2) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__error {
+    // display: block;
+    // margin: 10px 0 0 0;
+    // padding: 0 0 0 15px;
+    // color: var(--white);
+    // font-size: 12px;
+    // line-height: 100%;
+
+    @media (min-width: 1200px) {
+      // font-size: 14px;
+    }
+  }
+}
+
+.a-field--default {
+  --field-height: 54px;
+
+  .a-field__select,
+  .a-field__input {
+    height: var(--field-height);
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: var(--radius-10);
+    border: 4px solid transparent;
+  }
+
+  .a-field__select {
+    padding: 11px 40px 11px 4px;
+
+    @media (min-width: 1200px) {
+      padding: 11px 40px 11px 12px;
+    }
+  }
+
+  .a-field__input {
+    padding: 11px 8px;
+
+    @media (min-width: 1200px) {
+      padding: 11px 16px;
+    }
+  }
+}
+
+.a-field--mod-for-modal {
+  --field-height: 48px;
+
+  .a-field__select,
+  .a-field__input {
+    height: var(--field-height);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid var(--gray);
+  }
+
+  .a-field__select {
+    padding: 13px 40px 13px 12px;
+  }
+
+  .a-field__input {
+    padding: 13px 16px;
+  }
+
+}
+
+// .a-field--vertical {
+//   flex-direction: column;
+//   align-items: stretch;
+// }

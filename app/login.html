@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Zion</title>
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="a-header js_header">
+    <div class="a-header-top">
+      <div class="a-container-wide">
+        <div class="a-header-top__wrapper">
+          <span class="a-header-top__comment">
+            # Профессиональная online-школа программирования для детей и подростков
+          </span>
+          <div class="a-header-top__icon">
+            <!-- <img src="images/header-top-icon.svg" alt="Пасхалка" width="20" height="21"> -->
+
+            <svg width="20" height="21">
+              <use xlink:href="images/sprite.svg#header-top-icon"></use>
+            </svg>
+          </div>
+          <span class="a-header-top__comment"># Учим по-взрослому</span>
+          <span class="a-header-top__comment"># Online обучение </span>
+        </div>
+      </div>
+    </div>
+    <div class="a-header-main">
+      <div class="a-container-wide">
+        <div class="a-header-main__wrapper">
+          <a class="a-header__logo" href="/">
+            <img src="images/logo.svg" alt="Лого" width="284" height="59">
+          </a>
+          <nav class="a-header__nav a-nav">
+            <ul class="a-nav__list">
+              <li class="a-nav__item">
+                <a class="a-nav__link active" href="#">Admin</a>
+              </li>
+              <li class="a-nav__item">
+                <a class="a-nav__link" href="#">Python-online</a>
+              </li>
+              <li class="a-nav__item">
+                <a class="a-nav__link" href="#">Мои группы</a>
+              </li>
+              <li class="a-nav__item">
+                <a class="a-nav__link" href="#">Мои ученики</a>
+              </li>
+              <li class="a-nav__item">
+                <a class="a-nav__link" href="#">Zi-Top</a>
+              </li>
+              <li class="a-nav__item">
+                <a class="a-nav__link" href="#">
+                  <svg width="14" height="15">
+                    <use xlink:href="images/sprite.svg#settings"></use>
+                  </svg>
+                  Настройки
+                </a>
+              </li>
+              <li class="a-nav__item">
+                <a class="a-nav__link" href="#">Выход</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="a-header__box">
+            <a class="a-header__icon" href="#" aria-label="Вход в личный кабинет">
+              <svg width="22" height="25">
+                <use xlink:href="images/sprite.svg#header-icon-login"></use>
+              </svg>
+            </a>
+            <button class="a-header__burger a-burger js_burger" type="button" aria-label="Открыть меню">
+              <span></span>
+              <svg width="25" height="25">
+                <use xlink:href="images/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a-menu js_menu">
+      <div class="a-menu__wrapper">
+        <ul class="a-menu__list">
+          <li class="a-menu__item">
+            <a class="a-menu__link js_menu_link" href="#">
+              <span class="a-menu__icon">
+                <img src="images/icons/menu-python.png" alt="Python" width="24" height="24">
+              </span>
+              Python
+            </a>
+          </li>
+          <li class="a-menu__item">
+            <a class="a-menu__link js_menu_link" href="#">
+              <span class="a-menu__icon">
+                <svg width="33" height="24">
+                  <use xlink:href="images/sprite.svg#menu-icon"></use>
+                </svg>
+              </span>
+              Мои группы
+            </a>
+          </li>
+          <li class="a-menu__item">
+            <a class="a-menu__link js_menu_link" href="#">
+              <span class="a-menu__icon">
+                <svg width="33" height="24">
+                  <use xlink:href="images/sprite.svg#menu-icon"></use>
+                </svg>
+              </span>
+              Мои ученики
+            </a>
+          </li>
+          <li class="a-menu__item">
+            <a class="a-menu__link js_menu_link" href="#">
+              <span class="a-menu__icon">
+                <svg width="33" height="24">
+                  <use xlink:href="images/sprite.svg#menu-icon"></use>
+                </svg>
+              </span>
+              Zi-Top
+            </a>
+          </li>
+          <li class="a-menu__item">
+            <a class="a-menu__link js_menu_link" href="#">
+              <span class="a-menu__icon">
+                <svg width="24" height="24">
+                  <use xlink:href="images/sprite.svg#settings"></use>
+                </svg>
+              </span>
+              Настройки
+            </a>
+          </li>
+          <li class="a-menu__item">
+            <a class="a-menu__link js_menu_link" href="#">
+              <span class="a-menu__icon">
+                <svg width="34" height="21">
+                  <use xlink:href="images/sprite.svg#menu-exit"></use>
+                </svg>
+              </span>
+              Выход
+            </a>
+          </li>
+        </ul>
+        <div class="a-menu__footer">
+          <div class="a-menu-social">
+            <span class="a-menu-social__caption"># Присоединяйтесь:</span>
+            <ul class="a-menu-social__list">
+              <li class="a-menu-social__item">
+                <a class="a-menu-social__link" href="#" target="_blank" aria-label="Telegram" title="Telegram">
+                  <svg width="19" height="19">
+                    <use xlink:href="images/sprite.svg#tg"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="a-menu-social__item">
+                <a class="a-menu-social__link" href="#" target="_blank" aria-label="TikTok" title="TikTok">
+                  <img src="images/icons/menu-social-tiktok.png" alt="TikTok" width="20" height="21">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="a-breadcrumbs">
+      <div class="a-container">
+        <ul class="a-breadcrumbs__list">
+          <li class="a-breadcrumbs__item">
+            <a class="a-breadcrumbs__link" href="#">Личный кабинет</a>
+          </li>
+          <li class="a-breadcrumbs__item">
+            <a class="a-breadcrumbs__link" href="#">Вход</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="a-registration">
+      <div class="a-container">
+        <div class="a-registration__wrapper">
+          <h1 class="a-registration__title title">вход</h1>
+          <form class="a-registration__form">
+            <div class="a-registration__fields">
+              <div class="a-registration__field a-field a-field--default">
+                <label for="login" class="a-field__label">Логин</label>
+                <div class="a-field__inner">
+                  <input id="login" class="a-field__input" type="text" placeholder="Почта">
+                </div>
+              </div>
+              <div class="a-registration__field a-field a-field--default">
+                <label for="password" class="a-field__label">Пароль</label>
+                <div class="a-field__inner">
+                  <input id="password" class="a-field__input" type="password" placeholder="Пароль">
+                  <button class="a-field__btn js_field_btn" type="button">
+                    <svg width="26" height="21">
+                      <use xlink:href="images/sprite.svg#eye-hidden"></use>
+                    </svg>
+                    <svg width="23" height="19">
+                      <use xlink:href="images/sprite.svg#eye"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="a-registration__bottom">
+              <label class="a-registration__checkbox a-checkbox">
+                <input class="a-checkbox__input" type="checkbox">
+                <span class="a-checkbox__text">Запомнить меня</span>
+              </label>
+              <span class="a-registration__recovery">
+                <a href="#">Забыли пароль?</a>
+              </span>
+              <div class="a-registration__buttons">
+                <button class="a-registration__btn a-btn a-btn--default a-btn--red" type="submit">
+                  <svg width="24" height="24">
+                    <use xlink:href="images/sprite.svg#header-top-icon"></use>
+                  </svg>
+                  Вход
+                </button>
+              </div>
+              <span class="a-registration__error">Неверный логин или пароль!</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="a-footer">
+    <div class="a-container-wide">
+      <div class="a-footer__main">
+        <div class="a-footer__col">
+          <a class="a-footer__logo" href="/">
+            <img src="images/logo.svg" alt="Лого" width="284" height="59" loading="lazy">
+          </a>
+        </div>
+        <div class="a-footer__col">
+          <h3 class="a-footer__caption">наши курсы</h3>
+          <ul class="a-footer__list">
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#">Python : Базовый курс / Углубленный курс</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#">ЕГЭ по Информатике 2026</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#">С++ : Базовый курс / Углубленный курс</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#">Математическая логика</a>
+            </li>
+          </ul>
+        </div>
+        <div class="a-footer__col">
+          <h3 class="a-footer__caption">меню</h3>
+          <ul class="a-footer__list">
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#results">О школе</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#courses">Все курсы</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#feedback">Бесплатное занятие</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#">Редактор кода / Python</a>
+            </li>
+          </ul>
+        </div>
+        <div class="a-footer__col">
+          <h3 class="a-footer__caption">Документы</h3>
+          <ul class="a-footer__list">
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#results">Договор-оферта</a>
+            </li>
+            <li class="a-footer__item">
+              <a class="a-footer__link" href="#courses">Соглашение о конфиденциальности</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="a-footer__bottom">
+        <span class="a-footer__copy">© ENTER ZION 2025</span>
+        <span class="a-footer__copy w-3">Образовательная лицензия № Л035-01298-77/00646528 от 05 апреля 2023</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <div class="modal" data-modal="success">
+    <div class="modal__wrapper">
+      <h3 class="modal__title">Ваша заявка отправлена!</h3>
+      <div class="modal__descr">
+        <p>В ближайшее время мы с вами свяжемся.</p>
+      </div>
+      <button class="modal__close js_modal_close" type="button">
+        <svg width="20" height="20">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+  </div> -->
+
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

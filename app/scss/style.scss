@@ -1,0 +1,19 @@
+@use "vars";
+@use "fonts";
+@use "global";
+
+
+
+@use "blocks/header";
+@use "blocks/nav";
+@use "blocks/menu";
+@use "blocks/burger";
+@use "blocks/footer";
+@use "blocks/breadcrumbs";
+@use "blocks/registration";
+@use "blocks/field";
+@use "blocks/checkbox";
+@use "blocks/btn";
+@use "blocks/admin";
+
+@use "blocks/modal";

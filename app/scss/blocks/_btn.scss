@@ -1,0 +1,45 @@
+.a-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  border-style: solid;
+  border-color: var(--backtimeslip);
+  border-radius: 80px;
+
+  &:disabled {
+    cursor: default;
+    background-color: var(--disabled);
+    border-color: var(--disabled);
+  }
+
+  svg {
+    color: var(--backtimeslip);
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+}
+
+.a-btn--default {
+  min-height: 60px;
+  padding: 0 20px;
+  border-width: 3px;
+}
+
+.a-btn--mod-for-modal {
+  // min-height: 54px;
+  padding: 16px 10px;
+  border-width: 1px;
+}
+
+.a-btn--red {
+  color: var(--backtimeslip);
+  background-color: var(--red);
+  border-color: var(--red);
+}

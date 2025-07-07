@@ -1,0 +1,34 @@
+.a-burger {
+	position: relative;
+	z-index: 1;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	width: 40px;
+	height: 40px;
+
+	span,
+	&::before,
+	&::after {
+		width: 32px;
+		height: 3px;
+		border-radius: 10px;
+		background: linear-gradient(270deg, #6023c3 0%, #3169f8 100%);
+		transition: opacity 0.3s;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+	}
+
+	svg {
+		position: absolute;
+		color: var(--backtimeslip);
+		opacity: 0;
+		transition: opacity .3s;
+	}
+}

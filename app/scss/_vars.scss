@@ -1,0 +1,36 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+
+  --backtimeslip: #fff;
+  --blue: #3169f8;
+  --blue-13: #0d6efd;
+  --purple: #6023c3;
+  --purple-gray: #595281;
+  --red: #ea4643;
+  --error: #eb2020;
+  --disabled: #a5a5a5;
+  --black: #000;
+  --black-opacity-50: rgba(0, 0, 0, 0.5);
+  --black-34: #222222;
+  --black-55: #373737;
+  --background: #2d2d2d;
+  --gray: #757575;
+  --gray-155: #9b9b9b;
+  --gray-232: #e8e8e8;
+
+  --container-width: 1430px;
+  --radius-10: 10px;
+  --radius-20: 20px;
+  --radius-30: 30px;
+}
+
+@mixin font-face($font-family, $path, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font-family;
+        src: url('../fonts/#{$path}.woff2') format('woff2'),
+        url('../fonts/#{$path}.woff') format('woff');
+        font-weight: $font-weight;
+        font-style: $font-style;
+        font-display: swap;
+    }
+}

@@ -15,6 +15,9 @@ function initApp() {
   // controlBenefitsItems(); // логика при ховере карточек в разделе 'наши преимущества'
   controlModal(); // логика для модальных окон
   controlMofalFilter(); // фильтрация и сортирвка в модальных окнах
+  copyNewUserLink(); // копирование ссылки для приглашения нового пользователя
+  initDatepicker(); // датапикер
+  attachFile(); // прикрепление файла
 
   // новые скрипты
 
@@ -695,5 +698,291 @@ function controlMofalFilter() {
 
     // Первый запуск фильтрации и сортировки
     filterAndSort();
+  });
+}
+
+// копирование содержимое в буфер обмена
+
+function copyContent(content) {
+  navigator.clipboard
+    .writeText(content)
+    .then(() => {
+      // console.log('Содержимое скопировано в буфер обмена:', content);
+    })
+    .catch((err) => {
+      // console.error('Не удалось скопировать содержимое:', err);
+    });
+}
+
+// копирование ссылки для приглашения нового пользователя
+
+function copyNewUserLink() {
+  const input = document.querySelector(".js_new_user_input");
+  const btn = document.querySelector(".js_new_user_btn");
+  const modal = document.querySelector("[data-modal='new-user']");
+
+  if (input && btn) {
+    btn.addEventListener("click", () => {
+      copyContent(input.value);
+      if (modal) {
+        modal.classList.add("active");
+        fixBodyPosition();
+      }
+    });
+  }
+}
+
+// датапикер https://air-datepicker.com/ru
+
+function initDatepicker() {
+  const inputs = document.querySelectorAll(".js_date_input");
+
+  if (inputs.length) {
+    inputs.forEach((input) => {
+      new AirDatepicker(input, {
+        autoClose: true,
+        position: "bottom center",
+      });
+    });
+  }
+}
+
+// прикрепление файла
+
+// function attachFile() {
+//   const widgets = document.querySelectorAll(".js_upload");
+//   if (!widgets.length) return;
+
+//   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+//   const MAX_FILES_COUNT = 10;
+
+//   widgets.forEach(widget => {
+//     const input = widget.querySelector(".js_upload_input");
+//     const text = widget.querySelector(".js_upload_text");
+//     const list = widget.querySelector(".js_upload_list");
+
+//     // toggle native <input multiple> attr depending on data‑multiple
+//     const allowMultiple = widget.hasAttribute("data-multiple");
+//     if (allowMultiple) input.setAttribute("multiple", "multiple");
+
+//     // internal state – selected File objects
+//     let files = [];
+
+//     /** Utility: resets component to pristine */
+//     const reset = () => {
+//       files = [];
+//       render();
+//       input.value = "";
+//     };
+
+//     /** Remove file by index */
+//     const removeAt = index => {
+//       files.splice(index, 1);
+//       render();
+//     };
+
+//     /** UI: re‑render entire file list */
+//     const render = () => {
+//       // status text
+//        text.textContent = files.length
+//         ? (allowMultiple
+//             ? `${files.length}/${MAX_FILES_COUNT} файл(ов) выбран`
+//             : "Файл выбран")
+//         : "Файл не выбран";
+
+
+//       // list
+//       list.innerHTML = "";
+//       list.classList.toggle("active", files.length > 0);
+
+//       files.forEach((file, idx) => {
+//         const item = document.createElement("div");
+//         item.className = "a-upload__item";
+
+//         const name = document.createElement("span");
+//         name.className = "js_upload_name";
+//         name.textContent = file.name;
+//         item.appendChild(name);
+
+//         const removeBtn = document.createElement("button");
+//         removeBtn.type = "button";
+//         removeBtn.className = "js_upload_remove";
+//         removeBtn.innerHTML =
+//           '<svg width="12" height="12"><use xlink:href="images/sprite.svg#close"></use></svg>';
+//         removeBtn.addEventListener("click", () => removeAt(idx));
+//         item.appendChild(removeBtn);
+
+//         list.appendChild(item);
+//       });
+//     };
+
+//     /** Handle selection */
+//     input.addEventListener("change", () => {
+//       const selected = Array.from(input.files);
+
+//       // user cancelled
+//       if (!selected.length) {
+//         input.value = "";
+//         return;
+//       }
+
+//       // size validation & filter oversize files
+//       const oversize = selected.find(f => f.size > MAX_FILE_SIZE);
+//       if (oversize) {
+//         alert(`Размер файла «${oversize.name}» превышает 5 МБ`);
+//         input.value = "";
+//         return;
+//       }
+
+//       // if single‑file mode → replace; else additive
+//       if (!allowMultiple) {
+//         files = [selected[0]];
+//       } else {
+//         // concat and dedupe by name+size
+//         const combined = [...files, ...selected];
+//         const map = new Map();
+//         combined.forEach(f => map.set(`${f.name}_${f.size}`, f));
+//         files = Array.from(map.values()).slice(0, MAX_FILES_COUNT);
+
+//         if (combined.length > MAX_FILES_COUNT) {
+//           alert(`Можно загрузить максимум ${MAX_FILES_COUNT} файлов. Лишние будут проигнорированы.`);
+//         }
+//       }
+
+//       render();
+//       // clear native input so that the same file can be re‑selected later
+//       input.value = "";
+//     });
+
+//     // Public API: expose helper to read files later
+//     widget.getFiles = () => files;
+
+//     // expose reset if needed externally
+//     widget.resetFiles = reset;
+//   });
+// }
+
+function attachFile() {
+  const widgets = document.querySelectorAll(".js_upload");
+  if (!widgets.length) return;
+
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+  const MAX_FILES_COUNT = 10;
+
+  widgets.forEach(widget => {
+    const input = widget.querySelector(".js_upload_input");
+    const text  = widget.querySelector(".js_upload_text");
+    const list  = widget.querySelector(".js_upload_list");
+    const area  = widget.querySelector(".a-upload__area");
+
+    // multiple support
+    const allowMultiple = widget.hasAttribute("data-multiple");
+    if (allowMultiple) input.setAttribute("multiple", "multiple");
+
+    // internal state
+    let files = [];
+
+    /* utility -------------------------------------------------------------- */
+    const reset = () => {
+      files = [];
+      render();
+      input.value = "";
+    };
+
+    const removeAt = idx => {
+      files.splice(idx, 1);
+      render();
+    };
+
+    /* render ---------------------------------------------------------------- */
+    const render = () => {
+      text.textContent = files.length
+        ? (allowMultiple
+            ? `${files.length}/${MAX_FILES_COUNT} файл(ов) выбран`
+            : "Файл выбран")
+        : "Файл не выбран";
+
+      list.innerHTML = "";
+      list.classList.toggle("active", files.length > 0);
+
+      files.forEach((file, idx) => {
+        const item = document.createElement("div");
+        item.className = "a-upload__item";
+
+        const name = document.createElement("span");
+        name.className = "js_upload_name";
+        name.textContent = file.name;
+        item.appendChild(name);
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "js_upload_remove";
+        removeBtn.innerHTML =
+          '<svg width="12" height="12"><use xlink:href="images/sprite.svg#close"></use></svg>';
+        removeBtn.addEventListener("click", () => removeAt(idx));
+        item.appendChild(removeBtn);
+
+        list.appendChild(item);
+      });
+    };
+
+    /* core logic ------------------------------------------------------------ */
+    const tryAddFiles = selected => {
+      if (!selected.length) return;
+
+      const oversize = selected.find(f => f.size > MAX_FILE_SIZE);
+      if (oversize) {
+        alert(`Размер файла «${oversize.name}» превышает 5 МБ`);
+        return;
+      }
+
+      if (!allowMultiple) {
+        files = [selected[0]];
+      } else {
+        const combined = [...files, ...selected];
+        const map = new Map();
+        combined.forEach(f => map.set(`${f.name}_${f.size}`, f));
+        files = Array.from(map.values()).slice(0, MAX_FILES_COUNT);
+
+        if (combined.length > MAX_FILES_COUNT) {
+          alert(`Можно загрузить максимум ${MAX_FILES_COUNT} файлов. Лишние будут проигнорированы.`);
+        }
+      }
+      render();
+    };
+
+    /* input change ---------------------------------------------------------- */
+    input.addEventListener("change", () => {
+      tryAddFiles(Array.from(input.files));
+      input.value = ""; // allow reselection
+    });
+
+    /* drag‑and‑drop --------------------------------------------------------- */
+    if (area) {
+      const highlight = flag => area.classList.toggle("is-dragover", flag);
+
+      ["dragenter", "dragover"].forEach(ev => {
+        area.addEventListener(ev, e => {
+          e.preventDefault();
+          highlight(true);
+        });
+      });
+
+      ["dragleave", "dragend", "drop"].forEach(ev => {
+        area.addEventListener(ev, e => {
+          e.preventDefault();
+          highlight(false);
+        });
+      });
+
+      area.addEventListener("drop", e => {
+        const dtFiles = Array.from(e.dataTransfer.files);
+        tryAddFiles(dtFiles);
+      });
+    }
+
+    /* expose --------------------------------------------------------------- */
+    widget.getFiles  = () => files;
+    widget.resetFiles = reset;
   });
 }

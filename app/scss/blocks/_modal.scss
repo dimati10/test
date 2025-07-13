@@ -67,6 +67,12 @@
     }
   }
 
+  &__descr {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
   &__fields {
     margin: 0 0 40px;
     display: flex;
@@ -91,6 +97,18 @@
 
   &__btn {
     width: 100%;
+  }
+
+  &__wysiwyg {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
   }
 }
 
@@ -262,7 +280,7 @@
 
 .a-modal-teacher-change {
   .a-field__label {
-    @media (min-width: 205px) {
+    @media (min-width: 1200px) {
       width: 185px;
     }
   }
@@ -270,8 +288,66 @@
 
 .a-modal-changing-group-teacher {
   .a-field__label {
-    @media (min-width: 205px) {
+    @media (min-width: 1200px) {
       width: 225px;
+    }
+  }
+}
+
+.a-modal-adding-user {
+  .a-field__label {
+    @media (min-width: 1200px) {
+      width: 175px;
+    }
+  }
+}
+
+.a-modal-new-user {
+  .a-modal__descr {
+    max-width: 565px;
+    margin: 0 0 42px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 34px;
+    }
+  }
+
+  .a-modal__btn {
+    @media (min-width: 768px) {
+      width: auto;
+      min-width: 260px;
+    }
+  }
+}
+
+.a-modal-adding-course,
+.a-modal-change-course {
+  .a-field__label {
+    @media (min-width: 1200px) {
+      width: 325px;
+    }
+  }
+
+  .a-modal__checkbox {
+    @media (min-width: 1200px) {
+      width: 373px;
+    }
+  }
+}
+
+.a-modal-newsletter {
+  .a-modal__btn {
+    &:nth-child(1),
+    &:nth-child(2) {
+      @media (min-width: 1200px) {
+        width: 25%;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: 1200px) {
+        width: 50%;
+      }
     }
   }
 }

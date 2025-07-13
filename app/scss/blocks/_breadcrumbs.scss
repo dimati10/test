@@ -45,12 +45,15 @@
 		display: block;
 		font-size: 12px;
 		line-height: 15px;
-		text-decoration: underline;
-		text-decoration-skip-ink: none;
 
 		@media (min-width: 1200px) {
 			font-size: 14px;
 			line-height: 17px;
 		}
 	}
+
+	a.a-breadcrumbs__link {
+    text-decoration: underline;
+		text-decoration-skip-ink: none;
+  }
 }

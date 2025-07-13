@@ -180,76 +180,27 @@
             <a class="a-breadcrumbs__link" href="#">Личный кабинет</a>
           </li>
           <li class="a-breadcrumbs__item">
-            <a class="a-breadcrumbs__link" href="#">Регистрация</a>
+            <span class="a-breadcrumbs__link" href="#">Admin</span>
           </li>
         </ul>
       </div>
     </div>
 
-    <section class="a-registration">
+    <section class="a-new-user">
       <div class="a-container">
-        <div class="a-registration__wrapper">
-          <h1 class="a-registration__title title">Регистрация</h1>
-          <form class="a-registration__form">
-            <div class="a-registration__fields">
-              <div class="a-registration__field a-field a-field--default">
-                <label for="first-name" class="a-field__label">Имя</label>
-                <div class="a-field__inner">
-                  <input id="first-name" class="a-field__input" type="text" placeholder="Константин Константинович">
-                </div>
-              </div>
-              <div class="a-registration__field a-field a-field--default">
-                <label for="second-name" class="a-field__label">Фамилия</label>
-                <div class="a-field__inner">
-                  <input id="second-name" class="a-field__input" type="text" placeholder="Константинов">
-                </div>
-              </div>
-              <div class="a-registration__field a-field a-field--default">
-                <label for="username" class="a-field__label">Username</label>
-                <div class="a-field__inner">
-                  <input id="username" class="a-field__input" type="text" placeholder="Константинов">
-                </div>
-              </div>
-              <div class="a-registration__field a-field a-field--default">
-                <label for="password" class="a-field__label">Пароль</label>
-                <div class="a-field__inner">
-                  <input id="password" class="a-field__input" type="password" placeholder="Введите пароль">
-                  <button class="a-field__btn js_field_btn" type="button">
-                    <svg width="26" height="21">
-                      <use xlink:href="images/sprite.svg#eye-hidden"></use>
-                    </svg>
-                    <svg width="23" height="19">
-                      <use xlink:href="images/sprite.svg#eye"></use>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="a-registration__field a-field a-field--default">
-                <label for="password-again" class="a-field__label">Пароль</label>
-                <div class="a-field__inner">
-                  <input id="password-again" class="a-field__input" type="password" placeholder="Подтвердите пароль">
-                  <button class="a-field__btn js_field_btn" type="button">
-                    <svg width="26" height="21">
-                      <use xlink:href="images/sprite.svg#eye-hidden"></use>
-                    </svg>
-                    <svg width="23" height="19">
-                      <use xlink:href="images/sprite.svg#eye"></use>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+        <h1 class="a-new-user__title title">Добавление нового пользователя</h1>
+        <div class="a-new-user__inner">
+          <div class="a-new-user__field a-field a-field--default a-field--vertical">
+            <label for="first-name" class="a-field__label">Скопируйте ссылку для приглашения нового
+              пользователя!</label>
+            <div class="a-field__inner">
+              <input id="first-name" class="a-field__input js_new_user_input" type="text"
+                value="http://enterzion.io/register&ref_link=z96dsFF">
             </div>
-            <div class="a-registration__bottom">
-              <div class="a-registration__buttons">
-                <button class="a-registration__btn a-btn a-btn--default" type="submit">
-                  <svg width="24" height="24">
-                    <use xlink:href="images/sprite.svg#header-top-icon"></use>
-                  </svg>
-                  Приcоединиться
-                </button>
-              </div>
-            </div>
-          </form>
+          </div>
+          <button class="a-new-user__btn a-btn a-btn--default a-btn--red js_new_user_btn" type="submit">
+            скопировать
+          </button>
         </div>
       </div>
     </section>
@@ -315,6 +266,23 @@
       </div>
     </div>
   </footer>
+
+  <div class="a-modal a-modal-new-user" data-modal="new-user">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">Ваша ссылка скопирована</h3>
+      <p class="a-modal__descr">Отправьте ссылку пользователю дял продолжения регистрации</p>
+      <div class="a-modal__buttons">
+        <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red js_modal_close" type="button">
+          ок
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>

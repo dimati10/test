@@ -6,7 +6,7 @@ function initApp() {
   // initCoursesSlider(); // слайдер в разделе 'наши курсы'
   // controlCoursesBtn(); // кнопка 'все курсы' в разделе 'наши курсы'
   // initReviewsSlider(); // слайдер в разделе 'отзывы'
-  // controlSpoilers(); // спойлеры
+  controlSpoilers(); // спойлеры
   // initProgramSlider(); // слайдеры в разделе 'программа курса'
   // setPhoneMask(".js_input_phone", "+7 (___) ___-__-__"); // маска для телефона
   // sendForm(".js_feedback_form_1"); // отправка формы в разделе 'попробуйте бесплатно'
@@ -14,14 +14,15 @@ function initApp() {
   // sendForm(".js_feedback_form_2"); // отправка формы в разделе 'как начать учиться'
   // controlBenefitsItems(); // логика при ховере карточек в разделе 'наши преимущества'
   controlModal(); // логика для модальных окон
-  controlMofalFilter(); // фильтрация и сортирвка в модальных окнах
-  copyNewUserLink(); // копирование ссылки для приглашения нового пользователя
-  initDatepicker(); // датапикер
-  attachFile(); // прикрепление файла
 
   // новые скрипты
 
   controlPasswordVisibility(); // кнопка показать-скрыть пароль
+  controlMofalFilter(); // фильтрация и сортирвка в модальных окнах
+  copyNewUserLink(); // копирование ссылки для приглашения нового пользователя
+  initDatepicker(); // датапикер
+  attachFile(); // прикрепление файла
+  setTabs(); // табы
 
   console.log("initApp");
 }
@@ -790,7 +791,6 @@ function initDatepicker() {
 //             : "Файл выбран")
 //         : "Файл не выбран";
 
-
 //       // list
 //       list.innerHTML = "";
 //       list.classList.toggle("active", files.length > 0);
@@ -869,11 +869,11 @@ function attachFile() {
   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
   const MAX_FILES_COUNT = 10;
 
-  widgets.forEach(widget => {
+  widgets.forEach((widget) => {
     const input = widget.querySelector(".js_upload_input");
-    const text  = widget.querySelector(".js_upload_text");
-    const list  = widget.querySelector(".js_upload_list");
-    const area  = widget.querySelector(".a-upload__area");
+    const text = widget.querySelector(".js_upload_text");
+    const list = widget.querySelector(".js_upload_list");
+    const area = widget.querySelector(".a-upload__area");
 
     // multiple support
     const allowMultiple = widget.hasAttribute("data-multiple");
@@ -889,7 +889,7 @@ function attachFile() {
       input.value = "";
     };
 
-    const removeAt = idx => {
+    const removeAt = (idx) => {
       files.splice(idx, 1);
       render();
     };
@@ -897,9 +897,9 @@ function attachFile() {
     /* render ---------------------------------------------------------------- */
     const render = () => {
       text.textContent = files.length
-        ? (allowMultiple
-            ? `${files.length}/${MAX_FILES_COUNT} файл(ов) выбран`
-            : "Файл выбран")
+        ? allowMultiple
+          ? `${files.length}/${MAX_FILES_COUNT} файл(ов) выбран`
+          : "Файл выбран"
         : "Файл не выбран";
 
       list.innerHTML = "";
@@ -927,10 +927,10 @@ function attachFile() {
     };
 
     /* core logic ------------------------------------------------------------ */
-    const tryAddFiles = selected => {
+    const tryAddFiles = (selected) => {
       if (!selected.length) return;
 
-      const oversize = selected.find(f => f.size > MAX_FILE_SIZE);
+      const oversize = selected.find((f) => f.size > MAX_FILE_SIZE);
       if (oversize) {
         alert(`Размер файла «${oversize.name}» превышает 5 МБ`);
         return;
@@ -941,11 +941,13 @@ function attachFile() {
       } else {
         const combined = [...files, ...selected];
         const map = new Map();
-        combined.forEach(f => map.set(`${f.name}_${f.size}`, f));
+        combined.forEach((f) => map.set(`${f.name}_${f.size}`, f));
         files = Array.from(map.values()).slice(0, MAX_FILES_COUNT);
 
         if (combined.length > MAX_FILES_COUNT) {
-          alert(`Можно загрузить максимум ${MAX_FILES_COUNT} файлов. Лишние будут проигнорированы.`);
+          alert(
+            `Можно загрузить максимум ${MAX_FILES_COUNT} файлов. Лишние будут проигнорированы.`
+          );
         }
       }
       render();
@@ -959,30 +961,54 @@ function attachFile() {
 
     /* drag‑and‑drop --------------------------------------------------------- */
     if (area) {
-      const highlight = flag => area.classList.toggle("is-dragover", flag);
+      const highlight = (flag) => area.classList.toggle("is-dragover", flag);
 
-      ["dragenter", "dragover"].forEach(ev => {
-        area.addEventListener(ev, e => {
+      ["dragenter", "dragover"].forEach((ev) => {
+        area.addEventListener(ev, (e) => {
           e.preventDefault();
           highlight(true);
         });
       });
 
-      ["dragleave", "dragend", "drop"].forEach(ev => {
-        area.addEventListener(ev, e => {
+      ["dragleave", "dragend", "drop"].forEach((ev) => {
+        area.addEventListener(ev, (e) => {
           e.preventDefault();
           highlight(false);
         });
       });
 
-      area.addEventListener("drop", e => {
+      area.addEventListener("drop", (e) => {
         const dtFiles = Array.from(e.dataTransfer.files);
         tryAddFiles(dtFiles);
       });
     }
 
     /* expose --------------------------------------------------------------- */
-    widget.getFiles  = () => files;
+    widget.getFiles = () => files;
     widget.resetFiles = reset;
+  });
+}
+
+// табы
+
+function setTabs(tabsSelector=".js_tabs", btnSelector=".js_tabs_btn", itemSelector=".js_tabs_item") {
+  const tabs = document.querySelectorAll(tabsSelector);
+
+  if (!tabs.length) return;
+
+  tabs.forEach((tab) => {
+    const btns = tab.querySelectorAll(btnSelector);
+    const items = tab.querySelectorAll(itemSelector);
+
+    if (!btns.length || !items.length) return;
+
+    btns.forEach((btn , btnIndex) => {
+      btn.addEventListener("click", () => {
+        btns.forEach((b) => b.classList.remove("active"));
+        items.forEach((i) => i.classList.remove("active", "fade"));
+        btn.classList.add("active");
+        items[btnIndex].classList.add("active", "fade");
+      });
+    });
   });
 }

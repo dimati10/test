@@ -1,59 +1,59 @@
 .a-breadcrumbs {
-	padding: 13px 0 18px;
+  padding: 13px 0 18px;
 
-	@media (min-width: 1200px) {
-		padding: 20px 0 30px;
-	}
+  @media (min-width: 1200px) {
+    padding: 20px 0 30px;
+  }
 
-	&__list {
-		display: flex;
-		gap: 18px;
-		margin: 0 -20px;
-		padding: 0 20px 10px;
-		overflow-x: auto;
-		scrollbar-width: none;
+  &__list {
+    display: flex;
+    gap: 18px;
+    margin: 0 -20px;
+    padding: 0 20px 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
 
-		&::-webkit-scrollbar {
-			height: 0;
-		}
-	}
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
 
-	&__item {
-		position: relative;
-		flex-shrink: 0;
+  &__item {
+    position: relative;
+    flex-shrink: 0;
 
-		&:not(:last-child) {
-			&::after {
-				content: '/';
-				position: absolute;
-				top: 50%;
-				right: -11px;
-				transform: translateY(-50%);
-				font-size: 12px;
-				line-height: 15px;
+    &:not(:last-child) {
+      &::after {
+        content: '/';
+        position: absolute;
+        top: 50%;
+        right: -11px;
+        transform: translateY(-50%);
+        font-size: 12px;
+        line-height: 15px;
 
-				@media (min-width: 1200px) {
-					right: -12px;
-					font-size: 14px;
-					line-height: 17px;
-				}
-			}
-		}
-	}
+        @media (min-width: 1200px) {
+          right: -12px;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+  }
 
-	&__link {
-		display: block;
-		font-size: 12px;
-		line-height: 15px;
+  &__link {
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
 
-		@media (min-width: 1200px) {
-			font-size: 14px;
-			line-height: 17px;
-		}
-	}
+    @media (min-width: 1200px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
 
-	a.a-breadcrumbs__link {
+  a.a-breadcrumbs__link {
     text-decoration: underline;
-		text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
   }
 }

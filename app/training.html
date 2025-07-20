@@ -186,123 +186,410 @@
       </div>
     </div>
 
-    <section class="a-admin">
+    <section class="a-training">
       <div class="a-container">
-        <div class="a-admin__wrapper">
-          <h1 class="a-admin__title title">администрирование</h1>
-          <div class="a-admin__newsletter">
-            <button class="a-admin__newsletter-btn" type="button">
-              <svg width="19" height="19">
-                <use xlink:href="images/sprite.svg#tg"></use>
-              </svg>
-              общая рассылка в телеграм
+        <div class="a-training__inner">
+          <div class="a-training-courses">
+            <h1 class="a-training-courses__title title">Обучение</h1>
+            <div class="a-training-courses__inner js_tabs">
+              <div class="a-training-courses__cards">
+                <article class="a-training-courses-card js_tabs_item active fade">
+                  <h3 class="a-training-courses-card__title">
+                    <strong>Python: Базовый курс</strong><br>
+                    по программированию
+                  </h3>
+                  <div class="a-training-courses-card__img">
+                    <picture>
+                      <img src="images/courses/a-training-courses-card-img.png"
+                        alt="Python: Базовый курс по программированию">
+                    </picture>
+                  </div>
+                  <a class="a-training-courses-card__btn" href="#">
+                    <svg width="9" height="16">
+                      <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                    </svg>
+                  </a>
+                </article>
+                <article class="a-training-courses-card js_tabs_item">
+                  <h3 class="a-training-courses-card__title">
+                    <strong>ЕГЭ по информатике</strong><br>
+                    2025
+                  </h3>
+                  <div class="a-training-courses-card__img">
+                    <picture>
+                      <img src="images/courses/a-training-courses-card-img.png"
+                        alt="Python: Базовый курс по программированию">
+                    </picture>
+                  </div>
+                  <a class="a-training-courses-card__btn" href="#">
+                    <svg width="9" height="16">
+                      <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                    </svg>
+                  </a>
+                </article>
+                <article class="a-training-courses-card js_tabs_item disabled">
+                  <h3 class="a-training-courses-card__title">
+                    <strong>Олимпиадное программирование</strong>
+                  </h3>
+                  <div class="a-training-courses-card__img">
+                    <picture>
+                      <img src="images/courses/a-training-courses-card-img.png"
+                        alt="Python: Базовый курс по программированию">
+                    </picture>
+                  </div>
+                  <a class="a-training-courses-card__btn" href="#">
+                    <svg width="9" height="16">
+                      <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                    </svg>
+                  </a>
+                </article>
+                <article class="a-training-courses-card js_tabs_item">
+                  <h3 class="a-training-courses-card__title">
+                    <strong>Тест</strong>
+                  </h3>
+                  <div class="a-training-courses-card__img">
+                    <picture>
+                      <img src="images/courses/a-training-courses-card-img.png"
+                        alt="Python: Базовый курс по программированию">
+                    </picture>
+                  </div>
+                  <a class="a-training-courses-card__btn" href="#">
+                    <svg width="9" height="16">
+                      <use xlink:href="images/sprite.svg#btn-arrow"></use>
+                    </svg>
+                  </a>
+                </article>
+              </div>
+              <div class="a-training-courses__tabs">
+                <div class="a-training-courses-tab js_tabs_btn">
+                  <div class="a-training-courses-tab__content">
+                    <span class="a-training-courses-tab__title">Разработка Telegram-ботов</span>
+                  </div>
+                  <div class="a-training-courses-tab__logo">
+                    <img src="images/courses/a-training-courses-tab-logo-1.svg" alt="Разработка Telegram-ботов"
+                      width="70" height="70">
+                  </div>
+                </div>
+                <div class="a-training-courses-tab js_tabs_btn">
+                  <div class="a-training-courses-tab__content">
+                    <span class="a-training-courses-tab__title">ЕГЭ по информатике</span>
+                    <span class="a-training-courses-tab__time">2025</span>
+                  </div>
+                  <div class="a-training-courses-tab__logo">
+                    <img src="images/courses/a-training-courses-tab-logo-2.svg" alt="Разработка Telegram-ботов"
+                      width="70" height="70">
+                  </div>
+                </div>
+                <div class="a-training-courses-tab js_tabs_btn disabled">
+                  <div class="a-training-courses-tab__content">
+                    <span class="a-training-courses-tab__title">Олимпиадное программирование</span>
+                  </div>
+                  <div class="a-training-courses-tab__logo">
+                    <img src="images/courses/a-training-courses-tab-logo-3.svg" alt="Олимпиадное программирование"
+                      width="70" height="70">
+                  </div>
+                </div>
+                <div class="a-training-courses-tab js_tabs_btn">
+                  <div class="a-training-courses-tab__content">
+                    <span class="a-training-courses-tab__title">Тест</span>
+                  </div>
+                  <div class="a-training-courses-tab__logo">
+                    <img src="images/courses/a-training-courses-tab-logo-1.svg" alt="" width="70" height="70">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="a-training-statistics">
+            <h2 class="a-training-statistics__title title">СТАТИСТИКА</h2>
+            <div class="a-training-statistics__items">
+              <div class="a-training-statistics__item">
+                <span>14</span>
+                <p>Уроков пройдено</p>
+              </div>
+              <div class="a-training-statistics__item">
+                <span>300</span>
+                <p>ZiTon’ов получено</p>
+              </div>
+              <div class="a-training-statistics__item">
+                <span>250</span>
+                <p>Домашних работ задано</p>
+              </div>
+              <div class="a-training-statistics__item">
+                <span>180</span>
+                <p>Домашних работ выполнено</p>
+              </div>
+              <div class="a-training-statistics__item">
+                <span>5</span>
+                <p>Домашних работ на проверке</p>
+              </div>
+              <div class="a-training-statistics__item">
+                <span>98%</span>
+                <p>Успешного завершения</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="a-training__line">
+          <div class="a-training__progress">
+            <span style="width: 40%;">
+              19 из 110 ZiTon’ов до Skyrim
+            </span>
+          </div>
+          <a class="a-training__link" href="#">КРУТИТЬ КОЛЕСО</a>
+        </div>
+
+        <div class="a-training-chat js_spoilers_item active">
+          <h2 class="a-training-chat__title title">Чат</h2>
+          <div class="a-training-chat__top">
+            <div class="a-training-chat-user">
+              <div class="a-training-chat-user__avatar">
+                <picture>
+                  <img src="images/avatar-2.svg" alt="">
+                </picture>
+              </div>
+              <div class="a-training-chat-user__content">
+                <span class="a-training-chat-user__name">Алексей Соловьев</span>
+                <span class="a-training-chat-user__post"># Преподаватель</span>
+              </div>
+            </div>
+            <button class="a-training-chat__more js_spoilers_item_btn" type="button">
+              <span>Свернуть</span>
+              <span>Развернуть</span>
             </button>
           </div>
-          <div class="a-admin__items">
-            <div class="a-admin-item">
-              <div class="a-admin-item__inner">
-                <div class="a-admin-item__top">
-                  <h2 class="a-admin-item__title">Ученики</h2>
-                  <button class="a-admin-item__add" type="button" data-btn="adding-student">дОБАВИТЬ УЧЕНИКА</button>
+          <div class="a-training-chat__main">
+            <div class="a-training-chat__messages-wrapper">
+              <div class="a-training-chat__messages">
+                <span class="a-training-chat__date">30 июня</span>
+                <div class="a-training-chat-message">
+                  <div class="a-training-chat-message__avatar">
+                    <picture>
+                      <img src="images/avatar-1.svg" alt="">
+                    </picture>
+                  </div>
+                  <div class="a-training-chat-message__content">
+                    <p class="a-training-chat-message__text">Здарова!</p>
+                    <span class="a-training-chat-message__time">11:10</span>
+                  </div>
                 </div>
-                <div class="a-admin-item__buttons">
-                  <button class="a-admin-item__btn" type="button" data-btn="teacher-change">Изменить учителя</button>
-                  <button class="a-admin-item__btn" type="button" data-btn="changing-group-teacher">Изменить учителя
-                    гр.</button>
-                  <button class="a-admin-item__btn" type="button" data-btn="adding-user">Добавить сотрудника</button>
+                <div class="a-training-chat-message a-training-chat-message--reversed">
+                  <div class="a-training-chat-message__avatar">
+                    <picture>
+                      <img src="images/avatar-2.svg" alt="">
+                    </picture>
+                  </div>
+                  <div class="a-training-chat-message__content">
+                    <p class="a-training-chat-message__text">Хау ду ю ду</p>
+                    <span class="a-training-chat-message__time">11:10</span>
+                  </div>
+                </div>
+                <div class="a-training-chat-message">
+                  <div class="a-training-chat-message__avatar">
+                    <picture>
+                      <img src="images/avatar-2.svg" alt="">
+                    </picture>
+                  </div>
+                  <div class="a-training-chat-message__content">
+                    <p class="a-training-chat-message__text">Предложи как-нибудь Илье подумать над официальным
+                      документом
+                      бизнес-процесса, такого плана что я прикрепил, чтобы у на с ни у кого не было наверное и мы все
+                      четко могли видеть и понимать этапы</p>
+                    <span class="a-training-chat-message__time">11:10</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="a-admin-statistics">
-              <h3 class="a-admin-statistics__title">Статистика по ученикам</h3>
-              <div class="a-admin-statistics__items">
-                <div class="a-admin-statistics__item">
-                  <span>250</span>
-                  <p>Активных учеников</p>
+            <form class="a-training-chat__form">
+              <div class="a-training-chat__field">
+                <input class="a-training-chat__input" type="text">
+              </div>
+              <button class="a-training-chat__btn" type="submit">
+                <svg width="19" height="21">
+                  <use xlink:href="images/sprite.svg#book"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="a-training-tabs js_tabs">
+          <div class="a-training-tabs__bar">
+            <div class="a-training-tabs__control">
+              <button class="a-training-tabs__btn js_tabs_btn active" type="button">
+                <svg width="19" height="21">
+                  <use xlink:href="images/sprite.svg#book"></use>
+                </svg>
+                Уроки
+              </button>
+              <button class="a-training-tabs__btn js_tabs_btn" type="button">
+                <svg width="20" height="21">
+                  <use xlink:href="images/sprite.svg#settings"></use>
+                </svg>
+                ДОПОЛНИТЕЛЬНО
+              </button>
+            </div>
+            <ul class="a-training-tabs__statuses">
+              <li class="a-training-tabs__status" style="--status-color: #127954;">все сделано</li>
+              <li class="a-training-tabs__status" style="--status-color: #ffbe0b;">на проверке</li>
+              <li class="a-training-tabs__status" style="--status-color: #ea4643;">Не все решено</li>
+            </ul>
+          </div>
+          <div class="a-training-tabs__content">
+            <div class="a-training-tabs__item js_tabs_item active fade">
+              <div class="a-training-tabs__block">
+                <h4 class="a-training-tabs__title">Модуль #2</h4>
+                <div class="a-training-tabs__cards">
+                  <button class="a-training-tabs__add" type="button">
+                    <span></span>
+                    Добавить
+                  </button>
+                  <div class="a-training-tabs-card" style="--card-color: #107a54;">
+                    <div class="a-training-tabs-card__top">
+                      <span class="a-training-tabs-card__num">1.</span>
+                      <h3 class="a-training-tabs-card__title">Пробник</h3>
+                      <span class="a-training-tabs-card__date">27.03.2025</span>
+                    </div>
+                    <div class="a-training-tabs-card__lines">
+                      <div class="a-training-tabs-card__line">
+                        <span>Тема</span>
+                        <span>№ 1 Пробный вариант</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Задано</span>
+                        <span>23 задачи</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Сдано</span>
+                        <span>23 задачи</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>На проверке</span>
+                        <span>0 задач</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="a-admin-statistics__item">
-                  <span>5</span>
-                  <p>Отвалившихся за последний месяц</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>75%</span>
-                  <p>Выполненого домашнего задания</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>20%</span>
-                  <p>Отстающих учеников</p>
+              </div>
+              <div class="a-training-tabs__block">
+                <h4 class="a-training-tabs__title">Модуль #1</h4>
+                <div class="a-training-tabs__cards">
+                  <button class="a-training-tabs__add" type="button">
+                    <span></span>
+                    Добавить
+                  </button>
+                  <div class="a-training-tabs-card" style="--card-color: #107a54;">
+                    <div class="a-training-tabs-card__top">
+                      <span class="a-training-tabs-card__num">1.</span>
+                      <h3 class="a-training-tabs-card__title">Звонок</h3>
+                      <span class="a-training-tabs-card__date">27.03.2025</span>
+                    </div>
+                    <div class="a-training-tabs-card__lines">
+                      <div class="a-training-tabs-card__line">
+                        <span>Контрольный звонок</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Причина:</span>
+                        <span>тормозит трансляция</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Результат:</span>
+                        <span>больше не тормозит</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="a-admin-item">
-              <div class="a-admin-item__inner">
-                <div class="a-admin-item__top">
-                  <h2 class="a-admin-item__title">Группы</h2>
-                  <button class="a-admin-item__add" type="button" data-btn="creating-group">создать новую
-                    группу</button>
-                </div>
-                <div class="a-admin-item__buttons">
-                  <button class="a-admin-item__btn" type="button" data-btn="adding-student-group">Добавить в
-                    группу</button>
-                  <button class="a-admin-item__btn" type="button" data-btn="removing-student">Удалить из группы</button>
-                  <button class="a-admin-item__btn" type="button" data-btn="disbandment-group">Расформировать гр.</button>
+            <div class="a-training-tabs__item js_tabs_item">
+              <div class="a-training-tabs__block">
+                <h4 class="a-training-tabs__title">Проверочные работы</h4>
+                <div class="a-training-tabs__cards">
+                  <button class="a-training-tabs__add" type="button">
+                    <span></span>
+                    Добавить
+                  </button>
+                  <div class="a-training-tabs-card" style="--card-color: #ffbe0b; --card-top-color: #2d2d2d;">
+                    <div class="a-training-tabs-card__top">
+                      <span class="a-training-tabs-card__num">2.</span>
+                      <h3 class="a-training-tabs-card__title">Срез</h3>
+                      <span class="a-training-tabs-card__date">27.03.2025</span>
+                    </div>
+                    <div class="a-training-tabs-card__lines">
+                      <div class="a-training-tabs-card__line">
+                        <span>Тема</span>
+                        <span>Условный оператор</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Задано</span>
+                        <span>23 задачи</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Сдано</span>
+                        <span>3 задачи</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>На проверке</span>
+                        <span>3 задачи</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="a-training-tabs-card" style="--card-color: #107a54;">
+                    <div class="a-training-tabs-card__top">
+                      <span class="a-training-tabs-card__num">1.</span>
+                      <h3 class="a-training-tabs-card__title">Пробник</h3>
+                      <span class="a-training-tabs-card__date">27.03.2025</span>
+                    </div>
+                    <div class="a-training-tabs-card__lines">
+                      <div class="a-training-tabs-card__line">
+                        <span>Тема</span>
+                        <span>№ 1 Пробный вариант</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Задано</span>
+                        <span>23 задачи</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Сдано</span>
+                        <span>23 задачи</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>На проверке</span>
+                        <span>0 задач</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="a-admin-statistics">
-              <h3 class="a-admin-statistics__title">Статистика по группам</h3>
-              <div class="a-admin-statistics__items">
-                <div class="a-admin-statistics__item">
-                  <span>14</span>
-                  <p>Общее число групп</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>2,8</span>
-                  <p>Ср. наполняемость групп</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>250</span>
-                  <p>Учеников в группах</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>180</span>
-                  <p>Уч-ов занимается индивидуально</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="a-admin-item">
-              <div class="a-admin-item__inner">
-                <div class="a-admin-item__top">
-                  <h2 class="a-admin-item__title">Курсы</h2>
-                  <button class="a-admin-item__add" type="button" data-btn="adding-course">добавить новый курс</button>
-                </div>
-                <div class="a-admin-item__buttons">
-                  <button class="a-admin-item__btn" type="button">Изменить курс</button>
-                  <button class="a-admin-item__btn" type="button" data-btn="course-lock">Заблокировать курс</button>
-                  <button class="a-admin-item__btn" type="button" data-btn="unlocking-course">Разблокировать курс</button>
-                </div>
-              </div>
-            </div>
-            <div class="a-admin-statistics">
-              <h3 class="a-admin-statistics__title">ТОП 3 КУРСА</h3>
-              <div class="a-admin-statistics__items">
-                <div class="a-admin-statistics__item">
-                  <span>104</span>
-                  <p>Python / Базовый курс</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>12</span>
-                  <p>Олимпиадное программирование</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>76</span>
-                  <p>Python / Алгоритмы и структуры данных</p>
-                </div>
-                <div class="a-admin-statistics__item">
-                  <span>81</span>
-                  <p>Остальные курсы</p>
+              <div class="a-training-tabs__block">
+                <h4 class="a-training-tabs__title">Контрольные звонки</h4>
+                <div class="a-training-tabs__cards">
+                  <button class="a-training-tabs__add" type="button">
+                    <span></span>
+                    Добавить
+                  </button>
+                  <div class="a-training-tabs-card" style="--card-color: #107a54;">
+                    <div class="a-training-tabs-card__top">
+                      <span class="a-training-tabs-card__num">1.</span>
+                      <h3 class="a-training-tabs-card__title">Звонок</h3>
+                      <span class="a-training-tabs-card__date">27.03.2025</span>
+                    </div>
+                    <div class="a-training-tabs-card__lines">
+                      <div class="a-training-tabs-card__line">
+                        <span>Контрольный звонок</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Причина:</span>
+                        <span>тормозит трансляция</span>
+                      </div>
+                      <div class="a-training-tabs-card__line">
+                        <span>Результат:</span>
+                        <span>больше не тормозит</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -372,1218 +659,6 @@
       </div>
     </div>
   </footer>
-
-  <div class="a-modal" data-modal="adding-student">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">добавление УЧЕНИКА</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Имя</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text" placeholder="Сергей">
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Фамилия</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text" placeholder="Сергеев">
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">>
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Курс</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите курс</option>
-                <option value="1">Python / Базовый курс</option>
-                <option value="2">Курс 2</option>
-                <option value="3">Курс 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            Добавить пользователя
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal" data-modal="creating-group">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">Создание группы</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Поиск</label>
-            <div class="a-field__inner">
-              <input class="a-field__input js_modal_search" type="text">
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="21" height="22">
-                  <use xlink:href="images/sprite.svg#search"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal-list js_modal_list">
-            <div class="a-modal-list__top">
-              <span class="a-modal-list__label">Ученики</span>
-              <div class="a-modal-list-sort js_modal_list_sort">
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn active" type="button" data-sort="name">
-                  По имени
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="surname">
-                  По фамилии
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="course">
-                  По курсам
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="a-modal-list__items js_modal_list_items">
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Борис Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александра Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Алексей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бартоломью Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Максим Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Марк Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Миранда Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Моисей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Маркус Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Митяй Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Курс</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите курс</option>
-                <option value="1">Python / Базовый курс</option>
-                <option value="2">Курс 2</option>
-                <option value="3">Курс 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            создать группу
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal a-modal-teacher-change" data-modal="teacher-change">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">изменение учителя</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Текущий учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Поиск</label>
-            <div class="a-field__inner">
-              <input class="a-field__input js_modal_search" type="text">
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="21" height="22">
-                  <use xlink:href="images/sprite.svg#search"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal-list js_modal_list">
-            <div class="a-modal-list__top">
-              <span class="a-modal-list__label">Ученики</span>
-              <div class="a-modal-list-sort js_modal_list_sort">
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn active" type="button" data-sort="name">
-                  По имени
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="surname">
-                  По фамилии
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="course">
-                  По курсам
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="a-modal-list__items js_modal_list_items">
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Борис Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александра Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Алексей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бартоломью Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Максим Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Марк Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Миранда Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Моисей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Маркус Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Митяй Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Новый учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            изменить
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal" data-modal="adding-student-group">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">добавление ученика в группу</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Группа</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите группу</option>
-                <option value="1">Python / Базовый курс / Группа № 12</option>
-                <option value="2">Группа 2</option>
-                <option value="3">Группа 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Поиск</label>
-            <div class="a-field__inner">
-              <input class="a-field__input js_modal_search" type="text">
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="21" height="22">
-                  <use xlink:href="images/sprite.svg#search"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal-list js_modal_list">
-            <div class="a-modal-list__top">
-              <span class="a-modal-list__label">Ученики</span>
-              <div class="a-modal-list-sort js_modal_list_sort">
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn active" type="button" data-sort="name">
-                  По имени
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="surname">
-                  По фамилии
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="course">
-                  По курсам
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="a-modal-list__items js_modal_list_items">
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Борис Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александра Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Алексей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бартоломью Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Максим Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Марк Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Миранда Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Моисей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Маркус Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Митяй Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            добавить
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal a-modal-changing-group-teacher" data-modal="changing-group-teacher">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">Изменение учителя группы</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Текущий учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Группа</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите группу</option>
-                <option value="1">Python / Базовый курс / Группа № 12</option>
-                <option value="2">Группа 2</option>
-                <option value="3">Группа 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Новый учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            изменить
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal" data-modal="removing-student">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">Удаление ученика из группы</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Учитель</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите учителя</option>
-                <option value="1">Александр Рязанов</option>
-                <option value="2">Учитель 2</option>
-                <option value="3">Учитель 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Группа</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите группу</option>
-                <option value="1">Python / Базовый курс / Группа № 12</option>
-                <option value="2">Группа 2</option>
-                <option value="3">Группа 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Поиск</label>
-            <div class="a-field__inner">
-              <input class="a-field__input js_modal_search" type="text">
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="21" height="22">
-                  <use xlink:href="images/sprite.svg#search"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal-list js_modal_list">
-            <div class="a-modal-list__top">
-              <span class="a-modal-list__label">Ученики</span>
-              <div class="a-modal-list-sort js_modal_list_sort">
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn active" type="button" data-sort="name">
-                  По имени
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="surname">
-                  По фамилии
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-                <button class="a-modal-list-sort__btn js_modal_list_sort_btn" type="button" data-sort="course">
-                  По курсам
-                  <svg width="8" height="12">
-                    <use xlink:href="images/sprite.svg#sort-arrow"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="a-modal-list__items js_modal_list_items">
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Борис Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александр Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Александра Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Алексей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бартоломью Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Бенедиктович Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Максим Рязанов</span>
-                  <span class="js_modal_list_item_course">py/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Марк Малюгин</span>
-                  <span class="js_modal_list_item_course">егэ/025</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Миранда Габченко</span>
-                  <span class="js_modal_list_item_course">py/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Моисей Потапов</span>
-                  <span class="js_modal_list_item_course">++/база</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Маркус Рязанов</span>
-                  <span class="js_modal_list_item_course">мат/лог</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Митяй Малюгин</span>
-                  <span class="js_modal_list_item_course">++/олим</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-              <label class="a-modal-list-item js_modal_list_item">
-                <input class="a-modal-list-item__input js_modal_list_item_input" type="checkbox">
-                <span class="a-modal-list-item__text">
-                  <span class="js_modal_list_item_name">Николай Габченко</span>
-                  <span class="js_modal_list_item_course">tg/bots</span>
-                  <span>(Выбрать)</span>
-                </span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            удалить
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal" data-modal="disbandment-group">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">расформирование группы</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
-            <label class="a-field__label">Группа</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text">
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            расформировать
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal" data-modal="unlocking-course">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">разблокировка курса</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
-            <label class="a-field__label">Курс</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text">
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
-            <label class="a-field__label">Ученик</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text">
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            разблокировать курс
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="a-modal a-modal-adding-user" data-modal="adding-user">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">добавление нового пользователя</h3>
-      <form class="a-modal__form">
-        <div class="a-modal__fields">
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Имя</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text" placeholder="Сергей">
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Отчество</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text" placeholder="Сергеевич">
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Фамилия</label>
-            <div class="a-field__inner">
-              <input class="a-field__input" type="text" placeholder="Сергеев">
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Дата рождения</label>
-            <div class="a-field__inner">
-              <input class="a-field__input js_date_input" type="text" readonly>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="21" height="22">
-                  <use xlink:href="images/sprite.svg#calendar"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
-            <label class="a-field__label">Роль</label>
-            <div class="a-field__inner">
-              <select class="a-field__select">
-                <option value="" disabled selected>Выберите роль</option>
-                <option value="1">Учитель</option>
-                <option value="2">Роль 2</option>
-                <option value="3">Роль 3</option>
-              </select>
-              <button class="a-field__btn" type="button" disabled>
-                <svg width="16" height="9">
-                  <use xlink:href="images/sprite.svg#select-arrow"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
-            Вернуться
-          </button>
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            добавить
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>

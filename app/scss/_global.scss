@@ -146,6 +146,16 @@ input::-ms-clear {
   display: none;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /*
 
 &:hover {

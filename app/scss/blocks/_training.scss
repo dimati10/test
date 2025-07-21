@@ -6,18 +6,80 @@
   }
 
   &__inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 54px;
-    margin: 0 0 84px;
+    margin: 0 0 75px;
 
     @media (min-width: 1200px) {
       flex-direction: row;
       gap: 40px;
+      margin-bottom: 84px;
     }
 
     @media (min-width: 1400px) {
       gap: 68px;
+    }
+  }
+
+  &__down {
+    position: absolute;
+    right: 0;
+    top: -8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    @media (min-width: 1200px) {
+      top: 0;
+    }
+
+    @media (min-width: 1900px) {
+      top: 90px;
+      right: auto;
+      left: calc(100% + 80px);
+      gap: 15px;
+    }
+
+    span {
+      &:nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 100%;
+        background-color: var(--backtimeslip);
+
+        @media (min-width: 1900px) {
+          width: 90px;
+          height: 90px;
+        }
+      }
+
+      &:nth-child(2) {
+        font-size: 14px;
+        line-height: 16px;
+        white-space: nowrap;
+
+        @media (min-width: 1900px) {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+
+      svg {
+        color: var(--background);
+        width: 8px;
+        height: 16px;
+
+        @media (min-width: 1900px) {
+          width: 16px;
+          height: 31px;
+        }
+      }
     }
   }
 
@@ -37,7 +99,6 @@
     align-items: center;
     position: relative;
     flex-grow: 1;
-    // padding: 20px 44px;
     border-radius: 30px;
     background: linear-gradient(180deg, #fff 0%, #737373 100%);
 
@@ -94,26 +155,72 @@
   }
 
   &__title {
-    margin: 0 0 65px;
+    margin: 0 0 42px;
+    padding: 0 80px 0 0;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 65px;
+      padding: 0;
+    }
   }
 
   &__inner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 17px;
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 17px;
+    }
   }
 
-  &__cards {}
+  &__cards {
+    &.swiper {
+      margin: 0 -20px;
+      padding: 0 20px;
+
+      @media (min-width: 768px) {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .swiper-slide {
+      height: auto;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      &.active {
+        display: block;
+      }
+
+      &.fade {
+        animation: fade 0.5s;
+      }
+
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+
+  &__buttons {
+    margin: 40px 0 0;
+  }
 
   &__tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    padding: 0 10px 0 0;
-    max-height: 356px;
-    overflow-y: auto;
-    scrollbar-color: var(--gray-238) var(--gray-121);
-    scrollbar-width: thin;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      padding: 0 10px 0 0;
+      max-height: 356px;
+      overflow-y: auto;
+      scrollbar-color: var(--gray-238) var(--gray-121);
+      scrollbar-width: thin;
+    }
 
     &::-webkit-scrollbar {
       width: 7px;
@@ -128,21 +235,19 @@
 }
 
 .a-training-courses-card {
-  display: none;
+  display: flex;
   position: relative;
   flex-direction: column;
   height: 100%;
-  padding: 20px 24px 46px;
-  background: var(--gray-238);
+  padding: 20px 20px 40px;
+  background: var(--backtimeslip);
   box-shadow: 0 11px 29px 0 rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-30);
 
-  &.active {
-    display: flex;
-  }
 
-  &.fade {
-    animation: fade 0.5s;
+  @media (min-width: 768px) {
+    padding: 20px 24px 46px;
+    background: var(--gray-238);
   }
 
   &__title {
@@ -150,7 +255,11 @@
     color: var(--black);
     font-size: 16px;
     line-height: 19px;
-    font-weight: 400;
+    font-weight: 700;
+
+    @media (min-width: 1200px) {
+      font-weight: 400;
+    }
 
     strong {
       font-weight: 600;
@@ -174,7 +283,7 @@
 
   &__btn {
     position: absolute;
-    left: 24px;
+    left: 20px;
     bottom: 24px;
     display: flex;
     align-items: center;
@@ -185,6 +294,10 @@
     line-height: 24px;
     background: linear-gradient(244deg, #6023c3 0%, #3169f8 100%);
     border-radius: 30px;
+
+    @media (min-width: 768px) {
+      left: 24px;
+    }
 
     svg {
       color: var(--white);
@@ -272,32 +385,84 @@
   }
 
   &__title {
-    margin: 0 0 65px;
+    margin: 0 0 55px;
+
+    @media (min-width: 1200px) {
+      padding: 0 80px 0 0;
+      margin-bottom: 65px;
+    }
+
+    @media (min-width: 1900px) {
+      padding: 0;
+    }
+  }
+
+  &__swiper {
+    &.swiper {
+      margin: 0 -20px;
+      padding: 0 20px;
+
+      @media (min-width: 768px) {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .swiper-wrapper {
+      @media (min-width: 768px) {
+        gap: 30px;
+      }
+    }
+
+    .swiper-slide {
+      @media (min-width: 768px) {
+        width: calc(50% - 15px);
+      }
+    }
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 80px 30px;
+
+    @media (min-width: 1200px) {
+      grid-gap: 25px 30px;
+    }
   }
 
   &__item {
     display: flex;
     align-items: center;
-    min-height: 102px;
     gap: 10px;
 
+    @media (min-width: 1200px) {
+      min-height: 102px;
+    }
+
     span {
+      flex-shrink: 0;
       min-width: 80px;
       font-weight: 700;
       font-size: 40px;
       line-height: 49px;
     }
 
-    p {}
+    p {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+
+      @media (min-width: 1200px) {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__buttons {
+    margin: 40px 0 0;
   }
 }
-
 
 .a-training-chat {
   margin: 0 0 50px;
@@ -418,6 +583,31 @@
 
     @media (min-width: 768px) {
       align-items: flex-start;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__field {
+    flex-grow: 1;
+  }
+
+  &__input {}
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--red) 0%, var(--red-186) 100%);
+
+    svg {
+      color: var(--backtimeslip);
     }
   }
 }
@@ -573,6 +763,8 @@
 }
 
 .a-training-tabs {
+  scroll-margin-top: 150px;
+
   &__bar {
     position: relative;
     display: flex;

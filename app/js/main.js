@@ -23,6 +23,7 @@ function initApp() {
   initDatepicker(); // датапикер
   attachFile(); // прикрепление файла
   setTabs(); // табы
+  initTrainingSliders(); // превращение карточек в слайдеры на мобильных расширениях
 
   console.log("initApp");
 }
@@ -991,7 +992,11 @@ function attachFile() {
 
 // табы
 
-function setTabs(tabsSelector=".js_tabs", btnSelector=".js_tabs_btn", itemSelector=".js_tabs_item") {
+function setTabs(
+  tabsSelector = ".js_tabs",
+  btnSelector = ".js_tabs_btn",
+  itemSelector = ".js_tabs_item"
+) {
   const tabs = document.querySelectorAll(tabsSelector);
 
   if (!tabs.length) return;
@@ -1002,7 +1007,7 @@ function setTabs(tabsSelector=".js_tabs", btnSelector=".js_tabs_btn", itemSelect
 
     if (!btns.length || !items.length) return;
 
-    btns.forEach((btn , btnIndex) => {
+    btns.forEach((btn, btnIndex) => {
       btn.addEventListener("click", () => {
         btns.forEach((b) => b.classList.remove("active"));
         items.forEach((i) => i.classList.remove("active", "fade"));
@@ -1011,4 +1016,48 @@ function setTabs(tabsSelector=".js_tabs", btnSelector=".js_tabs_btn", itemSelect
       });
     });
   });
+}
+
+// превращение карточек в слайдеры на мобильных расширениях
+
+function initTrainingSliders() {
+  const sliders = document.querySelectorAll(".js_training_swiper");
+
+  if (sliders.length) {
+    sliders.forEach((slider) => {
+      let swiper;
+
+      function mobileSlider() {
+        if (window.innerWidth <= 767 && slider.dataset.mobile == "false") {
+          swiper = new Swiper(slider, {
+            navigation: {
+              nextEl: ".js_training_next",
+              prevEl: ".js_training_prev",
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+          });
+
+          slider.dataset.mobile = "true";
+        }
+
+        if (window.innerWidth > 1200) {
+          slider.dataset.mobile = "false";
+
+          if (slider.classList.contains("swiper-initialized")) {
+            swiper.destroy();
+          }
+        }
+      }
+
+      mobileSlider();
+
+      window.addEventListener("resize", () => {
+        mobileSlider();
+      });
+    });
+  }
 }

@@ -136,4 +136,11 @@
     <symbol id="chat-btn-arrow" viewBox="0 0 14 23">
        <path d="M12.8368 12.2462C13.4226 11.6604 13.4226 10.7107 12.8368 10.1249L3.29084 0.578946C2.70505 -0.00684066 1.75531 -0.00684058 1.16952 0.578946C0.583734 1.16473 0.583734 2.11448 1.16952 2.70027L9.6548 11.1855L1.16952 19.6708C0.583736 20.2566 0.583736 21.2064 1.16952 21.7921C1.75531 22.3779 2.70506 22.3779 3.29084 21.7921L12.8368 12.2462ZM9.77539 11.1855L9.77539 12.6855L11.7761 12.6855L11.7761 11.1855L11.7761 9.68555L9.77539 9.68555L9.77539 11.1855Z" fill="currentColor" />
     </symbol>
+
+    <symbol id="chat-btn-emoji" viewBox="0 0 24 24" fill="none">
+       <circle cx="12.1777" cy="11.7949" r="10.25" stroke="currentColor" stroke-width="2" />
+      <circle cx="9.27734" cy="9.41797" r="1" fill="currentColor" stroke="currentColor" stroke-width="0.847656" />
+      <circle cx="15.1172" cy="9.41797" r="1" fill="currentColor" stroke="currentColor" stroke-width="0.847656" />
+      <path d="M6.6582 14.1855C6.90732 15.2507 8.33421 17.3809 12.0488 17.3809C15.7634 17.3809 17.1914 15.2507 17.441 14.1855" stroke="currentColor" stroke-width="2" />
+    </symbol>
 </svg>

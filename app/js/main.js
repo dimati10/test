@@ -24,6 +24,8 @@ function initApp() {
   attachFile(); // прикрепление файла
   setTabs(); // табы
   initTrainingSliders(); // превращение карточек в слайдеры на мобильных расширениях
+  seTextareaHeight(); // автоматическое увеличение высоты textarea при переполнении текстом
+  setTimer(".js_training_link_timer", "2025-08-10"); // таймер
 
   console.log("initApp");
 }
@@ -1060,4 +1062,64 @@ function initTrainingSliders() {
       });
     });
   }
+}
+
+// автоматическое увеличение высоты textarea при переполнении текстом
+
+function seTextareaHeight() {
+  const textarea = document.querySelector(".js_textarea");
+  textarea.addEventListener("input", () => {
+    // textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  });
+}
+
+// таймер
+
+function setTimer(id, deadline) {
+  function getTimeRemaining(endtime) {
+    const t =
+      Date.parse(endtime) -
+      Date.parse(new Date()) +
+      new Date().getTimezoneOffset() * 60000;
+
+    const totalHours = Math.floor(t / (1000 * 60 * 60));
+    const minutes = Math.floor((t / 1000 / 60) % 60);
+    const seconds = Math.floor((t / 1000) % 60);
+
+    return {
+      total: t,
+      hours: totalHours,
+      minutes: minutes,
+      seconds: seconds,
+    };
+  }
+
+  function getZero(num) {
+    return num < 10 ? `0${num}` : `${num}`;
+  }
+
+  function setClock(selector, endtime) {
+    const timer = document.querySelector(selector);
+
+    if (timer) {
+      const timeInterval = setInterval(updateClock, 1000);
+      updateClock();
+
+      function updateClock() {
+        const t = getTimeRemaining(endtime);
+
+        timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(
+          t.seconds
+        )}`;
+
+        if (t.total <= 0) {
+          clearInterval(timeInterval);
+          timer.innerHTML = `00:00:00`;
+        }
+      }
+    }
+  }
+
+  setClock(id, deadline);
 }

@@ -21,6 +21,7 @@
   --gray-161: #a1a1a1;
   --gray-167: #a7a7a7;
   --gray-207: #cfd5e4;
+  --gray-211: #d3d3d3;
   --gray-217: #d9d9d9;
   --gray-227: #e3e3e3;
   --gray-232: #e8e8e8;
@@ -1698,7 +1699,7 @@ input::-ms-clear {
   gap: 20px;
   margin: 0 0 58px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .a-training__line {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1732,27 +1733,43 @@ input::-ms-clear {
   background: -webkit-gradient(linear, left top, left bottom, from(#e67b53), to(#6023c3));
   background: linear-gradient(180deg, #e67b53 0%, #6023c3 100%);
 }
-@media (min-width: 768px) {
-  .a-training__progress span {
-    padding: 20px;
-  }
-}
 @media (min-width: 1200px) {
   .a-training__progress span {
     font-size: 20px;
     padding: 20px 44px;
   }
 }
-.a-training__link {
+.a-training__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .a-training__buttons {
+    gap: 20px;
+  }
+}
+.a-training__btn {
+  border: 2px solid var(--backtimeslip);
+  border-radius: 80px;
+  width: 50%;
+  min-width: 155px;
+  padding: 18px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+@media (min-width: 1200px) {
+  .a-training__btn {
+    width: auto;
+  }
+}
+.a-training__btn--red {
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--red)), to(var(--red-186)));
+  background: linear-gradient(180deg, var(--red) 0%, var(--red-186) 100%);
+}
+.a-training__link {
   min-width: 330px;
   padding: 20px;
   color: var(--background);
@@ -1772,8 +1789,14 @@ input::-ms-clear {
   }
 }
 .a-training__link:disabled, .a-training__link.disabled {
+  font-weight: 600;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#737373));
   background: linear-gradient(180deg, #fff 0%, #737373 100%);
+  pointer-events: none;
+  cursor: default;
+}
+.a-training__link span {
+  font-variant-numeric: tabular-nums;
 }
 
 @media (min-width: 1200px) {
@@ -2244,9 +2267,77 @@ input::-ms-clear {
   gap: 24px;
 }
 .a-training-chat__field {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+.a-training-chat__textarea {
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding: 19px 55px;
+  font-weight: 400;
+  color: var(--black);
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  border-radius: var(--radius-10);
+  resize: none;
+  max-height: 100px;
+  overflow: auto;
+  scrollbar-color: var(--gray) var(--gray-232);
+  scrollbar-width: thin;
+}
+.a-training-chat__textarea::-webkit-input-placeholder {
+  color: var(--gray-211);
+}
+.a-training-chat__textarea::-moz-placeholder {
+  color: var(--gray-211);
+}
+.a-training-chat__textarea:-ms-input-placeholder {
+  color: var(--gray-211);
+}
+.a-training-chat__textarea::-ms-input-placeholder {
+  color: var(--gray-211);
+}
+.a-training-chat__textarea::placeholder {
+  color: var(--gray-211);
+}
+.a-training-chat__textarea::-webkit-scrollbar {
+  width: 7px;
+  background-color: var(--gray-232);
+}
+.a-training-chat__textarea::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--gray);
+}
+.a-training-chat__emoji-btn, .a-training-chat__upload-btn {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 55px;
+  height: 55px;
+}
+.a-training-chat__emoji-btn {
+  left: 0;
+}
+.a-training-chat__emoji-btn svg {
+  color: var(--blue);
+}
+.a-training-chat__upload-btn {
+  right: 0;
+}
+.a-training-chat__upload-btn svg {
+  color: var(--blue);
 }
 .a-training-chat__btn {
   display: -webkit-box;
@@ -2731,6 +2822,11 @@ input::-ms-clear {
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
+}
+@media (min-width: 1200px) {
+  .a-training-tabs-card__date {
+    font-weight: 400;
+  }
 }
 .a-training-tabs-card__lines {
   display: -webkit-box;

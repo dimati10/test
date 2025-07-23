@@ -554,6 +554,14 @@ function controlModal() {
           if (btn.dataset.btn === modal.dataset.modal) {
             modal.classList.add("active");
             fixBodyPosition();
+
+            if (modal.dataset.modal !== "statistics") return;
+
+            console.log("statistics");
+
+            const copyBlock = modal.querySelector(".js_modal_statistics_copy");
+
+            copyContent(copyBlock.textContent.trim())
           }
         });
       });
@@ -753,123 +761,11 @@ function initDatepicker() {
 
 // прикрепление файла
 
-// function attachFile() {
-//   const widgets = document.querySelectorAll(".js_upload");
-//   if (!widgets.length) return;
-
-//   const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
-//   const MAX_FILES_COUNT = 10;
-
-//   widgets.forEach(widget => {
-//     const input = widget.querySelector(".js_upload_input");
-//     const text = widget.querySelector(".js_upload_text");
-//     const list = widget.querySelector(".js_upload_list");
-
-//     // toggle native <input multiple> attr depending on data‑multiple
-//     const allowMultiple = widget.hasAttribute("data-multiple");
-//     if (allowMultiple) input.setAttribute("multiple", "multiple");
-
-//     // internal state – selected File objects
-//     let files = [];
-
-//     /** Utility: resets component to pristine */
-//     const reset = () => {
-//       files = [];
-//       render();
-//       input.value = "";
-//     };
-
-//     /** Remove file by index */
-//     const removeAt = index => {
-//       files.splice(index, 1);
-//       render();
-//     };
-
-//     /** UI: re‑render entire file list */
-//     const render = () => {
-//       // status text
-//        text.textContent = files.length
-//         ? (allowMultiple
-//             ? `${files.length}/${MAX_FILES_COUNT} файл(ов) выбран`
-//             : "Файл выбран")
-//         : "Файл не выбран";
-
-//       // list
-//       list.innerHTML = "";
-//       list.classList.toggle("active", files.length > 0);
-
-//       files.forEach((file, idx) => {
-//         const item = document.createElement("div");
-//         item.className = "a-upload__item";
-
-//         const name = document.createElement("span");
-//         name.className = "js_upload_name";
-//         name.textContent = file.name;
-//         item.appendChild(name);
-
-//         const removeBtn = document.createElement("button");
-//         removeBtn.type = "button";
-//         removeBtn.className = "js_upload_remove";
-//         removeBtn.innerHTML =
-//           '<svg width="12" height="12"><use xlink:href="images/sprite.svg#close"></use></svg>';
-//         removeBtn.addEventListener("click", () => removeAt(idx));
-//         item.appendChild(removeBtn);
-
-//         list.appendChild(item);
-//       });
-//     };
-
-//     /** Handle selection */
-//     input.addEventListener("change", () => {
-//       const selected = Array.from(input.files);
-
-//       // user cancelled
-//       if (!selected.length) {
-//         input.value = "";
-//         return;
-//       }
-
-//       // size validation & filter oversize files
-//       const oversize = selected.find(f => f.size > MAX_FILE_SIZE);
-//       if (oversize) {
-//         alert(`Размер файла «${oversize.name}» превышает 5 МБ`);
-//         input.value = "";
-//         return;
-//       }
-
-//       // if single‑file mode → replace; else additive
-//       if (!allowMultiple) {
-//         files = [selected[0]];
-//       } else {
-//         // concat and dedupe by name+size
-//         const combined = [...files, ...selected];
-//         const map = new Map();
-//         combined.forEach(f => map.set(`${f.name}_${f.size}`, f));
-//         files = Array.from(map.values()).slice(0, MAX_FILES_COUNT);
-
-//         if (combined.length > MAX_FILES_COUNT) {
-//           alert(`Можно загрузить максимум ${MAX_FILES_COUNT} файлов. Лишние будут проигнорированы.`);
-//         }
-//       }
-
-//       render();
-//       // clear native input so that the same file can be re‑selected later
-//       input.value = "";
-//     });
-
-//     // Public API: expose helper to read files later
-//     widget.getFiles = () => files;
-
-//     // expose reset if needed externally
-//     widget.resetFiles = reset;
-//   });
-// }
-
 function attachFile() {
   const widgets = document.querySelectorAll(".js_upload");
   if (!widgets.length) return;
 
-  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+  const MAX_FILE_SIZE = 5 * 1024 * 1024;
   const MAX_FILES_COUNT = 10;
 
   widgets.forEach((widget) => {
@@ -878,14 +774,11 @@ function attachFile() {
     const list = widget.querySelector(".js_upload_list");
     const area = widget.querySelector(".a-upload__area");
 
-    // multiple support
     const allowMultiple = widget.hasAttribute("data-multiple");
     if (allowMultiple) input.setAttribute("multiple", "multiple");
 
-    // internal state
     let files = [];
 
-    /* utility -------------------------------------------------------------- */
     const reset = () => {
       files = [];
       render();
@@ -897,7 +790,6 @@ function attachFile() {
       render();
     };
 
-    /* render ---------------------------------------------------------------- */
     const render = () => {
       text.textContent = files.length
         ? allowMultiple
@@ -929,7 +821,6 @@ function attachFile() {
       });
     };
 
-    /* core logic ------------------------------------------------------------ */
     const tryAddFiles = (selected) => {
       if (!selected.length) return;
 
@@ -956,13 +847,11 @@ function attachFile() {
       render();
     };
 
-    /* input change ---------------------------------------------------------- */
     input.addEventListener("change", () => {
       tryAddFiles(Array.from(input.files));
-      input.value = ""; // allow reselection
+      input.value = "";
     });
 
-    /* drag‑and‑drop --------------------------------------------------------- */
     if (area) {
       const highlight = (flag) => area.classList.toggle("is-dragover", flag);
 
@@ -986,7 +875,6 @@ function attachFile() {
       });
     }
 
-    /* expose --------------------------------------------------------------- */
     widget.getFiles = () => files;
     widget.resetFiles = reset;
   });
@@ -1068,6 +956,9 @@ function initTrainingSliders() {
 
 function seTextareaHeight() {
   const textarea = document.querySelector(".js_textarea");
+
+  if (!textarea) return;
+
   textarea.addEventListener("input", () => {
     // textarea.style.height = "auto";
     textarea.style.height = `${textarea.scrollHeight}px`;

@@ -452,7 +452,7 @@
           </div>
           <div class="a-training__buttons">
             <button class="a-training__btn a-training__btn--red" type="button">+ ЗИТОН</button>
-            <button class="a-training__btn" type="button">ОТЧЕТ</button>
+            <button class="a-training__btn" type="button" data-btn="statistics">ОТЧЕТ</button>
           </div>
           <a class="a-training__link disabled" href="#">Крутить через <span class="js_training_link_timer">00:00:00</span></a>
         </div>
@@ -910,6 +910,53 @@
       </div>
     </div>
   </footer>
+
+  <div class="a-modal a-modal-statistics" data-modal="statistics">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">Статистика</h3>
+      <p class="a-modal__descr">Статистика уже скопирована в ваш буфер обмена!</p>
+      <div class="a-modal-statistics__items">
+        <div class="a-modal-statistics-item">
+          <span class="a-modal-statistics-item__caption">26 уроков от 15 февраля:</span>
+          <a class="a-modal-statistics-item__link" href="#">https://enterzion.ktalk.ru</a>
+          <p class="a-modal-statistics-item__descr">Выполнено домашнего задания: 0 из 1 (0.00%)</p>
+        </div>
+        <div class="a-modal-statistics-item">
+          <span class="a-modal-statistics-item__caption">26 уроков от 15 февраля:</span>
+          <a class="a-modal-statistics-item__link" href="#">https://enterzion.ktalk.ru</a>
+          <p class="a-modal-statistics-item__descr">Выполнено домашнего задания: 0 из 1 (0.00%)</p>
+        </div>
+        <div class="a-modal-statistics-item">
+          <span class="a-modal-statistics-item__caption">26 уроков от 15 февраля:</span>
+          <a class="a-modal-statistics-item__link" href="#">https://enterzion.ktalk.ru</a>
+          <p class="a-modal-statistics-item__descr">Выполнено домашнего задания: 0 из 1 (0.00%)</p>
+        </div>
+      </div>
+      <div class="a-modal__buttons">
+        <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red js_modal_close" type="button">
+          ок
+        </button>
+      </div>
+      <div class="a-modal-statistics__copy js_modal_statistics_copy">
+        26 уроков от 15 февраля:
+        https://enterzion.ktalk.ru
+        Выполнено домашнего задания: 0 из 1 (0.00%)
+
+        26 уроков от 15 февраля:
+        https://enterzion.ktalk.ru
+        Выполнено домашнего задания: 0 из 1 (0.00%)
+
+        26 уроков от 15 февраля:
+        https://enterzion.ktalk.ru
+        Выполнено домашнего задания: 0 из 1 (0.00%)
+      </div>
+    </div>
+  </div>
 
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>

@@ -55,7 +55,7 @@
       <li class="pages__item"><a class="pages__link" href="admin.html">Администрирование</a></li>
       <li class="pages__item"><a class="pages__link" href="new-user.html">Добавление нового пользователя</a></li>
       <li class="pages__item"><a class="pages__link" href="training.html">Обучение - ученик</a></li>
-      <li class="pages__item"><a class="pages__link" href="training-teacher.html">Обучение - ученик (в разработке)</a></li>
+      <li class="pages__item"><a class="pages__link" href="training-teacher.html">Обучение - учитель</a></li>
       <br>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="adding-student">Модальное окно - Добавление
           ученика</a>
@@ -100,6 +100,8 @@
       </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="newsletter">Модальное окно - Общая рассылка в
           телеграм</a>
+      </li>
+       <li class="pages__item"><a class="pages__link" href="#" data-btn="statistics">Модальное окно - Статистика</a>
       </li>
     </ol>
   </div>
@@ -1756,6 +1758,53 @@
           </button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-statistics" data-modal="statistics">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">Статистика</h3>
+      <p class="a-modal__descr">Статистика уже скопирована в ваш буфер обмена!</p>
+      <div class="a-modal-statistics__items">
+        <div class="a-modal-statistics-item">
+          <span class="a-modal-statistics-item__caption">26 уроков от 15 февраля:</span>
+          <a class="a-modal-statistics-item__link" href="#">https://enterzion.ktalk.ru</a>
+          <p class="a-modal-statistics-item__descr">Выполнено домашнего задания: 0 из 1 (0.00%)</p>
+        </div>
+        <div class="a-modal-statistics-item">
+          <span class="a-modal-statistics-item__caption">26 уроков от 15 февраля:</span>
+          <a class="a-modal-statistics-item__link" href="#">https://enterzion.ktalk.ru</a>
+          <p class="a-modal-statistics-item__descr">Выполнено домашнего задания: 0 из 1 (0.00%)</p>
+        </div>
+        <div class="a-modal-statistics-item">
+          <span class="a-modal-statistics-item__caption">26 уроков от 15 февраля:</span>
+          <a class="a-modal-statistics-item__link" href="#">https://enterzion.ktalk.ru</a>
+          <p class="a-modal-statistics-item__descr">Выполнено домашнего задания: 0 из 1 (0.00%)</p>
+        </div>
+      </div>
+      <div class="a-modal__buttons">
+        <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red js_modal_close" type="button">
+          ок
+        </button>
+      </div>
+      <div class="a-modal-statistics__copy js_modal_statistics_copy">
+        26 уроков от 15 февраля:
+        https://enterzion.ktalk.ru
+        Выполнено домашнего задания: 0 из 1 (0.00%)
+
+        26 уроков от 15 февраля:
+        https://enterzion.ktalk.ru
+        Выполнено домашнего задания: 0 из 1 (0.00%)
+
+        26 уроков от 15 февраля:
+        https://enterzion.ktalk.ru
+        Выполнено домашнего задания: 0 из 1 (0.00%)
+      </div>
     </div>
   </div>
 

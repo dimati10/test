@@ -555,13 +555,21 @@ function controlModal() {
             modal.classList.add("active");
             fixBodyPosition();
 
-            if (modal.dataset.modal !== "statistics") return;
+            if (modal.dataset.modal === "statistics") {
+              const copyBlock = modal.querySelector(
+                ".js_modal_statistics_copy"
+              );
 
-            console.log("statistics");
+              copyContent(copyBlock.textContent.trim());
+            }
 
-            const copyBlock = modal.querySelector(".js_modal_statistics_copy");
+            if (modal.dataset.modal === "adding-lesson") {
+              const hiddenInput = modal.querySelector(".js_hidden_input");
 
-            copyContent(copyBlock.textContent.trim())
+              if (btn.dataset.type) {
+                hiddenInput.value = btn.dataset.type;
+              }
+            }
           }
         });
       });

@@ -562,7 +562,7 @@
               <div class="a-training-tabs__block">
                 <h4 class="a-training-tabs__title">Модуль #2</h4>
                 <div class="a-training-tabs__cards">
-                  <button class="a-training-tabs__add" type="button">
+                  <button class="a-training-tabs__add" type="button" data-btn="adding-lesson" data-type="1">
                     <span></span>
                     Добавить
                   </button>
@@ -596,7 +596,7 @@
               <div class="a-training-tabs__block">
                 <h4 class="a-training-tabs__title">Модуль #1</h4>
                 <div class="a-training-tabs__cards">
-                  <button class="a-training-tabs__add" type="button">
+                  <button class="a-training-tabs__add" type="button" data-btn="adding-lesson" data-type="2">
                     <span></span>
                     Добавить
                   </button>
@@ -628,7 +628,7 @@
               <div class="a-training-tabs__block">
                 <h4 class="a-training-tabs__title">Проверочные работы</h4>
                 <div class="a-training-tabs__cards">
-                  <button class="a-training-tabs__add" type="button">
+                  <button class="a-training-tabs__add" type="button" data-btn="adding-lesson" data-type="3">
                     <span></span>
                     Добавить
                   </button>
@@ -687,7 +687,7 @@
               <div class="a-training-tabs__block">
                 <h4 class="a-training-tabs__title">Контрольные звонки</h4>
                 <div class="a-training-tabs__cards">
-                  <button class="a-training-tabs__add" type="button">
+                  <button class="a-training-tabs__add" type="button" data-btn="adding-lesson" data-type="4">
                     <span></span>
                     Добавить
                   </button>
@@ -780,6 +780,92 @@
       </div>
     </div>
   </footer>
+
+  <div class="a-modal a-modal-adding-lesson" data-modal="adding-lesson">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">добавить урок</h3>
+      <h4 class="a-modal-adding-lesson__name">для александра александрова</h4>
+      <form class="a-modal__form">
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Название курса</label>
+            <div class="a-field__inner">
+              <select class="a-field__select">
+                <option value="" disabled selected>Выберите курс</option>
+                <option value="1">Математическая логика</option>
+                <option value="2">Курс 2</option>
+                <option value="3">Курс 3</option>
+              </select>
+              <button class="a-field__btn" type="button" disabled>
+                <svg width="16" height="9">
+                  <use xlink:href="images/sprite.svg#select-arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Шаблон урока</label>
+            <div class="a-field__inner">
+              <select class="a-field__select">
+                <option value="" disabled selected>Выберите урок</option>
+                <option value="1">Новый урок</option>
+                <option value="2">Урок 2</option>
+                <option value="3">Урок 3</option>
+              </select>
+              <button class="a-field__btn" type="button" disabled>
+                <svg width="16" height="9">
+                  <use xlink:href="images/sprite.svg#select-arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Тема урока</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="text">
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Ссылка на презентацию</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="text">
+              <label class="a-field__btn">
+                <span class="a-modal__checkbox a-checkbox a-checkbox--simple">
+                  <input class="a-checkbox__input" type="checkbox" checked>
+                  <span class="a-checkbox__text"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Дата урока</label>
+            <div class="a-field__inner">
+              <input class="a-field__input js_date_input" type="text" readonly>
+              <button class="a-field__btn" type="button" disabled>
+                <svg width="21" height="22">
+                  <use xlink:href="images/sprite.svg#calendar"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <input class="js_hidden_input" type="hidden">
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal" type="button">
+            создать урок
+          </button>
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            начать урок
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>

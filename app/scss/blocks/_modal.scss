@@ -59,6 +59,7 @@
   &__title {
     font-size: 24px;
     line-height: 29px;
+    font-weight: 700;
     text-transform: uppercase;
     margin: 0 32px 28px 0;
 
@@ -424,5 +425,37 @@
   &__descr {
     font-size: 14px;
     line-height: 17px;
+  }
+}
+
+.a-modal-adding-lesson {
+  .a-field__label {
+    @media (min-width: 1200px) {
+      width: 325px;
+    }
+  }
+
+  .a-modal__checkbox {
+    .a-checkbox__text {
+      &::before {
+        border: 2px solid var(--blue);
+      }
+    }
+  }
+
+  .a-modal__title {
+    margin-bottom: 16px;
+  }
+
+  &__name {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 32px 28px 0;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 40px;
+    }
   }
 }

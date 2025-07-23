@@ -3,6 +3,10 @@
   width: fit-content;
   cursor: pointer;
 
+  &:not(:has(.a-checkbox__text)) {
+    
+  }
+
   &__input {
     position: absolute;
     width: 1px;
@@ -21,7 +25,7 @@
     }
 
     &:focus+.a-checkbox__text::before {
-      box-shadow: 0 0 0 2px var(--blue);
+      box-shadow: 0 0 0 1px var(--blue);
     }
   }
 
@@ -72,5 +76,11 @@
       left: auto;
       right: 4px;
     }
+  }
+}
+
+.a-checkbox--simple {
+  .a-checkbox__text {
+    padding: 0 0 24px 28px;
   }
 }

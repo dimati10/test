@@ -1202,8 +1202,8 @@ input::-ms-clear {
   opacity: 1;
 }
 .a-checkbox__input:focus + .a-checkbox__text::before {
-  -webkit-box-shadow: 0 0 0 2px var(--blue);
-          box-shadow: 0 0 0 2px var(--blue);
+  -webkit-box-shadow: 0 0 0 1px var(--blue);
+          box-shadow: 0 0 0 1px var(--blue);
 }
 .a-checkbox__text {
   position: relative;
@@ -1250,6 +1250,10 @@ input::-ms-clear {
 .a-checkbox--reversed .a-checkbox__text::after {
   left: auto;
   right: 4px;
+}
+
+.a-checkbox--simple .a-checkbox__text {
+  padding: 0 0 24px 28px;
 }
 
 .a-btn {
@@ -2995,6 +2999,7 @@ input::-ms-clear {
 .a-modal__title {
   font-size: 24px;
   line-height: 29px;
+  font-weight: 700;
   text-transform: uppercase;
   margin: 0 32px 28px 0;
 }
@@ -3371,4 +3376,28 @@ input::-ms-clear {
 .a-modal-statistics-item__descr {
   font-size: 14px;
   line-height: 17px;
+}
+
+@media (min-width: 1200px) {
+  .a-modal-adding-lesson .a-field__label {
+    width: 325px;
+  }
+}
+.a-modal-adding-lesson .a-modal__checkbox .a-checkbox__text::before {
+  border: 2px solid var(--blue);
+}
+.a-modal-adding-lesson .a-modal__title {
+  margin-bottom: 16px;
+}
+.a-modal-adding-lesson__name {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 32px 28px 0;
+}
+@media (min-width: 1200px) {
+  .a-modal-adding-lesson__name {
+    margin-bottom: 40px;
+  }
 }

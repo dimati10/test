@@ -26,6 +26,7 @@ function initApp() {
   initTrainingSliders(); // превращение карточек в слайдеры на мобильных расширениях
   seTextareaHeight(); // автоматическое увеличение высоты textarea при переполнении текстом
   setTimer(".js_training_link_timer", "2025-08-10"); // таймер
+  setQrCode(); // qr код
 
   console.log("initApp");
 }
@@ -1021,4 +1022,22 @@ function setTimer(id, deadline) {
   }
 
   setClock(id, deadline);
+}
+
+// qr код
+
+function setQrCode() {
+  const qrContainer = document.querySelector(".js_qr");
+  const url = qrContainer.dataset.url;
+
+  if (url) {
+    new QRCode(qrContainer, {
+      text: url,
+      width: 200,
+      height: 200,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+  }
 }

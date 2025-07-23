@@ -3013,6 +3013,12 @@ input::-ms-clear {
   line-height: 24px;
   font-weight: 500;
 }
+.a-modal__descr a {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: var(--purple-164);
+}
 .a-modal__fields {
   margin: 0 0 40px;
   display: -webkit-box;
@@ -3398,6 +3404,29 @@ input::-ms-clear {
 }
 @media (min-width: 1200px) {
   .a-modal-adding-lesson__name {
+    margin-bottom: 40px;
+  }
+}
+
+.a-modal-share .a-modal__descr:not(:last-child) {
+  margin: 0 0 28px;
+}
+@media (min-width: 1200px) {
+  .a-modal-share .a-modal__descr:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+.a-modal-share__qr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0 28px;
+}
+@media (min-width: 1200px) {
+  .a-modal-share__qr {
     margin-bottom: 40px;
   }
 }

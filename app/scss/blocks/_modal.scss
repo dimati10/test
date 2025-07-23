@@ -72,6 +72,12 @@
     font-size: 20px;
     line-height: 24px;
     font-weight: 500;
+
+    a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: var(--purple-164);
+    }
   }
 
   &__fields {
@@ -453,6 +459,28 @@
     font-weight: 700;
     text-transform: uppercase;
     margin: 0 32px 28px 0;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.a-modal-share {
+  .a-modal__descr {
+    &:not(:last-child) {
+      margin: 0 0 28px;
+
+      @media (min-width: 1200px) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__qr {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 28px;
 
     @media (min-width: 1200px) {
       margin-bottom: 40px;

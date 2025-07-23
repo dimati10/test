@@ -15,7 +15,8 @@
 
   <style>
     body {
-      padding: 0;
+      display: block;
+      padding-top: 0;
     }
 
     .pages {
@@ -56,6 +57,7 @@
       <li class="pages__item"><a class="pages__link" href="new-user.html">Добавление нового пользователя</a></li>
       <li class="pages__item"><a class="pages__link" href="training.html">Обучение - ученик</a></li>
       <li class="pages__item"><a class="pages__link" href="training-teacher.html">Обучение - учитель</a></li>
+      <li class="pages__item"><a class="pages__link" href="profile.html">Личные данные (в разработке)</a></li>
       <br>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="adding-student">Модальное окно - Добавление
           ученика</a>
@@ -105,6 +107,7 @@
       </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="adding-lesson">Модальное окно - Добавление
           урока</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="share">Модальное окно - Присоединиться к боту в телеграм</a></li>
     </ol>
   </div>
 
@@ -1896,8 +1899,23 @@
     </div>
   </div>
 
+  <div class="a-modal a-modal-share" data-modal="share">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">присоединиться к боту в телеграм</h3>
+      <p class="a-modal__descr">Сканируй QR-code или перейди по ссылке, чтобы присоедениться к боту</p>
+      <div data-url="https://t.me/enterzion_infobot" class="a-modal-share__qr js_qr"></div>
+      <p class="a-modal__descr">Ссылка: <a href="https://t.me/enterzion_infobot">t.me/enterzion_infobot</a></p>
+    </div>
+  </div>
+
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>
+  <script src="js/qrcode.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

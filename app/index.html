@@ -108,6 +108,8 @@
       <li class="pages__item"><a class="pages__link" href="#" data-btn="adding-lesson">Модальное окно - Добавление
           урока</a></li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="share">Модальное окно - Присоединиться к боту в телеграм</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="add-zitons">Модальное окно -  Добавление зитонов</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="remove-zitons">Модальное окно -  Cписание зитонов</a></li>
     </ol>
   </div>
 
@@ -1910,6 +1912,70 @@
       <p class="a-modal__descr">Сканируй QR-code или перейди по ссылке, чтобы присоедениться к боту</p>
       <div data-url="https://t.me/enterzion_infobot" class="a-modal-share__qr js_qr"></div>
       <p class="a-modal__descr">Ссылка: <a href="https://t.me/enterzion_infobot">t.me/enterzion_infobot</a></p>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-add-zitons" data-modal="add-zitons">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">добавление зитонов</h3>
+       <form class="a-modal__form">
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Количество Зитонов</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="number">
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
+            <label class="a-field__label">Комментарий</label>
+            <div class="a-field__inner">
+              <textarea class="a-field__textarea"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--green" type="submit">
+            Добавить Зитоны
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-remove-zitons" data-modal="remove-zitons">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">списание зитонов</h3>
+       <form class="a-modal__form">
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Количество Зитонов</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="number">
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
+            <label class="a-field__label">Комментарий</label>
+            <div class="a-field__inner">
+              <textarea class="a-field__textarea"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            списать Зитоны
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 

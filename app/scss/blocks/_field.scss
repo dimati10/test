@@ -34,7 +34,7 @@
     flex-grow: 1;
   }
 
-  // &__textarea,
+  &__textarea,
   &__select,
   &__input {
     display: block;
@@ -57,16 +57,13 @@
   }
 
   &__textarea {
-    // resize: none;
-    // height: 120px;
+    resize: none;
+    height: 100px;
   }
 
   &__select {
     text-overflow: ellipsis;
     appearance: none;
-    // background-repeat: no-repeat;
-    // background-position: top 20px right 12px;
-    // background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.70711 8.20784C8.31658 8.59836 7.68342 8.59836 7.29289 8.20784L0.928932 1.84388C0.538408 1.45335 0.538408 0.820189 0.928932 0.429665C1.31946 0.0391403 1.95262 0.0391403 2.34315 0.429665L8 6.08652L13.6569 0.429665C14.0474 0.0391402 14.6805 0.0391401 15.0711 0.429665C15.4616 0.820189 15.4616 1.45335 15.0711 1.84388L8.70711 8.20784ZM9 5.5L9 7.50073L7 7.50073L7 5.5L9 5.5Z' fill='black' /%3E%3C/svg%3E");
   }
 
   &__btn {
@@ -153,8 +150,8 @@
   --field-height: 48px;
 
   .a-field__select,
+  .a-field__textarea,
   .a-field__input {
-    height: var(--field-height);
     font-size: 16px;
     line-height: 20px;
     font-weight: 500;
@@ -162,10 +159,16 @@
     border: 1px solid var(--gray);
   }
 
+  .a-field__select,
+  .a-field__input {
+     height: var(--field-height);
+  }
+
   .a-field__select {
     padding: 13px 40px 13px 12px;
   }
 
+  .a-field__textarea,
   .a-field__input {
     padding: 13px 16px;
   }

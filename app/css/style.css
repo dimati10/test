@@ -6,6 +6,7 @@
   --purple: #6023c3;
   --purple-gray: #595281;
   --purple-164: #a49cd7;
+  --green: #107a54;
   --red: #ea4643;
   --red-186: #ba2522;
   --error: #eb2020;
@@ -982,28 +983,32 @@ input::-ms-clear {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.a-field__select, .a-field__input {
+.a-field__textarea, .a-field__select, .a-field__input {
   display: block;
   width: 100%;
   color: var(--black);
 }
-.a-field__select::-webkit-input-placeholder, .a-field__input::-webkit-input-placeholder {
+.a-field__textarea::-webkit-input-placeholder, .a-field__select::-webkit-input-placeholder, .a-field__input::-webkit-input-placeholder {
   color: var(--black);
 }
-.a-field__select::-moz-placeholder, .a-field__input::-moz-placeholder {
+.a-field__textarea::-moz-placeholder, .a-field__select::-moz-placeholder, .a-field__input::-moz-placeholder {
   color: var(--black);
 }
-.a-field__select:-ms-input-placeholder, .a-field__input:-ms-input-placeholder {
+.a-field__textarea:-ms-input-placeholder, .a-field__select:-ms-input-placeholder, .a-field__input:-ms-input-placeholder {
   color: var(--black);
 }
-.a-field__select::-ms-input-placeholder, .a-field__input::-ms-input-placeholder {
+.a-field__textarea::-ms-input-placeholder, .a-field__select::-ms-input-placeholder, .a-field__input::-ms-input-placeholder {
   color: var(--black);
 }
-.a-field__select::placeholder, .a-field__input::placeholder {
+.a-field__textarea::placeholder, .a-field__select::placeholder, .a-field__input::placeholder {
   color: var(--black);
 }
-.a-field__select.error, .a-field__input.error {
+.a-field__textarea.error, .a-field__select.error, .a-field__input.error {
   border-color: var(--error);
+}
+.a-field__textarea {
+  resize: none;
+  height: 100px;
 }
 .a-field__select {
   text-overflow: ellipsis;
@@ -1077,17 +1082,22 @@ input::-ms-clear {
   --field-height: 48px;
 }
 .a-field--mod-for-modal .a-field__select,
+.a-field--mod-for-modal .a-field__textarea,
 .a-field--mod-for-modal .a-field__input {
-  height: var(--field-height);
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
   border-radius: 4px;
   border: 1px solid var(--gray);
 }
+.a-field--mod-for-modal .a-field__select,
+.a-field--mod-for-modal .a-field__input {
+  height: var(--field-height);
+}
 .a-field--mod-for-modal .a-field__select {
   padding: 13px 40px 13px 12px;
 }
+.a-field--mod-for-modal .a-field__textarea,
 .a-field--mod-for-modal .a-field__input {
   padding: 13px 16px;
 }
@@ -1304,6 +1314,12 @@ input::-ms-clear {
   color: var(--backtimeslip);
   background-color: var(--red);
   border-color: var(--red);
+}
+
+.a-btn--green {
+  color: var(--backtimeslip);
+  background-color: var(--green);
+  border-color: var(--green);
 }
 
 .a-admin {
@@ -3428,5 +3444,12 @@ input::-ms-clear {
 @media (min-width: 1200px) {
   .a-modal-share__qr {
     margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .a-modal-add-zitons .a-field__label,
+  .a-modal-remove-zitons .a-field__label {
+    width: 285px;
   }
 }

@@ -487,3 +487,12 @@
     }
   }
 }
+
+.a-modal-add-zitons,
+.a-modal-remove-zitons {
+  .a-field__label {
+    @media (min-width: 1200px) {
+      width: 285px;
+    }
+  }
+}

@@ -189,7 +189,14 @@
     <section class="a-profile-card">
       <div class="a-container">
         <div class="a-profile-card__inner">
-          <h1 class="a-profile-card__title title">Личные данные</h1>
+          <h1 class="a-profile-card__title title">
+            Личные данные
+            <button class="a-profile-card__edit-btn" type="button">
+              <svg width="29" height="26">
+                <use xlink:href="images/sprite.svg#edit"></use>
+              </svg>
+            </button>
+          </h1>
           <div class="a-profile-card__avatar">
             <img src="images/avatar-1.svg" alt="Аватар" width="221" height="221">
           </div>
@@ -220,11 +227,6 @@
               </svg>
               присоединиться к боту в телеграм
             </button>
-            <button class="a-profile-card__edit-btn" type="button">
-              <svg width="29" height="26">
-                <use xlink:href="images/sprite.svg#edit"></use>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
@@ -236,27 +238,23 @@
           <div class="a-profile-achievements">
             <h2 class="a-profile-achievements__title title">Достижения</h2>
             <div class="a-profile-achievements__charts">
-              <div class="a-profile-achievements-donut" data-percent="75" style="--percent: 75">
+              <div class="a-profile-achievements-donut" style="--percent: 75%">
                 <h3 class="a-profile-achievements-donut__label">Домашние задания</h3>
                 <div class="a-profile-achievements-donut__inner">
                   <span>75%</span>
                 </div>
               </div>
-              <div class="a-profile-achievements-donut" data-percent="58" style="--percent: 58">
+              <div class="a-profile-achievements-donut" style="--percent: 58%">
                 <h3 class="a-profile-achievements-donut__label">Контрольные работы</h3>
                 <div class="a-profile-achievements-donut__inner">
                   <span>58%</span>
                 </div>
               </div>
             </div>
-            <div class="a-profile-dashboard-legend">
-              <div class="a-profile-dashboard-legend__item"><span
-                  class="a-profile-dashboard-legend__color a-profile-dashboard-legend__color--accepted"></span> Принято
-              </div>
-              <div class="a-profile-dashboard-legend__item"><span
-                  class="a-profile-dashboard-legend__color a-profile-dashboard-legend__color--not-accepted"></span> Не
-                принято</div>
-            </div>
+             <ul class="a-profile-dashboard__statuses">
+              <li class="a-profile-dashboard__status" style="--status-color: #107a54;;">Принято</li>
+              <li class="a-profile-dashboard__status" style="--status-color: #ffbe0b;">Не принято</li>
+            </ul>
           </div>
 
           <div class="a-profile-statistics">

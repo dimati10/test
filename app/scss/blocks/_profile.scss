@@ -1,7 +1,6 @@
 .a-profile-card {
 
 	&__inner {
-		position: relative;
 		display: grid;
 		align-items: start;
 		grid-gap: 40px;
@@ -17,6 +16,10 @@
 			gap: 40px 100px;
 			padding-bottom: 70px;
 		}
+	}
+
+	&__title {
+		position: relative;
 	}
 
 	&__avatar {
@@ -148,7 +151,7 @@
 
 	&__edit-btn {
 		position: absolute;
-		top: 0;
+		top: 70px;
 		right: 0;
 		display: flex;
 		align-items: center;
@@ -157,6 +160,10 @@
 		height: 52px;
 		border-radius: 13px;
 		border: 1px solid var(--backtimeslip);
+
+		@media (min-width: 768px) {
+			top: 0;
+		}
 
 		svg {
 			color: var(--backtimeslip);
@@ -173,7 +180,11 @@
 	}
 
 	&__title {
-		margin: 0 0 60px;
+		margin: 0 0 54px;
+
+		@media (min-width: 1200px) {
+			margin-bottom: 60px;
+		}
 	}
 
 	&__inner {
@@ -342,34 +353,91 @@
 .a-profile-dashboard {
 	padding: 60px 0 40px;
 
-	&__inner {}
+	&__inner {
+		display: flex;
+		// flex-direction: column;
+		// gap: 60px;
+
+		@media (min-width: 1200px) {
+			flex-direction: row;
+			gap: 100px;
+		}
+	}
+
+	&__statuses {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&__status {
+		display: flex;
+		align-items: center;
+		gap: 27px;
+		font-family: var(--font-family);
+		font-size: 16px;
+		line-height: 20px;
+
+		&::before {
+			flex-shrink: 0;
+			content: '';
+			width: 20px;
+			height: 20px;
+			background-color: var(--status-color);
+		}
+	}
 }
 
 .a-profile-achievements {
+
+	@media (min-width: 1200px) {
+		width: 600px;
+	}
 
 	&__title {
 		margin: 0 0 78px;
 	}
 
-	&__charts {}
+	&__charts {
+		display: flex;
+		gap: 40px;
+		justify-content: space-between;
+		margin: 0 0 50px;
+	}
 }
 
 .a-profile-achievements-donut {
+	width: 250px;
 
-	&__label {}
+	&__label {
+		margin: 0 0 50px;
+		font-size: 24px;
+		line-height: 29px;
+		font-weight: 600;
+	}
 
-	&__inner {}
-}
+	&__inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background: conic-gradient(var(--green) 0% var(--percent), var(--yellow) var(--percent) 100%);
 
-.a-profile-dashboard-legend {
-
-	&__item {}
-
-	&__color {}
-
-	&__color--accepted {}
-
-	&__color--not-accepted {}
+		span {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: calc(100% - 80px);
+			height: calc(100% - 80px);
+			font-size: 48px;
+			line-height: 77px;
+			border-radius: 50%;
+			background-color: var(--background);
+		}
+	}
 }
 
 .a-profile-statistics {

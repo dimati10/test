@@ -3148,8 +3148,280 @@ input::-ms-clear {
   margin: -2px -6px 0 0;
 }
 
+.a-profile-dashboard {
+  padding: 34px 0;
+}
+@media (min-width: 1200px) {
+  .a-profile-dashboard {
+    padding: 60px 0 40px;
+  }
+}
+.a-profile-dashboard__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 78px;
+}
+@media (min-width: 1200px) {
+  .a-profile-dashboard__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 100px;
+  }
+}
+.a-profile-dashboard__statuses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+  margin: auto 0 0;
+}
+.a-profile-dashboard__status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 27px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 20px;
+}
+.a-profile-dashboard__status::before {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--status-color);
+}
+
+.a-profile-achievements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 1200px) {
+  .a-profile-achievements {
+    width: 600px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+.a-profile-achievements__title {
+  margin: 0 0 42px;
+}
+@media (min-width: 1200px) {
+  .a-profile-achievements__title {
+    margin-bottom: 78px;
+  }
+}
+.a-profile-achievements__charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+  margin: 0 0 60px;
+}
+@media (min-width: 768px) {
+  .a-profile-achievements__charts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    gap: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .a-profile-achievements__charts {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (min-width: 768px) {
+  .a-profile-achievements-donut {
+    width: 250px;
+  }
+}
+.a-profile-achievements-donut__label {
+  margin: 0 0 26px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+@media (min-width: 1200px) {
+  .a-profile-achievements-donut__label {
+    min-height: 87px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+.a-profile-achievements-donut__inner {
+  width: 250px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: conic-gradient(var(--green) 0% var(--percent), var(--yellow) var(--percent) 100%);
+}
+.a-profile-achievements-donut__inner span {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(100% - 80px);
+  height: calc(100% - 80px);
+  font-size: 48px;
+  line-height: 77px;
+  border-radius: 50%;
+  background-color: var(--background);
+}
+
+.a-profile-statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.a-profile-statistics__title {
+  margin: 0 0 42px;
+}
+@media (min-width: 1200px) {
+  .a-profile-statistics__title {
+    margin-bottom: 78px;
+  }
+}
+.a-profile-statistics__subtitle {
+  margin: 0 0 42px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+@media (min-width: 1200px) {
+  .a-profile-statistics__subtitle {
+    min-height: 87px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+.a-profile-statistics__bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 60px;
+}
+@media (min-width: 768px) {
+  .a-profile-statistics__bars {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    gap: 28px;
+  }
+}
+@media (min-width: 1200px) {
+  .a-profile-statistics__bars {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.a-profile-statistics-bar {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+  width: 44px;
+}
+.a-profile-statistics-bar__progress {
+  background-color: var(--yellow);
+  height: 248px;
+  border-radius: 5px;
+}
+.a-profile-statistics-bar__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #222;
+  font-size: 32px;
+  line-height: 26px;
+  font-weight: 700;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.a-profile-statistics-bar__value--accepted {
+  color: var(--backtimeslip);
+  background-color: var(--green);
+}
+.a-profile-statistics-bar__date {
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-size: 16px;
+  line-height: 100%;
+}
+
 .a-profile-zitons {
-  padding: 27px 0 50px;
+  padding: 34px 0 45px;
 }
 @media (min-width: 1200px) {
   .a-profile-zitons {
@@ -3318,26 +3590,45 @@ input::-ms-clear {
 }
 
 .a-profile-zitons-assistant {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   gap: 32px;
 }
+@media (min-width: 768px) {
+  .a-profile-zitons-assistant {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media (min-width: 1200px) {
+  .a-profile-zitons-assistant {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
 .a-profile-zitons-assistant__img {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   width: 124px;
 }
+@media (min-width: 768px) {
+  .a-profile-zitons-assistant__img {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
 .a-profile-zitons-assistant__img img {
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
 }
 .a-profile-zitons-assistant__content {
   display: -webkit-box;
@@ -3360,116 +3651,6 @@ input::-ms-clear {
 .a-profile-zitons-assistant__footnote {
   font-size: 16px;
   line-height: 21px;
-}
-
-.a-profile-dashboard {
-  padding: 60px 0 40px;
-}
-.a-profile-dashboard__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media (min-width: 1200px) {
-  .a-profile-dashboard__inner {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    gap: 100px;
-  }
-}
-.a-profile-dashboard__statuses {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 24px;
-}
-.a-profile-dashboard__status {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 27px;
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-}
-.a-profile-dashboard__status::before {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  content: "";
-  width: 20px;
-  height: 20px;
-  background-color: var(--status-color);
-}
-
-@media (min-width: 1200px) {
-  .a-profile-achievements {
-    width: 600px;
-  }
-}
-.a-profile-achievements__title {
-  margin: 0 0 78px;
-}
-.a-profile-achievements__charts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 40px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 0 50px;
-}
-
-.a-profile-achievements-donut {
-  width: 250px;
-}
-.a-profile-achievements-donut__label {
-  margin: 0 0 50px;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: 600;
-}
-.a-profile-achievements-donut__inner {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: conic-gradient(var(--green) 0% var(--percent), var(--yellow) var(--percent) 100%);
-}
-.a-profile-achievements-donut__inner span {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: calc(100% - 80px);
-  height: calc(100% - 80px);
-  font-size: 48px;
-  line-height: 77px;
-  border-radius: 50%;
-  background-color: var(--background);
 }
 
 .a-modal {

@@ -27,6 +27,7 @@ function initApp() {
   seTextareaHeight(); // автоматическое увеличение высоты textarea при переполнении текстом
   setTimer(".js_training_link_timer", "2025-08-10"); // таймер
   setQrCode(); // qr код
+  setFortuneWheel(); // колесо фортуны
 
   console.log("initApp");
 }
@@ -1040,4 +1041,61 @@ function setQrCode() {
       correctLevel: QRCode.CorrectLevel.H,
     });
   }
+}
+
+// колесо фортуны
+
+function setFortuneWheel() {
+  const btn = document.querySelector(".js_profile_fortune_wheel_btn");
+  const wheel = document.querySelector(".js_profile_fortune_wheel_inner");
+
+  const segments = [
+    "red",
+    "yellow",
+    "green",
+    "orange",
+    "red",
+    "yellow",
+    "green",
+    "orange",
+  ];
+
+  const segmentAngle = 360 / segments.length;
+  const minTurns = 1;
+  const maxTurns = 4;
+  let spinning = false;
+  let totalRotation = 0;
+
+  btn.addEventListener("click", () => {
+    if (spinning) return;
+    spinning = true;
+
+    const turns =
+      Math.floor(Math.random() * (maxTurns - minTurns + 1)) + minTurns;
+    const randomAngleInSegment = Math.random() * segmentAngle;
+    const extraRotation = turns * 360 + randomAngleInSegment;
+    totalRotation += extraRotation;
+
+    wheel.style.transition = "transform 5s cubic-bezier(0.33, 1, 0.68, 1)";
+    wheel.style.transform = `rotate(${totalRotation}deg)`;
+
+    setTimeout(() => {
+      // Определяем реальное положение стрелки (вверх = 0°)
+      const normalizedAngle = ((totalRotation % 360) + 360) % 360;
+      const index = Math.floor(((360 - normalizedAngle) % 360) / segmentAngle);
+      const result = segments[index];
+
+      console.log("Выпало:", result);
+
+      fetch("/api/wheel-result", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ result }),
+      });
+
+      spinning = false;
+    }, 5200);
+  });
 }

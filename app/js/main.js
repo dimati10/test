@@ -1065,16 +1065,52 @@ function setFortuneWheel() {
   const maxTurns = 4;
   let spinning = false;
   let totalRotation = 0;
+  let countdownInterval = null;
+
+  function parseTimeString(str) {
+    const [h, m, s] = str.split(":").map((n) => parseInt(n, 10));
+    return (h || 0) * 3600 + (m || 0) * 60 + (s || 0);
+  }
+
+  function formatTime(seconds) {
+    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const s = String(seconds % 60).padStart(2, "0");
+    return `${h}:${m}:${s}`;
+  }
+
+  function startCountdown(duration) {
+    let remaining = duration;
+    btn.textContent = formatTime(remaining);
+    btn.disabled = true;
+
+    countdownInterval = setInterval(() => {
+      remaining--;
+      btn.textContent = formatTime(remaining);
+      if (remaining <= 0) {
+        clearInterval(countdownInterval);
+        btn.textContent = "КРУТИТЬ";
+        btn.disabled = false;
+      }
+    }, 1000);
+  }
+
+  const raw = btn.getAttribute("data-timer");
+  if (raw) {
+    const seconds = parseTimeString(raw);
+    if (seconds > 0) {
+      startCountdown(seconds);
+    }
+  }
 
   btn.addEventListener("click", () => {
-    if (spinning) return;
+    if (spinning || btn.disabled) return;
     spinning = true;
     btn.disabled = true;
 
     const turns =
       Math.floor(Math.random() * (maxTurns - minTurns + 1)) + minTurns;
-    const randomAngleInSegment = Math.random() * segmentAngle;
-    const extraRotation = turns * 360 + randomAngleInSegment;
+    const extraRotation = turns * 360 + Math.random() * 360;
     totalRotation += extraRotation;
 
     wheel.style.transition = "transform 5s cubic-bezier(0.33, 1, 0.68, 1)";
@@ -1087,16 +1123,25 @@ function setFortuneWheel() {
 
       // console.log("Выпало:", result);
 
+      if (result === "green") {
+        spinning = false;
+        btn.disabled = false;
+        btn.textContent = "КРУТИТЬ";
+        return;
+      }
+
+      const nextCooldown = "12:00:00";
+
       fetch("/api/wheel-result", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ result }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ result, cooldown: nextCooldown }),
       });
 
+      const seconds = parseTimeString(nextCooldown);
+      startCountdown(seconds);
+
       spinning = false;
-      btn.disabled = false;
     }, 5200);
   });
 }

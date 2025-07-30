@@ -4182,6 +4182,7 @@ input::-ms-clear {
   line-height: 22px;
   font-weight: 700;
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
   border-radius: 50%;
   background-color: var(--green);
   -webkit-transition: background-color 0.3s;

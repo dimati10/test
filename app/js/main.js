@@ -1069,6 +1069,7 @@ function setFortuneWheel() {
   btn.addEventListener("click", () => {
     if (spinning) return;
     spinning = true;
+    btn.disabled = true;
 
     const turns =
       Math.floor(Math.random() * (maxTurns - minTurns + 1)) + minTurns;
@@ -1080,12 +1081,11 @@ function setFortuneWheel() {
     wheel.style.transform = `rotate(${totalRotation}deg)`;
 
     setTimeout(() => {
-      // Определяем реальное положение стрелки (вверх = 0°)
       const normalizedAngle = ((totalRotation % 360) + 360) % 360;
       const index = Math.floor(((360 - normalizedAngle) % 360) / segmentAngle);
       const result = segments[index];
 
-      console.log("Выпало:", result);
+      // console.log("Выпало:", result);
 
       fetch("/api/wheel-result", {
         method: "POST",
@@ -1096,6 +1096,7 @@ function setFortuneWheel() {
       });
 
       spinning = false;
+      btn.disabled = false;
     }, 5200);
   });
 }

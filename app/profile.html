@@ -191,7 +191,7 @@
         <div class="a-profile-card__inner">
           <h1 class="a-profile-card__title title">
             Личные данные
-            <button class="a-profile-card__edit-btn" type="button">
+            <button class="a-profile-card__edit-btn" type="button" data-btn="data-editor">
               <svg width="29" height="26">
                 <use xlink:href="images/sprite.svg#edit"></use>
               </svg>
@@ -641,7 +641,8 @@
                   </div>
                 </div>
               </div>
-              <button class="a-profile-fortune-wheel__btn js_profile_fortune_wheel_btn" data-timer="00:00:10">КРУТИТЬ</button>
+              <button class="a-profile-fortune-wheel__btn js_profile_fortune_wheel_btn"
+                data-timer="00:00:10">КРУТИТЬ</button>
             </div>
             <ul class="a-profile-fortune__statuses">
               <li class="a-profile-fortune__status">
@@ -833,6 +834,116 @@
         <div class="a-modal__buttons">
           <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
             списать Зитоны
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-data-editor" data-modal="data-editor">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">редактор данных</h3>
+      <form class="a-modal__form">
+        <div class="a-modal-data-editor__avatars">
+          <h4 class="a-modal-data-editor__caption">Аватар профиля</h4>
+          <div class="a-modal-data-editor__slider">
+            <div class="a-modal-data-editor__swiper swiper js_modal_data_editor_swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <label class="a-modal-data-editor-avatar">
+                    <input class="a-modal-data-editor-avatar__input" type="radio" name="avatar" checked>
+                    <div class="a-modal-data-editor-avatar__img">
+                      <img src="images/avatar-1.svg" alt="Аватар">
+                    </div>
+                  </label>
+                </div>
+                <div class="swiper-slide">
+                  <label class="a-modal-data-editor-avatar">
+                    <input class="a-modal-data-editor-avatar__input" type="radio" name="avatar">
+                    <div class="a-modal-data-editor-avatar__img">
+                      <img src="images/avatar-2.svg" alt="Аватар">
+                    </div>
+                  </label>
+                </div>
+                <div class="swiper-slide">
+                  <label class="a-modal-data-editor-avatar">
+                    <input class="a-modal-data-editor-avatar__input" type="radio" name="avatar">
+                    <div class="a-modal-data-editor-avatar__img">
+                      <img src="images/avatar-1.svg" alt="Аватар">
+                    </div>
+                  </label>
+                </div>
+                <div class="swiper-slide">
+                  <label class="a-modal-data-editor-avatar">
+                    <input class="a-modal-data-editor-avatar__input" type="radio" name="avatar">
+                    <div class="a-modal-data-editor-avatar__img">
+                      <img src="images/avatar-2.svg" alt="Аватар">
+                    </div>
+                  </label>
+                </div>
+                <div class="swiper-slide">
+                  <div class="a-modal-data-editor-upload js_modal_data_editor_upload">
+                    <label class="a-modal-data-editor-upload__label">
+                      <input class="a-modal-data-editor-upload__input js_modal_data_editor_upload_input" type="file"
+                        accept=".jpg, .jpeg, .png,image/jpeg,image/png">
+                      <div class="a-modal-data-editor-upload__img js_modal_data_editor_upload_img_wrapper hidden">
+                        <img class="js_modal_data_editor_upload_img" src="" alt="Аватар">
+                      </div>
+                      <div class="a-modal-data-editor-upload__btn js_modal_data_editor_upload_btn" type="button">
+                        <svg width="45" height="40">
+                          <use xlink:href="images/sprite.svg#avatar-upload"></use>
+                        </svg>
+                        <span>Загрузите фото</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="a-modal-data-editor__prev js_modal_data_editor_prev" type="button">
+              <svg width="14" height="23">
+                <use xlink:href="images/sprite.svg#slider-prev"></use>
+              </svg>
+            </button>
+            <button class="a-modal-data-editor__next js_modal_data_editor_next" type="button">
+              <svg width="13" height="23">
+                <use xlink:href="images/sprite.svg#slider-next"></use>
+              </svg>
+            </button>
+          </div>
+          <p class="a-modal-data-editor__descr">Выберите себе аватар из готовых шаблонов или загрузите свой</p>
+        </div>
+        <h4 class="a-modal-data-editor__caption">Данные профиля</h4>
+        <p class="a-modal-data-editor__descr">Имя пользователя необходимо для входа в на платформу. Имя пользователя
+          можно посмотреть в телеграм-боте: команда /info</p>
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Имя пользователя</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="text" value="enterzion">
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Почта</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="email" value="enterzion@gmail.com">
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Steam</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="text" value="enterzion">
+            </div>
+          </div>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            сохранить
           </button>
         </div>
       </form>

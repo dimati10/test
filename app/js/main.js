@@ -28,6 +28,8 @@ function initApp() {
   setTimer(".js_training_link_timer", "2025-08-10"); // таймер
   setQrCode(); // qr код
   setFortuneWheel(); // колесо фортуны
+  initModalDataEditorSlider(); // слайдер c аватарами в модальном окне 'редактор данных'
+  changeAvatar(); //смена аватара в профиле
 
   console.log("initApp");
 }
@@ -1049,6 +1051,8 @@ function setFortuneWheel() {
   const btn = document.querySelector(".js_profile_fortune_wheel_btn");
   const wheel = document.querySelector(".js_profile_fortune_wheel_inner");
 
+  if (!btn || !wheel) return;
+
   const segments = [
     "red",
     "yellow",
@@ -1143,5 +1147,113 @@ function setFortuneWheel() {
 
       spinning = false;
     }, 5200);
+  });
+}
+
+// слайдер c аватарами в модальном окне 'редактор данных'
+
+function initModalDataEditorSlider() {
+  if (document.querySelector(".js_modal_data_editor_swiper")) {
+    const swiper = new Swiper(".js_modal_data_editor_swiper", {
+      navigation: {
+        nextEl: ".js_modal_data_editor_next",
+        prevEl: ".js_modal_data_editor_prev",
+      },
+      slidesPerView: "auto",
+      spaceBetween: 43,
+    });
+  }
+}
+
+// смена аватара в профиле
+
+function changeAvatar() {
+  console.log("changeAvatar");
+
+  const uploadBlock = document.querySelector(".js_modal_data_editor_upload");
+
+  if (!uploadBlock) return;
+
+  const input = uploadBlock.querySelector(".js_modal_data_editor_upload_input");
+  const imgWrapper = uploadBlock.querySelector(
+    ".js_modal_data_editor_upload_img_wrapper"
+  );
+  const img = uploadBlock.querySelector(".js_modal_data_editor_upload_img");
+  const btn = uploadBlock.querySelector(".js_modal_data_editor_upload_btn");
+
+  const allowedExtensions = ["jpg", "jpeg", "png"];
+  const MAX_FILE_SIZE_MB = 5;
+
+  function handleFile(file) {
+    const fileExtension = file.name.split(".").pop().toLowerCase();
+
+    if (!allowedExtensions.includes(fileExtension)) {
+      alert("Поддерживаются только изображения в формате JPG, JPEG и PNG.");
+      resetCustomAvatar();
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+      alert(
+        `Файл слишком большой. Максимальный размер — ${MAX_FILE_SIZE_MB}MB.`
+      );
+      resetCustomAvatar();
+      return;
+    }
+
+    const reader = new FileReader();
+
+    imgWrapper.classList.remove("hidden");
+    btn.classList.add("hidden");
+
+    reader.addEventListener("load", () => {
+      img.src = reader.result;
+    });
+
+    reader.readAsDataURL(file);
+  }
+
+  function resetCustomAvatar() {
+    imgWrapper.classList.add("hidden");
+    btn.classList.remove("hidden");
+    input.value = "";
+    img.src = "";
+  }
+
+  input.addEventListener("change", () => {
+    if (input.files && input.files[0]) {
+      handleFile(input.files[0]);
+    } else {
+      resetCustomAvatar();
+    }
+  });
+
+  const highlight = (flag) => uploadBlock.classList.toggle("is-dragover", flag);
+
+  ["dragenter", "dragover"].forEach((ev) => {
+    uploadBlock.addEventListener(ev, (e) => {
+      e.preventDefault();
+      highlight(true);
+    });
+  });
+
+  ["dragleave", "dragend", "drop"].forEach((ev) => {
+    uploadBlock.addEventListener(ev, (e) => {
+      e.preventDefault();
+      highlight(false);
+    });
+  });
+
+  uploadBlock.addEventListener("drop", (e) => {
+    e.preventDefault();
+    highlight(false);
+
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      // handleFile(e.dataTransfer.files[0]);
+      input.files = e.dataTransfer.files;
+      handleFile(input.files[0]);
+    } else {
+      resetCustomAvatar();
+    }
   });
 }

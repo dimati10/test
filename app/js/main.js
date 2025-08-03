@@ -31,6 +31,12 @@ function initApp() {
   initModalDataEditorSlider(); // слайдер c аватарами в модальном окне 'редактор данных'
   changeAvatar(); //смена аватара в профиле
 
+  // setTimeout(() => {
+  //   const cropper = new Cropper("#image");
+  //   // console.log(cropper)
+  // }, 3000);
+  // // console.log(cropper)
+
   console.log("initApp");
 }
 
@@ -1031,10 +1037,12 @@ function setTimer(id, deadline) {
 
 function setQrCode() {
   const qrContainer = document.querySelector(".js_qr");
+
+  if(!qrContainer) return;
+
   const url = qrContainer.dataset.url;
 
-  if (url) {
-    new QRCode(qrContainer, {
+  new QRCode(qrContainer, {
       text: url,
       width: 200,
       height: 200,
@@ -1042,7 +1050,6 @@ function setQrCode() {
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.H,
     });
-  }
 }
 
 // колесо фортуны

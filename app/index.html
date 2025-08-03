@@ -52,12 +52,14 @@
     <ol class="pages__list">
       <li class="pages__item"><a class="pages__link" href="registration.html">Регистрация</a></li>
       <li class="pages__item"><a class="pages__link" href="login.html">Вход</a></li>
-      <li class="pages__item"><a class="pages__link" href="login-error.html">Вход - ошибка</a></li>
+      <li class="pages__item"><a class="pages__link" href="login-error.html">Вход - Ошибка</a></li>
       <li class="pages__item"><a class="pages__link" href="admin.html">Администрирование</a></li>
       <li class="pages__item"><a class="pages__link" href="new-user.html">Добавление нового пользователя</a></li>
-      <li class="pages__item"><a class="pages__link" href="training.html">Обучение - ученик</a></li>
-      <li class="pages__item"><a class="pages__link" href="training-teacher.html">Обучение - учитель</a></li>
+      <li class="pages__item"><a class="pages__link" href="training.html">Обучение - Ученик</a></li>
+      <li class="pages__item"><a class="pages__link" href="training-teacher.html">Обучение - Учитель</a></li>
       <li class="pages__item"><a class="pages__link" href="profile.html">Личные данные</a></li>
+      <!-- <li class="pages__item"><a class="pages__link" href="lesson.html">Обучение - Урок</a></li> -->
+      <li class="pages__item"><a class="pages__link" href="groups.html">Группы</a></li>
       <br>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="adding-student">Модальное окно - Добавление
           ученика</a>
@@ -107,10 +109,14 @@
       </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="adding-lesson">Модальное окно - Добавление
           урока</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="share">Модальное окно - Присоединиться к боту в телеграм</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="add-zitons">Модальное окно - Добавление зитонов</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="remove-zitons">Модальное окно - Cписание зитонов</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="data-editor">Модальное окно - Редактор данных</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="share">Модальное окно - Присоединиться к боту в
+          телеграм</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="add-zitons">Модальное окно - Добавление
+          зитонов</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="remove-zitons">Модальное окно - Cписание
+          зитонов</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="data-editor">Модальное окно - Редактор
+          данных</a></li>
     </ol>
   </div>
 
@@ -1924,7 +1930,7 @@
         </svg>
       </button>
       <h3 class="a-modal__title">добавление зитонов</h3>
-       <form class="a-modal__form">
+      <form class="a-modal__form">
         <div class="a-modal__fields">
           <div class="a-modal__field a-field a-field--mod-for-modal">
             <label class="a-field__label">Количество Зитонов</label>
@@ -1956,7 +1962,7 @@
         </svg>
       </button>
       <h3 class="a-modal__title">списание зитонов</h3>
-       <form class="a-modal__form">
+      <form class="a-modal__form">
         <div class="a-modal__fields">
           <div class="a-modal__field a-field a-field--mod-for-modal">
             <label class="a-field__label">Количество Зитонов</label>
@@ -1988,7 +1994,7 @@
         </svg>
       </button>
       <h3 class="a-modal__title">редактор данных</h3>
-      <form class="a-modal__form">
+      <form class="a-modal__form js_modal_data_editor_form">
         <div class="a-modal-data-editor__avatars">
           <h4 class="a-modal-data-editor__caption">Аватар профиля</h4>
           <div class="a-modal-data-editor__slider">
@@ -2087,12 +2093,28 @@
           </button>
         </div>
       </form>
+      <div class="a-modal-data-editor__cropper js_modal_data_editor_cropper">
+        <div class="a-modal-data-editor__cropper-area js_modal_data_editor_cropper_area">
+
+        </div>
+        <img id="image" src="images/wysiwyg-placeholder.png" alt="Picture">
+        <p class="a-modal-data-editor__descr">Выбранная область будет показываться на вашей странице.Если изображение ориентировано неправильно, фотографию можно повернуть.</p>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal" type="button">
+            назад
+          </button>
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            сохранить
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>
   <script src="js/qrcode.min.js"></script>
+  <!-- <script src="js/cropper.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 

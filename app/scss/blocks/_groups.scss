@@ -1,0 +1,82 @@
+.a-groups {
+  padding: 0 0 50px;
+
+  @media (min-width: 1200px) {
+    padding: 0 0 80px;
+  }
+
+  &__title {
+    margin: 0 0 28px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 43px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 30px;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+  }
+}
+
+.a-groups-card {
+  min-height: 278px;
+  padding: 30px 30px 40px;
+  border-radius: var(--radius-30);
+  background-color: var(--gray-61);
+  transition: background-color 0.3s;
+
+  &:hover {
+    @media (hover: hover) {
+      background: var(--blue);
+    }
+  }
+
+  &:active {
+    @media (hover: none) {
+      background: var(--blue);
+    }
+  }
+
+  &.active {
+    background: var(--blue);
+  }
+
+  &__title {
+    position: relative;
+    display: block;
+    margin: 0 0 20px;
+    padding: 0 0 30px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 32px;
+      height: 6px;
+      background-color: var(--backtimeslip);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 0 0 24px;
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 24px;
+    list-style-type: decimal;
+  }
+}

@@ -556,6 +556,8 @@ function controlModal() {
         e.preventDefault();
 
         modals.forEach((modal) => {
+          modal.classList.remove("active");
+
           if (btn.dataset.btn === modal.dataset.modal) {
             modal.classList.add("active");
             fixBodyPosition();

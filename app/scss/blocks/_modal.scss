@@ -684,3 +684,12 @@
     }
   }
 }
+
+.a-modal-deleting {
+  .a-modal__descr {
+    font-weight: 600;
+    &:last-child {
+      font-weight: 400;
+    }
+  }
+}

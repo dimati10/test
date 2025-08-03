@@ -5220,3 +5220,10 @@ input::-ms-clear {
 .a-modal-data-editor-upload__btn svg {
   color: var(--backtimeslip);
 }
+
+.a-modal-deleting .a-modal__descr {
+  font-weight: 600;
+}
+.a-modal-deleting .a-modal__descr:last-child {
+  font-weight: 400;
+}

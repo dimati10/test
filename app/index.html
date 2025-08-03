@@ -119,8 +119,14 @@
           зитонов</a></li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="data-editor">Модальное окно - Редактор
           данных</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="comment1">Модальное окно - Комментарий 1</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="comment2">Модальное окно - Комментарий 2</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="comment1">Модальное окно - Комментарий 1</a>
+      </li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="comment2">Модальное окно - Комментарий 2</a>
+      </li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-task">Модальное окно - Удаление
+          задания</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-lesson">Модальное окно - Удаление урока</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-lesson-confirm">Модальное окно - Подтверждение удаления урока</a></li>
     </ol>
   </div>
 
@@ -2116,7 +2122,7 @@
     </div>
   </div>
 
-  <div class="a-modal a-modal-comment1" data-modal="comment1">
+  <div class="a-modal" data-modal="comment1">
     <div class="a-modal__wrapper">
       <button class="a-modal__close js_modal_close" type="button">
         <svg width="24" height="24">
@@ -2149,7 +2155,7 @@
     </div>
   </div>
 
-  <div class="a-modal a-modal-comment2" data-modal="comment2">
+  <div class="a-modal" data-modal="comment2">
     <div class="a-modal__wrapper">
       <button class="a-modal__close js_modal_close" type="button">
         <svg width="24" height="24">
@@ -2176,6 +2182,72 @@
           </button>
           <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
             Подтвердить
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-deleting" data-modal="deleting-task">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">удаление задания</h3>
+      <form class="a-modal__form js_modal_data_editor_form">
+        <div class="a-modal__fields">
+          <p class="a-modal__descr">Вы уверены что хотите удалить задание?</p>
+          <p class="a-modal__descr">Задание будет удалено без возможности восстановления</p>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            удалить задание
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-deleting" data-modal="deleting-lesson">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">удаление урока</h3>
+      <form class="a-modal__form js_modal_data_editor_form">
+        <div class="a-modal__fields">
+          <p class="a-modal__descr">Вы уверены что хотите удалить урок?</p>
+          <p class="a-modal__descr">Урок будет удалено без возможности восстановления</p>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="button" data-btn="deleting-lesson-confirm"">
+            удалить урок
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-deleting" data-modal="deleting-lesson-confirm">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">Подтверждение удаления урока</h3>
+      <form class="a-modal__form js_modal_data_editor_form">
+        <div class="a-modal__fields">
+          <p class="a-modal__descr">Вы ТОЧНО уверены, что хотите удалить урок?</p>
+          <p class="a-modal__descr">Вы уже НИКОГДА не сможете восстановить этот урок</p>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            да, я хочу удалить урок
           </button>
         </div>
       </form>

@@ -32,12 +32,6 @@ function initApp() {
   changeAvatar(); //смена аватара в профиле
   controlRatingTableSort(); // сортировка таблицы на странице 'рейтинг учеников'
 
-  // setTimeout(() => {
-  //   const cropper = new Cropper("#image");
-  //   // console.log(cropper)
-  // }, 3000);
-  // // console.log(cropper)
-
   console.log("initApp");
 }
 
@@ -1176,8 +1170,6 @@ function initModalDataEditorSlider() {
 // смена аватара в профиле
 
 function changeAvatar() {
-  console.log("changeAvatar");
-
   const uploadBlock = document.querySelector(".js_modal_data_editor_upload");
 
   if (!uploadBlock) return;

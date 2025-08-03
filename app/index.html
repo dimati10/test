@@ -119,6 +119,8 @@
           зитонов</a></li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="data-editor">Модальное окно - Редактор
           данных</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="comment1">Модальное окно - Комментарий 1</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="comment2">Модальное окно - Комментарий 2</a></li>
     </ol>
   </div>
 
@@ -2095,12 +2097,13 @@
           </button>
         </div>
       </form>
-      <div class="a-modal-data-editor__cropper js_modal_data_editor_cropper">
+      <!-- <div class="a-modal-data-editor__cropper js_modal_data_editor_cropper">
         <div class="a-modal-data-editor__cropper-area js_modal_data_editor_cropper_area">
 
         </div>
         <img id="image" src="images/wysiwyg-placeholder.png" alt="Picture">
-        <p class="a-modal-data-editor__descr">Выбранная область будет показываться на вашей странице.Если изображение ориентировано неправильно, фотографию можно повернуть.</p>
+        <p class="a-modal-data-editor__descr">Выбранная область будет показываться на вашей странице.Если изображение
+          ориентировано неправильно, фотографию можно повернуть.</p>
         <div class="a-modal__buttons">
           <button class="a-modal__btn a-btn a-btn--mod-for-modal" type="button">
             назад
@@ -2109,7 +2112,73 @@
             сохранить
           </button>
         </div>
-      </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-comment1" data-modal="comment1">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">оставьте комментарий</h3>
+      <form class="a-modal__form js_modal_data_editor_form">
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
+            <label class="a-field__label">Похвалите ученика</label>
+            <div class="a-field__inner">
+              <textarea class="a-field__textarea"></textarea>
+            </div>
+          </div>
+          <label class="a-modal__checkbox a-checkbox">
+            <input class="a-checkbox__input" type="checkbox" checked>
+            <span class="a-checkbox__text">Бесшумная отправка</span>
+          </label>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
+            Вернуться
+          </button>
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--green" type="submit">
+            Подтвердить
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="a-modal a-modal-comment2" data-modal="comment2">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <h3 class="a-modal__title">оставьте комментарий</h3>
+      <form class="a-modal__form js_modal_data_editor_form">
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
+            <label class="a-field__label">Подскажите ученику, укажите на его ошибки, задайте наводящие вопросы</label>
+            <div class="a-field__inner">
+              <textarea class="a-field__textarea"></textarea>
+            </div>
+          </div>
+          <label class="a-modal__checkbox a-checkbox">
+            <input class="a-checkbox__input" type="checkbox" checked>
+            <span class="a-checkbox__text">Бесшумная отправка</span>
+          </label>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
+            Вернуться
+          </button>
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            Подтвердить
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 

@@ -343,6 +343,10 @@
 }
 
 .a-modal-newsletter {
+  .a-modal__wrapper {
+    overflow: visible;
+  }
+
   .a-modal__btn {
 
     &:nth-child(1),

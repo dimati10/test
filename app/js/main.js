@@ -30,6 +30,7 @@ function initApp() {
   setFortuneWheel(); // колесо фортуны
   initModalDataEditorSlider(); // слайдер c аватарами в модальном окне 'редактор данных'
   changeAvatar(); //смена аватара в профиле
+  controlRatingTableSort(); // сортировка таблицы на странице 'рейтинг учеников'
 
   // setTimeout(() => {
   //   const cropper = new Cropper("#image");
@@ -1038,18 +1039,18 @@ function setTimer(id, deadline) {
 function setQrCode() {
   const qrContainer = document.querySelector(".js_qr");
 
-  if(!qrContainer) return;
+  if (!qrContainer) return;
 
   const url = qrContainer.dataset.url;
 
   new QRCode(qrContainer, {
-      text: url,
-      width: 200,
-      height: 200,
-      colorDark: "#000000",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H,
-    });
+    text: url,
+    width: 200,
+    height: 200,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H,
+  });
 }
 
 // колесо фортуны
@@ -1262,5 +1263,59 @@ function changeAvatar() {
     } else {
       resetCustomAvatar();
     }
+  });
+}
+
+// сортировка таблицы на странице 'рейтинг учеников'
+
+function controlRatingTableSort() {
+  const table = document.querySelector(".js_table");
+
+  if (!table) return;
+
+  const tbody = table.querySelector(".js_table_body");
+  const sortButtons = table.querySelectorAll(".js_table_sort_btn");
+
+  let activeColumnIndex = null;
+  let isAscending = true;
+
+  sortButtons.forEach((button) => {
+    const th = button.closest("th");
+    const columnIndex = Array.from(th.parentElement.children).indexOf(th);
+
+    button.addEventListener("click", () => {
+      if (activeColumnIndex !== columnIndex) {
+        isAscending = true;
+        activeColumnIndex = columnIndex;
+      } else {
+        isAscending = !isAscending;
+      }
+
+      sortButtons.forEach((btn) => {
+        btn.classList.remove("active");
+        btn.dataset.sort = "";
+        btn.querySelector("svg").style.transform = "";
+      });
+
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+
+      rows.sort((a, b) => {
+        const aText = a.children[columnIndex]?.textContent.trim() || "";
+        const bText = b.children[columnIndex]?.textContent.trim() || "";
+
+        const aValue = parseFloat(aText.replace("%", "")) || 0;
+        const bValue = parseFloat(bText.replace("%", "")) || 0;
+
+        return isAscending ? aValue - bValue : bValue - aValue;
+      });
+
+      rows.forEach((row) => tbody.appendChild(row));
+
+      button.classList.add("active");
+      button.dataset.sort = isAscending ? "asc" : "desc";
+      button.querySelector("svg").style.transform = isAscending
+        ? "rotate(180deg)"
+        : "rotate(0deg)";
+    });
   });
 }

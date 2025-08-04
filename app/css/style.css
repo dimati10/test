@@ -5111,6 +5111,20 @@ input::-ms-clear {
   font-size: 16px;
   line-height: 20px;
 }
+.a-modal-data-editor__form.hidden, .a-modal-data-editor__cropper.hidden {
+  display: none;
+}
+.a-modal-data-editor__img {
+  max-width: 755px;
+  margin: 0 auto 32px;
+  height: 312px;
+}
+.a-modal-data-editor__img img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 .a-modal-data-editor-avatar {
   display: block;

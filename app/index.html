@@ -11,6 +11,7 @@
   <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/air-datepicker.css">
+  <link rel="stylesheet" href="css/cropper.min.css">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -2004,7 +2005,7 @@
         </svg>
       </button>
       <h3 class="a-modal__title">редактор данных</h3>
-      <form class="a-modal__form js_modal_data_editor_form">
+      <form class="a-modal__form a-modal-data-editor__form js_modal_data_editor_form">
         <div class="a-modal-data-editor__avatars">
           <h4 class="a-modal-data-editor__caption">Аватар профиля</h4>
           <div class="a-modal-data-editor__slider">
@@ -2103,11 +2104,10 @@
           </button>
         </div>
       </form>
-      <!-- <div class="a-modal-data-editor__cropper js_modal_data_editor_cropper">
-        <div class="a-modal-data-editor__cropper-area js_modal_data_editor_cropper_area">
-
+      <div class="a-modal-data-editor__cropper hidden js_modal_data_editor_cropper">
+        <div class="a-modal-data-editor__img js_modal_data_editor_cropper_img_wrapper">
+          <img class="js_modal_data_editor_cropper_img" src="" alt="">
         </div>
-        <img id="image" src="images/wysiwyg-placeholder.png" alt="Picture">
         <p class="a-modal-data-editor__descr">Выбранная область будет показываться на вашей странице.Если изображение
           ориентировано неправильно, фотографию можно повернуть.</p>
         <div class="a-modal__buttons">
@@ -2118,7 +2118,7 @@
             сохранить
           </button>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 
@@ -2257,8 +2257,8 @@
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/air-datepicker.js"></script>
   <script src="js/qrcode.min.js"></script>
-  <!-- <script src="js/cropper.js"></script> -->
-  <script src="js/main.js"></script>
+  <script src="js/cropper.min.js"></script>
+  <script src="js/main.js" type="module"></script>
 </body>
 
 </html>

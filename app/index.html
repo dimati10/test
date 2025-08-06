@@ -120,14 +120,18 @@
           зитонов</a></li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="data-editor">Модальное окно - Редактор
           данных</a></li>
+      <!-- <li class="pages__item"><a class="pages__link" href="#" data-btn="add-task">Модальное окно - Добавить задание</a>
+      </li> -->
       <li class="pages__item"><a class="pages__link" href="#" data-btn="comment1">Модальное окно - Комментарий 1</a>
       </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="comment2">Модальное окно - Комментарий 2</a>
       </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-task">Модальное окно - Удаление
           задания</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-lesson">Модальное окно - Удаление урока</a></li>
-      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-lesson-confirm">Модальное окно - Подтверждение удаления урока</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-lesson">Модальное окно - Удаление
+          урока</a></li>
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="deleting-lesson-confirm">Модальное окно -
+          Подтверждение удаления урока</a></li>
     </ol>
   </div>
 
@@ -2122,6 +2126,86 @@
     </div>
   </div>
 
+  <div class="a-modal a-modal-add-task" data-modal="add-task">
+    <div class="a-modal__wrapper">
+      <button class="a-modal__close js_modal_close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+      <div class="a-modal-add-task__top">
+        <h3 class="a-modal__title">ДОБАВИТЬ задание </h3>
+        <p class="a-modal__descr">для Александра Александрова</p>
+      </div>
+      <form class="a-modal__form js_modal_data_editor_form">
+        <div class="a-modal__fields">
+          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
+            <label class="a-field__label">Условие задачи</label>
+            <div class="a-field__inner">
+              <div class="a-modal__wysiwyg">
+                <img src="images/wysiwyg-placeholder.png" alt="wysiwyg-placeholder">
+              </div>
+            </div>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Изображение курса</label>
+            <div class="a-field__inner">
+              <div class="a-upload js_upload">
+                <label class="a-upload__label">
+                  <input class="a-upload__input js_upload_input" type="file">
+                  <div class="a-upload__area">
+                    <svg width="20" height="23">
+                      <use xlink:href="images/sprite.svg#upload"></use>
+                    </svg>
+                    <span class="js_upload_text">Файл не выбран</span>
+                  </div>
+                </label>
+                <div class="a-upload__list js_upload_list"></div>
+              </div>
+            </div>
+          </div>
+          <label class="a-modal__toggle a-toggle">
+            <input class="a-toggle__input" type="checkbox">
+            <span class="a-toggle__text">Отображать правильный ответ</span>
+          </label>
+          <div class="a-modal__field a-field a-field--mod-for-modal">
+            <label class="a-field__label">Правильный ответ</label>
+            <div class="a-field__inner">
+              <input class="a-field__input" type="text">
+            </div>
+          </div>
+          <p class="a-modal__descr">для Александра Александрова</p>
+          <label class="a-modal__toggle a-toggle">
+            <input class="a-toggle__input" type="checkbox">
+            <span class="a-toggle__text">Текстовый ответ</span>
+          </label>
+          <label class="a-modal__toggle a-toggle">
+            <input class="a-toggle__input" type="checkbox">
+            <span class="a-toggle__text">Прикрепленный файл</span>
+          </label>
+          <label class="a-modal__toggle a-toggle">
+            <input class="a-toggle__input" type="checkbox">
+            <span class="a-toggle__text">Бесшумная отправка</span>
+          </label>
+        </div>
+        <div class="a-modal__buttons">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+            Завершить
+          </button>
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal" type="button">
+            <svg width="25" height="25">
+              <use xlink:href="images/sprite.svg#btn-plus"></use>
+            </svg>
+            Добавить ещё одно
+          </button>
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal js_modal_close" type="button">
+            Вернуться
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="a-modal" data-modal="comment1">
     <div class="a-modal__wrapper">
       <button class="a-modal__close js_modal_close" type="button">
@@ -2224,7 +2308,8 @@
           <p class="a-modal__descr">Урок будет удалено без возможности восстановления</p>
         </div>
         <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="button" data-btn="deleting-lesson-confirm"">
+          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="button"
+            data-btn="deleting-lesson-confirm"">
             удалить урок
           </button>
         </div>
@@ -2232,33 +2317,33 @@
     </div>
   </div>
 
-  <div class="a-modal a-modal-deleting" data-modal="deleting-lesson-confirm">
-    <div class="a-modal__wrapper">
-      <button class="a-modal__close js_modal_close" type="button">
-        <svg width="24" height="24">
-          <use xlink:href="images/sprite.svg#close"></use>
-        </svg>
-      </button>
-      <h3 class="a-modal__title">Подтверждение удаления урока</h3>
-      <form class="a-modal__form js_modal_data_editor_form">
-        <div class="a-modal__fields">
-          <p class="a-modal__descr">Вы ТОЧНО уверены, что хотите удалить урок?</p>
-          <p class="a-modal__descr">Вы уже НИКОГДА не сможете восстановить этот урок</p>
+  <div class=" a-modal a-modal-deleting" data-modal="deleting-lesson-confirm">
+            <div class="a-modal__wrapper">
+              <button class="a-modal__close js_modal_close" type="button">
+                <svg width="24" height="24">
+                  <use xlink:href="images/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <h3 class="a-modal__title">Подтверждение удаления урока</h3>
+              <form class="a-modal__form js_modal_data_editor_form">
+                <div class="a-modal__fields">
+                  <p class="a-modal__descr">Вы ТОЧНО уверены, что хотите удалить урок?</p>
+                  <p class="a-modal__descr">Вы уже НИКОГДА не сможете восстановить этот урок</p>
+                </div>
+                <div class="a-modal__buttons">
+                  <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
+                    да, я хочу удалить урок
+                  </button>
+                </div>
+              </form>
+            </div>
         </div>
-        <div class="a-modal__buttons">
-          <button class="a-modal__btn a-btn a-btn--mod-for-modal a-btn--red" type="submit">
-            да, я хочу удалить урок
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
 
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/air-datepicker.js"></script>
-  <script src="js/qrcode.min.js"></script>
-  <script src="js/cropper.min.js"></script>
-  <script src="js/main.js"></script>
+        <script src="js/swiper-bundle.min.js"></script>
+        <script src="js/air-datepicker.js"></script>
+        <script src="js/qrcode.min.js"></script>
+        <script src="js/cropper.min.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>

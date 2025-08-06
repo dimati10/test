@@ -3,10 +3,6 @@
   width: fit-content;
   cursor: pointer;
 
-  &:not(:has(.a-checkbox__text)) {
-    
-  }
-
   &__input {
     position: absolute;
     width: 1px;

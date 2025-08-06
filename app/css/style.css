@@ -3,6 +3,7 @@
   --backtimeslip: #fff;
   --blue: #3169f8;
   --blue-13: #0d6efd;
+  --blue-154: #9ac3ff;
   --purple: #6023c3;
   --purple-gray: #595281;
   --purple-86: #565178;
@@ -18,6 +19,7 @@
   --black: #000;
   --black-opacity-50: rgba(0, 0, 0, 0.5);
   --black-34: #222222;
+  --black-48: #303030;
   --black-55: #373737;
   --background: #2d2d2d;
   --gray: #757575;
@@ -1011,7 +1013,7 @@ input::-ms-clear {
   color: var(--black);
 }
 .a-field__textarea.error, .a-field__select.error, .a-field__input.error {
-  border-color: var(--error);
+  border-color: var(--error) !important;
 }
 .a-field__textarea {
   resize: none;
@@ -4549,6 +4551,64 @@ input::-ms-clear {
   list-style-type: decimal;
 }
 
+.a-toggle {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.a-toggle__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.a-toggle__input:checked + .a-toggle__text::before {
+  background-color: var(--blue-13);
+}
+.a-toggle__input:checked + .a-toggle__text::after {
+  left: 30px;
+  background-color: var(--backtimeslip);
+}
+.a-toggle__input:focus + .a-toggle__text::before {
+  -webkit-box-shadow: 0 0 0 1px var(--backtimeslip);
+          box-shadow: 0 0 0 1px var(--backtimeslip);
+}
+.a-toggle__text {
+  position: relative;
+  display: block;
+  padding: 0 0 0 64px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.a-toggle__text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 24px;
+  border-radius: 80px;
+  background-color: var(--gray);
+  border: 1px solid #303030;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.a-toggle__text::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--blue-154);
+  -webkit-transition: left 0.3s, background-color 0.3s;
+  transition: left 0.3s, background-color 0.3s;
+}
+
 .a-modal {
   position: fixed;
   top: 0;
@@ -5240,4 +5300,22 @@ input::-ms-clear {
 }
 .a-modal-deleting .a-modal__descr:last-child {
   font-weight: 400;
+}
+
+@media (min-width: 1200px) {
+  .a-modal-add-task .a-field__label {
+    width: 240px;
+  }
+}
+.a-modal-add-task .a-modal__btn {
+  white-space: nowrap;
+}
+.a-modal-add-task .a-modal__btn svg {
+  display: block;
+}
+.a-modal-add-task .a-modal__title {
+  margin-bottom: 10px;
+}
+.a-modal-add-task__top {
+  margin: 0 0 28px;
 }

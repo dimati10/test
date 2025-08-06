@@ -713,3 +713,25 @@
     }
   }
 }
+
+.a-modal-add-task {
+  .a-field__label {
+    @media (min-width: 1200px) {
+      width: 240px;
+    }
+  }
+  .a-modal__btn {
+    white-space: nowrap;
+    svg {
+      display: block;
+    }
+  }
+
+  .a-modal__title {
+    margin-bottom: 10px;
+  }
+
+  &__top {
+    margin: 0 0 28px;
+  }
+}

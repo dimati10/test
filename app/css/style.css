@@ -1,6 +1,7 @@
 :root {
   --font-family: "Montserrat", sans-serif;
   --backtimeslip: #fff;
+  --white-opacity-50: rgba(255, 255, 255, 0.5);
   --blue: #3169f8;
   --blue-13: #0d6efd;
   --blue-154: #9ac3ff;
@@ -1014,6 +1015,12 @@ input::-ms-clear {
 }
 .a-field__textarea.error, .a-field__select.error, .a-field__input.error {
   border-color: var(--error) !important;
+}
+.a-field__input {
+  -webkit-transition-property: color, font-size, background-color;
+  transition-property: color, font-size, background-color;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 .a-field__textarea {
   resize: none;
@@ -5318,4 +5325,64 @@ input::-ms-clear {
 }
 .a-modal-add-task__top {
   margin: 0 0 28px;
+}
+.a-modal-add-task__radio-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid var(--blue-13);
+  border-radius: var(--radius-10);
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.a-modal-add-task:not(:has(.a-modal-add-task__toggle-answer .a-toggle__input:checked)) .a-modal-add-task__field-answer .a-field__input {
+  background-color: var(--white-opacity-50);
+  color: transparent;
+  font-size: 0;
+  cursor: default;
+  outline: transparent;
+}
+.a-modal-add-task:not(:has(.a-modal-add-task__toggle-file .a-toggle__input:checked)) .a-modal-add-task__radio-group-file {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.a-modal-add-task-radio {
+  width: 33.333%;
+  cursor: pointer;
+}
+.a-modal-add-task-radio:not(:last-child) .a-modal-add-task-radio__text {
+  border-right: 1px solid var(--blue-13);
+}
+.a-modal-add-task-radio__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.a-modal-add-task-radio__input:checked + .a-modal-add-task-radio__text {
+  background-color: var(--blue-13);
+  color: var(--backtimeslip);
+}
+.a-modal-add-task-radio__text {
+  display: block;
+  height: 100%;
+  padding: 12px 5px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+}
+@media (min-width: 1200px) {
+  .a-modal-add-task-radio__text {
+    padding: 14px 5px;
+    font-size: 20px;
+    line-height: 24px;
+  }
 }

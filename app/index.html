@@ -120,8 +120,8 @@
           зитонов</a></li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="data-editor">Модальное окно - Редактор
           данных</a></li>
-      <!-- <li class="pages__item"><a class="pages__link" href="#" data-btn="add-task">Модальное окно - Добавить задание</a>
-      </li> -->
+      <li class="pages__item"><a class="pages__link" href="#" data-btn="add-task">Модальное окно - Добавить задание</a>
+      </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="comment1">Модальное окно - Комментарий 1</a>
       </li>
       <li class="pages__item"><a class="pages__link" href="#" data-btn="comment2">Модальное окно - Комментарий 2</a>
@@ -1950,7 +1950,7 @@
           <div class="a-modal__field a-field a-field--mod-for-modal">
             <label class="a-field__label">Количество Зитонов</label>
             <div class="a-field__inner">
-              <input class="a-field__input" type="number">
+              <input class="a-field__input js_input_number" type="text">
             </div>
           </div>
           <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
@@ -1982,7 +1982,7 @@
           <div class="a-modal__field a-field a-field--mod-for-modal">
             <label class="a-field__label">Количество Зитонов</label>
             <div class="a-field__inner">
-              <input class="a-field__input" type="number">
+              <input class="a-field__input js_input_number" type="number">
             </div>
           </div>
           <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
@@ -2164,25 +2164,58 @@
               </div>
             </div>
           </div>
-          <label class="a-modal__toggle a-toggle">
+          <label class="a-modal__toggle a-modal-add-task__toggle-answer a-toggle">
             <input class="a-toggle__input" type="checkbox">
             <span class="a-toggle__text">Отображать правильный ответ</span>
           </label>
-          <div class="a-modal__field a-field a-field--mod-for-modal">
+          <div class="a-modal-add-task__field-answer a-field a-field--mod-for-modal">
             <label class="a-field__label">Правильный ответ</label>
             <div class="a-field__inner">
-              <input class="a-field__input" type="text">
+              <input class="a-field__input" type="text" value="Правильный ответ" readonly>
             </div>
           </div>
-          <p class="a-modal__descr">для Александра Александрова</p>
+          <p class="a-modal__descr">Что нужно прикрепить ученику?</p>
           <label class="a-modal__toggle a-toggle">
             <input class="a-toggle__input" type="checkbox">
             <span class="a-toggle__text">Текстовый ответ</span>
           </label>
-          <label class="a-modal__toggle a-toggle">
+          <label class="a-modal__toggle a-modal-add-task__toggle-file a-toggle">
             <input class="a-toggle__input" type="checkbox">
             <span class="a-toggle__text">Прикрепленный файл</span>
           </label>
+          <div class="a-modal-add-task__radio-group a-modal-add-task__radio-group-file">
+            <label class="a-modal-add-task-radio">
+              <input class="a-modal-add-task-radio__input" type="radio" name="file-type">
+              <span class="a-modal-add-task-radio__text">Изображение</span>
+            </label>
+            <label class="a-modal-add-task-radio">
+              <input class="a-modal-add-task-radio__input" type="radio" name="file-type">
+              <span class="a-modal-add-task-radio__text">Код</span>
+            </label>
+            <label class="a-modal-add-task-radio">
+              <input class="a-modal-add-task-radio__input" type="radio" name="file-type">
+              <span class="a-modal-add-task-radio__text">Документ</span>
+            </label>
+          </div>
+          <div class="a-modal__field a-field a-field--mod-for-modal a-field--vertical">
+            <label class="a-field__label">Условие задачи</label>
+            <div class="a-field__inner">
+              <div class="a-modal-add-task__radio-group">
+                <label class="a-modal-add-task-radio">
+                  <input class="a-modal-add-task-radio__input" type="radio" name="task-type">
+                  <span class="a-modal-add-task-radio__text">Пример</span>
+                </label>
+                <label class="a-modal-add-task-radio">
+                  <input class="a-modal-add-task-radio__input" type="radio" name="task-type">
+                  <span class="a-modal-add-task-radio__text">Самостоятельная работа</span>
+                </label>
+                <label class="a-modal-add-task-radio">
+                  <input class="a-modal-add-task-radio__input" type="radio" name="task-type" checked>
+                  <span class="a-modal-add-task-radio__text">Домашняя работа</span>
+                </label>
+              </div>
+            </div>
+          </div>
           <label class="a-modal__toggle a-toggle">
             <input class="a-toggle__input" type="checkbox">
             <span class="a-toggle__text">Бесшумная отправка</span>

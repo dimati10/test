@@ -708,6 +708,7 @@
 .a-modal-deleting {
   .a-modal__descr {
     font-weight: 600;
+
     &:last-child {
       font-weight: 400;
     }
@@ -720,8 +721,10 @@
       width: 240px;
     }
   }
+
   .a-modal__btn {
     white-space: nowrap;
+
     svg {
       display: block;
     }
@@ -733,5 +736,79 @@
 
   &__top {
     margin: 0 0 28px;
+  }
+
+  &__radio-group {
+    display: flex;
+    border: 1px solid var(--blue-13);
+    border-radius: var(--radius-10);
+    overflow: hidden;
+    transition: opacity 0.3s;
+  }
+
+  &:not(:has(.a-modal-add-task__toggle-answer .a-toggle__input:checked)) {
+    .a-modal-add-task__field-answer {
+      .a-field__input {
+        background-color: var(--white-opacity-50);
+        color: transparent;
+        font-size: 0;
+        cursor: default;
+        outline: transparent;
+      }
+    }
+
+  }
+
+  &:not(:has(.a-modal-add-task__toggle-file .a-toggle__input:checked)) {
+    .a-modal-add-task__radio-group-file {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+  }
+}
+
+
+
+.a-modal-add-task-radio {
+  width: 33.333%;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    .a-modal-add-task-radio__text {
+      border-right: 1px solid var(--blue-13);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked+.a-modal-add-task-radio__text {
+      background-color: var(--blue-13);
+      color: var(--backtimeslip);
+    }
+  }
+
+  &__text {
+    display: block;
+    height: 100%;
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: color 0.3s, background-color 0.3s;
+
+    @media (min-width: 1200px) {
+      padding: 14px 5px;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }

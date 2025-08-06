@@ -19,6 +19,7 @@ function initApp() {
   setQrCode(); // qr код
   setFortuneWheel(); // колесо фортуны
   initModalDataEditorSlider(); // слайдер c аватарами в модальном окне 'редактор данных'
+  setInputNumber(); // ввод только цифр
   changeAvatar(); //смена аватара в профиле
   controlRatingTableSort(); // сортировка таблицы на странице 'рейтинг учеников'
 
@@ -893,6 +894,17 @@ function initModalDataEditorSlider() {
       observer: true,
       observeParents: true,
       observeSlideChildren: true
+    });
+  }
+}
+
+// ввод только цифр
+
+function setInputNumber() {
+  const input = document.querySelector(".js_input_number");
+  if (input) {
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/[^0-9]/g, "");
     });
   }
 }

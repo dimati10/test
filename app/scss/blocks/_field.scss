@@ -51,6 +51,9 @@
   }
 
   &__input {
+    transition-property: color, font-size, background-color;
+    transition-duration: 0.3s;
+
     &::placeholder {
       // color: var(--gray-187);
     }

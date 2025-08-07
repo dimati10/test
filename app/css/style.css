@@ -40,6 +40,7 @@
   --gray-238: #eeeeee;
   --container-width: 1430px;
   --radius-10: 10px;
+  --radius-12: 12px;
   --radius-16: 16px;
   --radius-20: 20px;
   --radius-30: 30px;
@@ -4616,6 +4617,167 @@ input::-ms-clear {
   transition: left 0.3s, background-color 0.3s;
 }
 
+.a-lesson {
+  padding: 0 0 50px;
+}
+@media (min-width: 1200px) {
+  .a-lesson {
+    padding: 0 0 80px;
+  }
+}
+
+.a-lesson-theme {
+  padding: 20px 0 50px;
+  border-radius: var(--radius-20) var(--radius-20) 0 0;
+  background-color: var(--black-34);
+}
+@media (min-width: 1200px) {
+  .a-lesson-theme {
+    padding: 28px 0 132px;
+  }
+}
+.a-lesson-theme__suptitle {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+}
+.a-lesson-theme__title {
+  margin: 0 0 44px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  .a-lesson-theme__title {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 100px;
+  }
+}
+.a-lesson-theme__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  padding: 20px 15px;
+  border: 1px solid var(--backtimeslip);
+  border-radius: var(--radius-16);
+}
+@media (min-width: 768px) {
+  .a-lesson-theme__block {
+    padding: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .a-lesson-theme__block {
+    padding: 24px;
+  }
+}
+.a-lesson-theme__descr {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+@media (min-width: 1200px) {
+  .a-lesson-theme__descr {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.a-lesson-theme__descr a {
+  text-decoration: underline;
+}
+.a-lesson-theme__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .a-lesson-theme__buttons {
+    gap: 20px;
+  }
+}
+.a-lesson-theme__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 54px;
+  height: 54px;
+  font-size: 0;
+  line-height: 24px;
+  font-weight: 600;
+  border-radius: var(--radius-12);
+  background-color: var(--red);
+}
+@media (min-width: 1200px) {
+  .a-lesson-theme__btn {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-width: 234px;
+    width: auto;
+    height: auto;
+    padding: 15px 24px;
+    font-size: 20px;
+  }
+}
+.a-lesson-theme__btn svg {
+  color: var(--backtimeslip);
+}
+.a-lesson-theme__plus-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 54px;
+  height: 54px;
+  color: var(--backtimeslip);
+  font-size: 0;
+  line-height: 24px;
+  font-weight: 600;
+  border: 1px solid var(--red);
+  border-radius: var(--radius-12);
+}
+@media (min-width: 1200px) {
+  .a-lesson-theme__plus-btn {
+    width: auto;
+    height: auto;
+    padding: 14px 21px;
+    gap: 8px;
+    font-size: 20px;
+  }
+}
+.a-lesson-theme__plus-btn::before {
+  content: "+";
+  font-size: 36px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
 .a-modal {
   position: fixed;
   top: 0;
@@ -4996,12 +5158,27 @@ input::-ms-clear {
 }
 
 .a-modal-statistics .a-modal__descr {
+  display: none;
   margin: 0 0 37px;
 }
 @media (min-width: 1200px) {
   .a-modal-statistics .a-modal__descr {
     margin-bottom: 27px;
   }
+}
+.a-modal-statistics .a-modal__descr.active {
+  display: block;
+}
+.a-modal-statistics .a-modal__field {
+  margin: 0 0 30px;
+}
+@media (min-width: 1200px) {
+  .a-modal-statistics .a-modal__field {
+    margin-bottom: 34px;
+  }
+}
+.a-modal-statistics .a-field__textarea {
+  height: 200px;
 }
 @media (min-width: 768px) {
   .a-modal-statistics .a-modal__btn {

@@ -367,11 +367,28 @@
 .a-modal-statistics {
 
   .a-modal__descr {
+    display: none;
     margin: 0 0 37px;
 
     @media (min-width: 1200px) {
       margin-bottom: 27px;
     }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .a-modal__field {
+    margin: 0 0 30px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 34px;
+    }
+  }
+
+  .a-field__textarea {
+    height: 200px;
   }
 
   .a-modal__btn {

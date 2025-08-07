@@ -10,6 +10,7 @@ function initApp() {
   controlPasswordVisibility(); // кнопка показать-скрыть пароль
   controlMofalFilter(); // фильтрация и сортирвка в модальных окнах
   copyNewUserLink(); // копирование ссылки для приглашения нового пользователя
+  copyStatistics(); // копирование статистики
   initDatepicker(); // датапикер
   attachFile(); // прикрепление файла
   setTabs(); // табы
@@ -288,13 +289,13 @@ function controlModal() {
             modal.classList.add("active");
             fixBodyPosition();
 
-            if (modal.dataset.modal === "statistics") {
-              const copyBlock = modal.querySelector(
-                ".js_modal_statistics_copy"
-              );
+            // if (modal.dataset.modal === "statistics") {
+            //   const copyBlock = modal.querySelector(
+            //     ".js_modal_statistics_copy"
+            //   );
 
-              copyContent(copyBlock.textContent.trim());
-            }
+            //   copyContent(copyBlock.textContent.trim());
+            // }
 
             if (modal.dataset.modal === "adding-lesson") {
               const hiddenInput = modal.querySelector(".js_hidden_input");
@@ -483,6 +484,33 @@ function copyNewUserLink() {
       }
     });
   }
+}
+
+// копирование статистики
+
+function copyStatistics() {
+  const modal = document.querySelector("[data-modal='statistics']");
+
+  if (!modal) return;
+
+  const descr = modal.querySelector(".js_modal_statistics_descr");
+  const textarea = modal.querySelector(".js_modal_statistics_textarea");
+  const btn = modal.querySelector(".js_modal_statistics_btn");
+
+  textarea.value = textarea.value.replace(/^[ \t]+/gm, "");
+
+  btn.addEventListener("click", () => {
+    copyContent(textarea.value);
+    if (descr) {
+      descr.classList.add("active");
+    }
+
+    setTimeout(() => {
+      if (descr) {
+        descr.classList.remove("active");
+      }
+    }, 3000);
+  });
 }
 
 // датапикер https://air-datepicker.com/ru
@@ -893,7 +921,7 @@ function initModalDataEditorSlider() {
       spaceBetween: 43,
       observer: true,
       observeParents: true,
-      observeSlideChildren: true
+      observeSlideChildren: true,
     });
   }
 }

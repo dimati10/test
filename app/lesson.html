@@ -259,7 +259,8 @@
               </button>
             </div>
             <ul class="a-training-tabs__statuses">
-              <li class="a-training-tabs__status" style="--status-color: #ffffff;">активная задача</li>
+              <li class="a-training-tabs__status js_lesson_tabs_status" style="--status-color: #ffffff;">активная задача
+              </li>
               <li class="a-training-tabs__status" style="--status-color: #ffbe0b;">на проверке</li>
               <li class="a-training-tabs__status" style="--status-color: #127954;">принято</li>
               <li class="a-training-tabs__status" style="--status-color: #ea4643;">не решено</li>
@@ -267,17 +268,112 @@
           </div>
           <div class="a-training-tabs__content">
             <div class="a-training-tabs__item js_tabs_item active fade">
-              1
-
               <div class="a-lesson-tabs js_lesson_tabs">
-                <div class="a-lesson-tabs__bar">
-                  <div class="a-lesson-tabs__swiper swiper js_lesson_swiper">
-                    <div class="swiper-wrspper">
+                <div class="a-lesson-tabs__title">Навигация по заданиям</div>
+                <div class="a-lesson-tabs__bar js_lesson_slider">
+                  <div class="a-lesson-tabs__swiper swiper js_lesson_swiper" data-mobile="false">
+                    <div class="swiper-wrapper">
                       <div class="swiper-slide">
-                        <button class="a-lesson-tabs__btn" type="button"></button>
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn active" type="button"
+                          style="--status-color: #ea4643;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn" type="button" style="--status-color: #ea4643;">+</button>
                       </div>
                     </div>
                   </div>
+                  <button class="a-lesson-tabs__prev js_lesson_prev" type="button">
+                    <svg width="14" height="23">
+                      <use xlink:href="images/sprite.svg#slider-prev"></use>
+                    </svg>
+                  </button>
+                  <button class="a-lesson-tabs__next js_lesson_next" type="button">
+                    <svg width="13" height="23">
+                      <use xlink:href="images/sprite.svg#slider-next"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="a-lesson-tabs__content">
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item active">1</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">2</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">3</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">4</div>
                 </div>
               </div>
 
@@ -293,11 +389,97 @@
             </div>
 
             <div class="a-training-tabs__item js_tabs_item">
-              2
+              <div class="a-lesson-tabs js_lesson_tabs">
+                <div class="a-lesson-tabs__title">Навигация по заданиям</div>
+                <div class="a-lesson-tabs__bar js_lesson_slider">
+                  <div class="a-lesson-tabs__swiper swiper js_lesson_swiper" data-mobile="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn active" type="button"
+                          style="--status-color: #ffbe0b;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn" type="button" style="--status-color: #ea4643;">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="a-lesson-tabs__prev js_lesson_prev" type="button">
+                    <svg width="14" height="23">
+                      <use xlink:href="images/sprite.svg#slider-prev"></use>
+                    </svg>
+                  </button>
+                  <button class="a-lesson-tabs__next js_lesson_next" type="button">
+                    <svg width="13" height="23">
+                      <use xlink:href="images/sprite.svg#slider-next"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="a-lesson-tabs__content">
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item active">1</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">2</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">3</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">4</div>
+                </div>
+              </div>
             </div>
 
             <div class="a-training-tabs__item js_tabs_item">
-              3
+              <div class="a-lesson-tabs js_lesson_tabs">
+                <div class="a-lesson-tabs__title">Навигация по заданиям</div>
+                <div class="a-lesson-tabs__bar js_lesson_slider">
+                  <div class="a-lesson-tabs__swiper swiper js_lesson_swiper" data-mobile="false">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn active" type="button"
+                          style="--status-color: #ffbe0b;">1</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #127954;">2</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ffbe0b;">3</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn js_lesson_tabs_btn" type="button"
+                          style="--status-color: #ea4643;">4</button>
+                      </div>
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn" type="button" style="--status-color: #ea4643;">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="a-lesson-tabs__prev js_lesson_prev" type="button">
+                    <svg width="14" height="23">
+                      <use xlink:href="images/sprite.svg#slider-prev"></use>
+                    </svg>
+                  </button>
+                  <button class="a-lesson-tabs__next js_lesson_next" type="button">
+                    <svg width="13" height="23">
+                      <use xlink:href="images/sprite.svg#slider-next"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="a-lesson-tabs__content">
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item active">1</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">2</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">3</div>
+                  <div class="a-lesson-tabs__item js_lesson_tabs_item">4</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

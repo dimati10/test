@@ -14,6 +14,7 @@ function initApp() {
   initDatepicker(); // датапикер
   attachFile(); // прикрепление файла
   setTabs(); // табы
+  setTabs('.js_lesson_tabs', '.js_lesson_tabs_btn', '.js_lesson_tabs_item'); // табы на странице урока
   initTrainingSliders(); // превращение карточек в слайдеры на мобильных расширениях
   seTextareaHeight(); // автоматическое увеличение высоты textarea при переполнении текстом
   setTimer(".js_training_link_timer", "2025-08-10"); // таймер
@@ -23,6 +24,7 @@ function initApp() {
   setInputNumber(); // ввод только цифр
   changeAvatar(); //смена аватара в профиле
   controlRatingTableSort(); // сортировка таблицы на странице 'рейтинг учеников'
+  initLessonSliders(); // превращение кнопок табов в слайдеры на мобильных расширениях на странице урока
 
   console.log("initApp");
 }
@@ -657,6 +659,7 @@ function setTabs(
   itemSelector = ".js_tabs_item"
 ) {
   const tabs = document.querySelectorAll(tabsSelector);
+  // const status = document.querySelector(".js_lesson_tabs_status");
 
   if (!tabs.length) return;
 
@@ -672,6 +675,10 @@ function setTabs(
         items.forEach((i) => i.classList.remove("active", "fade"));
         btn.classList.add("active");
         items[btnIndex].classList.add("active", "fade");
+
+        // if(btn.classList.contains("js_lesson_tabs_btn")) {
+        //   status.style.setProperty("--bg-color", btn.style.getPropertyValue("--status-color"));
+        // }
       });
     });
   });
@@ -703,7 +710,7 @@ function initTrainingSliders() {
           slider.dataset.mobile = "true";
         }
 
-        if (window.innerWidth > 1200) {
+        if (window.innerWidth > 767) {
           slider.dataset.mobile = "false";
 
           if (slider.classList.contains("swiper-initialized")) {
@@ -1294,4 +1301,48 @@ function controlRatingTableSort() {
         : "rotate(0deg)";
     });
   });
+}
+
+// превращение кнопок табов в слайдеры на мобильных расширениях на странице урока
+
+function initLessonSliders() {
+  const sliders = document.querySelectorAll(".js_lesson_swiper");
+
+  if (sliders.length) {
+    sliders.forEach((slider) => {
+      let swiper;
+
+      function mobileSlider() {
+        if (window.innerWidth <= 1199 && slider.dataset.mobile == "false") {
+          swiper = new Swiper(slider, {
+            navigation: {
+              nextEl: ".js_lesson_next",
+              prevEl: ".js_lesson_prev",
+            },
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+          });
+
+          slider.dataset.mobile = "true";
+        }
+
+        if (window.innerWidth > 1199) {
+          slider.dataset.mobile = "false";
+
+          if (slider.classList.contains("swiper-initialized")) {
+            swiper.destroy();
+          }
+        }
+      }
+
+      mobileSlider();
+
+      window.addEventListener("resize", () => {
+        mobileSlider();
+      });
+    });
+  }
 }

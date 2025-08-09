@@ -4,28 +4,136 @@
   @media (min-width: 1200px) {
     padding: 0 0 80px;
   }
+
+  .a-training-tabs__bar {
+    margin-bottom: 32px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .a-training-tabs__statuses {
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @media (min-width: 1400px) {
+      width: 468px;
+    }
+  }
+
+  .a-training-tabs__status {
+    &::before {
+      border: 3px solid var(--status-color);
+      background-color: var(--bg-color);
+    }
+  }
 }
 
 .a-lesson-main {
+  padding: 14px 0 56px;
 
-  &__top {}
+  @media (min-width: 1200px) {
+    padding: 24px 0 56px;
+  }
 
-  &__btn {}
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 12px;
 
-  &__inner {}
+    @media (min-width: 1200px) {
+      margin-bottom: 32px;
+    }
 
-  &__title {}
+    .a-breadcrumbs {
+      padding: 0;
+    }
+  }
 
-  &__subtitle {}
+  &__btn {
+    display: none;
+    padding: 12px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--backtimeslip);
+    border-radius: var(--radius-12);
+    border: 2px solid var(--backtimeslip);
 
-  &__status {}
+    @media (min-width: 1200px) {
+      display: block;
+    }
+  }
 
-  &__select {}
+  &__inner {
+    display: grid;
+    gap: 25px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      justify-self: end;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  &__status {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    grid-row: 2/3;
+
+    @media (min-width: 768px) {
+      align-self: end;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  &__select {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    padding: 13px 18px;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5157 8.52815C8.12518 8.91868 7.49201 8.91868 7.10149 8.52815L0.737526 2.16419C0.347002 1.77367 0.347001 1.1405 0.737526 0.749977C1.12805 0.359453 1.76122 0.359453 2.15174 0.749977L7.80859 6.40683L13.4654 0.749977C13.856 0.359453 14.4891 0.359453 14.8797 0.749977C15.2702 1.1405 15.2702 1.77367 14.8797 2.16419L8.5157 8.52815ZM7.80859 5.82031L8.80859 5.82031L8.80859 7.82104L7.80859 7.82104L6.80859 7.82104L6.80859 5.82031L7.80859 5.82031Z' fill='black' /%3E%3C/svg%3E");
+    cursor: pointer;
+  }
 }
 
 .a-lesson-theme {
+  margin: -20px 0 0;
   padding: 20px 0 50px;
-  // min-height: 430px;
   border-radius: var(--radius-20) var(--radius-20) 0 0;
   background-color: var(--black-34);
 
@@ -65,7 +173,7 @@
     border-radius: var(--radius-16);
 
     @media (min-width: 768px) {
-       padding: 20px;
+      padding: 20px;
     }
 
     @media (min-width: 1200px) {
@@ -155,8 +263,34 @@
 }
 
 .a-lesson-presentation {
+  padding: 30px 0;
 
-  &__title {}
+  @media (min-width: 1200px) {
+    padding: 30px 0 110px;
+  }
 
-  &__inner {}
+  &__title {
+    margin: 0 0 13px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__inner {
+    margin: 0 -20px;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
+  }
+
+  &__placeholder {
+    img {
+      width: 100%;
+    }
+  }
 }

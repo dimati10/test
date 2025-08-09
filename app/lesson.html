@@ -175,25 +175,29 @@
 
   <main class="main">
     <section class="a-lesson">
-      <div class="a-lesson-main" style="--status-color: #ea4643;">
+      <div class="a-lesson-main" style="background-color: #ea4643;">
         <div class="a-container">
           <div class="a-lesson-main__top">
             <div class="a-breadcrumbs">
-              <div class="a-container">
-                <ul class="a-breadcrumbs__list">
-                  <li class="a-breadcrumbs__item">
-                    <a class="a-breadcrumbs__link" href="#">Личный кабинет</a>
-                  </li>
-                  <li class="a-breadcrumbs__item">
-                    <span class="a-breadcrumbs__link">Мои ученики</span>
-                  </li>
-                </ul>
-              </div>
+              <ul class="a-breadcrumbs__list">
+                <li class="a-breadcrumbs__item">
+                  <a class="a-breadcrumbs__link" href="#">Ученики</a>
+                </li>
+                <li class="a-breadcrumbs__item">
+                  <a class="a-breadcrumbs__link" href="#">Имя Фамилия</a>
+                </li>
+                <li class="a-breadcrumbs__item">
+                  <a class="a-breadcrumbs__link" href="#">курс Python</a>
+                </li>
+                <li class="a-breadcrumbs__item">
+                  <span class="a-breadcrumbs__link">урок №1</span>
+                </li>
+              </ul>
             </div>
             <button class="a-lesson-main__btn" type="button">Изменить шаблон</button>
           </div>
           <div class="a-lesson-main__inner">
-            <h1 class="a-lesson-main__title">1 урок</h1>
+            <h1 class="a-lesson-main__title title">1 урок</h1>
             <h2 class="a-lesson-main__subtitle">22 августа 24</h2>
             <p class="a-lesson-main__status">Статус: Есть что порешать</p>
             <select class="a-lesson-main__select">>
@@ -204,21 +208,21 @@
             </select>
           </div>
         </div>
-        <div class="a-lesson-theme">
-          <div class="a-container">
-            <h3 class="a-lesson-theme__suptitle">Тема урока</h3>
-            <h2 class="a-lesson-theme__title">Строки (string) в python</h2>
-            <div class="a-lesson-theme__block">
-              <p class="a-lesson-theme__descr">Урок создан, но ещё не начался</p>
-              <div class="a-lesson-theme__buttons">
-                <button class="a-lesson-theme__plus-btn" type="button">Запись</button>
-                <a class="a-lesson-theme__btn" href="#">
-                  Начать урок
-                  <svg width="14" height="24">
-                    <use xlink:href="images/sprite.svg#chat-btn-arrow"></use>
-                  </svg>
-                </a>
-              </div>
+      </div>
+      <div class="a-lesson-theme">
+        <div class="a-container">
+          <h3 class="a-lesson-theme__suptitle">Тема урока</h3>
+          <h2 class="a-lesson-theme__title">Строки (string) в python</h2>
+          <div class="a-lesson-theme__block">
+            <p class="a-lesson-theme__descr">Урок создан, но ещё не начался</p>
+            <div class="a-lesson-theme__buttons">
+              <button class="a-lesson-theme__plus-btn" type="button">Запись</button>
+              <a class="a-lesson-theme__btn" href="#">
+                Начать урок
+                <svg width="14" height="24">
+                  <use xlink:href="images/sprite.svg#chat-btn-arrow"></use>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -227,7 +231,9 @@
         <div class="a-lesson-presentation">
           <h3 class="a-lesson-presentation__title">Презентация</h3>
           <div class="a-lesson-presentation__inner">
-            <img src="images/lesson/lesson.png" alt="">
+            <div class="a-lesson-presentation__placeholder">
+              <img src="images/lesson-presentation-placeholder.jpg" alt="">
+            </div>
           </div>
         </div>
         <div class="a-training-tabs js_tabs">
@@ -241,7 +247,7 @@
               </button>
               <button class="a-training-tabs__btn js_tabs_btn" type="button">
                 <svg width="20" height="21">
-                  <use xlink:href="images/sprite.svg#settings"></use>
+                  <use xlink:href="images/sprite.svg#list"></use>
                 </svg>
                 РАБОТА НА УРОКЕ
               </button>
@@ -253,24 +259,45 @@
               </button>
             </div>
             <ul class="a-training-tabs__statuses">
-              <li class="a-training-tabs__status" style="--status-color: #127954;">все сделано</li>
+              <li class="a-training-tabs__status" style="--status-color: #ffffff;">активная задача</li>
               <li class="a-training-tabs__status" style="--status-color: #ffbe0b;">на проверке</li>
-              <li class="a-training-tabs__status" style="--status-color: #ea4643;">Не все решено</li>
+              <li class="a-training-tabs__status" style="--status-color: #127954;">принято</li>
+              <li class="a-training-tabs__status" style="--status-color: #ea4643;">не решено</li>
             </ul>
           </div>
           <div class="a-training-tabs__content">
             <div class="a-training-tabs__item js_tabs_item active fade">
-              <div class="a-training-tabs__block">
+              1
 
+              <div class="a-lesson-tabs js_lesson_tabs">
+                <div class="a-lesson-tabs__bar">
+                  <div class="a-lesson-tabs__swiper swiper js_lesson_swiper">
+                    <div class="swiper-wrspper">
+                      <div class="swiper-slide">
+                        <button class="a-lesson-tabs__btn" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="a-lesson-editor">
+                <div class="a-lesson-editor__main">
+
+                </div>
+                <div class="a-lesson-editor__bottom">
+                  <button class="a-lesson-editor__task" type="button">задание</button>
+                  <button class="a-lesson-editor__ziton" type="button">Зитон</button>
+                </div>
               </div>
             </div>
 
             <div class="a-training-tabs__item js_tabs_item">
-
+              2
             </div>
 
             <div class="a-training-tabs__item js_tabs_item">
-
+              3
             </div>
           </div>
         </div>

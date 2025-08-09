@@ -902,6 +902,7 @@
     }
 
     svg {
+      flex-shrink: 0;
       color: var(--gray-113);
       transition: color 0.3s;
     }

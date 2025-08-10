@@ -14,7 +14,7 @@ function initApp() {
   initDatepicker(); // датапикер
   attachFile(); // прикрепление файла
   setTabs(); // табы
-  setTabs('.js_lesson_tabs', '.js_lesson_tabs_btn', '.js_lesson_tabs_item'); // табы на странице урока
+  setTabs(".js_lesson_tabs", ".js_lesson_tabs_btn", ".js_lesson_tabs_item"); // табы на странице урока
   initTrainingSliders(); // превращение карточек в слайдеры на мобильных расширениях
   seTextareaHeight(); // автоматическое увеличение высоты textarea при переполнении текстом
   setTimer(".js_training_link_timer", "2025-08-10"); // таймер
@@ -1306,20 +1306,24 @@ function controlRatingTableSort() {
 // превращение кнопок табов в слайдеры на мобильных расширениях на странице урока
 
 function initLessonSliders() {
-  const sliders = document.querySelectorAll(".js_lesson_swiper");
+  const sliderWraps = document.querySelectorAll(".js_lesson_slider");
 
-  if (sliders.length) {
-    sliders.forEach((slider) => {
+  if (sliderWraps.length) {
+    sliderWraps.forEach((wrap) => {
+      const slider = wrap.querySelector(".js_lesson_swiper");
+      const prev = wrap.querySelector(".js_lesson_prev");
+      const next = wrap.querySelector(".js_lesson_next");
+
       let swiper;
 
       function mobileSlider() {
         if (window.innerWidth <= 1199 && slider.dataset.mobile == "false") {
           swiper = new Swiper(slider, {
             navigation: {
-              nextEl: ".js_lesson_next",
-              prevEl: ".js_lesson_prev",
+              nextEl: next,
+              prevEl: prev,
             },
-            slidesPerView: 'auto',
+            slidesPerView: "auto",
             spaceBetween: 20,
             observer: true,
             observeParents: true,

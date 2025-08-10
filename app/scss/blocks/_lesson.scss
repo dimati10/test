@@ -329,9 +329,6 @@
 
     .swiper-slide {
       width: auto;
-      // @media (min-width: 1200px) {
-      //   width: auto;
-      // }
     }
   }
 
@@ -343,6 +340,19 @@
     width: 36px;
     top: 0;
     bottom: 0;
+    transition: opacity 0.3s;
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+
+    &.swiper-button-lock {
+      display: none;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.35;
+    }
   }
 
   &__prev {

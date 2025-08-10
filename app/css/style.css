@@ -5076,7 +5076,7 @@ input::-ms-clear {
   margin: 0 -20px;
   padding: 20px;
   border-radius: var(--radius-12);
-  border: 3px solid var(--red);
+  border: 3px solid transparent;
   background-color: var(--gray-61);
 }
 @media (min-width: 768px) {

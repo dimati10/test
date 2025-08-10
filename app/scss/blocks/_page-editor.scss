@@ -1,0 +1,33 @@
+.a-page-editor {
+  padding: 0 0 50px;
+
+  @media (min-width: 1200px) {
+    padding: 0 0 80px;
+  }
+
+  &__title {
+    margin: 0 0 45px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 48px;
+    }
+  }
+
+  .a-editor__main {
+    border-color: transparent !important;
+  }
+
+  .a-editor__buttons {
+    @media (max-width: 767px) {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  .a-editor__buttons-box {
+    @media (max-width: 767px) {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+}

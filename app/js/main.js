@@ -25,6 +25,7 @@ function initApp() {
   changeAvatar(); //смена аватара в профиле
   controlRatingTableSort(); // сортировка таблицы на странице 'рейтинг учеников'
   initLessonSliders(); // превращение кнопок табов в слайдеры на мобильных расширениях на странице урока
+  controlStudentsTable(); // сортировка таблицы на странице 'мои ученики'
 
   console.log("initApp");
 }
@@ -1349,4 +1350,114 @@ function initLessonSliders() {
       });
     });
   }
+}
+
+// сортировка таблицы на странице 'мои ученики'
+
+function controlStudentsTable() {
+  const tbody = document.querySelector(".js_students_table_body");
+  if (!tbody) return;
+
+  const rows = Array.from(tbody.querySelectorAll("tr"));
+
+  const searchInput = document.querySelector(".js_students_search_input");
+  const selects = document.querySelectorAll(".js_students_filter_select");
+  const sortBtns = document.querySelectorAll(".js_students_sort_btn");
+
+  function filterTable() {
+    const searchValue = searchInput.value.trim().toLowerCase();
+    const [teacherSelect, courseSelect, percentSelect] = selects;
+
+    rows.forEach(row => {
+      const cells = row.querySelectorAll("td");
+
+      const studentName = cells[1].textContent.trim().toLowerCase();
+      const teacher = cells[4].textContent.trim();
+      const course = cells[7].textContent.trim();
+      const percentText = cells[6].textContent.trim().replace("%", "");
+      const percent = parseInt(percentText, 10) || 0;
+
+      let matchesSearch = !searchValue || studentName.includes(searchValue);
+      let matchesTeacher = !teacherSelect.value || teacherSelect.options[teacherSelect.selectedIndex].text === teacher;
+      let matchesCourse = !courseSelect.value || courseSelect.options[courseSelect.selectedIndex].text === course;
+
+      let matchesPercent = true;
+      if (percentSelect.value) {
+        const selectedOption = percentSelect.options[percentSelect.selectedIndex].text;
+        const [min, max] = selectedOption.split("-").map(v => parseInt(v, 10));
+        matchesPercent = percent >= min && percent <= max;
+      }
+
+      if (matchesSearch && matchesTeacher && matchesCourse && matchesPercent) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
+
+  function sortTable(colIndex, type = "text") {
+    const visibleRows = rows.filter(row => row.style.display !== "none");
+
+    visibleRows.sort((a, b) => {
+      let aText = a.querySelectorAll("td")[colIndex].textContent.trim();
+      let bText = b.querySelectorAll("td")[colIndex].textContent.trim();
+
+      if (type === "number") {
+        aText = parseFloat(aText.replace("%", "")) || 0;
+        bText = parseFloat(bText.replace("%", "")) || 0;
+        return aText - bText; // всегда по возрастанию
+      } else {
+        return aText.localeCompare(bText, "ru", { sensitivity: "base" });
+      }
+    });
+
+    visibleRows.forEach(row => tbody.appendChild(row));
+  }
+
+  searchInput.addEventListener("input", filterTable);
+  selects.forEach(select => select.addEventListener("change", filterTable));
+
+  sortBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      sortBtns.forEach(b => b.classList.remove("active"));
+
+      if (index === 0) {
+        // Сброс
+        btn.classList.add("active");
+        searchInput.value = "";
+        selects.forEach(select => select.selectedIndex = 0);
+        rows.forEach(row => row.style.display = "");
+        // порядок возвращаем как был в HTML
+        rows.forEach(row => tbody.appendChild(row));
+        return;
+      }
+
+      btn.classList.add("active");
+
+      let colIndex = 0;
+      let type = "text";
+
+      switch (index) {
+        case 1: colIndex = 1; type = "text"; break; // имя
+        case 2: colIndex = 1; type = "text"; break; // фамилия
+        case 3: colIndex = 7; type = "text"; break; // курс
+        case 4: colIndex = 4; type = "text"; break; // преподаватель
+        case 5: colIndex = 6; type = "number"; break; // % ДЗ
+      }
+
+      if (index === 2) {
+        // По фамилии
+        const visibleRows = rows.filter(row => row.style.display !== "none");
+        visibleRows.sort((a, b) => {
+          const aSurname = a.querySelectorAll("td")[1].textContent.trim().split(" ").slice(-1)[0].toLowerCase();
+          const bSurname = b.querySelectorAll("td")[1].textContent.trim().split(" ").slice(-1)[0].toLowerCase();
+          return aSurname.localeCompare(bSurname, "ru", { sensitivity: "base" });
+        });
+        visibleRows.forEach(row => tbody.appendChild(row));
+      } else {
+        sortTable(colIndex, type);
+      }
+    });
+  });
 }

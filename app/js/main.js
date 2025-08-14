@@ -3,12 +3,9 @@ window.addEventListener("DOMContentLoaded", initApp);
 function initApp() {
   controlMobileMenu(); // мобильное меню;
   controlSpoilers(); // спойлеры
-  // sendForm(".js_feedback_form_1"); // отправка формы в разделе 'попробуйте бесплатно'
-  // sendForm(".js_any_questions_form"); // отправка формы в разделе 'остались вопросы'
-  // sendForm(".js_feedback_form_2"); // отправка формы в разделе 'как начать учиться'
   controlModal(); // логика для модальных окон
   controlPasswordVisibility(); // кнопка показать-скрыть пароль
-  controlMofalFilter(); // фильтрация и сортирвка в модальных окнах
+  controlModalFilter(); // фильтрация и сортирвка в модальных окнах
   copyNewUserLink(); // копирование ссылки для приглашения нового пользователя
   copyStatistics(); // копирование статистики
   initDatepicker(); // датапикер
@@ -203,77 +200,6 @@ const removeError = (input) => {
   }
 };
 
-// отправка формы
-
-function sendForm(formSelector) {
-  const form = document.querySelector(formSelector);
-  const success = document.querySelector('[data-modal="success"]');
-
-  if (form) {
-    const formBtn = form.querySelector(".js_form_btn");
-    const formInputs = form.querySelectorAll('[class*="js_input"]');
-
-    let isInputEventAdded = false;
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      if (!isInputEventAdded) {
-        formInputs.forEach((input) => {
-          input.addEventListener("input", () => {
-            validateForm(form);
-          });
-        });
-
-        isInputEventAdded = true;
-      }
-
-      if (validateForm(form)) {
-        // сюда пишем команды, которые должны выполниться после успешной валидации
-
-        console.log("validate");
-
-        formBtn.classList.add("animated");
-        formBtn.disabled = true;
-
-        setTimeout(() => {
-          // имитация отправки, когда отправка будет настроена, нужно удалить setTimeout(), код отправки ниже закомментирован
-
-          formBtn.classList.remove("animated");
-          formBtn.disabled = false;
-          form.reset();
-          success && success.classList.add("active");
-          fixBodyPosition();
-        }, 3000);
-
-        // const formData = new FormData(form);
-
-        // const response = await fetch('/', {
-        //     method: 'POST',
-        //     body: formData
-        // });
-
-        // if (response.ok) {
-        //     form.reset();
-        //     success && success.classList.add('active');
-        //     fixBodyPosition();
-        // } else {
-        //     alert('Ошибка');
-        // }
-
-        // formBtn.classList.remove('animated');
-        // formBtn.disabled = false;
-      } else {
-        console.log("no-validate");
-
-        if (form.querySelector('[class*="js_input"].error')) {
-          form.querySelector('[class*="js_input"].error').focus(); //фокус к полю с ошибкой;
-        }
-      }
-    });
-  }
-}
-
 // логика для модальных окон
 
 function controlModal() {
@@ -369,22 +295,18 @@ function controlPasswordVisibility() {
 
 // фильтрация и сортирвка в модальных окнах
 
-function controlMofalFilter() {
+function controlModalFilter() {
   const modals = document.querySelectorAll("[data-modal]");
-
   if (!modals.length) return;
 
   modals.forEach((modal) => {
     const searchInput = modal.querySelector(".js_modal_search");
     const list = modal.querySelector(".js_modal_list");
-
-    if (!list) return; // Если нет списка, выходим
+    if (!list) return;
 
     const sortBtns = list.querySelectorAll(".js_modal_list_sort_btn");
     const itemsWrapper = list.querySelector(".js_modal_list_items");
-    const items = Array.from(list.querySelectorAll(".js_modal_list_item"));
-
-    if (!items.length) return; // Нет учеников — выходим
+    if (!itemsWrapper) return;
 
     const getItemData = (item) => {
       const name =
@@ -401,22 +323,25 @@ function controlMofalFilter() {
       return { element: item, name, surname, course };
     };
 
-    let itemsData = items.map(getItemData);
+    function getItemsData() {
+      const items = Array.from(list.querySelectorAll(".js_modal_list_item"));
+      console.log(items);
+      return items.map(getItemData);
+    }
 
     function filterAndSort() {
-      const searchValue = searchInput?.value.trim().toLowerCase() || "";
+      const itemsData = getItemsData();
+      if (!itemsData.length) return;
 
-      // Определяем активную сортировку
-      const activeSortBtn = list.querySelector(
-        ".js_modal_list_sort_btn.active"
-      );
+      const searchValue = searchInput?.value.trim().toLowerCase() || "";
+      const activeSortBtn = list.querySelector(".js_modal_list_sort_btn.active");
       const sortKey = activeSortBtn?.dataset.sort || "name";
 
       // Фильтрация
       itemsData.forEach((item) => {
         const matches =
           item.name.includes(searchValue) || item.course.includes(searchValue);
-        item.element.style.display = matches ? "block" : "none";
+        item.element.style.display = matches ? "" : "none";
       });
 
       // Сортировка только видимых
@@ -429,12 +354,12 @@ function controlMofalFilter() {
       visibleItems.forEach((item) => itemsWrapper.appendChild(item.element));
     }
 
-    // Поиск, если поле есть
+    // Поиск
     if (searchInput) {
       searchInput.addEventListener("input", filterAndSort);
     }
 
-    // Сортировка, если кнопки есть
+    // Сортировка
     if (sortBtns.length) {
       sortBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -445,15 +370,12 @@ function controlMofalFilter() {
       });
 
       // Если ни одна кнопка не активна — активируем первую
-      const hasActive = Array.from(sortBtns).some((btn) =>
-        btn.classList.contains("active")
-      );
-      if (!hasActive) {
+      if (!Array.from(sortBtns).some((btn) => btn.classList.contains("active"))) {
         sortBtns[0].classList.add("active");
       }
     }
 
-    // Первый запуск фильтрации и сортировки
+    // Первый запуск
     filterAndSort();
   });
 }

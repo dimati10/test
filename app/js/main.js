@@ -325,7 +325,6 @@ function controlModalFilter() {
 
     function getItemsData() {
       const items = Array.from(list.querySelectorAll(".js_modal_list_item"));
-      console.log(items);
       return items.map(getItemData);
     }
 
@@ -334,7 +333,9 @@ function controlModalFilter() {
       if (!itemsData.length) return;
 
       const searchValue = searchInput?.value.trim().toLowerCase() || "";
-      const activeSortBtn = list.querySelector(".js_modal_list_sort_btn.active");
+      const activeSortBtn = list.querySelector(
+        ".js_modal_list_sort_btn.active"
+      );
       const sortKey = activeSortBtn?.dataset.sort || "name";
 
       // Фильтрация
@@ -370,7 +371,9 @@ function controlModalFilter() {
       });
 
       // Если ни одна кнопка не активна — активируем первую
-      if (!Array.from(sortBtns).some((btn) => btn.classList.contains("active"))) {
+      if (
+        !Array.from(sortBtns).some((btn) => btn.classList.contains("active"))
+      ) {
         sortBtns[0].classList.add("active");
       }
     }
@@ -654,13 +657,15 @@ function initTrainingSliders() {
 // автоматическое увеличение высоты textarea при переполнении текстом
 
 function seTextareaHeight() {
-  const textarea = document.querySelector(".js_textarea");
+  function autoResize(el) {
+    el.style.height = "auto";
+    const extra = el.offsetHeight - el.clientHeight;
+    el.style.height = el.scrollHeight + extra + "px";
+  }
 
-  if (!textarea) return;
-
-  textarea.addEventListener("input", () => {
-    // textarea.style.height = "auto";
-    textarea.style.height = `${textarea.scrollHeight}px`;
+  document.querySelectorAll("textarea").forEach((textarea) => {
+    autoResize(textarea);
+    textarea.addEventListener("input", () => autoResize(textarea));
   });
 }
 
@@ -1286,11 +1291,13 @@ function controlStudentsTable() {
   const selects = document.querySelectorAll(".js_students_filter_select");
   const sortBtns = document.querySelectorAll(".js_students_sort_btn");
 
+  let sortState = { index: null, direction: "asc" }; // текущее состояние сортировки
+
   function filterTable() {
     const searchValue = searchInput.value.trim().toLowerCase();
     const [teacherSelect, courseSelect, percentSelect] = selects;
 
-    rows.forEach(row => {
+    rows.forEach((row) => {
       const cells = row.querySelectorAll("td");
 
       const studentName = cells[1].textContent.trim().toLowerCase();
@@ -1300,13 +1307,20 @@ function controlStudentsTable() {
       const percent = parseInt(percentText, 10) || 0;
 
       let matchesSearch = !searchValue || studentName.includes(searchValue);
-      let matchesTeacher = !teacherSelect.value || teacherSelect.options[teacherSelect.selectedIndex].text === teacher;
-      let matchesCourse = !courseSelect.value || courseSelect.options[courseSelect.selectedIndex].text === course;
+      let matchesTeacher =
+        !teacherSelect.value ||
+        teacherSelect.options[teacherSelect.selectedIndex].text === teacher;
+      let matchesCourse =
+        !courseSelect.value ||
+        courseSelect.options[courseSelect.selectedIndex].text === course;
 
       let matchesPercent = true;
       if (percentSelect.value) {
-        const selectedOption = percentSelect.options[percentSelect.selectedIndex].text;
-        const [min, max] = selectedOption.split("-").map(v => parseInt(v, 10));
+        const selectedOption =
+          percentSelect.options[percentSelect.selectedIndex].text;
+        const [min, max] = selectedOption
+          .split("-")
+          .map((v) => parseInt(v, 10));
         matchesPercent = percent >= min && percent <= max;
       }
 
@@ -1318,8 +1332,8 @@ function controlStudentsTable() {
     });
   }
 
-  function sortTable(colIndex, type = "text") {
-    const visibleRows = rows.filter(row => row.style.display !== "none");
+  function sortTable(colIndex, type = "text", direction = "asc") {
+    const visibleRows = rows.filter((row) => row.style.display !== "none");
 
     visibleRows.sort((a, b) => {
       let aText = a.querySelectorAll("td")[colIndex].textContent.trim();
@@ -1328,57 +1342,102 @@ function controlStudentsTable() {
       if (type === "number") {
         aText = parseFloat(aText.replace("%", "")) || 0;
         bText = parseFloat(bText.replace("%", "")) || 0;
-        return aText - bText; // всегда по возрастанию
-      } else {
-        return aText.localeCompare(bText, "ru", { sensitivity: "base" });
       }
+
+      let comparison =
+        type === "number"
+          ? aText - bText
+          : aText.localeCompare(bText, "ru", { sensitivity: "base" });
+
+      return direction === "asc" ? comparison : -comparison;
     });
 
-    visibleRows.forEach(row => tbody.appendChild(row));
+    visibleRows.forEach((row) => tbody.appendChild(row));
   }
 
   searchInput.addEventListener("input", filterTable);
-  selects.forEach(select => select.addEventListener("change", filterTable));
+  selects.forEach((select) => select.addEventListener("change", filterTable));
 
   sortBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      sortBtns.forEach(b => b.classList.remove("active"));
+      sortBtns.forEach((b) => {
+        b.classList.remove("active");
+        b.classList.remove("rotated");
+      });
 
       if (index === 0) {
         // Сброс
         btn.classList.add("active");
         searchInput.value = "";
-        selects.forEach(select => select.selectedIndex = 0);
-        rows.forEach(row => row.style.display = "");
-        // порядок возвращаем как был в HTML
-        rows.forEach(row => tbody.appendChild(row));
+        selects.forEach((select) => (select.selectedIndex = 0));
+        rows.forEach((row) => (row.style.display = ""));
+        rows.forEach((row) => tbody.appendChild(row));
+        sortState = { index: null, direction: "asc" };
         return;
       }
 
+      // Если жмём на ту же кнопку — меняем направление
+      if (sortState.index === index) {
+        sortState.direction = sortState.direction === "asc" ? "desc" : "asc";
+      } else {
+        sortState = { index, direction: "asc" };
+      }
+
       btn.classList.add("active");
+      if (sortState.direction === "desc") {
+        btn.classList.add("rotated"); // для поворота стрелки
+      }
 
       let colIndex = 0;
       let type = "text";
 
       switch (index) {
-        case 1: colIndex = 1; type = "text"; break; // имя
-        case 2: colIndex = 1; type = "text"; break; // фамилия
-        case 3: colIndex = 7; type = "text"; break; // курс
-        case 4: colIndex = 4; type = "text"; break; // преподаватель
-        case 5: colIndex = 6; type = "number"; break; // % ДЗ
+        case 1:
+          colIndex = 1;
+          type = "text";
+          break; // имя
+        case 2:
+          colIndex = 1;
+          type = "text";
+          break; // фамилия
+        case 3:
+          colIndex = 7;
+          type = "text";
+          break; // курс
+        case 4:
+          colIndex = 4;
+          type = "text";
+          break; // преподаватель
+        case 5:
+          colIndex = 6;
+          type = "number";
+          break; // % ДЗ
       }
 
       if (index === 2) {
         // По фамилии
-        const visibleRows = rows.filter(row => row.style.display !== "none");
+        const visibleRows = rows.filter((row) => row.style.display !== "none");
         visibleRows.sort((a, b) => {
-          const aSurname = a.querySelectorAll("td")[1].textContent.trim().split(" ").slice(-1)[0].toLowerCase();
-          const bSurname = b.querySelectorAll("td")[1].textContent.trim().split(" ").slice(-1)[0].toLowerCase();
-          return aSurname.localeCompare(bSurname, "ru", { sensitivity: "base" });
+          const aSurname = a
+            .querySelectorAll("td")[1]
+            .textContent.trim()
+            .split(" ")
+            .slice(-1)[0]
+            .toLowerCase();
+          const bSurname = b
+            .querySelectorAll("td")[1]
+            .textContent.trim()
+            .split(" ")
+            .slice(-1)[0]
+            .toLowerCase();
+          let comparison = aSurname.localeCompare(bSurname, "ru", {
+            sensitivity: "base",
+          });
+          return sortState.direction === "asc" ? comparison : -comparison;
         });
-        visibleRows.forEach(row => tbody.appendChild(row));
+        visibleRows.forEach((row) => tbody.appendChild(row));
       } else {
-        sortTable(colIndex, type);
+        sortTable(colIndex, type, sortState.direction);
       }
     });
   });

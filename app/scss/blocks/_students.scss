@@ -230,6 +230,7 @@
       border-color: var(--yellow-251);
 
       svg {
+        transform: rotate(180deg);
         color: var(--yellow-251);
       }
     }
@@ -239,6 +240,12 @@
 
       @media (min-width: 768px) {
         display: block;
+      }
+    }
+
+    &.rotated {
+      svg {
+        transform: rotate(0deg);
       }
     }
   }

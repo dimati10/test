@@ -245,7 +245,7 @@
     font-size: 16px;
     line-height: 20px;
     border-radius: var(--radius-12);
-    resize: none;
+    resize: vertical;
   }
 }
 
@@ -313,10 +313,8 @@
   }
 
   &__textarea {
-    height: 58px;
-    resize: none;
-
-
+    min-height: 60px;
+    resize: vertical;
   }
 
   &__placeholder {

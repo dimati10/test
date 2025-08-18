@@ -201,12 +201,12 @@
             </span>
           </a>
           <div class="a-training-courses">
-            <h1 class="a-training-courses__title title">Александр Мухамеджанов</h1>
-            <div class="a-training-courses__inner js_tabs">
-              <div class="a-training-courses__cards swiper js_training_swiper" data-mobile="false">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide js_tabs_item active fade">
-                    <article class="a-training-courses-card">
+            <h1 class="a-training-courses__title title">Обучение</h1>
+            <div class="a-training-courses__swiper swiper js_training_swiper js_tabs" data-mobile="false">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="a-training-courses__cards">
+                    <article class="a-training-courses-card js_tabs_item active fade">
                       <h3 class="a-training-courses-card__title">
                         <strong>Python: Базовый курс</strong><br>
                         по программированию
@@ -223,9 +223,7 @@
                         </svg>
                       </a>
                     </article>
-                  </div>
-                  <div class="swiper-slide js_tabs_item">
-                    <article class="a-training-courses-card">
+                    <article class="a-training-courses-card js_tabs_item">
                       <h3 class="a-training-courses-card__title">
                         <strong>ЕГЭ по информатике</strong><br>
                         2025
@@ -242,9 +240,7 @@
                         </svg>
                       </a>
                     </article>
-                  </div>
-                  <div class="swiper-slide js_tabs_item disabled">
-                    <article class="a-training-courses-card">
+                    <article class="a-training-courses-card js_tabs_item disabled">
                       <h3 class="a-training-courses-card__title">
                         <strong>Олимпиадное программирование</strong>
                       </h3>
@@ -260,9 +256,7 @@
                         </svg>
                       </a>
                     </article>
-                  </div>
-                  <div class="swiper-slide js_tabs_item">
-                    <article class="a-training-courses-card">
+                    <article class="a-training-courses-card js_tabs_item">
                       <h3 class="a-training-courses-card__title">
                         <strong>Тест</strong>
                       </h3>
@@ -280,86 +274,88 @@
                     </article>
                   </div>
                 </div>
-                <div class="a-training-courses__buttons slider-buttons">
-                  <button class="slider-buttons__prev js_training_prev" type="button">
-                    <svg width="44" height="44">
-                      <use xlink:href="images/sprite.svg#slider-btn"></use>
-                    </svg>
-                    <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M22.5188 0.618651C34.4109 0.618651 44.0513 10.2591 44.0513 22.1511C44.0513 34.0432 34.4109 43.6836 22.5188 43.6836C10.6267 43.6836 0.986328 34.0432 0.986327 22.1511C0.986327 10.2591 10.6267 0.618652 22.5188 0.618651ZM22.5188 40.5487C32.6795 40.5487 40.9164 32.3118 40.9164 22.1511C40.9164 11.9904 32.6795 3.75353 22.5188 3.75354C12.3581 3.75354 4.12121 11.9904 4.12121 22.1511C4.12121 32.3118 12.3581 40.5487 22.5188 40.5487Z"
-                        fill="url(#paint0_linear_4010_136)" />
-                      <path
-                        d="M17.5072 23.213C16.9215 22.6272 16.9215 21.6775 17.5072 21.0917L27.0532 11.5457C27.639 10.96 28.5887 10.96 29.1745 11.5457C29.7603 12.1315 29.7603 13.0813 29.1745 13.6671L20.6892 22.1523L29.1745 30.6376C29.7603 31.2234 29.7603 32.1732 29.1745 32.7589C28.5887 33.3447 27.639 33.3447 27.0532 32.7589L17.5072 23.213ZM19.7832 22.1523L19.7832 23.6523L18.5679 23.6523L18.5679 22.1523L18.5679 20.6523L19.7832 20.6523L19.7832 22.1523Z"
-                        fill="#4649E0" />
-                      <defs>
-                        <linearGradient id="paint0_linear_4010_136" x1="10.9167" y1="22.1511" x2="35.9587" y2="22.1511"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#6023C3" />
-                          <stop offset="1" stop-color="#3169F8" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </button>
-                  <button class="slider-buttons__next js_training_next" type="button">
-                    <svg width="44" height="44">
-                      <use xlink:href="images/sprite.svg#slider-btn"></use>
-                    </svg>
-                    <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M22.5188 0.618651C34.4109 0.618651 44.0513 10.2591 44.0513 22.1511C44.0513 34.0432 34.4109 43.6836 22.5188 43.6836C10.6267 43.6836 0.986328 34.0432 0.986327 22.1511C0.986327 10.2591 10.6267 0.618652 22.5188 0.618651ZM22.5188 40.5487C32.6795 40.5487 40.9164 32.3118 40.9164 22.1511C40.9164 11.9904 32.6795 3.75353 22.5188 3.75354C12.3581 3.75354 4.12121 11.9904 4.12121 22.1511C4.12121 32.3118 12.3581 40.5487 22.5188 40.5487Z"
-                        fill="url(#paint0_linear_4010_136)" />
-                      <path
-                        d="M17.5072 23.213C16.9215 22.6272 16.9215 21.6775 17.5072 21.0917L27.0532 11.5457C27.639 10.96 28.5887 10.96 29.1745 11.5457C29.7603 12.1315 29.7603 13.0813 29.1745 13.6671L20.6892 22.1523L29.1745 30.6376C29.7603 31.2234 29.7603 32.1732 29.1745 32.7589C28.5887 33.3447 27.639 33.3447 27.0532 32.7589L17.5072 23.213ZM19.7832 22.1523L19.7832 23.6523L18.5679 23.6523L18.5679 22.1523L18.5679 20.6523L19.7832 20.6523L19.7832 22.1523Z"
-                        fill="#4649E0" />
-                      <defs>
-                        <linearGradient id="paint0_linear_4010_136" x1="10.9167" y1="22.1511" x2="35.9587" y2="22.1511"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#6023C3" />
-                          <stop offset="1" stop-color="#3169F8" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </button>
+                <div class="swiper-slide">
+                  <div class="a-training-courses__tabs">
+                    <div class="a-training-courses-tab js_tabs_btn">
+                      <div class="a-training-courses-tab__content">
+                        <span class="a-training-courses-tab__title">Разработка Telegram-ботов</span>
+                      </div>
+                      <div class="a-training-courses-tab__logo">
+                        <img src="images/courses/a-training-courses-tab-logo-1.svg" alt="Разработка Telegram-ботов"
+                          width="70" height="70">
+                      </div>
+                    </div>
+                    <div class="a-training-courses-tab js_tabs_btn">
+                      <div class="a-training-courses-tab__content">
+                        <span class="a-training-courses-tab__title">ЕГЭ по информатике</span>
+                        <span class="a-training-courses-tab__time">2025</span>
+                      </div>
+                      <div class="a-training-courses-tab__logo">
+                        <img src="images/courses/a-training-courses-tab-logo-2.svg" alt="Разработка Telegram-ботов"
+                          width="70" height="70">
+                      </div>
+                    </div>
+                    <div class="a-training-courses-tab js_tabs_btn disabled">
+                      <div class="a-training-courses-tab__content">
+                        <span class="a-training-courses-tab__title">Олимпиадное программирование</span>
+                      </div>
+                      <div class="a-training-courses-tab__logo">
+                        <img src="images/courses/a-training-courses-tab-logo-3.svg" alt="Олимпиадное программирование"
+                          width="70" height="70">
+                      </div>
+                    </div>
+                    <div class="a-training-courses-tab js_tabs_btn">
+                      <div class="a-training-courses-tab__content">
+                        <span class="a-training-courses-tab__title">Тест</span>
+                      </div>
+                      <div class="a-training-courses-tab__logo">
+                        <img src="images/courses/a-training-courses-tab-logo-1.svg" alt="" width="70" height="70">
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="a-training-courses__tabs">
-                <div class="a-training-courses-tab js_tabs_btn">
-                  <div class="a-training-courses-tab__content">
-                    <span class="a-training-courses-tab__title">Разработка Telegram-ботов</span>
-                  </div>
-                  <div class="a-training-courses-tab__logo">
-                    <img src="images/courses/a-training-courses-tab-logo-1.svg" alt="Разработка Telegram-ботов"
-                      width="70" height="70">
-                  </div>
-                </div>
-                <div class="a-training-courses-tab js_tabs_btn">
-                  <div class="a-training-courses-tab__content">
-                    <span class="a-training-courses-tab__title">ЕГЭ по информатике</span>
-                    <span class="a-training-courses-tab__time">2025</span>
-                  </div>
-                  <div class="a-training-courses-tab__logo">
-                    <img src="images/courses/a-training-courses-tab-logo-2.svg" alt="Разработка Telegram-ботов"
-                      width="70" height="70">
-                  </div>
-                </div>
-                <div class="a-training-courses-tab js_tabs_btn disabled">
-                  <div class="a-training-courses-tab__content">
-                    <span class="a-training-courses-tab__title">Олимпиадное программирование</span>
-                  </div>
-                  <div class="a-training-courses-tab__logo">
-                    <img src="images/courses/a-training-courses-tab-logo-3.svg" alt="Олимпиадное программирование"
-                      width="70" height="70">
-                  </div>
-                </div>
-                <div class="a-training-courses-tab js_tabs_btn">
-                  <div class="a-training-courses-tab__content">
-                    <span class="a-training-courses-tab__title">Тест</span>
-                  </div>
-                  <div class="a-training-courses-tab__logo">
-                    <img src="images/courses/a-training-courses-tab-logo-1.svg" alt="" width="70" height="70">
-                  </div>
-                </div>
+              <div class="a-training-courses__buttons slider-buttons">
+                <button class="slider-buttons__prev js_training_prev" type="button">
+                  <svg width="44" height="44">
+                    <use xlink:href="images/sprite.svg#slider-btn"></use>
+                  </svg>
+                  <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5188 0.618651C34.4109 0.618651 44.0513 10.2591 44.0513 22.1511C44.0513 34.0432 34.4109 43.6836 22.5188 43.6836C10.6267 43.6836 0.986328 34.0432 0.986327 22.1511C0.986327 10.2591 10.6267 0.618652 22.5188 0.618651ZM22.5188 40.5487C32.6795 40.5487 40.9164 32.3118 40.9164 22.1511C40.9164 11.9904 32.6795 3.75353 22.5188 3.75354C12.3581 3.75354 4.12121 11.9904 4.12121 22.1511C4.12121 32.3118 12.3581 40.5487 22.5188 40.5487Z"
+                      fill="url(#paint0_linear_4010_136)" />
+                    <path
+                      d="M17.5072 23.213C16.9215 22.6272 16.9215 21.6775 17.5072 21.0917L27.0532 11.5457C27.639 10.96 28.5887 10.96 29.1745 11.5457C29.7603 12.1315 29.7603 13.0813 29.1745 13.6671L20.6892 22.1523L29.1745 30.6376C29.7603 31.2234 29.7603 32.1732 29.1745 32.7589C28.5887 33.3447 27.639 33.3447 27.0532 32.7589L17.5072 23.213ZM19.7832 22.1523L19.7832 23.6523L18.5679 23.6523L18.5679 22.1523L18.5679 20.6523L19.7832 20.6523L19.7832 22.1523Z"
+                      fill="#4649E0" />
+                    <defs>
+                      <linearGradient id="paint0_linear_4010_136" x1="10.9167" y1="22.1511" x2="35.9587" y2="22.1511"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#6023C3" />
+                        <stop offset="1" stop-color="#3169F8" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </button>
+                <button class="slider-buttons__next js_training_next" type="button">
+                  <svg width="44" height="44">
+                    <use xlink:href="images/sprite.svg#slider-btn"></use>
+                  </svg>
+                  <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22.5188 0.618651C34.4109 0.618651 44.0513 10.2591 44.0513 22.1511C44.0513 34.0432 34.4109 43.6836 22.5188 43.6836C10.6267 43.6836 0.986328 34.0432 0.986327 22.1511C0.986327 10.2591 10.6267 0.618652 22.5188 0.618651ZM22.5188 40.5487C32.6795 40.5487 40.9164 32.3118 40.9164 22.1511C40.9164 11.9904 32.6795 3.75353 22.5188 3.75354C12.3581 3.75354 4.12121 11.9904 4.12121 22.1511C4.12121 32.3118 12.3581 40.5487 22.5188 40.5487Z"
+                      fill="url(#paint0_linear_4010_136)" />
+                    <path
+                      d="M17.5072 23.213C16.9215 22.6272 16.9215 21.6775 17.5072 21.0917L27.0532 11.5457C27.639 10.96 28.5887 10.96 29.1745 11.5457C29.7603 12.1315 29.7603 13.0813 29.1745 13.6671L20.6892 22.1523L29.1745 30.6376C29.7603 31.2234 29.7603 32.1732 29.1745 32.7589C28.5887 33.3447 27.639 33.3447 27.0532 32.7589L17.5072 23.213ZM19.7832 22.1523L19.7832 23.6523L18.5679 23.6523L18.5679 22.1523L18.5679 20.6523L19.7832 20.6523L19.7832 22.1523Z"
+                      fill="#4649E0" />
+                    <defs>
+                      <linearGradient id="paint0_linear_4010_136" x1="10.9167" y1="22.1511" x2="35.9587" y2="22.1511"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#6023C3" />
+                        <stop offset="1" stop-color="#3169F8" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>

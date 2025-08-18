@@ -5497,7 +5497,6 @@ input::-ms-clear {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  pointer-events: none;
 }
 @media (min-width: 1200px) {
   .a-students__table table th:nth-child(2),

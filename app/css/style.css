@@ -3044,6 +3044,7 @@ input::-ms-clear {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
 }
 @media (min-width: 1200px) {
   .a-profile-card__avatar img {

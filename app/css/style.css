@@ -2829,6 +2829,15 @@ input::-ms-clear {
   height: 30px;
 }
 
+.a-training-tabs--mod-lessons {
+  padding: 30px 0 0;
+}
+@media (min-width: 1200px) {
+  .a-training-tabs--mod-lessons {
+    padding-top: 110px;
+  }
+}
+
 .a-training-tabs-card {
   min-height: 232px;
   border-radius: var(--radius-30);
@@ -4925,12 +4934,7 @@ input::-ms-clear {
 }
 
 .a-lesson-presentation {
-  padding: 30px 0;
-}
-@media (min-width: 1200px) {
-  .a-lesson-presentation {
-    padding: 30px 0 110px;
-  }
+  padding: 30px 0 0;
 }
 .a-lesson-presentation__title {
   margin: 0 0 13px;

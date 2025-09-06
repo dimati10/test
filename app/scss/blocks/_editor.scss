@@ -183,6 +183,7 @@
 }
 
 .a-editor-spoiler {
+  position: relative;
   margin: 0 0 24px;
 
   @media (min-width: 1200px) {
@@ -210,6 +211,7 @@
   }
 
   &__btn {
+    width: fit-content;
     padding: 4px 10px;
     font-size: 16px;
     line-height: 20px;
@@ -221,6 +223,25 @@
       &:nth-child(2) {
         display: none;
       }
+    }
+  }
+
+  &__remove {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 42px;
+    height: 62px;
+    padding: 7px;
+    border-radius: var(--radius-10);
+    background-color: var(--black-32);
+    cursor: pointer;
+
+    svg {
+      color: var(--backtimeslip);
     }
   }
 

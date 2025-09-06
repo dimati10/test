@@ -674,6 +674,11 @@
 			@media (min-width: 576px) {
 				display: flex;
 			}
+
+			@media (min-width: 1200px) {
+				flex-shrink: 0;
+				width: 200px;
+			}
 		}
 	}
 

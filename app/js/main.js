@@ -14,7 +14,7 @@ function initApp() {
   setTabs(".js_lesson_tabs", ".js_lesson_tabs_btn", ".js_lesson_tabs_item"); // табы на странице урока
   initTrainingSliders(); // превращение карточек в слайдеры на мобильных расширениях
   seTextareaHeight(); // автоматическое увеличение высоты textarea при переполнении текстом
-  setTimer(".js_training_link_timer", "2025-08-10"); // таймер
+  setTimer(); // таймер
   setQrCode(); // qr код
   setFortuneWheel(); // колесо фортуны
   initModalDataEditorSlider(); // слайдер c аватарами в модальном окне 'редактор данных'
@@ -127,79 +127,6 @@ function controlSpoilers() {
   }
 }
 
-// валидация формы
-
-function validateForm(form) {
-  const formInputs = form.querySelectorAll('[class*="js_input"]');
-  const patternEmail = /^[a-zA-Z0-9._%+-\.]+@[a-z0-9.-]+\.[a-z]{2,}$/i; // рег. выражение для поля 'электронная почта';
-
-  let isValid = true;
-
-  formInputs.forEach((input) => {
-    // проверяем поле на заполненность от одного знака и более
-    if (input.classList.contains("js_input") && input.value === "") {
-      createError(input, "Заполните поле");
-      isValid = false;
-    } else if (input.classList.contains("js_input")) {
-      removeError(input);
-    }
-
-    // проверяем правильность заполнения поля 'телефон'
-    if (input.classList.contains("js_input_phone") && input.value === "") {
-      createError(input, "Заполните поле");
-      isValid = false;
-    } else if (
-      input.classList.contains("js_input_phone") &&
-      input.value.length === 18
-    ) {
-      removeError(input);
-    } else if (input.classList.contains("js_input_phone")) {
-      createError(input, "Укажите корректный телефон");
-      isValid = false;
-    }
-
-    // проверяем правильность заполнения поля 'электронная почта'
-    if (input.classList.contains("js_input_email") && input.value === "") {
-      createError(input, "Заполните поле");
-      isValid = false;
-    } else if (
-      input.classList.contains("js_input_email") &&
-      input.value.search(patternEmail) === 0
-    ) {
-      removeError(input);
-    } else if (input.classList.contains("js_input_email")) {
-      createError(input, "Укажите корректный e-mail");
-      isValid = false;
-    }
-  });
-
-  return isValid;
-}
-
-// создание ошибки валидации
-
-const createError = (input, text) => {
-  removeError(input);
-
-  input.classList.add("error");
-  input
-    .closest("label")
-    .insertAdjacentHTML(
-      "beforeend",
-      `<span class="field__error">${text}</span>`
-    );
-};
-
-// удаление ошибки валидации
-
-const removeError = (input) => {
-  input.classList.remove("error");
-
-  if (input.parentElement.querySelector(".field__error")) {
-    input.parentElement.querySelector(".field__error").remove();
-  }
-};
-
 // логика для модальных окон
 
 function controlModal() {
@@ -264,10 +191,23 @@ function controlModal() {
       }
     });
 
-    function closeModal(modal) {
+    window.closeModal = function (modal) {
       modal.classList.remove("active");
       unfixBodyPosition();
-    }
+    };
+
+    // Добавляем глобальную функцию для открытия
+    window.openModal = function (modalName) {
+      const modal = document.querySelector(`[data-modal="${modalName}"]`);
+      if (!modal) return;
+
+      document.querySelectorAll("[data-modal]").forEach((m) => {
+        m.classList.remove("active");
+      });
+
+      modal.classList.add("active");
+      fixBodyPosition();
+    };
   }
 }
 
@@ -510,7 +450,7 @@ function attachFile() {
         removeBtn.type = "button";
         removeBtn.className = "js_upload_remove";
         removeBtn.innerHTML =
-          '<svg width="12" height="12"><use xlink:href="images/sprite.svg#close"></use></svg>';
+          '<svg width="12" height="12"><use xlink:href="static/new_design/images/sprite.svg#close"></use></svg>';
         removeBtn.addEventListener("click", () => removeAt(idx));
         item.appendChild(removeBtn);
 
@@ -658,65 +598,110 @@ function initTrainingSliders() {
 
 function seTextareaHeight() {
   function autoResize(el) {
-    el.style.height = "auto";
+    if (!el.classList.contains("js_training_chat_textarea")) {
+      el.style.height = "auto";
+    }
+    
     const extra = el.offsetHeight - el.clientHeight;
     el.style.height = el.scrollHeight + extra + "px";
   }
 
   document.querySelectorAll("textarea").forEach((textarea) => {
-    autoResize(textarea);
+    if (!textarea.classList.contains("js_training_chat_textarea")) {
+      autoResize(textarea);
+    }
+
     textarea.addEventListener("input", () => autoResize(textarea));
   });
 }
 
 // таймер
 
-function setTimer(id, deadline) {
-  function getTimeRemaining(endtime) {
-    const t =
-      Date.parse(endtime) -
-      Date.parse(new Date()) +
-      new Date().getTimezoneOffset() * 60000;
+// function setTimer(id, deadline) {
+//   function getTimeRemaining(endtime) {
+//     const t =
+//       Date.parse(endtime) -
+//       Date.parse(new Date()) +
+//       new Date().getTimezoneOffset() * 60000;
 
-    const totalHours = Math.floor(t / (1000 * 60 * 60));
-    const minutes = Math.floor((t / 1000 / 60) % 60);
-    const seconds = Math.floor((t / 1000) % 60);
+//     const totalHours = Math.floor(t / (1000 * 60 * 60));
+//     const minutes = Math.floor((t / 1000 / 60) % 60);
+//     const seconds = Math.floor((t / 1000) % 60);
 
-    return {
-      total: t,
-      hours: totalHours,
-      minutes: minutes,
-      seconds: seconds,
-    };
+//     return {
+//       total: t,
+//       hours: totalHours,
+//       minutes: minutes,
+//       seconds: seconds,
+//     };
+//   }
+
+//   function getZero(num) {
+//     return num < 10 ? `0${num}` : `${num}`;
+//   }
+
+//   function setClock(selector, endtime) {
+//     const timer = document.querySelector(selector);
+
+//     if (timer) {
+//       const timeInterval = setInterval(updateClock, 1000);
+//       updateClock();
+
+//       function updateClock() {
+//         const t = getTimeRemaining(endtime);
+
+//         timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(
+//           t.seconds
+//         )}`;
+
+//         if (t.total <= 0) {
+//           clearInterval(timeInterval);
+//           timer.innerHTML = `00:00:00`;
+//         }
+//       }
+//     }
+//   }
+
+//   setClock(id, deadline);
+// }
+
+function setTimer() {
+  const timer = document.querySelector(".js_training_link_timer");
+  if (!timer) return;
+
+  function parseTimeString(str) {
+    const [h, m, s] = str.split(":").map((n) => parseInt(n, 10));
+    return (h || 0) * 3600 + (m || 0) * 60 + (s || 0);
   }
 
-  function getZero(num) {
-    return num < 10 ? `0${num}` : `${num}`;
+  function formatTime(seconds) {
+    const h = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const s = String(seconds % 60).padStart(2, "0");
+    return `${h}:${m}:${s}`;
   }
 
-  function setClock(selector, endtime) {
-    const timer = document.querySelector(selector);
+  function startCountdown(duration) {
+    let remaining = duration;
+    timer.textContent = formatTime(remaining);
 
-    if (timer) {
-      const timeInterval = setInterval(updateClock, 1000);
-      updateClock();
-
-      function updateClock() {
-        const t = getTimeRemaining(endtime);
-
-        timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(
-          t.seconds
-        )}`;
-
-        if (t.total <= 0) {
-          clearInterval(timeInterval);
-          timer.innerHTML = `00:00:00`;
-        }
+    const interval = setInterval(() => {
+      remaining--;
+      timer.textContent = formatTime(remaining);
+      if (remaining <= 0) {
+        clearInterval(interval);
+        timer.textContent = "00:00:00";
       }
+    }, 1000);
+  }
+
+  const raw = timer.getAttribute("data-timer");
+  if (raw) {
+    const seconds = parseTimeString(raw);
+    if (seconds > 0) {
+      startCountdown(seconds);
     }
   }
-
-  setClock(id, deadline);
 }
 
 // qr код
@@ -792,6 +777,41 @@ function setFortuneWheel() {
     }, 1000);
   }
 
+  function addHistoryItem(date, amount, comment) {
+    // Находим контейнер
+    const container = document.querySelector(".a-profile-history__items");
+    if (!container) {
+      console.error("Контейнер .a-profile-history__items не найден");
+      return;
+    }
+
+    // Создаём элемент
+    const item = document.createElement("div");
+    item.classList.add("a-profile-history-item");
+
+    item.innerHTML = `
+        <div class="a-profile-history-item__col">
+            <span class="a-profile-history-item__caption">Дата</span>
+            <span class="a-profile-history-item__date">${date}</span>
+        </div>
+        <div class="a-profile-history-item__col">
+            <span class="a-profile-history-item__caption">Кол-во</span>
+            <span class="a-profile-history-item__amount a-profile-history-item__amount--plus">
+                ${amount}
+            </span>
+        </div>
+        <div class="a-profile-history-item__col">
+            <span class="a-profile-history-item__caption">Комментарий</span>
+            <span class="a-profile-history-item__comment">${comment}</span>
+        </div>
+    `;
+
+    // Добавляем в начало (новые сверху) — как обычно в истории
+    container.prepend(item);
+
+    // Или в конец: container.appendChild(item);
+  }
+
   const raw = btn.getAttribute("data-timer");
   if (raw) {
     const seconds = parseTimeString(raw);
@@ -813,12 +833,58 @@ function setFortuneWheel() {
     wheel.style.transition = "transform 5s cubic-bezier(0.33, 1, 0.68, 1)";
     wheel.style.transform = `rotate(${totalRotation}deg)`;
 
-    setTimeout(() => {
-      const normalizedAngle = ((totalRotation % 360) + 360) % 360;
-      const index = Math.floor(((360 - normalizedAngle) % 360) / segmentAngle);
-      const result = segments[index];
+    const studentId = btn.getAttribute("data-student-id");
 
-      // console.log("Выпало:", result);
+    const normalizedAngle = ((totalRotation % 360) + 360) % 360;
+    const index = Math.floor(((360 - normalizedAngle) % 360) / segmentAngle);
+    const result = segments[index];
+
+    const csrfToken = document
+      .querySelector('meta[name="csrf-token"]')
+      ?.getAttribute("content");
+    if (result !== "green") {
+      fetch("/api/wheel_result", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken,
+        },
+        body: JSON.stringify({ result, student_id: studentId }),
+      });
+    }
+
+    setTimeout(() => {
+      openModal("ziton_message");
+
+      const messageModal = document.querySelector(
+        '[data-modal="ziton_message"]'
+      );
+      const title = messageModal.querySelector("#ziton_title");
+      const desc = messageModal.querySelector("#ziton_desc");
+      const coins = {
+        red: {
+          coins: 0,
+          title: "🐞 Это похоже на баг!",
+          desc: "Каждая ошибка учит тебя чему-то новому. Перезагрузка колеса через 24 часа!",
+        },
+        orange: {
+          coins: 1,
+          title: "🎉 +1 ЗИТОН!",
+          desc: "Отличный старт! Каждая монета приближает тебя к большой цели! Не останавливайся на достигнутом!",
+        },
+        yellow: {
+          coins: 3,
+          title: "🔥 ДЖЕКПОТ! +3 ЗИТОНА!",
+          desc: "Уровень удачи зашкаливает! Такие победы случаются не каждый день!",
+        },
+        green: {
+          coins: 0,
+          title: "🔄 Крути ещё раз!",
+          desc: "Удача на твоей стороне! Лови дополнительный спин!",
+        },
+      };
+      title.textContent = coins[result]["title"];
+      desc.textContent = coins[result]["desc"];
 
       if (result === "green") {
         spinning = false;
@@ -827,17 +893,21 @@ function setFortuneWheel() {
         return;
       }
 
-      const nextCooldown = "12:00:00";
+      if (result !== "green" && result !== "red") {
+        const now = new Date();
 
-      fetch("/api/wheel-result", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ result, cooldown: nextCooldown }),
-      });
+        const day = String(now.getDate()).padStart(2, "0"); // День (01-31)
+        const month = String(now.getMonth() + 1).padStart(2, "0"); // Месяц (01-12), getMonth() начинается с 0
+        const year = String(now.getFullYear()).slice(-2); // Последние 2 цифры года
+
+        const formattedDate = `${day}.${month}.${year}`;
+        addHistoryItem(formattedDate, coins[result]["coins"], "Колесо фортуны");
+      }
+
+      const nextCooldown = "24:00:00";
 
       const seconds = parseTimeString(nextCooldown);
       startCountdown(seconds);
-
       spinning = false;
     }, 5200);
   });
@@ -1060,11 +1130,10 @@ function changeAvatar() {
   });
 }
 
-// сортировка таблицы на странице 'рейтинг учеников'
+// сортировка таблицы на странице 'рейтинг учеников' | 'настройки' (сортировка работает по строкам)
 
 function controlRatingTableSort() {
   const table = document.querySelector(".js_table");
-
   if (!table) return;
 
   const tbody = table.querySelector(".js_table_body");
@@ -1078,6 +1147,7 @@ function controlRatingTableSort() {
     const columnIndex = Array.from(th.parentElement.children).indexOf(th);
 
     button.addEventListener("click", () => {
+      // Смена столбца или направления
       if (activeColumnIndex !== columnIndex) {
         isAscending = true;
         activeColumnIndex = columnIndex;
@@ -1085,31 +1155,57 @@ function controlRatingTableSort() {
         isAscending = !isAscending;
       }
 
+      // Сброс стилей у всех кнопок
       sortButtons.forEach((btn) => {
         btn.classList.remove("active");
         btn.dataset.sort = "";
-        btn.querySelector("svg").style.transform = "";
+        const svg = btn.querySelector("svg");
+        if (svg) svg.style.transform = "";
       });
 
+      // Получаем строки
       const rows = Array.from(tbody.querySelectorAll("tr"));
 
+      // Сортировка
       rows.sort((a, b) => {
-        const aText = a.children[columnIndex]?.textContent.trim() || "";
-        const bText = b.children[columnIndex]?.textContent.trim() || "";
+        const aCell = a.children[columnIndex];
+        const bCell = b.children[columnIndex];
 
-        const aValue = parseFloat(aText.replace("%", "")) || 0;
-        const bValue = parseFloat(bText.replace("%", "")) || 0;
+        if (!aCell || !bCell) return 0;
 
-        return isAscending ? aValue - bValue : bValue - aValue;
+        const aText = aCell.textContent.trim();
+        const bText = bCell.textContent.trim();
+
+        // Определяем, похоже ли на число (включая проценты)
+        const isNumeric = /[\d.%,]/.test(aText) && /[\d.%,]/.test(bText);
+
+        let aValue, bValue;
+
+        if (isNumeric) {
+          // Пытаемся извлечь число: убираем %, пробелы и парсим
+          aValue = parseFloat(aText.replace(/[^\d.-]/g, "")) || -Infinity;
+          bValue = parseFloat(bText.replace(/[^\d.-]/g, "")) || -Infinity;
+          return isAscending ? aValue - bValue : bValue - aValue;
+        } else {
+          // Текстовая сортировка (без учёта регистра)
+          aValue = aText.toLowerCase();
+          bValue = bText.toLowerCase();
+          if (aValue < bValue) return isAscending ? -1 : 1;
+          if (aValue > bValue) return isAscending ? 1 : -1;
+          return 0;
+        }
       });
 
+      // Перемещаем строки в отсортированном порядке
       rows.forEach((row) => tbody.appendChild(row));
 
+      // Обновляем активную кнопку
       button.classList.add("active");
       button.dataset.sort = isAscending ? "asc" : "desc";
-      button.querySelector("svg").style.transform = isAscending
-        ? "rotate(180deg)"
-        : "rotate(0deg)";
+      const svg = button.querySelector("svg");
+      if (svg) {
+        svg.style.transform = isAscending ? "rotate(180deg)" : "rotate(0deg)";
+      }
     });
   });
 }

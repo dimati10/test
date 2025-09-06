@@ -2293,6 +2293,8 @@ input::-ms-clear {
           flex-direction: column;
   gap: 14px;
   overflow: hidden;
+  max-height: 272px;
+  overflow-y: auto;
   -webkit-transition: padding 0.3s;
   transition: padding 0.3s;
 }
@@ -2322,6 +2324,7 @@ input::-ms-clear {
   display: block;
   width: 100%;
   min-height: 55px;
+  height: 55px;
   padding: 19px 55px;
   font-weight: 400;
   color: var(--black);
@@ -2419,6 +2422,7 @@ input::-ms-clear {
   width: 64px;
   height: 64px;
   border-radius: 50%;
+  overflow: hidden;
 }
 .a-training-chat-user__avatar img {
   width: 100%;
@@ -2487,6 +2491,7 @@ input::-ms-clear {
   width: 64px;
   height: 64px;
   border-radius: 50%;
+  overflow: hidden;
 }
 .a-training-chat-message__avatar img {
   width: 100%;
@@ -2799,7 +2804,12 @@ input::-ms-clear {
 }
 @media (min-width: 768px) {
   .a-training-tabs__add {
-    min-height: 0;
+    min-height: 232px;
+  }
+}
+@media (min-width: 1200px) {
+  .a-training-tabs__add {
+    min-height: 258px;
   }
 }
 .a-training-tabs__add span {
@@ -3822,6 +3832,13 @@ input::-ms-clear {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  .a-profile-history-item__col:nth-child(3) {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 200px;
   }
 }
 .a-profile-history-item__caption {
@@ -5275,6 +5292,7 @@ input::-ms-clear {
 }
 
 .a-editor-spoiler {
+  position: relative;
   margin: 0 0 24px;
 }
 @media (min-width: 1200px) {
@@ -5295,6 +5313,9 @@ input::-ms-clear {
   display: block;
 }
 .a-editor-spoiler__btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 4px 10px;
   font-size: 16px;
   line-height: 20px;
@@ -5304,6 +5325,29 @@ input::-ms-clear {
 }
 .a-editor-spoiler__btn span:nth-child(2) {
   display: none;
+}
+.a-editor-spoiler__remove {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42px;
+  height: 62px;
+  padding: 7px;
+  border-radius: var(--radius-10);
+  background-color: var(--black-32);
+  cursor: pointer;
+}
+.a-editor-spoiler__remove svg {
+  color: var(--backtimeslip);
 }
 .a-editor-spoiler__content {
   display: none;

@@ -605,6 +605,8 @@
     flex-direction: column;
     gap: 14px;
     overflow: hidden;
+    max-height: 272px;
+    overflow-y: auto;
     transition: padding 0.3s;
 
     @media (min-width: 768px) {
@@ -627,6 +629,7 @@
     display: block;
     width: 100%;
     min-height: 55px;
+    height: 55px;
     padding: 19px 55px;
     font-weight: 400;
     color: var(--black);
@@ -707,6 +710,7 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -765,6 +769,7 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -1022,7 +1027,11 @@
     border-radius: var(--radius-30);
 
     @media (min-width: 768px) {
-      min-height: 0;
+      min-height: 232px;
+    }
+
+    @media (min-width: 1200px) {
+      min-height: 258px;
     }
 
     span {

@@ -601,7 +601,7 @@ function seTextareaHeight() {
     if (!el.classList.contains("js_training_chat_textarea")) {
       el.style.height = "auto";
     }
-    
+
     const extra = el.offsetHeight - el.clientHeight;
     el.style.height = el.scrollHeight + extra + "px";
   }
@@ -616,54 +616,6 @@ function seTextareaHeight() {
 }
 
 // таймер
-
-// function setTimer(id, deadline) {
-//   function getTimeRemaining(endtime) {
-//     const t =
-//       Date.parse(endtime) -
-//       Date.parse(new Date()) +
-//       new Date().getTimezoneOffset() * 60000;
-
-//     const totalHours = Math.floor(t / (1000 * 60 * 60));
-//     const minutes = Math.floor((t / 1000 / 60) % 60);
-//     const seconds = Math.floor((t / 1000) % 60);
-
-//     return {
-//       total: t,
-//       hours: totalHours,
-//       minutes: minutes,
-//       seconds: seconds,
-//     };
-//   }
-
-//   function getZero(num) {
-//     return num < 10 ? `0${num}` : `${num}`;
-//   }
-
-//   function setClock(selector, endtime) {
-//     const timer = document.querySelector(selector);
-
-//     if (timer) {
-//       const timeInterval = setInterval(updateClock, 1000);
-//       updateClock();
-
-//       function updateClock() {
-//         const t = getTimeRemaining(endtime);
-
-//         timer.innerHTML = `${getZero(t.hours)}:${getZero(t.minutes)}:${getZero(
-//           t.seconds
-//         )}`;
-
-//         if (t.total <= 0) {
-//           clearInterval(timeInterval);
-//           timer.innerHTML = `00:00:00`;
-//         }
-//       }
-//     }
-//   }
-
-//   setClock(id, deadline);
-// }
 
 function setTimer() {
   const timer = document.querySelector(".js_training_link_timer");
@@ -825,19 +777,48 @@ function setFortuneWheel() {
     spinning = true;
     btn.disabled = true;
 
+    const probabilities = {
+      red: 0.55,
+      yellow: 0.05,
+      green: 0.15,
+      orange: 0.25,
+    };
+
+    function getWeightedRandom(probabilities) {
+      const rand = Math.random();
+      let cumulative = 0;
+      for (const [key, prob] of Object.entries(probabilities)) {
+        cumulative += prob;
+        if (rand < cumulative) return key;
+      }
+      return "red";
+    }
+
+    const result = getWeightedRandom(probabilities);
+    // console.log("Выпал сектор:", result);
+
+    // выбор угла для нужного сектора
+    const possibleIndexes = segments
+      .map((val, idx) => (val === result ? idx : -1))
+      .filter((idx) => idx !== -1);
+    const resultIndex =
+      possibleIndexes[Math.floor(Math.random() * possibleIndexes.length)];
+
+    const pointerAngle = 180;
+    const randomPointInSector =
+      resultIndex * segmentAngle + Math.random() * segmentAngle;
+    const desiredMod = (pointerAngle - randomPointInSector + 360) % 360;
+    const currentMod = ((totalRotation % 360) + 360) % 360;
+    const delta = (desiredMod - currentMod + 360) % 360;
+
     const turns =
       Math.floor(Math.random() * (maxTurns - minTurns + 1)) + minTurns;
-    const extraRotation = turns * 360 + Math.random() * 360;
-    totalRotation += extraRotation;
+    totalRotation += turns * 360 + delta;
 
     wheel.style.transition = "transform 5s cubic-bezier(0.33, 1, 0.68, 1)";
     wheel.style.transform = `rotate(${totalRotation}deg)`;
 
     const studentId = btn.getAttribute("data-student-id");
-
-    const normalizedAngle = ((totalRotation % 360) + 360) % 360;
-    const index = Math.floor(((360 - normalizedAngle) % 360) / segmentAngle);
-    const result = segments[index];
 
     const csrfToken = document
       .querySelector('meta[name="csrf-token"]')
